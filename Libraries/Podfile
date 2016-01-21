@@ -1,0 +1,55 @@
+# Master Pods Repo
+source 'https://github.com/CocoaPods/Specs.git'
+
+# Private Pods Repo
+source 'git@bitbucket.org:thedistance/thedistancekit-cocoapods.git'
+
+# pod configuration
+platform :ios, '8.0'
+use_frameworks!
+inhibit_all_warnings!
+
+# define 
+workspace '../MozQuito'
+xcodeproj '../MozQuito'
+
+
+target 'MozQuito' do
+
+xcodeproj '../MozQuito'
+
+### CORE PODS ###
+
+pod 'TheDistanceCore'
+pod 'ViperKit', :path => 'ViperKit'
+
+
+### DISTRIBUTION PODS ###
+
+pod 'Fabric'
+pod 'Crashlytics', :configurations => ['Release', 'Beta Testing']
+pod 'Google/Analytics'
+
+### NETWORKING PODS ###
+
+pod 'Alamofire'
+pod 'SwiftyJSON'
+pod 'PSOperations'
+
+### UI PODS ###
+
+pod 'M13ProgressSuite'
+pod 'StackView', :path => 'StackView'
+
+### Josh's Development Pods ###
+
+pod 'SwiftInPractice', :path => 'SwiftInPractice'
+pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
+
+end
+
+target 'MozQuitoTests' do
+
+xcodeproj '../MozQuito'
+
+end
