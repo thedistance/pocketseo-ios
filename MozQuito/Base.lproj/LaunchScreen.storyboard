@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +17,57 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Mozscape" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3n-Gg-7QF">
+                                <rect key="frame" x="20" y="551" width="560" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJg-1Z-GAe">
+                                <rect key="frame" x="20" y="271" width="560" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MozQuito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ki-sH-Cq3">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© The Distance, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sD-E5-ZjQ">
+                                        <rect key="frame" x="0.0" y="41" width="560" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6sD-E5-ZjQ" firstAttribute="top" secondItem="8ki-sH-Cq3" secondAttribute="bottom" constant="8" id="HEb-Fu-Qds"/>
+                                    <constraint firstItem="8ki-sH-Cq3" firstAttribute="top" secondItem="MJg-1Z-GAe" secondAttribute="top" id="gJp-Cz-MYW"/>
+                                    <constraint firstAttribute="trailing" secondItem="8ki-sH-Cq3" secondAttribute="trailing" id="gW0-nM-P6K"/>
+                                    <constraint firstItem="8ki-sH-Cq3" firstAttribute="leading" secondItem="MJg-1Z-GAe" secondAttribute="leading" id="gcW-cB-t4h"/>
+                                    <constraint firstItem="6sD-E5-ZjQ" firstAttribute="leading" secondItem="MJg-1Z-GAe" secondAttribute="leading" id="hcD-Oe-dTL"/>
+                                    <constraint firstItem="6sD-E5-ZjQ" firstAttribute="top" secondItem="MJg-1Z-GAe" secondAttribute="top" constant="8" id="k2E-2H-HWk"/>
+                                    <constraint firstAttribute="bottom" secondItem="6sD-E5-ZjQ" secondAttribute="bottom" id="rnU-aZ-ryZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="6sD-E5-ZjQ" secondAttribute="trailing" id="zea-00-icn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="k2E-2H-HWk"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="MJg-1Z-GAe" secondAttribute="trailing" id="0dP-E4-IGi"/>
+                            <constraint firstItem="MJg-1Z-GAe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Wy-aS-fya"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="R3n-Gg-7QF" secondAttribute="bottom" constant="32" id="7r7-AW-eec"/>
+                            <constraint firstItem="MJg-1Z-GAe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GDX-0L-yty"/>
+                            <constraint firstItem="R3n-Gg-7QF" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="TLh-zK-348"/>
+                            <constraint firstItem="R3n-Gg-7QF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="ssv-Ja-dp1"/>
+                            <constraint firstItem="MJg-1Z-GAe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="v5U-r1-LY4"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

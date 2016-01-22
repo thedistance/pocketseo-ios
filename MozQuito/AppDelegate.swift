@@ -8,6 +8,11 @@
 
 import UIKit
 
+import Fabric
+import Crashlytics
+
+import ViperKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let dependencies = MZAppDependencies.sharedInstance()
+        
+        dependencies.crashReportingInteractor?.logToCrashReport("App Launched")
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.frame = UIScreen.mainScreen().bounds
+        // set the root view controller via the root wireframe
+        if let window = self.window {
+            dependencies.installRootViewControllerIntoWindow(window)
+        }
+        
         return true
     }
 
