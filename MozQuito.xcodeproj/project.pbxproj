@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4087E065765E5258925F1D8D /* Pods_MozQuito.framework */; };
+		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
 		A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626DB1C5274670076147C /* AnalyticsInteractors.swift */; };
 		A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626E01C5277820076147C /* TestAnalyticsViewController.swift */; };
 		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
@@ -35,6 +36,7 @@
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
 		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
+		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */,
 				A5F4E6A71C5113D00099010C /* MozQuito-Info.h */,
+				A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */,
 				A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */,
 				A5F4E6771C50E0FD0099010C /* Info.plist */,
 				A59626D91C52743E0076147C /* Modules */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */,
 				A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */,
 				A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */,
 				A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */,
