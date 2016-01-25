@@ -21,7 +21,7 @@ class TestAnalyticsViewController: UIViewController, AnalyticScreenView {
     }
     
     override func viewDidAppear(animated: Bool) {
-        viewDidAppear(animated)
+        super.viewDidAppear(animated)
         
         registerScreenView()
     }

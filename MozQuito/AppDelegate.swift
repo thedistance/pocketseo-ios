@@ -9,8 +9,6 @@
 import UIKit
 
 import Fabric
-import Crashlytics
-
 import ViperKit
 
 @UIApplicationMain
@@ -28,9 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.frame = UIScreen.mainScreen().bounds
-        // set the root view controller via the root wireframe
+        
+        // set the root view controller via the app dependencies so log can be performed as to which vc to start from
         if let window = self.window {
             dependencies.installRootViewControllerIntoWindow(window)
+        }
+        
+        if FabricInitialiser.kits.count > 0 {
+            // starting Fabric has to be the last method
+            Fabric.with(FabricInitialiser.kits)
         }
         
         return true

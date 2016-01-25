@@ -18,6 +18,9 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
         preferencesInteractor = self
         analyticsInteractor = GoogleAnalyticsInteractor()
         crashReportingInteractor = FabricCrashReportingInteractor()
+        
+        analyticsInteractor?.setupAnalytics()
+        crashReportingInteractor?.setupCrashReporting()
     }
     
     func installRootViewControllerIntoWindow(window: UIWindow) {

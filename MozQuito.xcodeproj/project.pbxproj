@@ -183,6 +183,7 @@
 				A5F4E6661C50E0FD0099010C /* Resources */,
 				A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */,
 				82CBD3F762B24275BB76B977 /* Copy Pods Resources */,
+				A505BA411C563E4A004F2607 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +286,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A505BA411C563E4A004F2607 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 015a3121c76ea8baec90c4a97c7bd1976400adad dc9c94e3c240c0f762b3ba151b9bb3c0ddf4271bf6be439432c002315672794f";
 		};
 		A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -459,14 +473,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -558,14 +574,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA_TESTING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8e580fd0-d92b-4712-ac77-2a0f3b3c9428";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
 			name = "Beta Testing";

@@ -25,7 +25,7 @@ pod 'ViperKit', :path => 'ViperKit'
 
 ### DISTRIBUTION PODS ###
 
-pod 'Google/Analytics'
+pod 'GoogleAnalytics'
 pod 'Fabric'
 pod 'Crashlytics'
 
@@ -51,4 +51,12 @@ target 'MozQuitoTests' do
 
 xcodeproj '../MozQuito'
 
+end
+
+# Disable bitcode for Google Analytics
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        puts "#{target.name}"
+    end
 end
