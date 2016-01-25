@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4087E065765E5258925F1D8D /* Pods_MozQuito.framework */; };
 		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
+		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
+		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
+		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
 		A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626DB1C5274670076147C /* AnalyticsInteractors.swift */; };
 		A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626E01C5277820076147C /* TestAnalyticsViewController.swift */; };
 		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
 		A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
 		A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
+		A5EA9A8B1C568083004CC9EF /* MZURLMetricsOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZURLMetricsOperations.swift */; };
+		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
+		A5EA9A901C568233004CC9EF /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8F1C568233004CC9EF /* MZMetric.swift */; };
+		A5EA9A921C5686FB004CC9EF /* URLMetricsViperImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
@@ -37,12 +44,19 @@
 		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
 		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
+		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
+		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
+		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
 		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
 		A59627091C5289870076147C /* AnalyticEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticEntities.swift; path = Modules/Analytics/AnalyticEntities.swift; sourceTree = "<group>"; };
 		A596270B1C528C1D0076147C /* MZAppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAppDependencies.swift; path = Modules/Core/MZAppDependencies.swift; sourceTree = "<group>"; };
 		A59627101C5292740076147C /* MZStoryboardLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZStoryboardLoader.swift; path = Modules/Core/MZStoryboardLoader.swift; sourceTree = "<group>"; };
+		A5EA9A8A1C568083004CC9EF /* MZURLMetricsOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsOperations.swift; path = Modules/URLMetrics/NetworkOperations/MZURLMetricsOperations.swift; sourceTree = "<group>"; };
+		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
+		A5EA9A8F1C568233004CC9EF /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZMetric.swift; path = Modules/Core/MZMetric.swift; sourceTree = "<group>"; };
+		A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperImplementation.swift; path = Modules/URLMetrics/Viper/URLMetricsViperImplementation.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -92,9 +106,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A505BA441C567017004F2607 /* URL Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8C1C5681B6004CC9EF /* Viper */,
+				A505BA451C567025004F2607 /* Network Operations */,
+			);
+			name = "URL Metrics";
+			sourceTree = "<group>";
+		};
+		A505BA451C567025004F2607 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8A1C568083004CC9EF /* MZURLMetricsOperations.swift */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		A505BA461C567035004F2607 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */,
+				A505BA471C567057004F2607 /* MZAuthenticationToken.swift */,
+				A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
 		A59626D91C52743E0076147C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A505BA441C567017004F2607 /* URL Metrics */,
 				A59626DA1C5274460076147C /* Analytics */,
 				A596270D1C528C300076147C /* Core */,
 			);
@@ -123,10 +165,21 @@
 		A596270D1C528C300076147C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A505BA461C567035004F2607 /* Network Operations */,
 				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
 				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
+				A5EA9A8F1C568233004CC9EF /* MZMetric.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		A5EA9A8C1C5681B6004CC9EF /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */,
+				A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */,
+			);
+			name = Viper;
 			sourceTree = "<group>";
 		};
 		A5F4E65F1C50E0FD0099010C = {
@@ -343,7 +396,14 @@
 			files = (
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
 				A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */,
+				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
+				A5EA9A921C5686FB004CC9EF /* URLMetricsViperImplementation.swift in Sources */,
+				A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */,
+				A5EA9A901C568233004CC9EF /* MZMetric.swift in Sources */,
+				A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */,
 				A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */,
+				A5EA9A8B1C568083004CC9EF /* MZURLMetricsOperations.swift in Sources */,
+				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
 				A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */,

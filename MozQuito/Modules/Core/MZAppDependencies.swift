@@ -11,6 +11,21 @@ import ViperKit
 
 class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor {
     
+    private var _authenticationToken:MZAuthenicationToken?
+    
+    var currentAuthenticationToken:MZAuthenicationToken {
+        
+        let expiryBuffer:NSTimeInterval = -10
+        
+        if let token = _authenticationToken where NSDate().timeIntervalSinceDate(token.expiryDate) < expiryBuffer {
+            return token
+        } else {
+            let token = MZAuthenicationToken()
+            _authenticationToken = token
+            return token
+        }
+    }
+    
     override required init() {
         super.init()
         
