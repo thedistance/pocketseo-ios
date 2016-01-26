@@ -11,6 +11,10 @@ import UIKit
 import Fabric
 import ViperKit
 
+let isTesting:Bool = {
+    return NSProcessInfo.processInfo().environment["TESTING"] != nil
+}()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

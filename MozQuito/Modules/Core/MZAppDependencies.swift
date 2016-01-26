@@ -29,6 +29,8 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
     override required init() {
         super.init()
         
+        guard !isTesting else { return }
+        
         setDefaultPreferences()
         preferencesInteractor = self
         analyticsInteractor = GoogleAnalyticsInteractor()
@@ -39,6 +41,11 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
     }
     
     func installRootViewControllerIntoWindow(window: UIWindow) {
+        
+        guard !isTesting else {
+            window.rootViewController = UIViewController()
+            return
+        }
         
         window.rootViewController = MZStoryboardLoader.instantiateViewControllerForIdentifier(.TestVC)
         

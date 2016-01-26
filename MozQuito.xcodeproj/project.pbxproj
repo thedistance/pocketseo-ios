@@ -12,6 +12,7 @@
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
 		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
 		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
+		A54B1D231C57A3F30086BE0D /* URLMetricsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B1D221C57A3F30086BE0D /* URLMetricsTest.swift */; };
 		A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626DB1C5274670076147C /* AnalyticsInteractors.swift */; };
 		A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626E01C5277820076147C /* TestAnalyticsViewController.swift */; };
 		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
@@ -21,11 +22,16 @@
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
 		A5EA9A901C568233004CC9EF /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8F1C568233004CC9EF /* MZMetric.swift */; };
 		A5EA9A921C5686FB004CC9EF /* URLMetricsViperImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */; };
+		A5EA9A951C568D92004CC9EF /* ViperTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A941C568D92004CC9EF /* ViperTester.swift */; };
+		A5EA9A991C568DAF004CC9EF /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */; };
+		A5EA9A9A1C568DAF004CC9EF /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */; };
+		A5EA9A9B1C568DAF004CC9EF /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
 		A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */; };
+		D0171968272E6A403E62E8D8 /* Pods_MozQuitoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +45,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.release.xcconfig"; sourceTree = "<group>"; };
+		1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.beta testing.xcconfig"; sourceTree = "<group>"; };
+		1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.beta testing.xcconfig"; sourceTree = "<group>"; };
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
+		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
 		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
 		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
+		A54B1D221C57A3F30086BE0D /* URLMetricsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetricsTest.swift; sourceTree = "<group>"; };
+		A54B1D281C57AC920086BE0D /* MozQuitoTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MozQuitoTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -57,6 +69,10 @@
 		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
 		A5EA9A8F1C568233004CC9EF /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZMetric.swift; path = Modules/Core/MZMetric.swift; sourceTree = "<group>"; };
 		A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperImplementation.swift; path = Modules/URLMetrics/Viper/URLMetricsViperImplementation.swift; sourceTree = "<group>"; };
+		A5EA9A941C568D92004CC9EF /* ViperTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViperTester.swift; path = Libraries/ViperTester.swift; sourceTree = "<group>"; };
+		A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvancedOperationTestCase.swift; path = "Libraries/Testing Code/AdvancedOperationTestCase.swift"; sourceTree = SOURCE_ROOT; };
+		A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NLAssertEqualOptional.swift; path = "Libraries/Testing Code/NLAssertEqualOptional.swift"; sourceTree = SOURCE_ROOT; };
+		A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsInteractors.swift; path = "Libraries/Testing Code/TestAnalyticsInteractors.swift"; sourceTree = SOURCE_ROOT; };
 		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -82,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0171968272E6A403E62E8D8 /* Pods_MozQuitoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +111,9 @@
 				517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */,
 				6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */,
 				347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */,
+				1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */,
+				14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */,
+				1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -102,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4087E065765E5258925F1D8D /* Pods_MozQuito.framework */,
+				661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,6 +203,17 @@
 			name = Viper;
 			sourceTree = "<group>";
 		};
+		A5EA9A931C568D73004CC9EF /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A941C568D92004CC9EF /* ViperTester.swift */,
+				A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */,
+				A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */,
+				A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		A5F4E65F1C50E0FD0099010C = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +253,9 @@
 			isa = PBXGroup;
 			children = (
 				A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */,
+				A54B1D221C57A3F30086BE0D /* URLMetricsTest.swift */,
+				A54B1D281C57AC920086BE0D /* MozQuitoTests-Bridging-Header.h */,
+				A5EA9A931C568D73004CC9EF /* Libraries */,
 				A5F4E6821C50E0FD0099010C /* Info.plist */,
 			);
 			path = MozQuitoTests;
@@ -254,9 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */;
 			buildPhases = (
+				5092EEEE4558A00655037D59 /* Check Pods Manifest.lock */,
 				A5F4E6781C50E0FD0099010C /* Sources */,
 				A5F4E6791C50E0FD0099010C /* Frameworks */,
 				A5F4E67A1C50E0FD0099010C /* Resources */,
+				A6D7EB7BDD3DE9B2CA1751C2 /* Embed Pods Frameworks */,
+				3C54942435A29D6B8154C67F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,6 +367,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3C54942435A29D6B8154C67F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5092EEEE4558A00655037D59 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		82CBD3F762B24275BB76B977 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +424,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 015a3121c76ea8baec90c4a97c7bd1976400adad dc9c94e3c240c0f762b3ba151b9bb3c0ddf4271bf6be439432c002315672794f";
+		};
+		A6D7EB7BDD3DE9B2CA1751C2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -414,7 +497,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EA9A9A1C568DAF004CC9EF /* NLAssertEqualOptional.swift in Sources */,
+				A5EA9A991C568DAF004CC9EF /* AdvancedOperationTestCase.swift in Sources */,
 				A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */,
+				A54B1D231C57A3F30086BE0D /* URLMetricsTest.swift in Sources */,
+				A5EA9A951C568D92004CC9EF /* ViperTester.swift in Sources */,
+				A5EA9A9B1C568DAF004CC9EF /* TestAnalyticsInteractors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +624,7 @@
 			baseConfigurationReference = 517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
@@ -557,6 +646,7 @@
 			baseConfigurationReference = 6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MozQuito/Info.plist;
@@ -572,24 +662,28 @@
 		};
 		A5F4E6891C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MozQuitoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MozQuitoTests/MozQuitoTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
 			};
 			name = Debug;
 		};
 		A5F4E68A1C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MozQuitoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MozQuitoTests/MozQuitoTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
 			};
 			name = Release;
@@ -637,6 +731,7 @@
 			baseConfigurationReference = 347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
@@ -654,12 +749,14 @@
 		};
 		A5F4E6A61C5112450099010C /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MozQuitoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MozQuitoTests/MozQuitoTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
 			};
 			name = "Beta Testing";

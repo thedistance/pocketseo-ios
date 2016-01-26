@@ -13,7 +13,6 @@ use_frameworks!
 workspace '../MozQuito'
 xcodeproj '../MozQuito'
 
-
 target 'MozQuito' do
 
 xcodeproj '../MozQuito'
@@ -22,6 +21,7 @@ xcodeproj '../MozQuito'
 
 pod 'TheDistanceCore', :path => 'TheDistanceCore'
 pod 'ViperKit', :path => 'ViperKit'
+pod 'MagicalRecord'
 
 ### DISTRIBUTION PODS ###
 
@@ -33,7 +33,7 @@ pod 'Crashlytics'
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
-pod 'PSOperations'
+pod 'PSOperations', :git => 'https://github.com/joshc89/PSOperations.git'
 
 ### UI PODS ###
 
@@ -51,12 +51,9 @@ target 'MozQuitoTests' do
 
 xcodeproj '../MozQuito'
 
+pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
+pod 'ViperKit', :path => 'ViperKit'
+
 end
 
-# Disable bitcode for Google Analytics
 
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        puts "#{target.name}"
-    end
-end
