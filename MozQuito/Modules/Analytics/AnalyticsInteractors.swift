@@ -55,6 +55,10 @@ final class FabricCrashReportingInteractor: CrashReportingInteractor
             print(message)
         #endif
     }
+    
+    func logNonFatalError(error: NSError) {
+        
+    }
 }
 
 /// Default implementation of analytics using Google Analytics. This class should not be subclassed and is therefore 'final' for optimization.

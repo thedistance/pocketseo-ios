@@ -7,26 +7,35 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class MZGetURLMetricsOperation: MZAuthenticatedOperation {
     
-    var success:((metrics:[MZMetric]) -> Void)?
+    var success:((metrics:MZMozscapeMetrics) -> Void)?
     
     init(requestURLString:String) {
         
-        let requestString = "http://lsapi.seomoz.com/linkscape/url-metrics/" + requestURLString
+        let requestString = "https://lsapi.seomoz.com/linkscape/url-metrics/" + requestURLString
+        
+        let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
+        let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
         
         super.init(method: .GET,
             URLString: requestString,
-            parameters: ["Cols": "103616137253"],
+            parameters: ["Cols": "\(colsValue)"],
             encoding: .URL,
             headers: nil)
         
         self.responseSuccess = { (json) in
             
-            print(json)
-            
-            self.success?(metrics: [])
+            do {
+                let metrics = try MZMozscapeMetrics(json: json)
+                
+                self.success?(metrics:metrics)
+                
+            } catch let error as NSError {
+                self.finish([error])
+            }
         }
     }
     

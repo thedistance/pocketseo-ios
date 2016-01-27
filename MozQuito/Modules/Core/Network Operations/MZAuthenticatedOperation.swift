@@ -19,7 +19,7 @@ class MZAuthenticatedOperation: AlamofireJSONOperation {
         let token = MZAppDependencies.sharedDependencies().currentAuthenticationToken
         var authenticatedParameters = parameters ?? [String:AnyObject]()
         authenticatedParameters["AccessID"] = token.accessId
-        authenticatedParameters["Expires"] = token.expiry
+        authenticatedParameters["Expires"] = "\(token.expiry)"
         authenticatedParameters["Signature"] = token.signature
 
         super.init(method: method,

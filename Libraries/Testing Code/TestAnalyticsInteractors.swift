@@ -33,6 +33,8 @@ final class TestCrashInteractor: CrashReportingInteractor {
     /// Internal variable for saving the log messages.
     var messages = [String]()
     
+    var nonFatals = [NSError]()
+    
     func setupCrashReporting() {
         // reset the messages store
          messages = [String]()
@@ -49,6 +51,10 @@ final class TestCrashInteractor: CrashReportingInteractor {
     
     func simulateCrash() {
         assertionFailure("Simulated Crash!")
+    }
+    
+    func logNonFatalError(error: NSError) {
+        nonFatals.append(error)
     }
 }
 

@@ -9,49 +9,78 @@
 import Foundation
 import ViperKit
 
+/// Protocol defining the methods required on an object to provide network results to a `URLMetricsPresenter`.
 protocol URLMetricsInteractor: VIPERInteractor {
-    
-    /**
-     
-     Should call through to `getMetricsForURLString(_:)` after converting the URL to a valid `String` parameter.
-     
-     - parameter url: An `NSURL` object that can be converted as necessary to the parameter for `getMetricsForURLString(_:)`.
-    */
-    func getMetricsForURL(url:NSURL)
     
     /**
 
      Should query the network to get analytic metrics. On completion, will call either of:
      
-     - `foundMetrics(_:)`
-     - `failedToFindMetricsForURL(_:errors
+     - `foundMozscapeMetrics(_:)`
+     - `failedToFindMozscapeMetricWithErrors(_:)
 
-     - parameter urlString: The url string to get metrics for. This can be be user entered or stripped from an `NSURL` from `getMetricsForURL(_:)`.
+     - parameter urlString: The url string to get metrics for. This can be be user entered.
     */
-    func getMetricsForURLString(urlString:String)
+    func getMozscapeMetricsForURLString(urlString:String)
+    
+    /**
+     
+     Should query the network to get the indexed dates. On completion, will call `foundMozscapeIndexDates(_:)`. Errors for this will only be logged internally as this is supplementary data and separate errors will not be shown on the view.
+
+     */
+    func getMozscapeIndexDates()
+    
+    /**
+     
+     Should query the network to get page meta data. On completion, will call either of:
+     
+     - `foundPageMetaData(_:)`
+     - `failedToFindPageMetaDataWithErrors(_:)
+     
+     - parameter urlString: The url string to get metrics for. This can be be user entered.
+     */
+    func getPageMetaDataForURLString(url:String)
 }
 
+/// Protocol defining the methods available to request by a `URLMetricsView`, and methods available to a `URLMetricsInteractor` to report results. All results should be reported to a `URLMetricsView`.
 protocol URLMetricsPresenter: VIPERPresenter {
-    
-    /// Typically called from a `URLMetricsView` this should request metrics from the interactor for a known `NSURL` object.
-    func requestMetricsForURL(url:NSURL)
 
-    /// Typically called from a `URLMetricsView` this should request metrics from the interactor for a `String` typically user entered.
+    /// Typically called from a `URLMetricsView` this should request the multiple sources of metrics from the interactor for a `String` typically user entered.
     func requestMetricsForURLString(urlString:String)
     
     /// Typically called from a `URLMetricsInteractor`, this should forward a successful request to the `URLMetricsView`.
-    func foundMetrics(metrics:[MZMetric])
+    func foundMozscapeMetrics(metrics:MZMozscapeMetrics)
     
     /// Typically called from a `URLMetricsInteractor`, this should forward an unsuccessful request to the `URLMetricsView`.
-    func failedToFindMetricsForURL(url:NSURL, withErrors:[NSError])
+    func failedToFindMozscapeMetricWithErrors(errors:[NSError])
+    
+    /// Typically called from a `URLMetricsInteractor`, this should forward a successful request to the `URLMetricsView`.
+    func foundPageMetaData(data:MZPageMetaData)
+    
+    /// Typically called from a `URLMetricsInteractor`, this should forward an unsuccessful request to the `URLMetricsView`.
+    func failedToFindPageMetaDataWithErrors(errors:[NSError])
+    
+    /// Typically called from a `URLMetricsInteractor` or when data is in the cache, this should forward a successful request to the `URLMetricsView`.
+    func foundMozscapeIndexDates(dates:MZMozscapeIndexedDates)
 }
 
+/// Protocol defining the methods required on a object to respond to results from a `URLMetricsPresenter`.
 protocol URLMetricsView: VIPERView {
     
     /// Should update the UI to show the given metrics.
-    func showMetrics(metrics:[MZMetric])
+    func showMozscapeMetrics(metrics:MZMozscapeMetrics)
+
+    /// Should update the UI to show the given meta data.
+    func showPageMetaData(data:MZPageMetaData)
     
-    /// Should update the UI to indicate a failed request.
-    func showErrors(errors:[NSError], forURL:NSURL)
+    /// Should update the UI to show the given dates.
+    func showMozscapeIndexedDates(dates:MZMozscapeIndexedDates)
+    
+    /// Should update the UI to indicate a failed request to Mozscape.
+    func showMozscapeMetricsErrors(errors:[NSError])
+
+    /// Should update the UI to indicate a failed request to get meta data.
+    func showPageMetaDataErrors(errors:[NSError])
+    
 }
 

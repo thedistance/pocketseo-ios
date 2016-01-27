@@ -101,7 +101,16 @@ struct MZAuthenicationToken {
         expiry = NSDate().timeIntervalSince1970 + MZAuthenticationExpiryInterval
         
         let toEncode = "\(accessId)\n\(expiry)"
-        signature = toEncode.digestUsingAlgorithm(.SHA1, key: secret)
+        
+        let toEncodeData = toEncode.dataUsingEncoding(NSUTF8StringEncoding)!
+        let toEncodeLength = toEncodeData.length
+        let signatureData:NSMutableData? = NSMutableData(length: Int(CC_SHA1_DIGEST_LENGTH))
+        let secretData = secret.dataUsingEncoding(NSUTF8StringEncoding)!
+        let secretLength = secretData.length
+        
+        CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA1), secretData.bytes, secretLength, toEncodeData.bytes, toEncodeLength, signatureData!.mutableBytes)
+        
+        signature = signatureData?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength) ?? ""
     }
 }
 

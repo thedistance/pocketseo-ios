@@ -13,11 +13,15 @@ class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
     
     weak var presenter: MZURLMetricsPresenter<ViewType>?
     
-    func getMetricsForURL(url:NSURL) {
+    func getMozscapeMetricsForURLString(urlString: String) {
         
     }
     
-    func getMetricsForURLString(urlString:String) {
+    func getMozscapeIndexDates() {
+        
+    }
+    
+    func getPageMetaDataForURLString(url: String) {
         
     }
 }
@@ -45,19 +49,28 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
         return presenter
     }
     
-    func requestMetricsForURL(url:NSURL) {
-        
-    }
-    
     func requestMetricsForURLString(urlString:String) {
         
     }
     
-    func foundMetrics(metrics:[MZMetric]) {
+    func foundMozscapeMetrics(metrics:MZMozscapeMetrics) {
         
     }
     
-    func failedToFindMetricsForURL(url:NSURL, withErrors:[NSError]) {
+    func failedToFindMozscapeMetricWithErrors(errors: [NSError]) {
+        
+        
+    }
+    
+    func foundMozscapeIndexDates(dates: MZMozscapeIndexedDates) {
+        
+    }
+    
+    func foundPageMetaData(data: MZPageMetaData) {
+        
+    }
+    
+    func failedToFindPageMetaDataWithErrors(errors: [NSError]) {
         
     }
 }

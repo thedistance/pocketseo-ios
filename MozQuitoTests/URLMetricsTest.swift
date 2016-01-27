@@ -18,12 +18,34 @@ class URLMetricsTest: AdvancedOperationTestCase, ViperTesting {
         setupDependencies()
     }
     
-    func testURLMetricsOperationString() {
+    func testMozscapeMetricsOperation() {
         
         let urlString = "thedistance.co.uk"
         
-        let urlMetricsOperatoin = MZGetURLMetricsOperation(requestURLString: urlString)
+        let urlMetricsOperation = MZGetURLMetricsOperation(requestURLString: urlString)
         
+        var metrics:MZMozscapeMetrics? = nil
         
+        urlMetricsOperation.success = { (results) in
+            metrics = results
+        }
+        
+        registerAndRunOperation(urlMetricsOperation, named: __FUNCTION__) { (operation, errors) -> () in
+            XCTAssertEqual(errors.count, 0, "Operation Failed: \(errors)")
+        }
+        
+        guard let returnedMetrics = metrics else {
+            XCTFail("Failed to return any metrics")
+            return
+        }
+        
+        XCTAssertNotNil(returnedMetrics.title, "Missing Title")
+        XCTAssertNotNil(returnedMetrics.canonicalURL, "Missing CanonicalURL")
+        XCTAssertNotNil(returnedMetrics.HTTPStatusCode, "Missing HTTPStatusCode")
+        XCTAssertNotNil(returnedMetrics.pageAuthority, "Missing PageAuthority")
+        XCTAssertNotNil(returnedMetrics.domainAuthority, "Missing DomainAuthority")
+        XCTAssertNotNil(returnedMetrics.spamScore, "Missing SpamScore")
+        XCTAssertNotNil(returnedMetrics.establishedLinksRoot, "Missing EstablishedLinksRootDomains")
+        XCTAssertNotNil(returnedMetrics.establishedLinksTotal, "Missing EstablishedLinksTotalLinks")
     }
 }
