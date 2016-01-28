@@ -38,6 +38,14 @@ extension MZPageMetaData {
     
 }
 
+extension MZAlexaData {
+    
+    static func TheDistanceAlexaData() -> MZAlexaData {
+        return MZAlexaData(popularityText: "1316283", reachRank: "1199410", rankDelta: "+29419")
+    }
+    
+}
+
 class URLMetrics_NoNetwork_Tests: AdvancedOperationTestCase {
     
     override func setUp() {
@@ -88,6 +96,39 @@ class URLMetrics_NoNetwork_Tests: AdvancedOperationTestCase {
         XCTAssertEqual(returnedMeta.h1TagsCharacterCount,       testMeta.h1TagsCharacterCount,      "Parsed h1TagsCharacterCount incorrectly.")
         XCTAssertEqual(returnedMeta.h2Tags,                     testMeta.h2Tags,                    "Parsed h2Tags incorrectly.")
         XCTAssertEqual(returnedMeta.h2TagsCharacterCount,       testMeta.h2TagsCharacterCount,      "Parsed h2TagsCharacterCount incorrectly.")
+        
+    }
+    
+    func testParseAlexaData() {
+        
+        guard let testXMLURL = NSBundle(forClass: self.dynamicType).URLForResource("thedistance-alexa", withExtension: "xml"),let testData = NSData(contentsOfURL: testXMLURL) else {
+            
+            XCTFail("Unable to load test html")
+            return
+        }
+        
+        let parseOperation = MZParseAlexaDataOperation(data: testData)
+
+        var alexa:MZAlexaData? = nil
+        
+        parseOperation.success = { (response) in
+            alexa = response
+        }
+        
+        registerAndRunOperation(parseOperation, named: __FUNCTION__) { (operation, errors) -> () in
+            XCTAssertEqual(errors.count, 0, "Failed to parse test xml: \(errors)")
+        }
+        
+        guard let returnedAlexa = alexa else {
+            XCTFail("No alexa data returned")
+            return
+        }
+
+        let testAlexa = MZAlexaData.TheDistanceAlexaData()
+        
+        XCTAssertEqual(returnedAlexa.popularityText, testAlexa.popularityText, "Parsed popularity text incorrectly")
+        XCTAssertEqual(returnedAlexa.reachRank, testAlexa.reachRank, "Parsed reach rank text incorrectly")
+        XCTAssertEqual(returnedAlexa.rankDelta, testAlexa.rankDelta, "Parsed rank delta text incorrectly")
         
     }
 }

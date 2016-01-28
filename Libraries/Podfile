@@ -36,6 +36,7 @@ pod 'SwiftyJSON'
 pod 'PSOperations', :git => 'https://github.com/joshc89/PSOperations.git'
 
 pod 'hpple'
+pod 'AEXML'
 
 ### UI PODS ###
 

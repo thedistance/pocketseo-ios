@@ -12,6 +12,7 @@ enum MZErrorDomain:String {
     case InitError
     case MozscapeError
     case HTMLError
+    case XMLError
 }
 
 enum MZErrorCode:Int {
