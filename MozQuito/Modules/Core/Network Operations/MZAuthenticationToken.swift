@@ -81,10 +81,10 @@ let MZAuthenticationExpiryInterval:NSTimeInterval = 300.0
 struct MZAuthenicationToken {
     
     /// The access ID for the Mozscape API
-    let accessId = "mozscape-ca9625d9"
+    let accessId = "mozscape-6b2e08eff3"
     
     /// The access scret for accessing the Mozcape API
-    let secret = "d90eca92bf17553775575b06888d3aa3"
+    let secret = "7027a20f523c0262cdeba1a39bfa0db1"
     
     /// The unix time that this authentication token expires in, created on `init()`.
     let expiry:NSTimeInterval

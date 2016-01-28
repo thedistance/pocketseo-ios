@@ -9,13 +9,13 @@
 import Foundation
 import SwiftyJSON
 
-class MZGetURLMetricsOperation: MZAuthenticatedOperation {
+class MZGetMozscapeURLMetricsOperation: MZAuthenticatedOperation {
     
     var success:((metrics:MZMozscapeMetrics) -> Void)?
     
     init(requestURLString:String) {
         
-        let requestString = "https://lsapi.seomoz.com/linkscape/url-metrics/" + requestURLString
+        let requestString = BaseURL.Mozscape + RequestPath.MozscapeURLMetrics + "/\(requestURLString)"
         
         let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
         let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )

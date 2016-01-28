@@ -53,6 +53,19 @@ extension Request {
     }
 }
 
+/// Operation subclass that fails in a standardised way.
+class FailingOperation: Operation {
+    
+    /// Optional block called from `finished(_:)` if there have been 1 or more errors. A call to `self.finish(_:)` calls this block from `finished(_:)` if the `errors` parameter is not empty. As such this should not be called directly. This will **not** be called on the main thread. It is the caller's responsibility to dispatch back to the main thread if appropriate.
+    var failure:((errors:[NSError]) -> ())?
+    
+    override func finished(errors: [NSError]) {
+        if errors.count > 0 {
+            failure?(errors:errors)
+        }
+    }
+}
+
 /**
  
  Base `Operation` subclass for all network requests. This wraps Alamofire networking requests into the `Operation` paradigm. It can be created with either an `NSURLRequest` or the parameters for an Alamofire request. Subclasses are expected to add a `success` block with a struct parameter ensuring the networking logic and JSON parsing / structure remains contained entirely within a single operation.
@@ -63,7 +76,7 @@ extension Request {
  
  The `failure(error:)` block is called automatically from `finished(errors:)` and should not be called directly. This allows the `failure` block to be called from an operation that is cancelled by a failing `OperationCondition`.
  */
-class AlamofireJSONOperation: Operation {
+class AlamofireJSONOperation: FailingOperation {
     
     /// Optional property set via the init(request:) method allowing further customisation of the network request over the designated initialiser.
     var request:NSURLRequest?
@@ -85,10 +98,7 @@ class AlamofireJSONOperation: Operation {
     
     /// Called on completion of the Alamofire request. If set the `responseSuccess` block is not called. Users setting this variable should ensure `finish(_:)` is called appropriately from this block. This will **not** be called on the main thread. It is the caller's responsibility to dispatch back to the main queue if appropriate.
     var completion: SwiftyJSONResponseCompletion?
-    
-    /// Optional block to run if the Alamofire request's response returns a `Result.Failure`. A call to `self.finish(_:)` calls this method from `finished(_:)` if the `errors` parameter is empty. As such this should not be called directly. This will **not** be called on the main thread. It is the caller's responsibility to dispatch back to the main queue if appropriate.
-    var failure:((errors:[NSError]) -> ())?
-    
+
     /// Used internally to store the block set by a subclass.
     private var _responseSuccess:((json:JSON) -> ())?
     
@@ -168,12 +178,6 @@ class AlamofireJSONOperation: Operation {
             Alamofire.request(method, urlString, parameters: parameters, encoding: encoding, headers: headers)
                 .validate()
                 .responseSwiftyJSON(completionHandler: requestCompletion)
-        }
-    }
-    
-    override func finished(errors: [NSError]) {
-        if errors.count > 0 {
-            failure?(errors:errors)
         }
     }
 }

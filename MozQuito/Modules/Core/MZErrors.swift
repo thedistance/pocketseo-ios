@@ -9,8 +9,9 @@
 import Foundation
 
 enum MZErrorDomain:String {
-    case MozscapeError
     case InitError
+    case MozscapeError
+    case HTMLError
 }
 
 enum MZErrorCode:Int {

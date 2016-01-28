@@ -124,6 +124,23 @@ struct MZMozscapeIndexedDates {
     
     let last:NSDate
     let next:NSDate?
+    
+    init(json:JSON) throws {
+        
+        if let lastUnixDate = json["last_update"].double {
+            
+            last = NSDate(timeIntervalSince1970: lastUnixDate)
+            
+            if let nextUnixDate = json["last_update"].double {
+                next = NSDate(timeIntervalSince1970: nextUnixDate)
+            } else {
+                next = nil
+            }
+            
+        } else {
+            throw NSError(InitUnexpectedResponseWithDescription: "Failed to create \(self.dynamicType). last_update not found in json: \(json)")
+        }
+    }
 }
 
 /*

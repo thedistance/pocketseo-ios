@@ -12,7 +12,7 @@
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
 		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
 		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
-		A54B1D231C57A3F30086BE0D /* URLMetricsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B1D221C57A3F30086BE0D /* URLMetricsTest.swift */; };
+		A54B1D231C57A3F30086BE0D /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */; };
 		A57DBA141C59009500F246C2 /* URLMetrics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLMetrics.storyboard */; };
 		A5877EB31C5926C000DB4A05 /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5877EB21C5926C000DB4A05 /* MZMetric.swift */; };
 		A5877EB51C5926E000DB4A05 /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5877EB41C5926E000DB4A05 /* MZPageMetaData.swift */; };
@@ -22,13 +22,19 @@
 		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
 		A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
 		A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
-		A5EA9A8B1C568083004CC9EF /* MZURLMetricsOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZURLMetricsOperations.swift */; };
+		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
 		A5EA9A921C5686FB004CC9EF /* URLMetricsViperImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */; };
 		A5EA9A951C568D92004CC9EF /* ViperTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A941C568D92004CC9EF /* ViperTester.swift */; };
 		A5EA9A991C568DAF004CC9EF /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */; };
 		A5EA9A9A1C568DAF004CC9EF /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */; };
 		A5EA9A9B1C568DAF004CC9EF /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */; };
+		A5ECBD2D1C5A576C003350E3 /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2C1C5A576C003350E3 /* MZNetworking.swift */; };
+		A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */; };
+		A5ECBD321C5A5D10003350E3 /* thedistance.html in Resources */ = {isa = PBXBuildFile; fileRef = A5ECBD311C5A5D10003350E3 /* thedistance.html */; };
+		A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */; };
+		A5ECBD361C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD351C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift */; };
+		A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
@@ -60,7 +66,7 @@
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
 		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
 		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
-		A54B1D221C57A3F30086BE0D /* URLMetricsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetricsTest.swift; sourceTree = "<group>"; };
+		A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
 		A54B1D281C57AC920086BE0D /* MozQuitoTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MozQuitoTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLMetrics.storyboard; sourceTree = "<group>"; };
 		A5877EB21C5926C000DB4A05 /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZMetric.swift; path = Modules/URLMetrics/Viper/MZMetric.swift; sourceTree = "<group>"; };
@@ -72,13 +78,19 @@
 		A59627091C5289870076147C /* AnalyticEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticEntities.swift; path = Modules/Analytics/AnalyticEntities.swift; sourceTree = "<group>"; };
 		A596270B1C528C1D0076147C /* MZAppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAppDependencies.swift; path = Modules/Core/MZAppDependencies.swift; sourceTree = "<group>"; };
 		A59627101C5292740076147C /* MZStoryboardLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZStoryboardLoader.swift; path = Modules/Core/MZStoryboardLoader.swift; sourceTree = "<group>"; };
-		A5EA9A8A1C568083004CC9EF /* MZURLMetricsOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsOperations.swift; path = Modules/URLMetrics/NetworkOperations/MZURLMetricsOperations.swift; sourceTree = "<group>"; };
+		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
 		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
 		A5EA9A911C5686FB004CC9EF /* URLMetricsViperImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperImplementation.swift; path = Modules/URLMetrics/Viper/URLMetricsViperImplementation.swift; sourceTree = "<group>"; };
 		A5EA9A941C568D92004CC9EF /* ViperTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViperTester.swift; path = Libraries/ViperTester.swift; sourceTree = "<group>"; };
 		A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvancedOperationTestCase.swift; path = "Libraries/Testing Code/AdvancedOperationTestCase.swift"; sourceTree = SOURCE_ROOT; };
 		A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NLAssertEqualOptional.swift; path = "Libraries/Testing Code/NLAssertEqualOptional.swift"; sourceTree = SOURCE_ROOT; };
 		A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsInteractors.swift; path = "Libraries/Testing Code/TestAnalyticsInteractors.swift"; sourceTree = SOURCE_ROOT; };
+		A5ECBD2C1C5A576C003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZNetworking.swift; path = Modules/Core/MZNetworking.swift; sourceTree = "<group>"; };
+		A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeIndexDatesOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeIndexDatesOperation.swift; sourceTree = "<group>"; };
+		A5ECBD311C5A5D10003350E3 /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = thedistance.html; path = Resources/thedistance.html; sourceTree = "<group>"; };
+		A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetPageMetaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetPageMetaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD351C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_NoNetwork_Tests.swift; sourceTree = "<group>"; };
+		A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZParseHTMLDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZParseHTMLDataOperation.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -145,7 +157,10 @@
 		A505BA451C567025004F2607 /* Network Operations */ = {
 			isa = PBXGroup;
 			children = (
-				A5EA9A8A1C568083004CC9EF /* MZURLMetricsOperations.swift */,
+				A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */,
+				A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */,
+				A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */,
+				A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */,
 			);
 			name = "Network Operations";
 			sourceTree = "<group>";
@@ -197,6 +212,7 @@
 				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
 				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
 				A5877EB61C5926EE00DB4A05 /* MZErrors.swift */,
+				A5ECBD2C1C5A576C003350E3 /* MZNetworking.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -221,6 +237,14 @@
 				A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		A5ECBD301C5A5CF4003350E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD311C5A5D10003350E3 /* thedistance.html */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		A5F4E65F1C50E0FD0099010C = {
@@ -262,8 +286,10 @@
 			isa = PBXGroup;
 			children = (
 				A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */,
-				A54B1D221C57A3F30086BE0D /* URLMetricsTest.swift */,
+				A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */,
+				A5ECBD351C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift */,
 				A54B1D281C57AC920086BE0D /* MozQuitoTests-Bridging-Header.h */,
+				A5ECBD301C5A5CF4003350E3 /* Resources */,
 				A5EA9A931C568D73004CC9EF /* Libraries */,
 				A5F4E6821C50E0FD0099010C /* Info.plist */,
 			);
@@ -371,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ECBD321C5A5D10003350E3 /* thedistance.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5877EB51C5926E000DB4A05 /* MZPageMetaData.swift in Sources */,
+				A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */,
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
 				A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */,
 				A5877EB71C5926EE00DB4A05 /* MZErrors.swift in Sources */,
@@ -497,10 +525,13 @@
 				A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */,
 				A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */,
 				A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */,
-				A5EA9A8B1C568083004CC9EF /* MZURLMetricsOperations.swift in Sources */,
+				A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
+				A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
+				A5ECBD2D1C5A576C003350E3 /* MZNetworking.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
+				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
 				A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,10 +540,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ECBD361C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift in Sources */,
 				A5EA9A9A1C568DAF004CC9EF /* NLAssertEqualOptional.swift in Sources */,
 				A5EA9A991C568DAF004CC9EF /* AdvancedOperationTestCase.swift in Sources */,
 				A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */,
-				A54B1D231C57A3F30086BE0D /* URLMetricsTest.swift in Sources */,
+				A54B1D231C57A3F30086BE0D /* URLMetrics_API_Test.swift in Sources */,
 				A5EA9A951C568D92004CC9EF /* ViperTester.swift in Sources */,
 				A5EA9A9B1C568DAF004CC9EF /* TestAnalyticsInteractors.swift in Sources */,
 			);

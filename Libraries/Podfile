@@ -35,6 +35,8 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'PSOperations', :git => 'https://github.com/joshc89/PSOperations.git'
 
+pod 'hpple'
+
 ### UI PODS ###
 
 pod 'M13ProgressSuite'
