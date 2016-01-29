@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import MozQuitoEntities
 
 class MZAlexaDataOperation: FailingOperation {
 

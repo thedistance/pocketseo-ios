@@ -8,6 +8,7 @@
 
 import Foundation
 import hpple
+import MozQuitoEntities
 
 class MZParseAlexaDataOperation: FailingOperation {
     

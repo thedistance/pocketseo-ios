@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CIC-ij-RE7">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--URL Metrics View Controller-->
+        <scene sceneID="3SV-G3-mwN">
+            <objects>
+                <viewController storyboardIdentifier="URLMetricsVC" id="CIC-ij-RE7" customClass="MZURLMetricsViewController" customModule="MozQuito" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="20b-8c-cBp"/>
+                        <viewControllerLayoutGuide type="bottom" id="S5a-Vm-Nil"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pu3-LE-XB9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="As5-Vh-jJy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-bj-FND" customClass="MZURLMetricsView" customModule="MozQuitoViews">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zF0-bj-FND" firstAttribute="top" secondItem="As5-Vh-jJy" secondAttribute="top" id="ETe-CD-zVv"/>
+                                    <constraint firstItem="zF0-bj-FND" firstAttribute="leading" secondItem="As5-Vh-jJy" secondAttribute="leading" id="EZl-OV-LAh"/>
+                                    <constraint firstAttribute="bottom" secondItem="zF0-bj-FND" secondAttribute="bottom" id="Jaa-N6-kn0"/>
+                                    <constraint firstAttribute="trailing" secondItem="zF0-bj-FND" secondAttribute="trailing" id="cb3-lf-nTY"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zF0-bj-FND" firstAttribute="width" secondItem="pu3-LE-XB9" secondAttribute="width" id="Lpo-Ee-C9f"/>
+                            <constraint firstItem="As5-Vh-jJy" firstAttribute="leading" secondItem="pu3-LE-XB9" secondAttribute="leading" id="e9q-kn-YSN"/>
+                            <constraint firstItem="S5a-Vm-Nil" firstAttribute="top" secondItem="As5-Vh-jJy" secondAttribute="bottom" id="eai-ed-Z1Q"/>
+                            <constraint firstAttribute="trailing" secondItem="As5-Vh-jJy" secondAttribute="trailing" id="jYp-g8-MDh"/>
+                            <constraint firstItem="As5-Vh-jJy" firstAttribute="top" secondItem="pu3-LE-XB9" secondAttribute="top" id="xtS-wQ-WIb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="metricsView" destination="zF0-bj-FND" id="WHI-QY-WNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgo-f5-XXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="404"/>
+        </scene>
+    </scenes>
+</document>

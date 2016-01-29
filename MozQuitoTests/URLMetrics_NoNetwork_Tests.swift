@@ -7,35 +7,8 @@
 //
 
 import XCTest
+@testable import MozQuitoEntities
 @testable import MozQuito
-
-extension MZHTMLMetaData {
-    
-    static func TheDistanceMetaData() -> MZHTMLMetaData {
-        return MZHTMLMetaData(title: "App Developers UK | Mobile App Development | The Distance, York",
-            canonicalURL: NSURL(string: "https://thedistance.co.uk/")!,
-            description: "We are award winning UK app developers UK who develop mobile app development solutions for IOS & Android for B2C, B2B & Enterprise. Call York team today.",
-            h1Tags: ["The Yorkshire & UK leading mobile app developers"],
-            h2Tags: ["Mobile App Consultancy",
-                "Mobile App Development",
-                "Mobile App UI/UX",
-                "Trusted By",
-                "OUR TOOLS",
-                "PLATFORMS",
-                "TELL US YOUR APP IDEA"])
-    }
-}
-
-extension MZPageMetaData {
-    
-    static func TheDistanceMetaData() -> MZPageMetaData {
-        
-        return MZPageMetaData(htmlData: MZHTMLMetaData.TheDistanceMetaData(),
-            usingSSL: true,
-            requestDate: NSDate())
-    }
-    
-}
 
 extension MZAlexaData {
     

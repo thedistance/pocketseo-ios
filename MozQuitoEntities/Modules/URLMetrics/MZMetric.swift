@@ -10,7 +10,7 @@ import Foundation
 import TheDistanceCore
 import SwiftyJSON
 
-enum MZMetricKey: String {
+public enum MZMetricKey: String {
     case Title = "ut"
     case CanonicalURL = "uu"
     case ExternalEquityLinks = "ueid"
@@ -24,7 +24,7 @@ enum MZMetricKey: String {
     case EstablishedLinksRootDomains = "uifq"
     case EstablishedLinksTotalLinks = "uid"
     
-    var colValue:UInt64 {
+    public var colValue:UInt64 {
         switch (self) {
         case .Title:
             return 1
@@ -55,25 +55,25 @@ enum MZMetricKey: String {
     
 }
 
-struct MZMozscapeMetrics {
+public struct MZMozscapeMetrics {
     
-    let title:String?
-    let canonicalURL:NSURL?
-    let HTTPStatusCode:Int?
+    public let title:String?
+    public let canonicalURL:NSURL?
+    public let HTTPStatusCode:Int?
     
-    let pageAuthority:Double?
-    let pageAuthorityTotal:Int = 100
+    public let pageAuthority:Double?
+    public let pageAuthorityTotal:Int = 100
     
-    let domainAuthority:Double?
-    let domainAuthorityTotal:Int = 100
+    public let domainAuthority:Double?
+    public let domainAuthorityTotal:Int = 100
     
-    let spamScore:Double?
-    let spamScoreTotal:Int = 17
+    public let spamScore:Double?
+    public let spamScoreTotal:Int = 17
     
-    let establishedLinksRoot:Int?
-    let establishedLinksTotal:Int?
+    public let establishedLinksRoot:Int?
+    public let establishedLinksTotal:Int?
     
-    init(json:JSON) throws {
+    public init(json:JSON) throws {
         
         if let results = json.dictionary {
             
@@ -116,16 +116,15 @@ struct MZMozscapeMetrics {
             throw NSError(domain: .MozscapeError, code: .UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: "url-metrics response json in unexpected format. Expected Dictionary. Got\n\(json)"])
             
         }
-        
     }
 }
 
-struct MZMozscapeIndexedDates {
+public struct MZMozscapeIndexedDates {
     
-    let last:NSDate
-    let next:NSDate?
+    public let last:NSDate
+    public let next:NSDate?
     
-    init(json:JSON) throws {
+    public init(json:JSON) throws {
         
         if let lastUnixDate = json["last_update"].double {
             

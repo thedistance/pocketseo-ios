@@ -47,7 +47,7 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
             return
         }
         
-        window.rootViewController = MZStoryboardLoader.instantiateViewControllerForIdentifier(.TestVC)
+        window.rootViewController = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC)
         
     }
     

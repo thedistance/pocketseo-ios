@@ -8,6 +8,7 @@
 
 import Foundation
 import ViperKit
+import MozQuitoEntities
 
 class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
     
@@ -22,6 +23,10 @@ class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
     }
     
     func getPageMetaDataForURLString(url: String) {
+        
+    }
+    
+    func getAlexaDataFromURLString(url: String) {
         
     }
 }
@@ -71,6 +76,14 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     }
     
     func failedToFindPageMetaDataWithErrors(errors: [NSError]) {
+        
+    }
+    
+    func foundAlexaData(data: MZAlexaData) {
+        
+    }
+    
+    func failedToFindAlexaDataWithErrors(errors: [NSError]) {
         
     }
 }

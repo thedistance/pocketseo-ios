@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4087E065765E5258925F1D8D /* Pods_MozQuito.framework */; };
+		66AEF81EEFFC3D4B0A503695 /* Pods_MozQuitoViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */; };
+		A071977D6E3B3D01DED9BFCA /* Pods_MozQuitoEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */; };
 		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
 		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
 		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
 		A54B1D231C57A3F30086BE0D /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */; };
-		A57DBA141C59009500F246C2 /* URLMetrics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLMetrics.storyboard */; };
-		A5877EB71C5926EE00DB4A05 /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5877EB61C5926EE00DB4A05 /* MZErrors.swift */; };
+		A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
 		A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626DB1C5274670076147C /* AnalyticsInteractors.swift */; };
 		A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626E01C5277820076147C /* TestAnalyticsViewController.swift */; };
 		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
@@ -27,18 +28,32 @@
 		A5EA9A991C568DAF004CC9EF /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */; };
 		A5EA9A9A1C568DAF004CC9EF /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */; };
 		A5EA9A9B1C568DAF004CC9EF /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */; };
-		A5ECBD2D1C5A576C003350E3 /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2C1C5A576C003350E3 /* MZNetworking.swift */; };
 		A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */; };
 		A5ECBD321C5A5D10003350E3 /* thedistance.html in Resources */ = {isa = PBXBuildFile; fileRef = A5ECBD311C5A5D10003350E3 /* thedistance.html */; };
 		A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */; };
 		A5ECBD361C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD351C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift */; };
 		A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */; };
 		A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */; };
-		A5ECBD3E1C5A7F4C003350E3 /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD3C1C5A7F4C003350E3 /* MZMetric.swift */; };
-		A5ECBD3F1C5A7F4C003350E3 /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD3D1C5A7F4C003350E3 /* MZPageMetaData.swift */; };
-		A5ECBD411C5A7F63003350E3 /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD401C5A7F63003350E3 /* MZAlexaData.swift */; };
 		A5ECBD431C5A8462003350E3 /* thedistance-alexa.xml in Resources */ = {isa = PBXBuildFile; fileRef = A5ECBD421C5A8462003350E3 /* thedistance-alexa.xml */; };
 		A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */; };
+		A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
+		A5ECBD691C5BA52F003350E3 /* MozQuitoEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5ECBD6D1C5BA52F003350E3 /* MozQuitoEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */; };
+		A5ECBD6E1C5BA52F003350E3 /* MozQuitoEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5ECBD7C1C5BA53F003350E3 /* MozQuitoViews.h in Headers */ = {isa = PBXBuildFile; fileRef = A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5ECBD801C5BA53F003350E3 /* MozQuitoViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */; };
+		A5ECBD811C5BA53F003350E3 /* MozQuitoViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5ECBD881C5BA553003350E3 /* MozQuitoEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */; };
+		A5ECBD8D1C5BA5B2003350E3 /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */; };
+		A5ECBD8E1C5BA5B2003350E3 /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */; };
+		A5ECBD8F1C5BA5B2003350E3 /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */; };
+		A5ECBD931C5BA5FD003350E3 /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */; };
+		A5ECBD941C5BA5FD003350E3 /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */; };
+		A5ECBD9D1C5BA931003350E3 /* MZURLMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */; };
+		A5ECBD9E1C5BA931003350E3 /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
+		A5ECBD9F1C5BA931003350E3 /* MZMozscapeMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */; };
+		A5ECBDA01C5BA931003350E3 /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
+		A5ECBDA11C5BA931003350E3 /* MZPageMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
@@ -48,6 +63,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A5ECBD6B1C5BA52F003350E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5ECBD651C5BA52F003350E3;
+			remoteInfo = MozQuitoEntities;
+		};
+		A5ECBD7E1C5BA53F003350E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5ECBD781C5BA53F003350E3;
+			remoteInfo = MozQuitoViews;
+		};
+		A5ECBD861C5BA54E003350E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5ECBD651C5BA52F003350E3;
+			remoteInfo = MozQuitoEntities;
+		};
 		A5F4E67D1C50E0FD0099010C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
@@ -57,23 +93,42 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A5ECBD731C5BA52F003350E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5ECBD6E1C5BA52F003350E3 /* MozQuitoEntities.framework in Embed Frameworks */,
+				A5ECBD811C5BA53F003350E3 /* MozQuitoViews.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.release.xcconfig"; sourceTree = "<group>"; };
+		1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.debug.xcconfig"; sourceTree = "<group>"; };
+		1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.beta testing.xcconfig"; sourceTree = "<group>"; };
 		1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.beta testing.xcconfig"; sourceTree = "<group>"; };
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
+		5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.release.xcconfig"; sourceTree = "<group>"; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
+		6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.release.xcconfig"; sourceTree = "<group>"; };
+		82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.beta testing.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
 		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
 		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
 		A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
 		A54B1D281C57AC920086BE0D /* MozQuitoTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MozQuitoTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLMetrics.storyboard; sourceTree = "<group>"; };
-		A5877EB61C5926EE00DB4A05 /* MZErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZErrors.swift; path = Modules/Core/MZErrors.swift; sourceTree = "<group>"; };
+		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLDetails.storyboard; sourceTree = "<group>"; };
 		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -87,18 +142,31 @@
 		A5EA9A961C568DAF004CC9EF /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdvancedOperationTestCase.swift; path = "Libraries/Testing Code/AdvancedOperationTestCase.swift"; sourceTree = SOURCE_ROOT; };
 		A5EA9A971C568DAF004CC9EF /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NLAssertEqualOptional.swift; path = "Libraries/Testing Code/NLAssertEqualOptional.swift"; sourceTree = SOURCE_ROOT; };
 		A5EA9A981C568DAF004CC9EF /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsInteractors.swift; path = "Libraries/Testing Code/TestAnalyticsInteractors.swift"; sourceTree = SOURCE_ROOT; };
-		A5ECBD2C1C5A576C003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZNetworking.swift; path = Modules/Core/MZNetworking.swift; sourceTree = "<group>"; };
 		A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeIndexDatesOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeIndexDatesOperation.swift; sourceTree = "<group>"; };
 		A5ECBD311C5A5D10003350E3 /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = thedistance.html; path = Resources/thedistance.html; sourceTree = "<group>"; };
 		A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetPageMetaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetPageMetaDataOperation.swift; sourceTree = "<group>"; };
 		A5ECBD351C5A6250003350E3 /* URLMetrics_NoNetwork_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_NoNetwork_Tests.swift; sourceTree = "<group>"; };
 		A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZParseHTMLDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZParseHTMLDataOperation.swift; sourceTree = "<group>"; };
 		A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZAlexaDataOperation.swift; sourceTree = "<group>"; };
-		A5ECBD3C1C5A7F4C003350E3 /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetric.swift; sourceTree = "<group>"; };
-		A5ECBD3D1C5A7F4C003350E3 /* MZPageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaData.swift; sourceTree = "<group>"; };
-		A5ECBD401C5A7F63003350E3 /* MZAlexaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZAlexaData.swift; sourceTree = "<group>"; };
 		A5ECBD421C5A8462003350E3 /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "thedistance-alexa.xml"; path = "Resources/thedistance-alexa.xml"; sourceTree = "<group>"; };
 		A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZParseAlexaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLMetricsViewController.swift"; sourceTree = "<group>"; };
+		A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoEntities.h; sourceTree = "<group>"; };
+		A5ECBD6A1C5BA52F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoViews.h; sourceTree = "<group>"; };
+		A5ECBD7D1C5BA53F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZAlexaData.swift; sourceTree = "<group>"; };
+		A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetric.swift; sourceTree = "<group>"; };
+		A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaData.swift; sourceTree = "<group>"; };
+		A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZErrors.swift; sourceTree = "<group>"; };
+		A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZNetworking.swift; sourceTree = "<group>"; };
+		A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLMetricsView.swift; sourceTree = "<group>"; };
+		A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetaDataStack.swift; sourceTree = "<group>"; };
+		A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsView.swift; sourceTree = "<group>"; };
+		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
+		A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataView.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -109,14 +177,36 @@
 		A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MozQuitoTests.swift; sourceTree = "<group>"; };
 		A5F4E6821C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F4E6A71C5113D00099010C /* MozQuito-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Info.h"; sourceTree = "<group>"; };
+		B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.beta testing.xcconfig"; sourceTree = "<group>"; };
+		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5ECBD621C5BA52F003350E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A071977D6E3B3D01DED9BFCA /* Pods_MozQuitoEntities.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5ECBD751C5BA53F003350E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5ECBD881C5BA553003350E3 /* MozQuitoEntities.framework in Frameworks */,
+				66AEF81EEFFC3D4B0A503695 /* Pods_MozQuitoViews.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F4E6651C50E0FD0099010C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */,
+				A5ECBD801C5BA53F003350E3 /* MozQuitoViews.framework in Frameworks */,
+				A5ECBD6D1C5BA52F003350E3 /* MozQuitoEntities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +230,12 @@
 				1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */,
 				14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */,
 				1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */,
+				EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */,
+				5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */,
+				82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */,
+				1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */,
+				6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */,
+				B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -149,6 +245,8 @@
 			children = (
 				4087E065765E5258925F1D8D /* Pods_MozQuito.framework */,
 				661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */,
+				D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */,
+				1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,7 +254,7 @@
 		A505BA441C567017004F2607 /* URL Metrics */ = {
 			isa = PBXGroup;
 			children = (
-				A5ECBD3B1C5A7F4C003350E3 /* Entities */,
+				A5ECBD5E1C5BA365003350E3 /* View Controllers */,
 				A5EA9A8C1C5681B6004CC9EF /* Viper */,
 				A505BA451C567025004F2607 /* Network Operations */,
 			);
@@ -211,7 +309,7 @@
 			children = (
 				A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */,
 				A5F4E66F1C50E0FD0099010C /* Test.storyboard */,
-				A57DBA121C59009500F246C2 /* URLMetrics.storyboard */,
+				A57DBA121C59009500F246C2 /* URLDetails.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -222,8 +320,6 @@
 				A505BA461C567035004F2607 /* Network Operations */,
 				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
 				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
-				A5877EB61C5926EE00DB4A05 /* MZErrors.swift */,
-				A5ECBD2C1C5A576C003350E3 /* MZNetworking.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -257,21 +353,91 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		A5ECBD3B1C5A7F4C003350E3 /* Entities */ = {
+		A5ECBD5E1C5BA365003350E3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A5ECBD3C1C5A7F4C003350E3 /* MZMetric.swift */,
-				A5ECBD3D1C5A7F4C003350E3 /* MZPageMetaData.swift */,
-				A5ECBD401C5A7F63003350E3 /* MZAlexaData.swift */,
+				A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */,
 			);
-			name = Entities;
-			path = Modules/URLMetrics/Entities;
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */,
+				A5ECBD901C5BA5FD003350E3 /* Core */,
+				A5ECBD891C5BA5B2003350E3 /* URLMetrics */,
+				A5ECBD6A1C5BA52F003350E3 /* Info.plist */,
+			);
+			path = MozQuitoEntities;
+			sourceTree = "<group>";
+		};
+		A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */,
+				A5ECBD951C5BA931003350E3 /* URLMetrics */,
+				A5ECBD7D1C5BA53F003350E3 /* Info.plist */,
+			);
+			path = MozQuitoViews;
+			sourceTree = "<group>";
+		};
+		A5ECBD891C5BA5B2003350E3 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */,
+				A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */,
+				A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */,
+			);
+			name = URLMetrics;
+			path = Modules/URLMetrics;
+			sourceTree = "<group>";
+		};
+		A5ECBD901C5BA5FD003350E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */,
+				A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */,
+			);
+			name = Core;
+			path = Modules/Core;
+			sourceTree = "<group>";
+		};
+		A5ECBD951C5BA931003350E3 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
+				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
+				A5ECBD981C5BA931003350E3 /* Page Meta Data */,
+			);
+			name = URLMetrics;
+			path = Modules/URLMetrics;
+			sourceTree = "<group>";
+		};
+		A5ECBD961C5BA931003350E3 /* Mozscape Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Mozscape Data";
+			sourceTree = "<group>";
+		};
+		A5ECBD981C5BA931003350E3 /* Page Meta Data */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */,
+				A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */,
+				A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */,
+				A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */,
+			);
+			path = "Page Meta Data";
 			sourceTree = "<group>";
 		};
 		A5F4E65F1C50E0FD0099010C = {
 			isa = PBXGroup;
 			children = (
 				A5F4E66A1C50E0FD0099010C /* MozQuito */,
+				A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */,
+				A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */,
 				A5F4E67F1C50E0FD0099010C /* MozQuitoTests */,
 				A5F4E6691C50E0FD0099010C /* Products */,
 				4AD738720430DE630F07D53C /* Pods */,
@@ -284,6 +450,8 @@
 			children = (
 				A5F4E6681C50E0FD0099010C /* MozQuito.app */,
 				A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */,
+				A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */,
+				A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,7 +487,67 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A5ECBD631C5BA52F003350E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5ECBD691C5BA52F003350E3 /* MozQuitoEntities.h in Headers */,
+				A5ECBD7C1C5BA53F003350E3 /* MozQuitoViews.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5ECBD761C5BA53F003350E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5ECBD6F1C5BA52F003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoEntities" */;
+			buildPhases = (
+				2F14B06EE5986ADBCECAB819 /* Check Pods Manifest.lock */,
+				A5ECBD611C5BA52F003350E3 /* Sources */,
+				A5ECBD621C5BA52F003350E3 /* Frameworks */,
+				A5ECBD631C5BA52F003350E3 /* Headers */,
+				A5ECBD641C5BA52F003350E3 /* Resources */,
+				9B72DDFCB8E765B5F9D986C9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MozQuitoEntities;
+			productName = MozQuitoEntities;
+			productReference = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A5ECBD781C5BA53F003350E3 /* MozQuitoViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5ECBD821C5BA540003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoViews" */;
+			buildPhases = (
+				296A1CF5D3508D0AEDB3A4BC /* Check Pods Manifest.lock */,
+				A5ECBD741C5BA53F003350E3 /* Sources */,
+				A5ECBD751C5BA53F003350E3 /* Frameworks */,
+				A5ECBD761C5BA53F003350E3 /* Headers */,
+				A5ECBD771C5BA53F003350E3 /* Resources */,
+				3E40EE3A96AF6E69EC0438B0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5ECBD871C5BA54E003350E3 /* PBXTargetDependency */,
+			);
+			name = MozQuitoViews;
+			productName = MozQuitoViews;
+			productReference = A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A5F4E6671C50E0FD0099010C /* MozQuito */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */;
@@ -331,10 +559,13 @@
 				A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */,
 				82CBD3F762B24275BB76B977 /* Copy Pods Resources */,
 				A505BA411C563E4A004F2607 /* ShellScript */,
+				A5ECBD731C5BA52F003350E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A5ECBD6C1C5BA52F003350E3 /* PBXTargetDependency */,
+				A5ECBD7F1C5BA53F003350E3 /* PBXTargetDependency */,
 			);
 			name = MozQuito;
 			productName = MozQuito;
@@ -372,6 +603,14 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "The Distance";
 				TargetAttributes = {
+					A5ECBD651C5BA52F003350E3 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = RA4PB2C3M4;
+					};
+					A5ECBD781C5BA53F003350E3 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = RA4PB2C3M4;
+					};
 					A5F4E6671C50E0FD0099010C = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = RA4PB2C3M4;
@@ -396,12 +635,28 @@
 			projectRoot = "";
 			targets = (
 				A5F4E6671C50E0FD0099010C /* MozQuito */,
+				A5ECBD781C5BA53F003350E3 /* MozQuitoViews */,
+				A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */,
 				A5F4E67B1C50E0FD0099010C /* MozQuitoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A5ECBD641C5BA52F003350E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5ECBD771C5BA53F003350E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F4E6661C50E0FD0099010C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +664,7 @@
 				A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */,
 				A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */,
 				A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */,
-				A57DBA141C59009500F246C2 /* URLMetrics.storyboard in Resources */,
+				A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */,
 				A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +681,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		296A1CF5D3508D0AEDB3A4BC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F14B06EE5986ADBCECAB819 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		3C54942435A29D6B8154C67F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +724,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E40EE3A96AF6E69EC0438B0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5092EEEE4558A00655037D59 /* Check Pods Manifest.lock */ = {
@@ -469,6 +769,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B72DDFCB8E765B5F9D986C9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A505BA411C563E4A004F2607 /* ShellScript */ = {
@@ -532,6 +847,30 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5ECBD611C5BA52F003350E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5ECBD941C5BA5FD003350E3 /* MZNetworking.swift in Sources */,
+				A5ECBD8F1C5BA5B2003350E3 /* MZPageMetaData.swift in Sources */,
+				A5ECBD931C5BA5FD003350E3 /* MZErrors.swift in Sources */,
+				A5ECBD8E1C5BA5B2003350E3 /* MZMetric.swift in Sources */,
+				A5ECBD8D1C5BA5B2003350E3 /* MZAlexaData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5ECBD741C5BA53F003350E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5ECBD9F1C5BA931003350E3 /* MZMozscapeMetricsView.swift in Sources */,
+				A5ECBDA11C5BA931003350E3 /* MZPageMetaDataView.swift in Sources */,
+				A5ECBD9E1C5BA931003350E3 /* MZMetaDataStack.swift in Sources */,
+				A5ECBD9D1C5BA931003350E3 /* MZURLMetricsView.swift in Sources */,
+				A5ECBDA01C5BA931003350E3 /* MZPageMetaDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F4E6641C50E0FD0099010C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,24 +878,20 @@
 				A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */,
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
 				A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */,
-				A5ECBD3E1C5A7F4C003350E3 /* MZMetric.swift in Sources */,
-				A5877EB71C5926EE00DB4A05 /* MZErrors.swift in Sources */,
 				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
 				A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */,
 				A5EA9A921C5686FB004CC9EF /* URLMetricsViperImplementation.swift in Sources */,
 				A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */,
 				A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */,
+				A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */,
 				A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */,
 				A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
 				A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
-				A5ECBD2D1C5A576C003350E3 /* MZNetworking.swift in Sources */,
-				A5ECBD411C5A7F63003350E3 /* MZAlexaData.swift in Sources */,
 				A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
 				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
-				A5ECBD3F1C5A7F4C003350E3 /* MZPageMetaData.swift in Sources */,
 				A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +913,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A5ECBD6C1C5BA52F003350E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */;
+			targetProxy = A5ECBD6B1C5BA52F003350E3 /* PBXContainerItemProxy */;
+		};
+		A5ECBD7F1C5BA53F003350E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5ECBD781C5BA53F003350E3 /* MozQuitoViews */;
+			targetProxy = A5ECBD7E1C5BA53F003350E3 /* PBXContainerItemProxy */;
+		};
+		A5ECBD871C5BA54E003350E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */;
+			targetProxy = A5ECBD861C5BA54E003350E3 /* PBXContainerItemProxy */;
+		};
 		A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5F4E6671C50E0FD0099010C /* MozQuito */;
@@ -586,12 +936,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A57DBA121C59009500F246C2 /* URLMetrics.storyboard */ = {
+		A57DBA121C59009500F246C2 /* URLDetails.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A57DBA131C59009500F246C2 /* Base */,
 			);
-			name = URLMetrics.storyboard;
+			name = URLDetails.storyboard;
 			sourceTree = "<group>";
 		};
 		A5F4E66F1C50E0FD0099010C /* Test.storyboard */ = {
@@ -613,6 +963,138 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A5ECBD701C5BA52F003350E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MozQuitoEntities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoEntities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A5ECBD711C5BA52F003350E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MozQuitoEntities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoEntities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5ECBD721C5BA52F003350E3 /* Beta Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MozQuitoEntities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoEntities;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Beta Testing";
+		};
+		A5ECBD831C5BA540003350E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MozQuitoViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A5ECBD841C5BA540003350E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MozQuitoViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5ECBD851C5BA540003350E3 /* Beta Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MozQuitoViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Beta Testing";
+		};
 		A5F4E6831C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -704,6 +1186,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -726,6 +1209,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -811,6 +1295,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -841,6 +1326,26 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5ECBD6F1C5BA52F003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoEntities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5ECBD701C5BA52F003350E3 /* Debug */,
+				A5ECBD711C5BA52F003350E3 /* Release */,
+				A5ECBD721C5BA52F003350E3 /* Beta Testing */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Beta Testing";
+		};
+		A5ECBD821C5BA540003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5ECBD831C5BA540003350E3 /* Debug */,
+				A5ECBD841C5BA540003350E3 /* Release */,
+				A5ECBD851C5BA540003350E3 /* Beta Testing */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Beta Testing";
+		};
 		A5F4E6631C50E0FD0099010C /* Build configuration list for PBXProject "MozQuito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

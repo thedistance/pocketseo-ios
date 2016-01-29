@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MozQuitoEntities
 
 class MZGetMozscapeIndexDatesOperation: MZAuthenticatedOperation {
     

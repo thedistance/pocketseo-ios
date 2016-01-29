@@ -12,10 +12,12 @@ import TheDistanceCore
 
 enum MZStoryboadID:String {
     case Test
+    case URLDetails
 }
 
 enum MZViewControllerID:String {
     case TestVC
+    case URLMetricsVC
 }
 
 class MZStoryboardLoader: StoryboardLoader {
@@ -24,6 +26,8 @@ class MZStoryboardLoader: StoryboardLoader {
         switch viewControllerID {
         case .TestVC:
             return .Test
+        case .URLMetricsVC:
+            return .URLDetails
         }
     }
 }

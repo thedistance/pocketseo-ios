@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+import MozQuitoEntities
 import Alamofire
 
 class MZGetPageMetaDataOperation: FailingOperation {

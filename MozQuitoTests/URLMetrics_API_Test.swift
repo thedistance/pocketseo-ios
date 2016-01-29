@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+@testable import MozQuitoEntities
 @testable import MozQuito
 
 class URLMetrics_API_Test: AdvancedOperationTestCase, ViperTesting {

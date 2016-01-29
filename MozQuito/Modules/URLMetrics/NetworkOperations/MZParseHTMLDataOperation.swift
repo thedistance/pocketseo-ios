@@ -8,6 +8,7 @@
 
 import UIKit
 import hpple
+import MozQuitoEntities
 
 extension TFHppleElement {
     

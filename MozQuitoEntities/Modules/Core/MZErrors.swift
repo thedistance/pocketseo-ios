@@ -8,24 +8,24 @@
 
 import Foundation
 
-enum MZErrorDomain:String {
+public enum MZErrorDomain:String {
     case InitError
     case MozscapeError
     case HTMLError
     case XMLError
 }
 
-enum MZErrorCode:Int {
+public enum MZErrorCode:Int {
     case UnexpectedResponse
 }
 
-extension NSError {
+public extension NSError {
     
-    convenience init(InitUnexpectedResponseWithDescription descr: String) {
+    public convenience init(InitUnexpectedResponseWithDescription descr: String) {
         self.init(domain: .InitError, code:.UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: descr])
     }
     
-    convenience init(domain:MZErrorDomain, code:MZErrorCode, userInfo:[NSObject:AnyObject]?) {
+    public convenience init(domain:MZErrorDomain, code:MZErrorCode, userInfo:[NSObject:AnyObject]?) {
         self.init(domain: domain.rawValue, code: code.rawValue, userInfo: userInfo)
     }
 }

@@ -40,14 +40,26 @@ pod 'AEXML'
 
 ### UI PODS ###
 
-pod 'M13ProgressSuite'
-pod 'StackView', :path => 'StackView'
-
 ### Josh's Development Pods ###
 
 pod 'SwiftInPractice', :path => 'SwiftInPractice'
 pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
 
+end
+
+target 'MozQuitoEntities' do
+  
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'TheDistanceCore', :path => 'TheDistanceCore'
+  
+end
+
+target 'MozQuitoViews' do
+    
+    pod 'M13ProgressSuite'
+    pod 'StackView', :path => 'StackView'
+    
 end
 
 target 'MozQuitoTests' do
