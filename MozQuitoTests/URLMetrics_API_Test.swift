@@ -103,6 +103,28 @@ class URLMetrics_API_Test: AdvancedOperationTestCase, ViperTesting {
     }
     
     func testAlexaData() {
-        XCTFail("Implement Alexa request")
+        
+        
+        let alexaOperation = MZAlexaDataOperation(urlString: "thedistance.co.uk")
+        
+        var data:MZAlexaData? = nil
+        
+        alexaOperation.success = { (response) in
+            data = response
+        }
+        
+        registerAndRunOperation(alexaOperation,
+            named: __FUNCTION__) { (operation, errors) -> () in
+                XCTAssertEqual(errors.count, 0, "Getting alexa data failed: \(errors)")
+        }
+        
+        guard let returnedAlexa = data else {
+            XCTFail("No alexa data returned")
+            return
+        }
+        
+        XCTAssertNotNil(returnedAlexa.popularityText, "Missing popularity text")
+        XCTAssertNotNil(returnedAlexa.reachRank, "Missing reach rank text")
+        XCTAssertNotNil(returnedAlexa.rankDelta, "Missing rank delta text")
     }
 }

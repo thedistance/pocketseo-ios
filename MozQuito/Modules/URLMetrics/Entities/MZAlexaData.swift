@@ -10,8 +10,8 @@ import Foundation
 
 struct MZAlexaData {
     
-    let popularityText:String
-    let reachRank:String
-    let rankDelta:String
+    let popularityText:String?
+    let reachRank:String?
+    let rankDelta:String?
     
 }

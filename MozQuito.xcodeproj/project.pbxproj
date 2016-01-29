@@ -38,6 +38,7 @@
 		A5ECBD3F1C5A7F4C003350E3 /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD3D1C5A7F4C003350E3 /* MZPageMetaData.swift */; };
 		A5ECBD411C5A7F63003350E3 /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD401C5A7F63003350E3 /* MZAlexaData.swift */; };
 		A5ECBD431C5A8462003350E3 /* thedistance-alexa.xml in Resources */ = {isa = PBXBuildFile; fileRef = A5ECBD421C5A8462003350E3 /* thedistance-alexa.xml */; };
+		A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		A5ECBD3D1C5A7F4C003350E3 /* MZPageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaData.swift; sourceTree = "<group>"; };
 		A5ECBD401C5A7F63003350E3 /* MZAlexaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZAlexaData.swift; sourceTree = "<group>"; };
 		A5ECBD421C5A8462003350E3 /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "thedistance-alexa.xml"; path = "Resources/thedistance-alexa.xml"; sourceTree = "<group>"; };
+		A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZParseAlexaDataOperation.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */,
 				A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */,
 				A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */,
+				A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */,
 			);
 			name = "Network Operations";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
 				A5ECBD2D1C5A576C003350E3 /* MZNetworking.swift in Sources */,
 				A5ECBD411C5A7F63003350E3 /* MZAlexaData.swift in Sources */,
+				A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
 				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,

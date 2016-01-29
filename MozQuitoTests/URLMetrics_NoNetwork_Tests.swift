@@ -23,7 +23,6 @@ extension MZHTMLMetaData {
                 "OUR TOOLS",
                 "PLATFORMS",
                 "TELL US YOUR APP IDEA"])
-
     }
 }
 

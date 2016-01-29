@@ -6,9 +6,8 @@
 //  Copyright © 2016 The Distance. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
-import hpple
 
 class MZAlexaDataOperation: FailingOperation {
 
@@ -22,36 +21,32 @@ class MZAlexaDataOperation: FailingOperation {
     
     override func execute() {
         
-        
+        Alamofire.request(.GET,
+            BaseURL.Alexa,
+            parameters: ["cli": 10, "dat": "snbamz", "url": urlString],
+            encoding: .URL,
+            headers: nil)
+        .validate()
+        .responseData { (response) -> Void in
+            
+            switch response.result {
+            case .Success(let data):
+                
+                let parseOperation = MZParseAlexaDataOperation(data: data)
+                
+                parseOperation.success = { (data) in
+                    self.success?(data: data)
+                    self.finish()
+                }
+                
+                parseOperation.failure = self.failure
+                
+                self.produceOperation(parseOperation)
+                
+            case .Failure(let error):
+                self.finish([error])
+            }
+        }
     }
-    
 }
 
-class MZParseAlexaDataOperation: FailingOperation {
-    
-    var success:((data:MZAlexaData) -> ())?
-    
-    let xmlData:NSData
-    
-    init(data:NSData) {
-        xmlData = data
-    }
-    
-    override func execute() {
-        
-        guard let xmlDoc = TFHpple(XMLData: xmlData) else {
-            
-            let error = NSError(domain: .XMLError, code: .UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: "Unable to create hpple XML Document from data."])
-            self.finish([error])
-            return
-        }
-        
-        let popularityElements = xmlDoc.searchWithXPathQuery("//POPULARITY")
-        
-        let reachElements = xmlDoc.searchWithXPathQuery("//REACH")
-        
-        let rankElements = xmlDoc.searchWithXPathQuery("//RANK")
-        
-        self.finish([NSError(InitUnexpectedResponseWithDescription: "Not Yet Implemented")])
-    }
-}

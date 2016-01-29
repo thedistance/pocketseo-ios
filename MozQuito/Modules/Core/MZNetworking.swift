@@ -12,6 +12,7 @@ import Alamofire
 enum BaseURL:String, URLStringConvertible {
     
     case Mozscape = "https://lsapi.seomoz.com/linkscape"
+    case Alexa = "http://data.alexa.com/data"
     
     var URLString:String {
         return rawValue
