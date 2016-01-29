@@ -121,6 +121,9 @@ public struct MZMozscapeMetrics {
 
 public struct MZMozscapeIndexedDates {
     
+    public static let LastKey = "IndexedLastDate"
+    public static let NextKey = "IndexedNextDate"
+    
     public let last:NSDate
     public let next:NSDate?
     
@@ -139,6 +142,23 @@ public struct MZMozscapeIndexedDates {
         } else {
             throw NSError(InitUnexpectedResponseWithDescription: "Failed to create \(self.dynamicType). last_update not found in json: \(json)")
         }
+    }
+    
+    public init?(info:[String:AnyObject]) {
+        if let lastDate = info[MZMozscapeIndexedDates.LastKey] as? NSDate {
+            last = lastDate
+            next = info[MZMozscapeIndexedDates.NextKey] as? NSDate
+        } else {
+            return nil
+        }
+    }
+    
+    public var infoValue:[String:NSDate] {
+        
+        var info = [MZMozscapeIndexedDates.LastKey:last]
+        info[MZMozscapeIndexedDates.NextKey] = next
+        
+        return info
     }
 }
 

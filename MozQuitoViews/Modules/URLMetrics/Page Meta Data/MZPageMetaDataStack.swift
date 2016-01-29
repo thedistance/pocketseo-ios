@@ -28,12 +28,15 @@ public class MZPageMetaDataStack: CreatedStack {
     let descriptionStack = MZMetaDataStack(title: "META DESCRIPTION")
     let h1Stack = MZMetaDataStack(title: "H1")
     let h2Stack = MZMetaDataStack(title: "H2")
+    let usingSSLStack:StackView
     
     private(set) var expandingTitleStack:StackView
     
     private(set) var detailsStack:StackView
     private(set) var footerStack:StackView
     
+    let usingSSLTitleLabel = UILabel()
+    let usingSSLSwitch = UISwitch()
     let canonicalURLLabel = UILabel()
     let refreshDateLabel = UILabel()
     
@@ -69,6 +72,8 @@ public class MZPageMetaDataStack: CreatedStack {
             } else {
                 canonicalURLLabel.text = nil
             }
+            
+            usingSSLSwitch.on = pageMetaData?.usingSSL ?? false
         }
     }
     
@@ -82,8 +87,11 @@ public class MZPageMetaDataStack: CreatedStack {
         h2Stack.stackView.hidden = true
         
         expandingTitleStack = CreateStackView([titleStack.stackView, expandButton])
-        detailsStack = CreateStackView([expandingTitleStack.view, canonicalStack.stackView, descriptionStack.stackView, h1Stack.stackView, h2Stack.stackView])
+        usingSSLStack = CreateStackView([usingSSLTitleLabel, usingSSLSwitch])
+        detailsStack = CreateStackView([expandingTitleStack.view, canonicalStack.stackView, descriptionStack.stackView, h1Stack.stackView, h2Stack.stackView, usingSSLStack.view])
         footerStack = CreateStackView([canonicalURLLabel, refreshDateLabel])
+        
+        usingSSLStack.view.hidden = true
         
         super.init(arrangedSubviews: [detailsStack.view, footerStack.view])
         
@@ -107,8 +115,12 @@ public class MZPageMetaDataStack: CreatedStack {
         // configure the labels
         canonicalURLLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1)
         refreshDateLabel.font = canonicalURLLabel.font
+        usingSSLTitleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
         canonicalURLLabel.numberOfLines = 0
+        usingSSLTitleLabel.numberOfLines = 0
+        
+        usingSSLTitleLabel.text = "Using SSL"
         
         canonicalURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         refreshDateLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
@@ -119,10 +131,12 @@ public class MZPageMetaDataStack: CreatedStack {
         expandButton.contentHorizontalAlignment = .Left
         expandButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         
+        usingSSLSwitch.userInteractionEnabled = false
+        
         self.stack.axis = .Vertical
         self.stack.stackAlignment = .Fill
         self.stack.stackDistribution = .Fill
-        self.stack.spacing = 8.0
+        self.stack.spacing = 16.0
     }
     
     
@@ -153,5 +167,7 @@ public class MZPageMetaDataStack: CreatedStack {
         descriptionStack.stackView.hidden = !expanded
         h1Stack.stackView.hidden = !expanded
         h2Stack.stackView.hidden = !expanded
+        
+        usingSSLStack.view.hidden = !expanded
     }
 }

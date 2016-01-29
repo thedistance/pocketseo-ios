@@ -9,7 +9,9 @@
 import UIKit
 
 import MozQuitoEntities
+
 import Alamofire
+import PSOperations
 
 class MZGetPageMetaDataOperation: FailingOperation {
 
@@ -20,6 +22,10 @@ class MZGetPageMetaDataOperation: FailingOperation {
     
     init(url:NSURL) {
         requestURL = url
+        
+        super.init()
+        
+        addCondition(MutuallyExclusive<MZGetPageMetaDataOperation>())
     }
     
     override func execute() {

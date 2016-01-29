@@ -8,8 +8,21 @@
 
 import Foundation
 import ViperKit
+import TheDistanceCore
 
-class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor {
+enum RequestKeys:String, RequestCacheKey {
+    case MozscapeIndexedDates
+    
+    var keyString:String {
+        return rawValue
+    }
+    
+    static var allValues:[RequestKeys] = [.MozscapeIndexedDates]
+}
+
+class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor, RequestCache {
+    
+    typealias RequestCacheKeyType = RequestKeys
     
     private var _authenticationToken:MZAuthenicationToken?
     
@@ -47,8 +60,10 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
             return
         }
         
-        window.rootViewController = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC)
-        
+        if let vc = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC) as? MZURLMetricsViewController {
+            vc.presenter = MZURLMetricsPresenter.configuredPresenterForView(vc)
+            window.rootViewController = vc
+        }
     }
     
 }

@@ -24,6 +24,12 @@ public class MZURLMetricsStack:CreatedStack {
 @IBDesignable
 public class MZURLMetricsView: UIView {
     
+    public var pageMetaData:MZPageMetaData? {
+        didSet {
+            metricsStack.pageMetaDataView.metaStack.pageMetaData = pageMetaData
+        }
+    }
+    
     public let metricsStack = MZURLMetricsStack()
     
     override public init(frame: CGRect) {
@@ -50,6 +56,7 @@ public class MZURLMetricsView: UIView {
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
+        metricsStack.pageMetaDataView.metaStack.toggleExpanded()
         metricsStack.pageMetaDataView.metaStack.pageMetaData = MZPageMetaData.TheDistanceMetaData()
     }
 }

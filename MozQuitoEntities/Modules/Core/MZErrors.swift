@@ -13,10 +13,12 @@ public enum MZErrorDomain:String {
     case MozscapeError
     case HTMLError
     case XMLError
+    case UserInputError
 }
 
 public enum MZErrorCode:Int {
     case UnexpectedResponse
+    case InvalidURL
 }
 
 public extension NSError {

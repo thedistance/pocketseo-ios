@@ -40,7 +40,7 @@ protocol URLMetricsInteractor: VIPERInteractor {
      
      - parameter urlString: The url string to get metrics for. This can be be user entered.
      */
-    func getPageMetaDataForURLString(url:String)
+    func getPageMetaDataForURLString(urlString:String)
     
     /**
      
@@ -51,7 +51,7 @@ protocol URLMetricsInteractor: VIPERInteractor {
      
      - parameter urlString: The url string to get metrics for. This can be be user entered.
      */
-    func getAlexaDataFromURLString(url:String)
+    func getAlexaDataFromURLString(urlString:String)
 }
 
 /// Protocol defining the methods available to request by a `URLMetricsView`, and methods available to a `URLMetricsInteractor` to report results. All results should be reported to a `URLMetricsView`.

@@ -11,14 +11,24 @@ import TheDistanceCore
 import MozQuitoViews
 import MozQuitoEntities
 
-class MZURLMetricsViewController: UIViewController {
+class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
+    var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
+    
+    var urlString:String? {
+        didSet {
+            if let str = urlString {
+                presenter?.requestMetricsForURLString(str)
+            }
+        }
+    }
+    
     @IBOutlet weak var metricsView:MZURLMetricsView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        metricsView.metricsStack.pageMetaDataView.metaStack.pageMetaData = MZPageMetaData.TheDistanceMetaData()
+        self.urlString = "https://thedistance.co.uk"
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,14 +37,35 @@ class MZURLMetricsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    // MARK: - URLMetricsView
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showPageMetaData(data: MZPageMetaData) {
+        metricsView.pageMetaData = data
     }
-    */
-
+    
+    func showPageMetaDataErrors(errors: [NSError]) {
+        
+    }
+    
+    func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
+        
+    }
+    
+    func showMozscapeMetricsErrors(errors: [NSError]) {
+        
+    }
+    
+    func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
+        
+    }
+    
+    func showAlexaData(data: MZAlexaData) {
+        
+    }
+    
+    func showAlexaDataErrors(errors: [NSError]) {
+        
+    }
+    
+    
 }
