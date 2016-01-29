@@ -7,81 +7,7 @@
 //
 
 import Foundation
-import ViperKit
 import MozQuitoEntities
-import PSOperations
-
-class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
-    
-    var operationQueue = OperationQueue()
-    
-    weak var presenter: MZURLMetricsPresenter<ViewType>?
-    
-    func getMozscapeMetricsForURLString(urlString: String) {
-        
-    }
-    
-    func getMozscapeIndexDates() {
-        
-        let indexDates = MZGetMozscapeIndexDatesOperation()
-        
-        indexDates.success = { (dates) in
-            
-            MZAppDependencies.sharedDependencies().successfullyRequested(.MozscapeIndexedDates)
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.presenter?.foundMozscapeIndexDates(dates)
-            })
-        }
-        
-        operationQueue.addOperation(indexDates)
-    }
-    
-    func getPageMetaDataForURLString(urlString: String) {
-        
-        let invalidUserInput:() -> () = {
-            let inputError = NSError(domain: MZErrorDomain.UserInputError, code: MZErrorCode.InvalidURL, userInfo: [NSLocalizedDescriptionKey: "Invalid URL Entered."])
-            self.presenter?.failedToFindPageMetaDataWithErrors([inputError])
-        }
-        
-        guard var url = NSURL(string: urlString) else {
-            invalidUserInput()
-            return
-        }
-        
-        
-        if url.scheme.isEmpty {
-            if let guessURL = NSURL(string: "http://\(urlString)") {
-                url = guessURL
-            } else {
-                invalidUserInput()
-            }
-        }
-        
-        
-        let metaDataOperation = MZGetPageMetaDataOperation(url: url)
-
-        metaDataOperation.success = { (data) in
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.presenter?.foundPageMetaData(data)
-            })
-        }
-        
-        metaDataOperation.failure = { (errors) in
-         
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.presenter?.failedToFindPageMetaDataWithErrors(errors)
-            })
-        }
-        
-        operationQueue.addOperation(metaDataOperation)
-    }
-    
-    func getAlexaDataFromURLString(urlString: String) {
-        
-    }
-}
 
 class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     
@@ -124,12 +50,11 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     }
     
     func foundMozscapeMetrics(metrics:MZMozscapeMetrics) {
-        
+        view?.showMozscapeMetrics(metrics)
     }
     
     func failedToFindMozscapeMetricWithErrors(errors: [NSError]) {
-        
-        
+        view?.showMozscapeMetricsErrors(errors)
     }
     
     func foundMozscapeIndexDates(dates: MZMozscapeIndexedDates) {
@@ -147,16 +72,10 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     }
     
     func foundAlexaData(data: MZAlexaData) {
-        
+        view?.showAlexaData(data)
     }
     
     func failedToFindAlexaDataWithErrors(errors: [NSError]) {
-        
+        view?.showAlexaDataErrors(errors)
     }
-}
-
-class MZURLMetricsWireframe<ViewType:URLMetricsView>: VIPERWireframe {
-    
-    weak var view:ViewType?
-    
 }

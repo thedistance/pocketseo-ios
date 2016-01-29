@@ -105,7 +105,7 @@ class URLMetrics_API_Test: AdvancedOperationTestCase, ViperTesting {
     func testAlexaData() {
         
         
-        let alexaOperation = MZAlexaDataOperation(urlString: "thedistance.co.uk")
+        let alexaOperation = MZGetAlexaDataOperation(urlString: "thedistance.co.uk")
         
         var data:MZAlexaData? = nil
         

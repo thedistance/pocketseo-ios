@@ -39,6 +39,8 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
     // MARK: - URLMetricsView
 
+    // MARK: Meta Data
+    
     func showPageMetaData(data: MZPageMetaData) {
         metricsView.pageMetaData = data
     }
@@ -47,8 +49,10 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         
     }
     
+    // MARK: Mozscape
+    
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
-        
+        print(metrics)
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {
@@ -56,11 +60,13 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     }
     
     func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
-        
+        print(dates)
     }
     
+    // MARK: Alexa
+    
     func showAlexaData(data: MZAlexaData) {
-        
+        print(data)
     }
     
     func showAlexaDataErrors(errors: [NSError]) {

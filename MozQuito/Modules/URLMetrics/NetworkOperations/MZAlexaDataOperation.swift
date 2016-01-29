@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import MozQuitoEntities
 
-class MZAlexaDataOperation: FailingOperation {
+class MZGetAlexaDataOperation: FailingOperation {
 
     var success:((data:MZAlexaData) -> ())?
     
