@@ -8,7 +8,7 @@
         <!--URL Metrics View Controller-->
         <scene sceneID="3SV-G3-mwN">
             <objects>
-                <viewController storyboardIdentifier="URLMetricsVC" id="CIC-ij-RE7" customClass="MZURLMetricsViewController" customModule="MozQuito" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLMetricsVC" id="CIC-ij-RE7" customClass="MZURLMetricsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="20b-8c-cBp"/>
                         <viewControllerLayoutGuide type="bottom" id="S5a-Vm-Nil"/>
@@ -20,7 +20,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="As5-Vh-jJy">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-bj-FND" customClass="MZURLMetricsView" customModule="MozQuitoViews">
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-bj-FND" customClass="MZURLMetricsView" customModule="PocketSEOViews">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>

@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4087E065765E5258925F1D8D /* Pods_MozQuito.framework */; };
-		66AEF81EEFFC3D4B0A503695 /* Pods_MozQuitoViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */; };
-		A071977D6E3B3D01DED9BFCA /* Pods_MozQuitoEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */; };
+		5945B8ED315E61500A87AFB1 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
+		809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; };
 		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
 		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
 		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
 		A54B1D231C57A3F30086BE0D /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */; };
 		A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
+		A57FF7001C60EBCE00FDA2AF /* MZLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57FF6FE1C60EBCE00FDA2AF /* MZLocalization.swift */; };
+		A57FF7011C60EBCE00FDA2AF /* MZLocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57FF6FF1C60EBCE00FDA2AF /* MZLocalizedString.swift */; };
 		A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626DB1C5274670076147C /* AnalyticsInteractors.swift */; };
 		A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626E01C5277820076147C /* TestAnalyticsViewController.swift */; };
 		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
@@ -41,12 +42,12 @@
 		A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */; };
 		A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
 		A5ECBD691C5BA52F003350E3 /* MozQuitoEntities.h in Headers */ = {isa = PBXBuildFile; fileRef = A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5ECBD6D1C5BA52F003350E3 /* MozQuitoEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */; };
-		A5ECBD6E1C5BA52F003350E3 /* MozQuitoEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5ECBD6D1C5BA52F003350E3 /* PocketSEOEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* PocketSEOEntities.framework */; };
+		A5ECBD6E1C5BA52F003350E3 /* PocketSEOEntities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* PocketSEOEntities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5ECBD7C1C5BA53F003350E3 /* MozQuitoViews.h in Headers */ = {isa = PBXBuildFile; fileRef = A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5ECBD801C5BA53F003350E3 /* MozQuitoViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */; };
-		A5ECBD811C5BA53F003350E3 /* MozQuitoViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A5ECBD881C5BA553003350E3 /* MozQuitoEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */; };
+		A5ECBD801C5BA53F003350E3 /* PocketSEOViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD791C5BA53F003350E3 /* PocketSEOViews.framework */; };
+		A5ECBD811C5BA53F003350E3 /* PocketSEOViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD791C5BA53F003350E3 /* PocketSEOViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5ECBD881C5BA553003350E3 /* PocketSEOEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5ECBD661C5BA52F003350E3 /* PocketSEOEntities.framework */; };
 		A5ECBD8D1C5BA5B2003350E3 /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */; };
 		A5ECBD8E1C5BA5B2003350E3 /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */; };
 		A5ECBD8F1C5BA5B2003350E3 /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */; };
@@ -62,7 +63,8 @@
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
 		A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */; };
-		D0171968272E6A403E62E8D8 /* Pods_MozQuitoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */; };
+		A6B761F8FE888924F00BE0A2 /* Pods_PocketSEOViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */; };
+		AA381AA959F07C7F79A4D4C9 /* Pods_PocketSEOEntities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +105,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A5ECBD6E1C5BA52F003350E3 /* MozQuitoEntities.framework in Embed Frameworks */,
-				A5ECBD811C5BA53F003350E3 /* MozQuitoViews.framework in Embed Frameworks */,
+				A5ECBD6E1C5BA52F003350E3 /* PocketSEOEntities.framework in Embed Frameworks */,
+				A5ECBD811C5BA53F003350E3 /* PocketSEOViews.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,18 +114,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0A2CCA56A991C2B778B97D61 /* Pods-PocketSEOEntities.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.beta testing.xcconfig"; sourceTree = "<group>"; };
+		0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.beta testing.xcconfig"; sourceTree = "<group>"; };
 		14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.release.xcconfig"; sourceTree = "<group>"; };
 		1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.debug.xcconfig"; sourceTree = "<group>"; };
 		1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.beta testing.xcconfig"; sourceTree = "<group>"; };
 		1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		21F9FF84ADEB688B6B2667AA /* Pods-PocketSEOEntities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.release.xcconfig"; sourceTree = "<group>"; };
 		347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.beta testing.xcconfig"; sourceTree = "<group>"; };
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.release.xcconfig"; sourceTree = "<group>"; };
+		4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E07B89C07D73E9A63C165A1 /* Pods-PocketSEOViews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.release.xcconfig"; sourceTree = "<group>"; };
+		5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.release.xcconfig"; sourceTree = "<group>"; };
+		50E56C9EEA7577A406F74FD8 /* Pods-PocketSEOViews.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.beta testing.xcconfig"; sourceTree = "<group>"; };
 		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
+		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.release.xcconfig"; sourceTree = "<group>"; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
 		6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.release.xcconfig"; sourceTree = "<group>"; };
+		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
+		7FFCE0BCF1BD42804115749C /* Pods-PocketSEOViews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.debug.xcconfig"; sourceTree = "<group>"; };
 		82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.beta testing.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
@@ -132,6 +146,8 @@
 		A54B1D221C57A3F30086BE0D /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
 		A54B1D281C57AC920086BE0D /* MozQuitoTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MozQuitoTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLDetails.storyboard; sourceTree = "<group>"; };
+		A57FF6FE1C60EBCE00FDA2AF /* MZLocalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocalization.swift; sourceTree = "<group>"; };
+		A57FF6FF1C60EBCE00FDA2AF /* MZLocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocalizedString.swift; sourceTree = "<group>"; };
 		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -157,10 +173,10 @@
 		A5ECBD421C5A8462003350E3 /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "thedistance-alexa.xml"; path = "Resources/thedistance-alexa.xml"; sourceTree = "<group>"; };
 		A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZParseAlexaDataOperation.swift; sourceTree = "<group>"; };
 		A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLMetricsViewController.swift"; sourceTree = "<group>"; };
-		A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5ECBD661C5BA52F003350E3 /* PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoEntities.h; sourceTree = "<group>"; };
 		A5ECBD6A1C5BA52F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5ECBD791C5BA53F003350E3 /* PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoViews.h; sourceTree = "<group>"; };
 		A5ECBD7D1C5BA53F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZAlexaData.swift; sourceTree = "<group>"; };
@@ -173,19 +189,23 @@
 		A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsView.swift; sourceTree = "<group>"; };
 		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
 		A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataView.swift; sourceTree = "<group>"; };
-		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F4E6681C50E0FD0099010C /* PocketSEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketSEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
 		A5F4E6721C50E0FD0099010C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5F4E6751C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5F4E6771C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MozQuitoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F4E67C1C50E0FD0099010C /* PocketSEOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketSEOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MozQuitoTests.swift; sourceTree = "<group>"; };
 		A5F4E6821C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F4E6A71C5113D00099010C /* MozQuito-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Info.h"; sourceTree = "<group>"; };
 		B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.beta testing.xcconfig"; sourceTree = "<group>"; };
 		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
 		EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.debug.xcconfig"; sourceTree = "<group>"; };
+		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F419192D39A6C764EFA433A5 /* Pods-PocketSEOEntities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.debug.xcconfig"; sourceTree = "<group>"; };
+		FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A071977D6E3B3D01DED9BFCA /* Pods_MozQuitoEntities.framework in Frameworks */,
+				AA381AA959F07C7F79A4D4C9 /* Pods_PocketSEOEntities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5ECBD881C5BA553003350E3 /* MozQuitoEntities.framework in Frameworks */,
-				66AEF81EEFFC3D4B0A503695 /* Pods_MozQuitoViews.framework in Frameworks */,
+				A5ECBD881C5BA553003350E3 /* PocketSEOEntities.framework in Frameworks */,
+				A6B761F8FE888924F00BE0A2 /* Pods_PocketSEOViews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +230,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */,
-				A5ECBD801C5BA53F003350E3 /* MozQuitoViews.framework in Frameworks */,
-				A5ECBD6D1C5BA52F003350E3 /* MozQuitoEntities.framework in Frameworks */,
+				A5ECBD801C5BA53F003350E3 /* PocketSEOViews.framework in Frameworks */,
+				A5ECBD6D1C5BA52F003350E3 /* PocketSEOEntities.framework in Frameworks */,
+				809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0171968272E6A403E62E8D8 /* Pods_MozQuitoTests.framework in Frameworks */,
+				5945B8ED315E61500A87AFB1 /* Pods_PocketSEOTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +262,18 @@
 				1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */,
 				6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */,
 				B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */,
+				E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */,
+				5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */,
+				0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */,
+				F419192D39A6C764EFA433A5 /* Pods-PocketSEOEntities.debug.xcconfig */,
+				21F9FF84ADEB688B6B2667AA /* Pods-PocketSEOEntities.release.xcconfig */,
+				0A2CCA56A991C2B778B97D61 /* Pods-PocketSEOEntities.beta testing.xcconfig */,
+				01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */,
+				4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */,
+				7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */,
+				7FFCE0BCF1BD42804115749C /* Pods-PocketSEOViews.debug.xcconfig */,
+				4E07B89C07D73E9A63C165A1 /* Pods-PocketSEOViews.release.xcconfig */,
+				50E56C9EEA7577A406F74FD8 /* Pods-PocketSEOViews.beta testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -253,6 +285,10 @@
 				661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */,
 				D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */,
 				1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */,
+				58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */,
+				4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */,
+				F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */,
+				FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -288,6 +324,16 @@
 				A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */,
 			);
 			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		A57FF6FD1C60EBCE00FDA2AF /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A57FF6FE1C60EBCE00FDA2AF /* MZLocalization.swift */,
+				A57FF6FF1C60EBCE00FDA2AF /* MZLocalizedString.swift */,
+			);
+			name = Localization;
+			path = Modules/Localization;
 			sourceTree = "<group>";
 		};
 		A59626D91C52743E0076147C /* Modules */ = {
@@ -373,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */,
+				A57FF6FD1C60EBCE00FDA2AF /* Localization */,
 				A5ECBD901C5BA5FD003350E3 /* Core */,
 				A5ECBD891C5BA5B2003350E3 /* URLMetrics */,
 				A5ECBD6A1C5BA52F003350E3 /* Info.plist */,
@@ -457,10 +504,10 @@
 		A5F4E6691C50E0FD0099010C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5F4E6681C50E0FD0099010C /* MozQuito.app */,
-				A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */,
-				A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */,
-				A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */,
+				A5F4E6681C50E0FD0099010C /* PocketSEO.app */,
+				A5F4E67C1C50E0FD0099010C /* PocketSEOTests.xctest */,
+				A5ECBD661C5BA52F003350E3 /* PocketSEOEntities.framework */,
+				A5ECBD791C5BA53F003350E3 /* PocketSEOViews.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -516,9 +563,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */ = {
+		A5ECBD651C5BA52F003350E3 /* PocketSEOEntities */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5ECBD6F1C5BA52F003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoEntities" */;
+			buildConfigurationList = A5ECBD6F1C5BA52F003350E3 /* Build configuration list for PBXNativeTarget "PocketSEOEntities" */;
 			buildPhases = (
 				2F14B06EE5986ADBCECAB819 /* Check Pods Manifest.lock */,
 				A5ECBD611C5BA52F003350E3 /* Sources */,
@@ -531,14 +578,14 @@
 			);
 			dependencies = (
 			);
-			name = MozQuitoEntities;
+			name = PocketSEOEntities;
 			productName = MozQuitoEntities;
-			productReference = A5ECBD661C5BA52F003350E3 /* MozQuitoEntities.framework */;
+			productReference = A5ECBD661C5BA52F003350E3 /* PocketSEOEntities.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A5ECBD781C5BA53F003350E3 /* MozQuitoViews */ = {
+		A5ECBD781C5BA53F003350E3 /* PocketSEOViews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5ECBD821C5BA540003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoViews" */;
+			buildConfigurationList = A5ECBD821C5BA540003350E3 /* Build configuration list for PBXNativeTarget "PocketSEOViews" */;
 			buildPhases = (
 				296A1CF5D3508D0AEDB3A4BC /* Check Pods Manifest.lock */,
 				A5ECBD741C5BA53F003350E3 /* Sources */,
@@ -552,14 +599,14 @@
 			dependencies = (
 				A5ECBD871C5BA54E003350E3 /* PBXTargetDependency */,
 			);
-			name = MozQuitoViews;
+			name = PocketSEOViews;
 			productName = MozQuitoViews;
-			productReference = A5ECBD791C5BA53F003350E3 /* MozQuitoViews.framework */;
+			productReference = A5ECBD791C5BA53F003350E3 /* PocketSEOViews.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A5F4E6671C50E0FD0099010C /* MozQuito */ = {
+		A5F4E6671C50E0FD0099010C /* PocketSEO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */;
+			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */;
 			buildPhases = (
 				F22743495F1EF2404723081F /* Check Pods Manifest.lock */,
 				A5F4E6641C50E0FD0099010C /* Sources */,
@@ -576,14 +623,14 @@
 				A5ECBD6C1C5BA52F003350E3 /* PBXTargetDependency */,
 				A5ECBD7F1C5BA53F003350E3 /* PBXTargetDependency */,
 			);
-			name = MozQuito;
+			name = PocketSEO;
 			productName = MozQuito;
-			productReference = A5F4E6681C50E0FD0099010C /* MozQuito.app */;
+			productReference = A5F4E6681C50E0FD0099010C /* PocketSEO.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5F4E67B1C50E0FD0099010C /* MozQuitoTests */ = {
+		A5F4E67B1C50E0FD0099010C /* PocketSEOTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */;
+			buildConfigurationList = A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEOTests" */;
 			buildPhases = (
 				5092EEEE4558A00655037D59 /* Check Pods Manifest.lock */,
 				A5F4E6781C50E0FD0099010C /* Sources */,
@@ -597,9 +644,9 @@
 			dependencies = (
 				A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */,
 			);
-			name = MozQuitoTests;
+			name = PocketSEOTests;
 			productName = MozQuitoTests;
-			productReference = A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */;
+			productReference = A5F4E67C1C50E0FD0099010C /* PocketSEOTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -643,10 +690,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5F4E6671C50E0FD0099010C /* MozQuito */,
-				A5ECBD781C5BA53F003350E3 /* MozQuitoViews */,
-				A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */,
-				A5F4E67B1C50E0FD0099010C /* MozQuitoTests */,
+				A5F4E6671C50E0FD0099010C /* PocketSEO */,
+				A5ECBD781C5BA53F003350E3 /* PocketSEOViews */,
+				A5ECBD651C5BA52F003350E3 /* PocketSEOEntities */,
+				A5F4E67B1C50E0FD0099010C /* PocketSEOTests */,
 			);
 		};
 /* End PBXProject section */
@@ -732,7 +779,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3E40EE3A96AF6E69EC0438B0 /* Copy Pods Resources */ = {
@@ -747,7 +794,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5092EEEE4558A00655037D59 /* Check Pods Manifest.lock */ = {
@@ -777,7 +824,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B72DDFCB8E765B5F9D986C9 /* Copy Pods Resources */ = {
@@ -792,7 +839,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A505BA411C563E4A004F2607 /* ShellScript */ = {
@@ -820,7 +867,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */ = {
@@ -835,7 +882,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F22743495F1EF2404723081F /* Check Pods Manifest.lock */ = {
@@ -861,6 +908,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5ECBD941C5BA5FD003350E3 /* MZNetworking.swift in Sources */,
+				A57FF7001C60EBCE00FDA2AF /* MZLocalization.swift in Sources */,
+				A57FF7011C60EBCE00FDA2AF /* MZLocalizedString.swift in Sources */,
 				A5ECBD8F1C5BA5B2003350E3 /* MZPageMetaData.swift in Sources */,
 				A5ECBD931C5BA5FD003350E3 /* MZErrors.swift in Sources */,
 				A5ECBD8E1C5BA5B2003350E3 /* MZMetric.swift in Sources */,
@@ -927,22 +976,22 @@
 /* Begin PBXTargetDependency section */
 		A5ECBD6C1C5BA52F003350E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */;
+			target = A5ECBD651C5BA52F003350E3 /* PocketSEOEntities */;
 			targetProxy = A5ECBD6B1C5BA52F003350E3 /* PBXContainerItemProxy */;
 		};
 		A5ECBD7F1C5BA53F003350E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5ECBD781C5BA53F003350E3 /* MozQuitoViews */;
+			target = A5ECBD781C5BA53F003350E3 /* PocketSEOViews */;
 			targetProxy = A5ECBD7E1C5BA53F003350E3 /* PBXContainerItemProxy */;
 		};
 		A5ECBD871C5BA54E003350E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5ECBD651C5BA52F003350E3 /* MozQuitoEntities */;
+			target = A5ECBD651C5BA52F003350E3 /* PocketSEOEntities */;
 			targetProxy = A5ECBD861C5BA54E003350E3 /* PBXContainerItemProxy */;
 		};
 		A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5F4E6671C50E0FD0099010C /* MozQuito */;
+			target = A5F4E6671C50E0FD0099010C /* PocketSEO */;
 			targetProxy = A5F4E67D1C50E0FD0099010C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -977,7 +1026,7 @@
 /* Begin XCBuildConfiguration section */
 		A5ECBD701C5BA52F003350E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */;
+			baseConfigurationReference = F419192D39A6C764EFA433A5 /* Pods-PocketSEOEntities.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				CURRENT_PROJECT_VERSION = 1;
@@ -989,7 +1038,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoEntities;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.PocketSEOEntities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -999,7 +1048,7 @@
 		};
 		A5ECBD711C5BA52F003350E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */;
+			baseConfigurationReference = 21F9FF84ADEB688B6B2667AA /* Pods-PocketSEOEntities.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1011,7 +1060,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoEntities;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.PocketSEOEntities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1021,7 +1070,7 @@
 		};
 		A5ECBD721C5BA52F003350E3 /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */;
+			baseConfigurationReference = 0A2CCA56A991C2B778B97D61 /* Pods-PocketSEOEntities.beta testing.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1033,7 +1082,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoEntities;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.PocketSEOEntities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1043,7 +1092,7 @@
 		};
 		A5ECBD831C5BA540003350E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */;
+			baseConfigurationReference = 7FFCE0BCF1BD42804115749C /* Pods-PocketSEOViews.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1055,7 +1104,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoViews;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.PocketSEOViews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1065,7 +1114,7 @@
 		};
 		A5ECBD841C5BA540003350E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */;
+			baseConfigurationReference = 4E07B89C07D73E9A63C165A1 /* Pods-PocketSEOViews.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1077,7 +1126,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoViews;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.PocketSEOViews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1087,7 +1136,7 @@
 		};
 		A5ECBD851C5BA540003350E3 /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */;
+			baseConfigurationReference = 50E56C9EEA7577A406F74FD8 /* Pods-PocketSEOViews.beta testing.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1099,7 +1148,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoViews;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.PocketSEOViews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1192,7 +1241,7 @@
 		};
 		A5F4E6861C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */;
+			baseConfigurationReference = E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1205,7 +1254,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
@@ -1215,7 +1264,7 @@
 		};
 		A5F4E6871C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */;
+			baseConfigurationReference = 5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1227,7 +1276,7 @@
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
@@ -1235,7 +1284,7 @@
 		};
 		A5F4E6891C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */;
+			baseConfigurationReference = 01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MozQuitoTests/Info.plist;
@@ -1249,7 +1298,7 @@
 		};
 		A5F4E68A1C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */;
+			baseConfigurationReference = 4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MozQuitoTests/Info.plist;
@@ -1301,7 +1350,7 @@
 		};
 		A5F4E6A51C5112450099010C /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */;
+			baseConfigurationReference = 0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1314,7 +1363,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA_TESTING\"";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8e580fd0-d92b-4712-ac77-2a0f3b3c9428";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
@@ -1323,7 +1372,7 @@
 		};
 		A5F4E6A61C5112450099010C /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */;
+			baseConfigurationReference = 7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MozQuitoTests/Info.plist;
@@ -1338,7 +1387,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5ECBD6F1C5BA52F003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoEntities" */ = {
+		A5ECBD6F1C5BA52F003350E3 /* Build configuration list for PBXNativeTarget "PocketSEOEntities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5ECBD701C5BA52F003350E3 /* Debug */,
@@ -1348,7 +1397,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Beta Testing";
 		};
-		A5ECBD821C5BA540003350E3 /* Build configuration list for PBXNativeTarget "MozQuitoViews" */ = {
+		A5ECBD821C5BA540003350E3 /* Build configuration list for PBXNativeTarget "PocketSEOViews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5ECBD831C5BA540003350E3 /* Debug */,
@@ -1368,7 +1417,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Beta Testing";
 		};
-		A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */ = {
+		A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5F4E6861C50E0FD0099010C /* Debug */,
@@ -1378,7 +1427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Beta Testing";
 		};
-		A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */ = {
+		A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEOTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5F4E6891C50E0FD0099010C /* Debug */,

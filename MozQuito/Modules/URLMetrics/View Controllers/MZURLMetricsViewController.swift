@@ -8,8 +8,8 @@
 
 import UIKit
 import TheDistanceCore
-import MozQuitoViews
-import MozQuitoEntities
+import PocketSEOViews
+import PocketSEOEntities
 
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
@@ -27,7 +27,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.urlString = "https://thedistance.co.uk"
     }
 
@@ -42,6 +42,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     // MARK: Meta Data
     
     func showPageMetaData(data: MZPageMetaData) {
+        
         metricsView.pageMetaData = data
     }
     

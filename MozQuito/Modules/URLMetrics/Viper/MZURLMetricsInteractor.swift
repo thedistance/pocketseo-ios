@@ -9,7 +9,7 @@
 import Foundation
 import PSOperations
 
-import MozQuitoEntities
+import PocketSEOEntities
 
 class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
     

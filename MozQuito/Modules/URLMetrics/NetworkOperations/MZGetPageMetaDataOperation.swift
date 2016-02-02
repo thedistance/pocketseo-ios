@@ -8,7 +8,7 @@
 
 import UIKit
 
-import MozQuitoEntities
+import PocketSEOEntities
 
 import Alamofire
 import PSOperations

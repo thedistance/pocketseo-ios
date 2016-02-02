@@ -8,7 +8,7 @@
 
 import Foundation
 import StackView
-import MozQuitoEntities
+import PocketSEOEntities
 
 public class MZPageMetaDataStack: CreatedStack {
     

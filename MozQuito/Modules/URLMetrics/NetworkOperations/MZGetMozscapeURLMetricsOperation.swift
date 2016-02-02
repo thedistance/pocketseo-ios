@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftyJSON
-import MozQuitoEntities
+import PocketSEOEntities
 
 class MZGetMozscapeURLMetricsOperation: MZAuthenticatedOperation {
     

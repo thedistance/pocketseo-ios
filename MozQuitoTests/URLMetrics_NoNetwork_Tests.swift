@@ -7,8 +7,8 @@
 //
 
 import XCTest
-@testable import MozQuitoEntities
-@testable import MozQuito
+@testable import PocketSEOEntities
+@testable import PocketSEO
 
 extension MZAlexaData {
     

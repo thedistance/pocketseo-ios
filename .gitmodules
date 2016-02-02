@@ -15,3 +15,6 @@
 [submodule "Libraries/TheDistanceCore"]
 	path = Libraries/TheDistanceCore
 	url = git@bitbucket.org:thedistance/thedistancecore.git
+[submodule "Libraries/JCPageViewController"]
+	path = Libraries/JCPageViewController
+	url = git@bitbucket.org:joshcampion89/jcpageviewcontroller.git

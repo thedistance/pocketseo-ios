@@ -9,7 +9,7 @@
 import Foundation
 import StackView
 import TheDistanceCore
-import MozQuitoEntities
+import PocketSEOEntities
 
 public class MZURLMetricsStack:CreatedStack {
     

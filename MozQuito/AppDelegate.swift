@@ -11,6 +11,8 @@ import UIKit
 import Fabric
 import ViperKit
 
+import PocketSEOEntities
+
 let isTesting:Bool = {
     return NSProcessInfo.processInfo().environment["TESTING"] != nil
 }()
@@ -21,7 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        MZLocalization.dumpStringsFunction("MZLocalizedString", typed: "MZLocalizationKey", classed: "MZLocalization", filePath: "/Users/joshcampion/Documents/Client Repositories/MozQuito/MozQuitoEntities/Modules/Localization/MZLocalizedString.swift")
+        
+        
         // Override point for customization after application launch.
+        
+        
         
         let dependencies = MZAppDependencies.sharedInstance()
         

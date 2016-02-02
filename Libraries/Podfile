@@ -13,7 +13,7 @@ use_frameworks!
 workspace '../MozQuito'
 xcodeproj '../MozQuito'
 
-target 'MozQuito' do
+target 'PocketSEO' do
 
 xcodeproj '../MozQuito'
 
@@ -39,6 +39,13 @@ pod 'hpple'
 
 ### UI PODS ###
 
+pod 'JCPageViewController', :path => 'JCPageViewController'
+
+pod 'ThemeKit', :path => 'ThemeKit/_Archive/Debug'
+
+#pod 'ThemeKit', :path => 'ThemeKit/_Archive/Release'
+
+
 ### Josh's Development Pods ###
 
 pod 'SwiftInPractice', :path => 'SwiftInPractice'
@@ -46,7 +53,7 @@ pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
 
 end
 
-target 'MozQuitoEntities' do
+target 'PocketSEOEntities' do
   
   pod 'Alamofire'
   pod 'SwiftyJSON'
@@ -54,14 +61,14 @@ target 'MozQuitoEntities' do
   
 end
 
-target 'MozQuitoViews' do
+target 'PocketSEOViews' do
     
     pod 'M13ProgressSuite'
     pod 'StackView', :path => 'StackView'
     
 end
 
-target 'MozQuitoTests' do
+target 'PocketSEOTests' do
 
 xcodeproj '../MozQuito'
 

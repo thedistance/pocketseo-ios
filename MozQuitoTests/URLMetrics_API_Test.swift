@@ -7,8 +7,8 @@
 //
 
 import XCTest
-@testable import MozQuitoEntities
-@testable import MozQuito
+@testable import PocketSEOEntities
+@testable import PocketSEO
 
 class URLMetrics_API_Test: AdvancedOperationTestCase, ViperTesting {
 

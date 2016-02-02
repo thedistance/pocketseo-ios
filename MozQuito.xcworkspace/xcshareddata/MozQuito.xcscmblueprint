@@ -4,21 +4,23 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "E2035A6DF4203F67B47399AA3AC7BFDD102EBD79" : 0,
+    "5B5B76590D2E278C02A7AEC720BE6A622F7661A5" : 0,
+    "0A416A89222000977E3236F80C477D618054091C" : 0,
     "2B5C8C4FE519356928A8451B901B37371565B49D" : 0,
+    "E2035A6DF4203F67B47399AA3AC7BFDD102EBD79" : 0,
     "88B77B9FB810D126A3C04FBF9F5E647DB6A05416" : 0,
     "873F8EB6D3AFFA25C2D49E87C11E621A53CC75ED" : 0,
-    "5B5B76590D2E278C02A7AEC720BE6A622F7661A5" : 0,
-    "0A416A89222000977E3236F80C477D618054091C" : 0
+    "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C18529D0-1344-4D27-9DC7-37C09CB7BFB6",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "E2035A6DF4203F67B47399AA3AC7BFDD102EBD79" : "MozQuito\/Libraries\/AdvancedOperationKit\/",
+    "5B5B76590D2E278C02A7AEC720BE6A622F7661A5" : "MozQuito\/",
+    "0A416A89222000977E3236F80C477D618054091C" : "MozQuito\/Libraries\/TheDistanceCore\/",
     "2B5C8C4FE519356928A8451B901B37371565B49D" : "MozQuito\/Libraries\/StackView\/",
+    "E2035A6DF4203F67B47399AA3AC7BFDD102EBD79" : "MozQuito\/Libraries\/AdvancedOperationKit\/",
     "88B77B9FB810D126A3C04FBF9F5E647DB6A05416" : "MozQuito\/Libraries\/ViperKit\/",
     "873F8EB6D3AFFA25C2D49E87C11E621A53CC75ED" : "MozQuito\/Libraries\/SwiftInPractice\/",
-    "5B5B76590D2E278C02A7AEC720BE6A622F7661A5" : "MozQuito\/",
-    "0A416A89222000977E3236F80C477D618054091C" : "MozQuito\/Libraries\/TheDistanceCore\/"
+    "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1" : "MozQuito\/Libraries\/JCPageViewController\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "MozQuito",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -48,6 +50,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/viperkit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "88B77B9FB810D126A3C04FBF9F5E647DB6A05416"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:joshcampion89\/jcpageviewcontroller.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:joshcampion89\/advancedoperationkit.git",

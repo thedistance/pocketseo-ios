@@ -47,7 +47,8 @@ class MZMetaDataStack: CreatedStack {
         valueLabel.numberOfLines = 0
         
         // compression / resistance
-        characterCountLabel.setContentHuggingPriority(255, forAxis: .Horizontal)
+        titleLabel.setContentHuggingPriority(249, forAxis: .Horizontal)
+        characterCountLabel.setContentHuggingPriority(500, forAxis: .Horizontal)
         characterCountLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         
         valueLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MozQuito
+@testable import PocketSEO
 
 class MozQuitoTests: XCTestCase {
     

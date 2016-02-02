@@ -8,7 +8,7 @@
 
 import Foundation
 import ViperKit
-import MozQuitoEntities
+import PocketSEOEntities
 
 /// Protocol defining the methods required on an object to provide network results to a `URLMetricsPresenter`.
 protocol URLMetricsInteractor: VIPERInteractor {

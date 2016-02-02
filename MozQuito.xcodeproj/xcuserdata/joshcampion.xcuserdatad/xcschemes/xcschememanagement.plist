@@ -4,20 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MozQuito.xcscheme_^#shared#^_</key>
+		<key>PocketSEO.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>MozQuitoEntities.xcscheme_^#shared#^_</key>
+		<key>PocketSEOEntities.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>2</integer>
 		</dict>
-		<key>MozQuitoViews.xcscheme_^#shared#^_</key>
+		<key>PocketSEOViews.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
