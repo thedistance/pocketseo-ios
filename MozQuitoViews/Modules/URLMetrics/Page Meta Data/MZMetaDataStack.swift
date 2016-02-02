@@ -24,6 +24,9 @@ class MZMetaDataStack: CreatedStack {
             } else {
                 characterCountLabel.text = nil
             }
+            
+            characterCountLabel.sizeToFit()
+            characterCountLabel.preferredMaxLayoutWidth = characterCountLabel.frame.size.width
         }
     }
     
@@ -48,13 +51,16 @@ class MZMetaDataStack: CreatedStack {
         
         // compression / resistance
         titleLabel.setContentHuggingPriority(249, forAxis: .Horizontal)
+        
+        characterCountLabel.numberOfLines = 1
         characterCountLabel.setContentHuggingPriority(500, forAxis: .Horizontal)
         characterCountLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
-        
+        // characterCountLabel.addConstraints(NSLayoutConstraint.constraintsToSize(characterCountLabel, toWidth: 25, andHeight: nil))
         valueLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         
         headingStack = CreateStackView([titleLabel, characterCountLabel])
         headingStack.axis = .Horizontal
+        headingStack.stackDistribution = .EqualSpacing
         //headingStack.spacing = 8.0
         
         super.init(arrangedSubviews: [headingStack.view, valueLabel])

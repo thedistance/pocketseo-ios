@@ -58,6 +58,7 @@ target 'PocketSEOEntities' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'TheDistanceCore', :path => 'TheDistanceCore'
+  pod 'SwiftInPractice', :path => 'SwiftInPractice'
   
 end
 
@@ -66,6 +67,9 @@ target 'PocketSEOViews' do
     pod 'M13ProgressSuite'
     pod 'StackView', :path => 'StackView'
     
+    pod 'ThemeKit', :path => 'ThemeKit/_Archive/Debug'
+    
+    #pod 'ThemeKit', :path => 'ThemeKit/_Archive/Release'
 end
 
 target 'PocketSEOTests' do

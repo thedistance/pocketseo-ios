@@ -25,6 +25,12 @@
 		A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */; };
 		A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */; };
 		A599C8BA1C5BD0F3006B7FAC /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
+		A5C572361C61034600E2AACF /* MZMozscapeMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */; };
+		A5C572391C61083C00E2AACF /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
+		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
+		A5C5723D1C610AEF00E2AACF /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
+		A5C5723F1C610BBA00E2AACF /* ThemeTextViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */; };
+		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
 		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
 		A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */; };
@@ -55,7 +61,6 @@
 		A5ECBD941C5BA5FD003350E3 /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */; };
 		A5ECBD9D1C5BA931003350E3 /* MZURLMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */; };
 		A5ECBD9E1C5BA931003350E3 /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
-		A5ECBD9F1C5BA931003350E3 /* MZMozscapeMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */; };
 		A5ECBDA01C5BA931003350E3 /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
 		A5ECBDA11C5BA931003350E3 /* MZPageMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
@@ -117,28 +122,18 @@
 		01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A2CCA56A991C2B778B97D61 /* Pods-PocketSEOEntities.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.beta testing.xcconfig"; sourceTree = "<group>"; };
 		0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.beta testing.xcconfig"; sourceTree = "<group>"; };
-		14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.release.xcconfig"; sourceTree = "<group>"; };
-		1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.debug.xcconfig"; sourceTree = "<group>"; };
 		1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.beta testing.xcconfig"; sourceTree = "<group>"; };
-		1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoTests/Pods-MozQuitoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		21F9FF84ADEB688B6B2667AA /* Pods-PocketSEOEntities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.release.xcconfig"; sourceTree = "<group>"; };
-		347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.beta testing.xcconfig"; sourceTree = "<group>"; };
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.release.xcconfig"; sourceTree = "<group>"; };
 		4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E07B89C07D73E9A63C165A1 /* Pods-PocketSEOViews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.release.xcconfig"; sourceTree = "<group>"; };
 		5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.release.xcconfig"; sourceTree = "<group>"; };
 		50E56C9EEA7577A406F74FD8 /* Pods-PocketSEOViews.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.beta testing.xcconfig"; sourceTree = "<group>"; };
-		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
 		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.release.xcconfig"; sourceTree = "<group>"; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
-		6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.release.xcconfig"; sourceTree = "<group>"; };
 		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
 		7FFCE0BCF1BD42804115749C /* Pods-PocketSEOViews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.debug.xcconfig"; sourceTree = "<group>"; };
-		82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.beta testing.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
 		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
@@ -157,6 +152,12 @@
 		A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsInteractor.swift; path = Modules/URLMetrics/Viper/MZURLMetricsInteractor.swift; sourceTree = "<group>"; };
 		A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsWireframe.swift; path = Modules/URLMetrics/Viper/MZURLMetricsWireframe.swift; sourceTree = "<group>"; };
 		A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetricProgressView.swift; sourceTree = "<group>"; };
+		A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsView.swift; sourceTree = "<group>"; };
+		A5C572381C61083C00E2AACF /* MZTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZTheme.swift; sourceTree = "<group>"; };
+		A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLDetailsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLDetailsViewController.swift"; sourceTree = "<group>"; };
+		A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextFieldStack.swift; sourceTree = "<group>"; };
+		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
+		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
 		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
 		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
 		A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsPresenter.swift; path = Modules/URLMetrics/Viper/MZURLMetricsPresenter.swift; sourceTree = "<group>"; };
@@ -186,7 +187,6 @@
 		A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZNetworking.swift; sourceTree = "<group>"; };
 		A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLMetricsView.swift; sourceTree = "<group>"; };
 		A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetaDataStack.swift; sourceTree = "<group>"; };
-		A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsView.swift; sourceTree = "<group>"; };
 		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
 		A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataView.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* PocketSEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketSEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,10 +199,8 @@
 		A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MozQuitoTests.swift; sourceTree = "<group>"; };
 		A5F4E6821C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F4E6A71C5113D00099010C /* MozQuito-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Info.h"; sourceTree = "<group>"; };
-		B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoViews.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoViews/Pods-MozQuitoViews.beta testing.xcconfig"; sourceTree = "<group>"; };
 		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
-		EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuitoEntities.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuitoEntities/Pods-MozQuitoEntities.debug.xcconfig"; sourceTree = "<group>"; };
 		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F419192D39A6C764EFA433A5 /* Pods-PocketSEOEntities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.debug.xcconfig"; sourceTree = "<group>"; };
 		FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,18 +248,6 @@
 		4AD738720430DE630F07D53C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */,
-				6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */,
-				347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */,
-				1FCDD3837DE771F11761A96F /* Pods-MozQuitoTests.debug.xcconfig */,
-				14F2D386169590A92E3F0628 /* Pods-MozQuitoTests.release.xcconfig */,
-				1DA1FD0FDFB66E475999B7CB /* Pods-MozQuitoTests.beta testing.xcconfig */,
-				EE822A7423160C2A2AA18122 /* Pods-MozQuitoEntities.debug.xcconfig */,
-				5EDEB06A9D5D41CB12EF3FCA /* Pods-MozQuitoEntities.release.xcconfig */,
-				82EF9214D49E615F5ED9C486 /* Pods-MozQuitoEntities.beta testing.xcconfig */,
-				1569A6A66CD296E2B894BCFF /* Pods-MozQuitoViews.debug.xcconfig */,
-				6DF2FE840EC2E828BE9C1950 /* Pods-MozQuitoViews.release.xcconfig */,
-				B1133106A48D6EC840BD23B2 /* Pods-MozQuitoViews.beta testing.xcconfig */,
 				E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */,
 				5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */,
 				0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */,
@@ -371,9 +357,21 @@
 			children = (
 				A505BA461C567035004F2607 /* Network Operations */,
 				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
+				A5C572401C61131800E2AACF /* MZRootWireframe.swift */,
 				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		A5C572371C61083C00E2AACF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A5C572381C61083C00E2AACF /* MZTheme.swift */,
+				A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */,
+				A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */,
+			);
+			name = Theme;
+			path = Modules/Theme;
 			sourceTree = "<group>";
 		};
 		A5EA9A8C1C5681B6004CC9EF /* Viper */ = {
@@ -411,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */,
+				A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -431,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */,
+				A5C572371C61083C00E2AACF /* Theme */,
 				A5ECBD951C5BA931003350E3 /* URLMetrics */,
 				A5ECBD7D1C5BA53F003350E3 /* Info.plist */,
 			);
@@ -473,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */,
+				A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */,
 			);
 			path = "Mozscape Data";
 			sourceTree = "<group>";
@@ -481,7 +482,6 @@
 			isa = PBXGroup;
 			children = (
 				A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */,
-				A5ECBD9A1C5BA931003350E3 /* MZMozscapeMetricsView.swift */,
 				A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */,
 				A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */,
 			);
@@ -921,12 +921,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5ECBD9F1C5BA931003350E3 /* MZMozscapeMetricsView.swift in Sources */,
+				A5C572391C61083C00E2AACF /* MZTheme.swift in Sources */,
 				A5ECBDA11C5BA931003350E3 /* MZPageMetaDataView.swift in Sources */,
 				A5ECBD9E1C5BA931003350E3 /* MZMetaDataStack.swift in Sources */,
 				A5ECBD9D1C5BA931003350E3 /* MZURLMetricsView.swift in Sources */,
 				A599C8BA1C5BD0F3006B7FAC /* MZMetricProgressView.swift in Sources */,
 				A5ECBDA01C5BA931003350E3 /* MZPageMetaDataStack.swift in Sources */,
+				A5C572361C61034600E2AACF /* MZMozscapeMetricsView.swift in Sources */,
+				A5C5723F1C610BBA00E2AACF /* ThemeTextViewStack.swift in Sources */,
+				A5C5723D1C610AEF00E2AACF /* ThemeTextFieldStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,6 +940,7 @@
 				A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */,
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
 				A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */,
+				A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */,
 				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
 				A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */,
 				A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */,
@@ -952,6 +956,7 @@
 				A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
+				A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */,
 				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
 				A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */,
 			);

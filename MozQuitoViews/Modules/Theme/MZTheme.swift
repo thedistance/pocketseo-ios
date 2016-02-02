@@ -15,7 +15,7 @@ import ThemeKit
 public extension IBThemeable {
     
     public func ibTheme() -> Theme? {
-        return CCTheme()
+        return MZTheme()
     }
 }
 
@@ -61,9 +61,9 @@ public class ThemeTabBar: TKTabBar, IBThemeable { }
 @IBDesignable
 public class ThemeTabBarItem: TKTabBarItem, IBThemeable { }
 
-public class CCThemeVendor: TKThemeVendor {
+public class MZThemeVendor: TKThemeVendor {
     
-    private var _defaultTheme:Theme? = CCTheme()
+    private var _defaultTheme:Theme? = MZTheme()
     
     public override var defaultTheme:Theme? {
         get {
@@ -81,12 +81,12 @@ extension TKThemeVendor {
         super.initialize()
         
         if self == TKThemeVendor.self {
-            assert(CCThemeVendor.shared().defaultTheme != nil)
+            assert(MZThemeVendor.shared().defaultTheme != nil)
         }
     }
 }
 
-public struct CCTheme: Theme {
+public struct MZTheme: Theme {
     
     public init() {}
     
@@ -113,8 +113,9 @@ public struct CCTheme: Theme {
 
 let MaterialColours:[ColourStyle:UIColor] = [
 //    .Accent: UIColor.redColor(),
-    .Main: UIColor(red: 219.0 / 255.0, green: 0, blue: 19.0 / 255.0, alpha: 1.0),
-    .MainDark: UIColor(red: 181.0 / 255.0, green: 0, blue: 20.0 / 255.0, alpha: 1.0),
+    .Main: UIColor(red: 3.0 / 255.0, green: 169.0/255.0, blue: 244.0 / 255.0, alpha: 1.0),
+    .MainDark: UIColor(red: 1.0 / 255.0, green: 87.0 / 255.0, blue: 155.0 / 255.0, alpha: 1.0),
+    .Accent: UIColor(red: 1, green: 0.596, blue: 0, alpha: 1.0),
     .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
     .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
     .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),

@@ -46,7 +46,6 @@ public class MZURLMetricsView: UIView {
     
     func configureHierarchy() {
         
-        metricsStack.stackView.backgroundColor = UIColor.redColor()
         metricsStack.stackView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(metricsStack.stackView)

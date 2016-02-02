@@ -15,6 +15,8 @@ public enum MZLocalizationKey: String {
     
     case URLDataSearchHint
     
+    case URLMetricsTitle
+    
     // -- Page Meta Data
     
     case URLPageMetaDataPageTitle
@@ -43,38 +45,39 @@ public enum MZLocalizationKey: String {
     // -- Alexa Data
     
     static var allValues:[MZLocalizationKey] = [
-    
-    // -- URL Info
-    .URLDataSearchHint,
-    
-    // -- Page Meta Data
-    
-    .URLPageMetaDataPageTitle,
-    .URLPageMetaDataCanonicalURL,
-    .URLPageMetaDataMetaDescription,
-    .URLPageMetaDataH1Tags,
-    .URLPageMetaDataH2Tags,
-    .URLPageMetaDataUsingSSL,
-    
-    // -- Mozscape Data
-    
-    .URLMozscapeAuthorityTitle,
-    .URLMozscapeAuthorityPage,
-    .URLMozscapeAuthorityDomain,
-    .URLMozscapeAuthoritySpamScore,
-    .URLMozscapeAuthorityInfo,
-    
-    .URLMozscapeLinksTitle,
-    .URLMozscapeLinksRootDomain,
-    .URLMozscapeLinksTotalLinks,
-    .URLMozscapeLinksInfo,
-    
-    .URLMozscapeLastIndexedTitle,
-    .URLMozscapeNextIndexedTitle
-    
-    // -- Alexa Data
-
-    
+        
+        // -- URL Info
+        .URLDataSearchHint,
+        .URLMetricsTitle,
+        
+        // -- Page Meta Data
+        
+        .URLPageMetaDataPageTitle,
+        .URLPageMetaDataCanonicalURL,
+        .URLPageMetaDataMetaDescription,
+        .URLPageMetaDataH1Tags,
+        .URLPageMetaDataH2Tags,
+        .URLPageMetaDataUsingSSL,
+        
+        // -- Mozscape Data
+        
+        .URLMozscapeAuthorityTitle,
+        .URLMozscapeAuthorityPage,
+        .URLMozscapeAuthorityDomain,
+        .URLMozscapeAuthoritySpamScore,
+        .URLMozscapeAuthorityInfo,
+        
+        .URLMozscapeLinksTitle,
+        .URLMozscapeLinksRootDomain,
+        .URLMozscapeLinksTotalLinks,
+        .URLMozscapeLinksInfo,
+        
+        .URLMozscapeLastIndexedTitle,
+        .URLMozscapeNextIndexedTitle
+        
+        // -- Alexa Data
+        
+        
     ]
 }
 
@@ -92,6 +95,8 @@ public struct MZLocalization: LocalizationHandler {
         switch (key) {
         case .URLDataSearchHint:
             return ("Get Metrics for...", "The text field hint on the URL Data page.")
+        case .URLMetricsTitle:
+            return ("URL Metrics", "The tab title for the URL Metrics tab.")
         case .URLPageMetaDataPageTitle:
             return ("Page Title", "The title on the meta data panel for the page title")
         case .URLPageMetaDataCanonicalURL:
@@ -118,13 +123,13 @@ public struct MZLocalization: LocalizationHandler {
             return ("Established Links", "The title for the Links section of the mozscape panel")
         case .URLMozscapeLinksRootDomain:
             return ("Root Domains", "The subtitle for the number of Root Domains in the links section of the mozscape panel")
-        case .URLMozscapeLinksTotalLinks: 
+        case .URLMozscapeLinksTotalLinks:
             return ("Total Links", "The subtitle for the total number of links in the links section of the mozscape panel")
-        case .URLMozscapeLinksInfo: 
+        case .URLMozscapeLinksInfo:
             return ("<#value#>", "The help info shown for the links section of the mozscape panel")
-        case .URLMozscapeLastIndexedTitle: 
+        case .URLMozscapeLastIndexedTitle:
             return ("Last Indexed", "The subtitle of the last index date on the mozscape panel")
-        case .URLMozscapeNextIndexedTitle: 
+        case .URLMozscapeNextIndexedTitle:
             return ("Next Indexing", "The subtitle of the next index date on the mozscape panel")
         }
     }

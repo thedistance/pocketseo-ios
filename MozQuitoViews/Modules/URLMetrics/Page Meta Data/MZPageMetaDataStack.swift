@@ -28,7 +28,7 @@ public class MZPageMetaDataStack: CreatedStack {
     let descriptionStack = MZMetaDataStack(title: "META DESCRIPTION")
     let h1Stack = MZMetaDataStack(title: "H1")
     let h2Stack = MZMetaDataStack(title: "H2")
-    let usingSSLStack:StackView
+    private(set) var usingSSLStack:StackView
     
     private(set) var expandingTitleStack:StackView
     
@@ -108,6 +108,7 @@ public class MZPageMetaDataStack: CreatedStack {
         
         footerStack.axis = .Horizontal
         footerStack.spacing = 8.0
+        footerStack.stackDistribution = .EqualSpacing
         
         detailsStack.axis = .Vertical
         detailsStack.spacing = 16.0
@@ -121,6 +122,7 @@ public class MZPageMetaDataStack: CreatedStack {
         usingSSLTitleLabel.numberOfLines = 0
         
         usingSSLTitleLabel.text = "Using SSL"
+        usingSSLStack.stackDistribution = .EqualSpacing
         
         canonicalURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         refreshDateLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)

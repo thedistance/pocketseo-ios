@@ -9,6 +9,8 @@
 import Foundation
 import ViperKit
 import TheDistanceCore
+import ThemeKit
+import PocketSEOViews
 
 enum RequestKeys:String, RequestCacheKey {
     case MozscapeIndexedDates
@@ -23,6 +25,8 @@ enum RequestKeys:String, RequestCacheKey {
 class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor, RequestCache {
     
     typealias RequestCacheKeyType = RequestKeys
+    
+    let rootWireframe = MZRootWireframe()
     
     private var _authenticationToken:MZAuthenicationToken?
     
@@ -60,10 +64,17 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
             return
         }
         
-        if let vc = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC) as? MZURLMetricsViewController {
-            vc.presenter = MZURLMetricsPresenter.configuredPresenterForView(vc)
-            window.rootViewController = vc
-        }
+        let statusView = ThemeView()
+        statusView.backgroundColourStyle = .MainDark
+        
+        let statusFrame = CGRectMake(0, 0, window.frame.size.width, 20.0)
+        statusView.frame = statusFrame
+        statusView.autoresizingMask = .FlexibleWidth
+        statusView.layer.zPosition = 10.0
+
+        window.addSubview(statusView)
+        
+        window.rootViewController = rootWireframe.createRootViewController()
     }
     
 }
