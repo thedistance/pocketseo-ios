@@ -18,7 +18,7 @@ return NSLocalizedString("URLPageMetaDataUsingSSL", value:"Using SSL", comment:"
 case .URLMozscapeLinksTotalLinks:
 return NSLocalizedString("URLMozscapeLinksTotalLinks", value:"Total Links", comment:"The subtitle for the total number of links in the links section of the mozscape panel")
 case .URLDataSearchHint:
-return NSLocalizedString("URLDataSearchHint", value:"Get Metrics for...", comment:"The text field hint on the URL Data page.")
+return NSLocalizedString("URLDataSearchHint", value:"Search For Metrics", comment:"The text field hint on the URL Data page.")
 case .URLMozscapeAuthoritySpamScore:
 return NSLocalizedString("URLMozscapeAuthoritySpamScore", value:"Spam Score", comment:"The subtitle for the mozscape spam score")
 case .URLPageMetaDataCanonicalURL:
@@ -27,6 +27,8 @@ case .URLMozscapeLinksTitle:
 return NSLocalizedString("URLMozscapeLinksTitle", value:"Established Links", comment:"The title for the Links section of the mozscape panel")
 case .URLMozscapeLinksInfo:
 return NSLocalizedString("URLMozscapeLinksInfo", value:"<#value#>", comment:"The help info shown for the links section of the mozscape panel")
+case .URLLinksTitle:
+return NSLocalizedString("URLLinksTitle", value:"Links", comment:"The tab title for the links tab on the URL details screen.")
 case .URLPageMetaDataPageTitle:
 return NSLocalizedString("URLPageMetaDataPageTitle", value:"Page Title", comment:"The title on the meta data panel for the page title")
 case .URLPageMetaDataMetaDescription:

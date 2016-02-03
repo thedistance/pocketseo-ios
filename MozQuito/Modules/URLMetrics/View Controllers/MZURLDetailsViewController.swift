@@ -11,44 +11,61 @@ import StackView
 import PocketSEOViews
 import ThemeKit
 import JCPageViewController
+import TheDistanceCore
 
 class MZURLDetailsViewController: JCPageViewController {
 
-    let safariButton = ThemeButton()
-    let urlTextField = ThemeTextField()
-    let refreshButton = ThemeButton()
-    
+    @IBOutlet weak var urlInputView:MZURLInputView!
     private(set) var urlStack:StackView!
+    
+    var urlString:String? {
+        didSet {
+            metricsVC?.urlString = urlString
+        }
+    }
+    
+    var metricsVC:MZURLMetricsViewController!
+    var linksVC:UIViewController!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // create the selection before `viewDidLoad()` queries it
+        let selection = ThemeView(frame: CGRectMake(0,0,0,4))
+        selection.backgroundColourStyle = .Accent
+        self.selectionIndicator = selection
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let selection = ThemeView(frame: CGRectMake(0,0,0,4))
-        selection.backgroundColourStyle = .Accent
         
-        self.selectionIndicator = selection
+        // configure the JCPageViewController settings
+        viewControllers = [metricsVC, linksVC]
         
-        // Do any additional setup after loading the view.
-        configureURLStack()
+        (self.pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
+        
+        // configure this view
+        urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
+        urlInputView.inputStack.safariButton.addTarget(self, action: "safariTapped:", forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
     }
     
-    func configureURLStack() {
+    func safariTapped(sender:UIButton) {
         
+        guard let str = urlString where !str.isEmpty else { return }
         
-        safariButton.setImage(UIImage(named: "launch-safari"), forState: .Normal)
-        safariButton.hidden = true
-        
-        urlTextField.delegate = self
-        urlTextField.keyboardType = .URL
-        urlTextField.returnKeyType = .Send
-        urlTextField.autocapitalizationType = .None
-        urlTextField.autocorrectionType = .No
-        
-        urlStack = CreateStackView([safariButton, urlTextField, refreshButton])
-        urlStack.stackDistribution = .EqualSpacing
-        urlStack.spacing = 8.0
+        if let url = NSURL(string: str) {
+            self.openInSafari(url)
+        }
     }
-
+    
+    func refreshTapped(sender:UIButton) {
+        
+        // reset the property to reload the views where appropriate
+        let str = urlString
+        urlString = str
+    }
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
@@ -56,7 +73,7 @@ class MZURLDetailsViewController: JCPageViewController {
         if let pageControlCell = cell as? JCPageControlCell {
             pageControlCell.backgroundColor = UIColor.clearColor()
             pageControlCell.contentView.backgroundColor = UIColor.clearColor()
-            pageControlCell.titleLabel.textColor = MZThemeVendor.shared().defaultTheme?.colour(.LightText)
+            pageControlCell.titleLabel.textColor = MZThemeVendor.defaultColour(.LightText)
         }
         
         return cell
@@ -64,8 +81,8 @@ class MZURLDetailsViewController: JCPageViewController {
     
     // MARK: - UICollectionViewDelegatePageControlLayout
     
-    func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, titleFontForIndexPath indexPath: NSIndexPath) -> UIFont? {
-        return MZThemeVendor.shared().defaultTheme?.font(.Title)
+    override func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, titleFontForIndexPath indexPath: NSIndexPath) -> UIFont? {
+        return MZThemeVendor.defaultFont(.SubHeadline, sizeCategory: nil)
     }
     
 }
@@ -75,6 +92,8 @@ extension MZURLDetailsViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
+        
+        urlString = textField.text
         
         return true
     }

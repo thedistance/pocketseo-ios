@@ -25,6 +25,7 @@
 		A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */; };
 		A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */; };
 		A599C8BA1C5BD0F3006B7FAC /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
+		A5B45E0F1C62173C005AFA37 /* MZURLInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */; };
 		A5C572361C61034600E2AACF /* MZMozscapeMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */; };
 		A5C572391C61083C00E2AACF /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
 		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
@@ -152,6 +153,7 @@
 		A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsInteractor.swift; path = Modules/URLMetrics/Viper/MZURLMetricsInteractor.swift; sourceTree = "<group>"; };
 		A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsWireframe.swift; path = Modules/URLMetrics/Viper/MZURLMetricsWireframe.swift; sourceTree = "<group>"; };
 		A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetricProgressView.swift; sourceTree = "<group>"; };
+		A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLInputView.swift; sourceTree = "<group>"; };
 		A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsView.swift; sourceTree = "<group>"; };
 		A5C572381C61083C00E2AACF /* MZTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZTheme.swift; sourceTree = "<group>"; };
 		A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLDetailsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLDetailsViewController.swift"; sourceTree = "<group>"; };
@@ -461,8 +463,9 @@
 		A5ECBD951C5BA931003350E3 /* URLMetrics */ = {
 			isa = PBXGroup;
 			children = (
-				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
 				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
+				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
+				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
 				A5ECBD981C5BA931003350E3 /* Page Meta Data */,
 			);
 			name = URLMetrics;
@@ -923,6 +926,7 @@
 			files = (
 				A5C572391C61083C00E2AACF /* MZTheme.swift in Sources */,
 				A5ECBDA11C5BA931003350E3 /* MZPageMetaDataView.swift in Sources */,
+				A5B45E0F1C62173C005AFA37 /* MZURLInputView.swift in Sources */,
 				A5ECBD9E1C5BA931003350E3 /* MZMetaDataStack.swift in Sources */,
 				A5ECBD9D1C5BA931003350E3 /* MZURLMetricsView.swift in Sources */,
 				A599C8BA1C5BD0F3006B7FAC /* MZMetricProgressView.swift in Sources */,

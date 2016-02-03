@@ -17,8 +17,10 @@ enum MZStoryboadID:String {
 
 enum MZViewControllerID:String {
     case TestVC
+    
     case URLDetailsVC
     case URLMetricsVC
+    case URLLinksVC
 }
 
 class MZStoryboardLoader: StoryboardLoader {
@@ -27,7 +29,7 @@ class MZStoryboardLoader: StoryboardLoader {
         switch viewControllerID {
         case .TestVC:
             return .Test
-        case .URLDetailsVC, .URLMetricsVC:
+        case .URLDetailsVC, .URLMetricsVC, .URLLinksVC:
             return .URLDetails
         }
     }

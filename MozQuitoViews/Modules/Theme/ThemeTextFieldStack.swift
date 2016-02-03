@@ -10,9 +10,9 @@ import UIKit
 import StackView
 import ThemeKit
 
-class ThemeTextFieldStack: TextFieldStack {
+public class ThemeTextFieldStack: TextFieldStack {
     
-    init() {
+    public init() {
         super.init(textField: ThemeTextField(),
             placeholderLabel: ThemeLabel(),
             errorLabel: ThemeLabel(),
@@ -32,7 +32,7 @@ class ThemeTextFieldStack: TextFieldStack {
         (underline as? ThemeView)?.backgroundColourStyle = .SecondaryLightText
     }
 
-    override func configureUnderline() {
+    override public func configureUnderline() {
         
         if textField.isFirstResponder() {
             

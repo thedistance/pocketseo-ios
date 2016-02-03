@@ -44,6 +44,10 @@ public enum MZLocalizationKey: String {
     
     // -- Alexa Data
     
+    // -- Links
+    
+    case URLLinksTitle
+    
     static var allValues:[MZLocalizationKey] = [
         
         // -- URL Info
@@ -73,11 +77,13 @@ public enum MZLocalizationKey: String {
         .URLMozscapeLinksInfo,
         
         .URLMozscapeLastIndexedTitle,
-        .URLMozscapeNextIndexedTitle
+        .URLMozscapeNextIndexedTitle,
         
         // -- Alexa Data
         
+        // -- Links
         
+        .URLLinksTitle
     ]
 }
 
@@ -94,7 +100,7 @@ public struct MZLocalization: LocalizationHandler {
     public static func localizationForKey(key:KeyType) -> (value:String, comment:String) {
         switch (key) {
         case .URLDataSearchHint:
-            return ("Get Metrics for...", "The text field hint on the URL Data page.")
+            return ("Search For Metrics", "The text field hint on the URL Data page.")
         case .URLMetricsTitle:
             return ("URL Metrics", "The tab title for the URL Metrics tab.")
         case .URLPageMetaDataPageTitle:
@@ -131,6 +137,8 @@ public struct MZLocalization: LocalizationHandler {
             return ("Last Indexed", "The subtitle of the last index date on the mozscape panel")
         case .URLMozscapeNextIndexedTitle:
             return ("Next Indexing", "The subtitle of the next index date on the mozscape panel")
+        case .URLLinksTitle:
+            return ("Links", "The tab title for the links tab on the URL details screen.")
         }
     }
 }

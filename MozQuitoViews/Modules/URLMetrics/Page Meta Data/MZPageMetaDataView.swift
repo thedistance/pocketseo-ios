@@ -72,10 +72,10 @@ public class MZPageMetaDataView: GMDView {
     
     func expandTapped(sender:UIButton) {
         
-        // UIView.animateWithDuration(0.35, animations: { () -> Void in
+//         UIView.animateWithDuration(0.35, animations: { () -> Void in
             self.metaStack.toggleExpanded()
             self.layoutIfNeeded()
-        // })
+//         })
     }
     
 }

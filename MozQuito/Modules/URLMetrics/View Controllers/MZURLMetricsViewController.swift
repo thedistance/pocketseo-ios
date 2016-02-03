@@ -17,23 +17,30 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     var urlString:String? {
         didSet {
+            
+            pageMetaData = nil
+            metricsView?.metricsStack.pageMetaDataView.metaStack.configureAsExpanded(false)
+            
             if let str = urlString {
                 presenter?.requestMetricsForURLString(str)
             }
         }
     }
     
-    @IBOutlet weak var metricsView:MZURLMetricsView!
+    var pageMetaData:MZPageMetaData? {
+        didSet {
+            metricsView?.pageMetaData = pageMetaData
+        }
+    }
     
+    @IBOutlet weak var metricsView:MZURLMetricsView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.urlString = "https://thedistance.co.uk"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // re-set the properties to assign to the views incase the presenter request finished before viewDidLoad(_:)
+        let meta = pageMetaData
+        pageMetaData = meta
     }
     
 
@@ -42,8 +49,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     // MARK: Meta Data
     
     func showPageMetaData(data: MZPageMetaData) {
-        
-        metricsView.pageMetaData = data
+        pageMetaData = data
     }
     
     func showPageMetaDataErrors(errors: [NSError]) {

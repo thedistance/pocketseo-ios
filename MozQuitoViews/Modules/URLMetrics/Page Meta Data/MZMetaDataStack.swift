@@ -8,6 +8,7 @@
 
 import Foundation
 import StackView
+import PocketSEOEntities
 
 class MZMetaDataStack: CreatedStack {
     
@@ -30,20 +31,25 @@ class MZMetaDataStack: CreatedStack {
         }
     }
     
-    private let titleLabel = UILabel()
-    private let valueLabel = UILabel()
-    private let characterCountLabel = UILabel()
+    let titleLabel = ThemeLabel()
+    let valueLabel = ThemeLabel()
+    let characterCountLabel = ThemeLabel()
     
     let headingStack:StackView
     
-    init(title:String) {
+    init(titleKey:MZLocalizationKey) {
         
-        titleLabel.text = title
+        titleLabel.text = MZLocalizedString(titleKey).uppercaseString
         
         // fonts
-        titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        characterCountLabel.font = titleLabel.font
-        valueLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        titleLabel.textStyle = .Caption
+        titleLabel.textColourStyle = .SecondaryText
+        
+        characterCountLabel.textStyle = .Caption
+        characterCountLabel.textColourStyle = .SecondaryText
+        
+        valueLabel.textStyle = .Body1
+        valueLabel.textColourStyle = .Text
         
         // lines
         titleLabel.numberOfLines = 0

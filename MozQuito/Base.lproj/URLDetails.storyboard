@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iZj-Kv-mgg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iZj-Kv-mgg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -20,12 +20,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ps-V1-z62" customClass="ThemeView" customModule="PocketSEOViews">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="178"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="102" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-BI-hWd">
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-BI-hWd" customClass="MZURLInputView" customModule="PocketSEOViews">
                                         <rect key="frame" x="0.0" y="20" width="600" height="102"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="4Jb-1F-J0U"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4Jb-1F-J0U"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ve-PD-ffy">
                                         <rect key="frame" x="0.0" y="122" width="600" height="56"/>
@@ -81,6 +86,7 @@
                         <outlet property="pageContainer" destination="Dfg-3m-gGI" id="VEu-Sb-Ewb"/>
                         <outlet property="pageControl" destination="2ve-PD-ffy" id="4OL-Dv-LWU"/>
                         <outlet property="pageControlHeightConstraint" destination="1Pl-HO-1Ze" id="a7d-Jv-Rw0"/>
+                        <outlet property="urlInputView" destination="gA0-BI-hWd" id="Xlx-tA-ILn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOu-qG-4kG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,6 +137,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgo-f5-XXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="783" y="404"/>
+        </scene>
+        <!--URL Metrics View Controller-->
+        <scene sceneID="swk-ZZ-cv9">
+            <objects>
+                <viewController storyboardIdentifier="URLLinksVC" id="pUl-D9-qVh" customClass="MZURLMetricsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0rK-9Z-esY"/>
+                        <viewControllerLayoutGuide type="bottom" id="ATk-eF-eiS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bp1-dB-bVu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEOViews">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Headline"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bgn-AL-Oq2" firstAttribute="centerX" secondItem="Bp1-dB-bVu" secondAttribute="centerX" id="7Fn-6P-eB5"/>
+                            <constraint firstItem="bgn-AL-Oq2" firstAttribute="centerY" secondItem="Bp1-dB-bVu" secondAttribute="centerY" id="ut8-Lk-Tl4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2M-sR-TR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="404"/>
         </scene>
     </scenes>
 </document>

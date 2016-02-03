@@ -26,19 +26,18 @@ class MZRootWireframe {
     
     func createRootViewController() -> UIViewController {
         
-        let vc = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLDetailsVC)
+        let detailsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLDetailsVC) as! MZURLDetailsViewController
         
-        let urlMetricsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC)
-        urlMetricsVC.title = MZLocalizedString(.URLMetricsTitle)
+        let urlMetricsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC) as! MZURLMetricsViewController
+        urlMetricsVC.title = MZLocalizedString(.URLMetricsTitle).uppercaseString
+        urlMetricsVC.presenter = MZURLMetricsPresenter.configuredPresenterForView(urlMetricsVC)
         
-        if let metricsVC = urlMetricsVC as? MZURLMetricsViewController {
-            metricsVC.presenter = MZURLMetricsPresenter.configuredPresenterForView(metricsVC)
-        }
+        let linksVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLLinksVC)
+        linksVC.title = MZLocalizedString(.URLLinksTitle).uppercaseString
         
-        if let detailsVC = vc as? MZURLDetailsViewController {
-            detailsVC.viewControllers = [urlMetricsVC]
-        }
-
-        return vc
+        detailsVC.metricsVC = urlMetricsVC
+        detailsVC.linksVC = linksVC
+        
+        return detailsVC
     }
 }
