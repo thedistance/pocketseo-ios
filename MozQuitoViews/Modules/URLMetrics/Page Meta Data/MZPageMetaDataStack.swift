@@ -15,7 +15,7 @@ public class MZPageMetaDataStack: CreatedStack {
     static let dateFormatter:NSDateFormatter = {
         
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
+        formatter.dateStyle = .MediumStyle
         formatter.timeStyle = .MediumStyle
         
         return formatter
