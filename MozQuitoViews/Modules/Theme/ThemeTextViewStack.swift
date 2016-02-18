@@ -8,7 +8,7 @@
 
 import UIKit
 import StackView
-import ThemeKit
+import ThemeKitCore
 
 class ThemeTextViewStack: TextViewStack {
     

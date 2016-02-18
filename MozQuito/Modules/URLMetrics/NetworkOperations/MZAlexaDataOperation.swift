@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import PocketSEOEntities
+//import PocketSEOEntities
 
 class MZGetAlexaDataOperation: FailingOperation {
 

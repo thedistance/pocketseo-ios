@@ -44,11 +44,11 @@ public enum MZMetricKey: String {
             return 68719476736
         case .SpamScore:
             return 67108864
-        case .TimeLastCrawled: 
+        case .TimeLastCrawled:
             return 144115188075855872
-        case .EstablishedLinksRootDomains: 
+        case .EstablishedLinksRootDomains:
             return 512
-        case .EstablishedLinksTotalLinks: 
+        case .EstablishedLinksTotalLinks:
             return 2048
         }
     }
@@ -85,30 +85,36 @@ public struct MZMozscapeMetrics {
                     return nil
                 }
             }))
-
-//            if {
-             let title = keyResults[.Title]?.string
-                let canURL = keyResults[.CanonicalURL]?.URL
-                let http = keyResults[.HTTPStatusCode]?.int
-                let pageAuth = keyResults[.PageAuthority]?.double
-                let domainAuth = keyResults[.DomainAuthority]?.double
-                let spam = keyResults[.SpamScore]?.double
-                let root = keyResults[.EstablishedLinksRootDomains]?.int
-                let total = keyResults[.EstablishedLinksTotalLinks]?.int
-                    
-                    self.title = title
-                    self.canonicalURL = canURL
+            
+            //            if {
+            let title = keyResults[.Title]?.string
+            let canURL = keyResults[.CanonicalURL]?.URL
+            let http = keyResults[.HTTPStatusCode]?.int
+            let pageAuth = keyResults[.PageAuthority]?.double
+            let domainAuth = keyResults[.DomainAuthority]?.double
+ 
+            let root = keyResults[.EstablishedLinksRootDomains]?.int
+            let total = keyResults[.EstablishedLinksTotalLinks]?.int
+            
+            self.title = title
+            self.canonicalURL = canURL
             self.HTTPStatusCode = http
-                    self.pageAuthority = pageAuth
-                    self.domainAuthority = domainAuth
-                    self.spamScore = spam
-                    self.establishedLinksRoot = root
-                    self.establishedLinksTotal = total
-                    
-                    
-//            } else {
-//                throw NSError(InitUnexpectedResponseWithDescription: "unknown url-metrics response. Missing parameters.Got\n\(results)")
-//            }
+            self.pageAuthority = pageAuth
+            self.domainAuthority = domainAuth
+            
+            if let s = keyResults[.SpamScore]?.double where s > 0 {
+                self.spamScore = s - 1.0
+            } else {
+                self.spamScore = nil
+            }
+            
+            self.establishedLinksRoot = root
+            self.establishedLinksTotal = total
+            
+            
+            //            } else {
+            //                throw NSError(InitUnexpectedResponseWithDescription: "unknown url-metrics response. Missing parameters.Got\n\(results)")
+            //            }
             
             
         } else {
@@ -190,63 +196,63 @@ return false
 
 struct MZMetric {
 
-    let key:MZMetricKey
-    let value:MZMetricValueType
+let key:MZMetricKey
+let value:MZMetricValueType
 
-    init(key:MZMetricKey, value:MZMetricValueType) {
-        self.key = key
-        self.value = value
-    }
-    
-    init?(keyString:String, value:JSON) throws {
-        
-        if let key = MZMetricKey(rawValue: keyString) {
-            
-            let metricValue:MZMetricValueType
-            
-            switch (key) {
-            case .Title, .CanonicalURL:
-                
-                if let str = value.string {
-                    metricValue = .StringMetric(str)
-                } else {
-                    throw NSError(InitUnexpectedResponseWithDescription: "expected String with \"\(key)\", got: \(value)")
-                }
-                
-            case .ExternalEquityLinks:
-                
-                if let count = value.double {
-                    metricValue = .ValueAbsolute(count)
-                } else {
-                    throw NSError(InitUnexpectedResponseWithDescription: "expected Number with \"\(key)\", got: \(value)")
-                }
-                
-            case .MozRankURL:
-                <#statement#>
-            case .MozRankSubdomain:
-                <#statement#>
-            case .HTTPStatusCode:
-                <#statement#>
-            case .PageAuthority:
-                <#statement#>
-            case .DomainAuthroirty:
-                <#statement#>
-            case .SpamScore: 
-                <#statement#>
-            case .TimeLastCrawled: 
-                <#statement#>
-            case .EstablishedLinksRootDomains: 
-                <#statement#>
-            case .EstablishedLinksTotalLinks:
-                <#statement#>
-            }
-            
-        } else {
-        
-            throw NSError(InitUnexpectedResponseWithDescription: "Unknown metric \"\(keyString)\" with value: \(value)")
+init(key:MZMetricKey, value:MZMetricValueType) {
+self.key = key
+self.value = value
+}
 
-        }
-        
-    }
+init?(keyString:String, value:JSON) throws {
+
+if let key = MZMetricKey(rawValue: keyString) {
+
+let metricValue:MZMetricValueType
+
+switch (key) {
+case .Title, .CanonicalURL:
+
+if let str = value.string {
+metricValue = .StringMetric(str)
+} else {
+throw NSError(InitUnexpectedResponseWithDescription: "expected String with \"\(key)\", got: \(value)")
+}
+
+case .ExternalEquityLinks:
+
+if let count = value.double {
+metricValue = .ValueAbsolute(count)
+} else {
+throw NSError(InitUnexpectedResponseWithDescription: "expected Number with \"\(key)\", got: \(value)")
+}
+
+case .MozRankURL:
+<#statement#>
+case .MozRankSubdomain:
+<#statement#>
+case .HTTPStatusCode:
+<#statement#>
+case .PageAuthority:
+<#statement#>
+case .DomainAuthroirty:
+<#statement#>
+case .SpamScore:
+<#statement#>
+case .TimeLastCrawled:
+<#statement#>
+case .EstablishedLinksRootDomains:
+<#statement#>
+case .EstablishedLinksTotalLinks:
+<#statement#>
+}
+
+} else {
+
+throw NSError(InitUnexpectedResponseWithDescription: "Unknown metric \"\(keyString)\" with value: \(value)")
+
+}
+
+}
 }
 */

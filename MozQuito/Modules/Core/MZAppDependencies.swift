@@ -9,8 +9,12 @@
 import Foundation
 import ViperKit
 import TheDistanceCore
-import ThemeKit
-import PocketSEOViews
+import ThemeKitCore
+//import PocketSEOViews
+
+let isTesting:Bool = {
+    return NSProcessInfo.processInfo().environment["TESTING"] != nil
+}()
 
 enum RequestKeys:String, RequestCacheKey {
     case MozscapeIndexedDates
@@ -58,11 +62,6 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
     }
     
     func installRootViewControllerIntoWindow(window: UIWindow) {
-        
-        guard !isTesting else {
-            window.rootViewController = UIViewController()
-            return
-        }
         
         let statusView = ThemeView()
         statusView.backgroundColourStyle = .MainDark

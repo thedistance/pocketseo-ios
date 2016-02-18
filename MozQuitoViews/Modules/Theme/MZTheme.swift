@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import ThemeKit
+import ThemeKitCore
 
 import UIKit
-import ThemeKit
 
 public extension IBThemeable {
     
@@ -19,6 +18,7 @@ public extension IBThemeable {
     }
 }
 
+/*
 @IBDesignable
 public class ThemeView: TKView, IBThemeable { }
 
@@ -60,6 +60,7 @@ public class ThemeTabBar: TKTabBar, IBThemeable { }
 
 @IBDesignable
 public class ThemeTabBarItem: TKTabBarItem, IBThemeable { }
+*/
 
 public class MZThemeVendor: TKThemeVendor {
     
@@ -93,29 +94,40 @@ public struct MZTheme: Theme {
     //    typealias TextStyleType = TextStyle // default
     //    typealias ColourStyleType = ColourStyle // default
     
+    let thinFont = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1).fontName
+    let normalFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
+    let mediumFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
+    
     public let defaultTextSizes = MaterialTextSizes // default
     public let textSizeAdjustments = AppleFontAdjustments // default
     
-    public let themeColours = MaterialColours
+    public let themeColours = MZColours
     
     public func fontName(textStye:TextStyle) -> String {
         
         switch textStye {
         case .Display4:
-            return "HelveticaNeue-Light"
-        case .Display3, .Display2, .Display1, .Headline, .SubHeadline, .Body1, .Caption:
-            return "HelveticaNeue"
-        case .Title, .Body2, .Button:
-            return "HelveticaNeue-Medium"
+            return thinFont
+        case .Display3, .Display2, .Display1, .Headline:
+            return normalFont
+        case .Title:
+            return mediumFont
+        case .SubHeadline:
+            return normalFont
+        case .Body2, .Button:
+            return mediumFont
+        case .Body1, .Custom(_):
+            return normalFont
+        case .Caption:
+            return thinFont
         }
     }
 }
 
-let MaterialColours:[ColourStyle:UIColor] = [
-//    .Accent: UIColor.redColor(),
-    .Main: UIColor(red: 3.0 / 255.0, green: 169.0/255.0, blue: 244.0 / 255.0, alpha: 1.0),
-    .MainDark: UIColor(red: 1.0 / 255.0, green: 87.0 / 255.0, blue: 155.0 / 255.0, alpha: 1.0),
-    .Accent: UIColor(red: 1, green: 0.596, blue: 0, alpha: 1.0),
+let MZColours:[ColourStyle:UIColor] = [
+    .Main: UIColor(hexString: "0071bc")!,
+    .MainDark: UIColor(hexString: "1b1464")!,
+    .Accent: UIColor(hexString: "fbb03b")!,
     .Text: UIColor.blackColor().colorWithAlphaComponent(0.87),
     .SecondaryText: UIColor.blackColor().colorWithAlphaComponent(0.54),
     .LightText: UIColor.whiteColor().colorWithAlphaComponent(0.87),

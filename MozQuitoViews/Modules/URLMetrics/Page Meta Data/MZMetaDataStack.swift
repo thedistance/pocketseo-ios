@@ -8,7 +8,7 @@
 
 import Foundation
 import StackView
-import PocketSEOEntities
+//import PocketSEOEntities
 
 class MZMetaDataStack: CreatedStack {
     

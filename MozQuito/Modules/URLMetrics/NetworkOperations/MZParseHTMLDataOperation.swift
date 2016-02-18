@@ -8,7 +8,7 @@
 
 import UIKit
 import hpple
-import PocketSEOEntities
+//import PocketSEOEntities
 
 extension TFHppleElement {
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-import PocketSEOEntities
+//import PocketSEOEntities
 
 import Alamofire
 import PSOperations
@@ -41,11 +41,19 @@ class MZGetPageMetaDataOperation: FailingOperation {
                 
                 parseOperation.success = { (htmlMeta) in
                     
-                    let responseURL = response.response?.URL
+                    guard let responseURL = response.response?.URL else {
+                        let error = NSError(domain: .HTMLError,
+                            code: .UnexpectedResponse,
+                            userInfo: [NSLocalizedDescriptionKey:"No response found."])
+                        self.finish([error])
+                        return
+                    }
                     
                     let pageMeta = MZPageMetaData(htmlData: htmlMeta,
-                        usingSSL: (responseURL?.scheme == "https") ?? false,
-                        requestDate: NSDate())
+                        usingSSL: (responseURL.scheme == "https") ?? false,
+                        requestDate: NSDate(),
+                        responseURL: responseURL
+                    )
                     
                     self.success?(data: pageMeta)
                     self.finish()

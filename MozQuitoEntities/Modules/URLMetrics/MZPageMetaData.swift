@@ -63,19 +63,23 @@ public struct MZPageMetaData {
     public let htmlMetaData:MZHTMLMetaData
     public let usingSSL:Bool
     public let requestDate:NSDate
+    public let responseURL:NSURL
     
-    public init(htmlData:MZHTMLMetaData, usingSSL:Bool, requestDate:NSDate) {
+    public init(htmlData:MZHTMLMetaData, usingSSL:Bool, requestDate:NSDate, responseURL:NSURL) {
         
         htmlMetaData = htmlData
         self.usingSSL = usingSSL
         self.requestDate = requestDate
+        self.responseURL = responseURL
     }
     
     public static func TheDistanceMetaData() -> MZPageMetaData {
         
         return MZPageMetaData(htmlData: MZHTMLMetaData.TheDistanceMetaData(),
             usingSSL: true,
-            requestDate: NSDate())
+            requestDate: NSDate(),
+            responseURL: NSURL(string: "https://thedistance.co.uk")!
+        )
     }
 
 }

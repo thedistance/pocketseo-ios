@@ -9,14 +9,26 @@
 import Foundation
 import StackView
 import TheDistanceCore
-import PocketSEOEntities
+//import PocketSEOEntities
 
 public class MZURLMetricsStack:CreatedStack {
     
     public let pageMetaDataView = MZPageMetaDataView(frame: CGRectMake(0, 0, 320, 64))
+    public let mozDataView = MZMozscapeMetricsView(frame: CGRectMake(0, 0, 320, 64))
+    
+    let secondStack:StackView
     
     public init() {
-        super.init(arrangedSubviews: [pageMetaDataView])
+        
+        secondStack = CreateStackView([mozDataView])
+        
+        super.init(arrangedSubviews: [pageMetaDataView, secondStack.view])
+        
+        stack.axis = .Vertical
+        stack.spacing = 8.0
+        
+        secondStack.axis = .Horizontal
+        secondStack.spacing = 8.0
     }
     
 }

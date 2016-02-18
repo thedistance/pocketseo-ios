@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PocketSEOEntities
+//import PocketSEOEntities
 
 class MZGetMozscapeIndexDatesOperation: MZAuthenticatedOperation {
     

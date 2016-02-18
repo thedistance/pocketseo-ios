@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PocketSEOEntities
+//import PocketSEOEntities
 
 class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     
@@ -37,7 +37,7 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
         if MZAppDependencies.sharedDependencies().shouldIgnoreCacheForRequest(.MozscapeIndexedDates) {
             interactor?.getMozscapeIndexDates()
         } else {
-            if let dates = NSUserDefaults.valueForKey(RequestKeys.MozscapeIndexedDates.rawValue) as? [String:AnyObject],
+            if let dates = NSUserDefaults.standardUserDefaults().dictionaryForKey(RequestKeys.MozscapeIndexedDates.rawValue),
                 let mzDates = MZMozscapeIndexedDates(info: dates) {
                 foundMozscapeIndexDates(mzDates)
             }
@@ -59,7 +59,7 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     
     func foundMozscapeIndexDates(dates: MZMozscapeIndexedDates) {
         
-        NSUserDefaults.standardUserDefaults().setValue(dates.infoValue, forKey: RequestKeys.MozscapeIndexedDates.rawValue)
+        NSUserDefaults.standardUserDefaults().setObject(dates.infoValue, forKey: RequestKeys.MozscapeIndexedDates.rawValue)
         view?.showMozscapeIndexedDates(dates)
     }
     

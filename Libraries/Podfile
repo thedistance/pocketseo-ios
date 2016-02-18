@@ -9,76 +9,61 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-# define 
+# define
 workspace '../MozQuito'
 xcodeproj '../MozQuito'
 
 target 'PocketSEO' do
-
-xcodeproj '../MozQuito'
-
-### CORE PODS ###
-
-pod 'TheDistanceCore', :path => 'TheDistanceCore'
-pod 'ViperKit', :path => 'ViperKit'
-pod 'MagicalRecord'
-
-### DISTRIBUTION PODS ###
-
-pod 'GoogleAnalytics'
-pod 'Fabric'
-pod 'Crashlytics'
-
-### NETWORKING PODS ###
-
-pod 'Alamofire'
-pod 'SwiftyJSON'
-pod 'PSOperations', :git => 'https://github.com/joshc89/PSOperations.git'
-
-pod 'hpple'
-
-### UI PODS ###
-
-pod 'JCPageViewController', :path => 'JCPageViewController'
-
-pod 'ThemeKit', :path => 'ThemeKit/_Archive/Debug'
-
-#pod 'ThemeKit', :path => 'ThemeKit/_Archive/Release'
-
-
-### Josh's Development Pods ###
-
-pod 'SwiftInPractice', :path => 'SwiftInPractice'
-pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
-
-end
-
-target 'PocketSEOEntities' do
-  
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'TheDistanceCore', :path => 'TheDistanceCore'
-  pod 'SwiftInPractice', :path => 'SwiftInPractice'
-  
-end
-
-target 'PocketSEOViews' do
+    
+    xcodeproj '../MozQuito'
+    
+    ### CORE PODS ###
+    
+    pod 'TheDistanceCore', :path => 'TheDistanceCore'
+    pod 'ViperKit', :path => 'ViperKit'
+    pod 'MagicalRecord'
+    
+    ### DISTRIBUTION PODS ###
+    
+    pod 'GoogleAnalytics'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
+    ### NETWORKING PODS ###
+    
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'PSOperations'
+    
+    pod 'hpple'
+    
+    ### UI PODS ###
+    
+    pod 'JCPageViewController', :path => 'JCPageViewController'
+    
+    pod 'ThemeKit', :path => 'ThemeKit/Debug'
+    
+    #pod 'ThemeKit', :path => 'ThemeKit/Release'
+    
+    ### Josh's Development Pods ###
+    
+    pod 'SwiftInPractice', :path => 'SwiftInPractice'
+    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
     
     pod 'M13ProgressSuite'
     pod 'StackView', :path => 'StackView'
     
-    pod 'ThemeKit', :path => 'ThemeKit/_Archive/Debug'
-    
-    #pod 'ThemeKit', :path => 'ThemeKit/_Archive/Release'
 end
 
+
 target 'PocketSEOTests' do
-
-xcodeproj '../MozQuito'
-
-pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
-pod 'ViperKit', :path => 'ViperKit'
-
+    
+    xcodeproj '../MozQuito'
+    
+    pod 'ThemeKit', :path => 'ThemeKit/Debug'
+    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
+    pod 'ViperKit', :path => 'ViperKit'
+    
 end
 
 

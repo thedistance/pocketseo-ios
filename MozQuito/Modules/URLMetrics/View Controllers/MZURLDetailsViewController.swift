@@ -8,8 +8,8 @@
 
 import UIKit
 import StackView
-import PocketSEOViews
-import ThemeKit
+//import PocketSEOViews
+import ThemeKitCore
 import JCPageViewController
 import TheDistanceCore
 

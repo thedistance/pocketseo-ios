@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import PocketSEOEntities
 @testable import PocketSEO
 
 class URLMetrics_API_Test: AdvancedOperationTestCase, ViperTesting {

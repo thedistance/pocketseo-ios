@@ -2,9 +2,6 @@
 	path = Libraries/StackView
 	url = git@bitbucket.org:joshcampion89/stackview.git
 	branch = develop
-[submodule "Libraries/AdvancedOperationKit"]
-	path = Libraries/AdvancedOperationKit
-	url = git@bitbucket.org:joshcampion89/advancedoperationkit.git
 [submodule "Libraries/SwiftInPractice"]
 	path = Libraries/SwiftInPractice
 	url = git@bitbucket.org:joshcampion89/swiftinpractice.git

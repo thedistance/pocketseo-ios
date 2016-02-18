@@ -8,8 +8,8 @@
 
 import UIKit
 import TheDistanceCore
-import PocketSEOViews
-import PocketSEOEntities
+//import PocketSEOViews
+//import PocketSEOEntities
 
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 

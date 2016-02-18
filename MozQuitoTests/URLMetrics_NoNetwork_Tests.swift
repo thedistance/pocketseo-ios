@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import PocketSEOEntities
 @testable import PocketSEO
 
 extension MZAlexaData {

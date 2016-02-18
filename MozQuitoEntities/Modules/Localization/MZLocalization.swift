@@ -19,6 +19,7 @@ public enum MZLocalizationKey: String {
     
     // -- Page Meta Data
     
+    case URLPageMetaDataHeadline
     case URLPageMetaDataPageTitle
     case URLPageMetaDataCanonicalURL
     case URLPageMetaDataMetaDescription
@@ -56,6 +57,7 @@ public enum MZLocalizationKey: String {
         
         // -- Page Meta Data
         
+        .URLPageMetaDataHeadline,
         .URLPageMetaDataPageTitle,
         .URLPageMetaDataCanonicalURL,
         .URLPageMetaDataMetaDescription,
@@ -103,6 +105,8 @@ public struct MZLocalization: LocalizationHandler {
             return ("Search For Metrics", "The text field hint on the URL Data page.")
         case .URLMetricsTitle:
             return ("URL Metrics", "The tab title for the URL Metrics tab.")
+        case .URLPageMetaDataHeadline:
+            return ("HTML Metadata", "The headline on the top of the HTML Metadata page.")
         case .URLPageMetaDataPageTitle:
             return ("Page Title", "The title on the meta data panel for the page title")
         case .URLPageMetaDataCanonicalURL:
@@ -116,7 +120,7 @@ public struct MZLocalization: LocalizationHandler {
         case .URLPageMetaDataUsingSSL:
             return ("Using SSL", "The title on the meta data panel for whether the site is using SSL")
         case .URLMozscapeAuthorityTitle:
-            return ("Authority", "The title for the Authroity section of the Mozscape panel")
+            return ("AUTHORITY", "The title for the Authroity section of the Mozscape panel")
         case .URLMozscapeAuthorityPage:
             return ("Page Authority", "The subtitle for the mozscape page authority")
         case .URLMozscapeAuthorityDomain:
@@ -126,7 +130,7 @@ public struct MZLocalization: LocalizationHandler {
         case .URLMozscapeAuthorityInfo:
             return ("<#value#>", "The help info shown for the authority section of the mozscape panel")
         case .URLMozscapeLinksTitle:
-            return ("Established Links", "The title for the Links section of the mozscape panel")
+            return ("ESTABLISHED LINKS", "The title for the Links section of the mozscape panel")
         case .URLMozscapeLinksRootDomain:
             return ("Root Domains", "The subtitle for the number of Root Domains in the links section of the mozscape panel")
         case .URLMozscapeLinksTotalLinks:
@@ -134,9 +138,9 @@ public struct MZLocalization: LocalizationHandler {
         case .URLMozscapeLinksInfo:
             return ("<#value#>", "The help info shown for the links section of the mozscape panel")
         case .URLMozscapeLastIndexedTitle:
-            return ("Last Indexed", "The subtitle of the last index date on the mozscape panel")
+            return ("LAST INDEXED", "The subtitle of the last index date on the mozscape panel")
         case .URLMozscapeNextIndexedTitle:
-            return ("Next Indexing", "The subtitle of the next index date on the mozscape panel")
+            return ("NEXT INDEXING", "The subtitle of the next index date on the mozscape panel")
         case .URLLinksTitle:
             return ("Links", "The tab title for the links tab on the URL details screen.")
         }

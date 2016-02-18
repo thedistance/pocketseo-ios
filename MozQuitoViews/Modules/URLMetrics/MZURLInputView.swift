@@ -8,8 +8,8 @@
 
 import Foundation
 import StackView
-import ThemeKit
-import PocketSEOEntities
+import ThemeKitCore
+//import PocketSEOEntities
 import TheDistanceCore
 
 public class MZURLInputStack: CreatedStack {
@@ -20,8 +20,12 @@ public class MZURLInputStack: CreatedStack {
     
     init() {
         
+        let bundle = NSBundle(forClass: MZURLInputStack.self)
+        let safariImage = UIImage(named: "launch_safari", inBundle: bundle, compatibleWithTraitCollection: nil)
+        let refreshImage = UIImage(named: "ic_refresh", inBundle: bundle, compatibleWithTraitCollection: nil)
+        
         safariButton.tintColourStyle = .LightText
-        safariButton.setImage(UIImage(named: "launch_safari"), forState: .Normal)
+        safariButton.setImage(safariImage, forState: .Normal)
         safariButton.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         safariButton.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         safariButton.setContentHuggingPriority(255, forAxis: .Horizontal)
@@ -37,7 +41,7 @@ public class MZURLInputStack: CreatedStack {
         (urlTextFieldStack.textField as? ThemeTextField)?.textColourStyle = .LightText
         (urlTextFieldStack.textField as? ThemeTextField)?.placeholderTextColourStyle = .SecondaryLightText
         
-        refreshButton.setImage(UIImage(named: "ic_refresh"), forState: .Normal)
+        refreshButton.setImage(refreshImage, forState: .Normal)
         refreshButton.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         refreshButton.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         refreshButton.setContentHuggingPriority(255, forAxis: .Horizontal)

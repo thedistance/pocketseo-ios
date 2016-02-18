@@ -8,7 +8,7 @@
 
 import Foundation
 import hpple
-import PocketSEOEntities
+//import PocketSEOEntities
 
 class MZParseAlexaDataOperation: FailingOperation {
     

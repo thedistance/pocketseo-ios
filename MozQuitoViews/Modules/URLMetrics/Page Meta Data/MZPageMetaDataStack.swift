@@ -8,9 +8,63 @@
 
 import Foundation
 import StackView
-import PocketSEOEntities
+//import PocketSEOEntities
 
-public class MZPageMetaDataStack: CreatedStack {
+public class MZExpandingStack: CreatedStack {
+    
+    let expandButton = ThemeButton(type: .System)
+    private(set) var expandingTitleStack:StackView
+    private(set) var expanded:Bool = false
+    
+    init(titleView:UIView, arrangedSubviews:[UIView]) {
+        
+        expandingTitleStack = CreateStackView([titleView, expandButton])
+        
+        var allViews = arrangedSubviews
+        allViews.insert(expandingTitleStack.view, atIndex: 0)
+        
+        super.init(arrangedSubviews: allViews)
+        
+        configureStack()
+    }
+    
+    func configureStack() {
+        
+        // configure button
+        let expandImage = UIImage(named: "ic_expand_more", inBundle: NSBundle(forClass: MZPageMetaDataStack.self), compatibleWithTraitCollection: nil)
+        expandButton.setImage(expandImage, forState: .Normal)
+        expandButton.tintColourStyle = .SecondaryText
+        expandButton.contentHorizontalAlignment = .Left
+        expandButton.setContentHuggingPriority(255, forAxis: .Horizontal)
+        
+        // configure the title stack
+        expandingTitleStack.axis = .Horizontal
+        expandingTitleStack.stackAlignment = .Fill
+        expandingTitleStack.stackDistribution = .Fill
+        expandingTitleStack.spacing = 8.0
+        
+        self.stack.axis = .Vertical
+        self.stack.stackAlignment = .Fill
+        self.stack.stackDistribution = .Fill
+        self.stack.spacing = 16.0
+    }
+    
+    public func toggleExpanded() {
+        
+        self.configureAsExpanded(!self.expanded)
+        self.stackView.layoutIfNeeded()
+    }
+    
+    public func configureAsExpanded(expanded:Bool) {
+        
+        self.expanded = expanded
+        
+        let pi = CGFloat(M_PI)
+        expandButton.transform = expanded ? CGAffineTransformMakeRotation(pi) : CGAffineTransformMakeRotation(2.0 * pi)
+    }
+}
+
+public class MZPageMetaDataStack: MZExpandingStack {
     
     static let dateFormatter:NSDateFormatter = {
         
@@ -21,26 +75,20 @@ public class MZPageMetaDataStack: CreatedStack {
         return formatter
     }()
     
-    let expandButton = ThemeButton(type: .System)
-    
-    let titleStack = MZMetaDataStack(titleKey: .URLPageMetaDataPageTitle)
+    let pageTitleStack = MZMetaDataStack(titleKey: .URLPageMetaDataPageTitle)
     let canonicalStack = MZMetaDataStack(titleKey: .URLPageMetaDataCanonicalURL)
     let descriptionStack = MZMetaDataStack(titleKey: .URLPageMetaDataMetaDescription)
     let h1Stack = MZMetaDataStack(titleKey: .URLPageMetaDataH1Tags)
     let h2Stack = MZMetaDataStack(titleKey: .URLPageMetaDataH2Tags)
     private(set) var usingSSLStack:StackView
     
-    private(set) var expandingTitleStack:StackView
-    
     private(set) var detailsStack:StackView
     private(set) var footerStack:StackView
     
     let usingSSLTitleLabel = ThemeLabel()
     let usingSSLSwitch = ThemeSwitch()
-    let canonicalURLLabel = ThemeLabel()
+    let responseURLLabel = ThemeLabel()
     let refreshDateLabel = ThemeLabel()
-    
-    private(set) var expanded:Bool = false
     
     public var pageMetaData:MZPageMetaData? {
         didSet {
@@ -49,7 +97,7 @@ public class MZPageMetaDataStack: CreatedStack {
             let h2Text = pageMetaData?.htmlMetaData.h2Tags.joinWithSeparator(" \u{2022} ")
             
             let stackValues:[(stack:MZMetaDataStack, value:String?, charactercCount:Int?)] = [
-                (titleStack, pageMetaData?.htmlMetaData.title, pageMetaData?.htmlMetaData.titleCharacterCount),
+                (pageTitleStack, pageMetaData?.htmlMetaData.title, pageMetaData?.htmlMetaData.titleCharacterCount),
                 (canonicalStack, pageMetaData?.htmlMetaData.canonicalURL?.absoluteString, pageMetaData?.htmlMetaData.canonicalURLCharacterCount),
                 (descriptionStack, pageMetaData?.htmlMetaData.description, pageMetaData?.htmlMetaData.descriptionCharacterCount),
                 (h1Stack, h1Text, pageMetaData?.htmlMetaData.h1TagsCharacterCount),
@@ -67,10 +115,10 @@ public class MZPageMetaDataStack: CreatedStack {
                 refreshDateLabel.text = nil
             }
             
-            if let str = pageMetaData?.htmlMetaData.canonicalURL?.absoluteString {
-                canonicalURLLabel.text = str
+            if let str = pageMetaData?.responseURL.absoluteString {
+                responseURLLabel.text = str
             } else {
-                canonicalURLLabel.text = nil
+                responseURLLabel.text = nil
             }
             
             usingSSLSwitch.on = pageMetaData?.usingSSL ?? false
@@ -80,34 +128,37 @@ public class MZPageMetaDataStack: CreatedStack {
     init() {
         
         // init as collapsed
-        titleStack.headingStack.view.hidden = true
+        pageTitleStack.headingStack.view.hidden = true
         canonicalStack.stackView.hidden = true
         descriptionStack.stackView.hidden = true
         h1Stack.stackView.hidden = true
         h2Stack.stackView.hidden = true
         
-        expandingTitleStack = CreateStackView([titleStack.stackView, expandButton])
         usingSSLStack = CreateStackView([usingSSLTitleLabel, usingSSLSwitch])
-        detailsStack = CreateStackView([expandingTitleStack.view, canonicalStack.stackView, descriptionStack.stackView, h1Stack.stackView, h2Stack.stackView, usingSSLStack.view])
-        footerStack = CreateStackView([canonicalURLLabel, refreshDateLabel])
+        
+        detailsStack = CreateStackView([pageTitleStack.stackView,
+            canonicalStack.stackView,
+            descriptionStack.stackView,
+            h1Stack.stackView,
+            h2Stack.stackView,
+            usingSSLStack.view])
+        footerStack = CreateStackView([responseURLLabel, refreshDateLabel])
         
         usingSSLStack.view.hidden = true
         
-        super.init(arrangedSubviews: [detailsStack.view, footerStack.view])
+        let titleLabel = ThemeLabel()
+        titleLabel.textStyle = .Title
+        titleLabel.textColourStyle = .Text
+        titleLabel.text = MZLocalizedString(.URLPageMetaDataHeadline)
         
-        configureStack()
+        super.init(titleView: titleLabel, arrangedSubviews: [detailsStack.view, footerStack.view])
     }
     
-    func configureStack() {
+    override func configureStack() {
+        
+        super.configureStack()
         
         // configure the stacks
-        expandingTitleStack.axis = .Horizontal
-        expandingTitleStack.stackAlignment = .Fill
-        expandingTitleStack.stackDistribution = .Fill
-        expandingTitleStack.spacing = 8.0
-        
-        titleStack.valueLabel.textStyle = .Title
-        
         footerStack.axis = .Horizontal
         footerStack.spacing = 8.0
         footerStack.stackDistribution = .EqualSpacing
@@ -116,8 +167,8 @@ public class MZPageMetaDataStack: CreatedStack {
         detailsStack.spacing = 16.0
         
         // configure the labels
-        canonicalURLLabel.textStyle = .Caption
-        canonicalURLLabel.textColourStyle = .SecondaryText
+        responseURLLabel.textStyle = .Caption
+        responseURLLabel.textColourStyle = .SecondaryText
         
         refreshDateLabel.textStyle = .Caption
         refreshDateLabel.textColourStyle = .SecondaryText
@@ -125,46 +176,26 @@ public class MZPageMetaDataStack: CreatedStack {
         usingSSLTitleLabel.textStyle = .Body1
         usingSSLTitleLabel.textColourStyle = .Text
         
-        canonicalURLLabel.numberOfLines = 0
+        responseURLLabel.numberOfLines = 0
         usingSSLTitleLabel.numberOfLines = 0
         
         usingSSLTitleLabel.text = MZLocalizedString(.URLPageMetaDataUsingSSL)
         usingSSLStack.stackDistribution = .EqualSpacing
         
-        canonicalURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
+        responseURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         refreshDateLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         refreshDateLabel.setContentHuggingPriority(255, forAxis: .Horizontal)
-        
-        // configure button
-        expandButton.setImage(UIImage(named: "ic_expand_more"), forState: .Normal)
-        expandButton.tintColourStyle = .Accent
-        expandButton.contentHorizontalAlignment = .Left
-        expandButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         
         usingSSLSwitch.userInteractionEnabled = false
         usingSSLSwitch.onTintColourStyle = .Accent
         
-        self.stack.axis = .Vertical
-        self.stack.stackAlignment = .Fill
-        self.stack.stackDistribution = .Fill
-        self.stack.spacing = 16.0
     }
     
-    
-    public func toggleExpanded() {
+    public override func configureAsExpanded(expanded: Bool) {
         
-        self.configureAsExpanded(!self.expanded)
-        self.stackView.layoutIfNeeded()
-    }
-    
-    public func configureAsExpanded(expanded:Bool) {
-     
-        self.expanded = expanded
+        super.configureAsExpanded(expanded)
         
-        let pi = CGFloat(M_PI)
-        expandButton.transform = expanded ? CGAffineTransformMakeRotation(pi) : CGAffineTransformMakeRotation(2.0 * pi)
-        
-        titleStack.headingStack.view.hidden = !expanded
+        pageTitleStack.headingStack.view.hidden = !expanded
         canonicalStack.stackView.hidden = !expanded
         descriptionStack.stackView.hidden = !expanded
         h1Stack.stackView.hidden = !expanded
@@ -172,4 +203,5 @@ public class MZPageMetaDataStack: CreatedStack {
         
         usingSSLStack.view.hidden = !expanded
     }
+    
 }

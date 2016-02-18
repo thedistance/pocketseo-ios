@@ -8,7 +8,7 @@
 
 import UIKit
 
-import PocketSEOEntities
+//import PocketSEOEntities
 import TheDistanceCore
 
 import JCPageViewController
@@ -25,6 +25,11 @@ class MZRootWireframe {
     }
     
     func createRootViewController() -> UIViewController {
+        
+        if isTesting {
+            // return a blank VC to ensure no code is running to interfere with the tests
+            return UIViewController()
+        }
         
         let detailsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLDetailsVC) as! MZURLDetailsViewController
         
