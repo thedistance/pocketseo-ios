@@ -42,6 +42,18 @@ public class MZURLMetricsView: UIView {
         }
     }
     
+    public var mozscapeMetrics: MZMozscapeMetrics? {
+        didSet {
+            metricsStack.mozDataView.dataStack.data = mozscapeMetrics
+        }
+    }
+    
+    public var mozscapeIndexedDates:MZMozscapeIndexedDates? {
+        didSet {
+            metricsStack.mozDataView.dataStack.indexedStack.dates = mozscapeIndexedDates
+        }
+    }
+    
     public let metricsStack = MZURLMetricsStack()
     
     override public init(frame: CGRect) {
@@ -67,7 +79,11 @@ public class MZURLMetricsView: UIView {
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        metricsStack.pageMetaDataView.metaStack.toggleExpanded()
-        metricsStack.pageMetaDataView.metaStack.pageMetaData = MZPageMetaData.TheDistanceMetaData()
+        metricsStack.pageMetaDataView.metaStack.toggleExpanded(nil)
+        pageMetaData = MZPageMetaData.TheDistanceMetaData()
+        
+        metricsStack.mozDataView.dataStack.toggleExpanded(nil)
+        mozscapeMetrics = try? MZMozscapeMetrics()
+        // mozscapeIndexedDates = MZMozscapeIndexedDates.testDates()
     }
 }

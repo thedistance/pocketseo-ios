@@ -124,7 +124,7 @@ public struct MZLocalization: LocalizationHandler {
         case .URLMozscapeAuthorityPage:
             return ("Page Authority", "The subtitle for the mozscape page authority")
         case .URLMozscapeAuthorityDomain:
-            return ("Domain Authorith", "The subtitle for the mozscape domain authority")
+            return ("Domain Authority", "The subtitle for the mozscape domain authority")
         case .URLMozscapeAuthoritySpamScore:
             return ("Spam Score", "The subtitle for the mozscape spam score")
         case .URLMozscapeAuthorityInfo:

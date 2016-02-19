@@ -15,3 +15,6 @@
 [submodule "Libraries/JCPageViewController"]
 	path = Libraries/JCPageViewController
 	url = git@bitbucket.org:joshcampion89/jcpageviewcontroller.git
+[submodule "Libraries/AdvancedOperationKit"]
+    path = Libraries/AdvancedOperationKit
+    url = git@bitbucket.org:joshcampion89/advancedoperationkit.git

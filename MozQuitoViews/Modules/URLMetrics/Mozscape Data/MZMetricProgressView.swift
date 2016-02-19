@@ -12,10 +12,46 @@ import M13ProgressSuite
 
 public class MZMetricProgressView: UIView {
 
-    public var value:CGFloat?
-    public var total:CGFloat?
+    func setDValue(d:Double?) {
+        if let val = d {
+            value = CGFloat(val)
+            if let v = value, let t = total {
+                progressView.setProgress(v / t, animated: false)
+            }
+        } else {
+            value = nil
+        }
+    }
     
-    let valueStack = GenericStringsStack<UILabel>(strings: ["", ""])
+    public var value:CGFloat? {
+        didSet {
+            if let v = value {
+                valueLabel.text = String(Int(round(v)))
+            } else {
+                valueLabel.text = "-"
+            }
+        }
+    }
+    
+    public var total:CGFloat? {
+        didSet {
+            if let t = total {
+                totalLabel.text = String(Int(t))
+            } else {
+                totalLabel.text = "-"
+            }
+        }
+    }
+    
+    let valueStack = GenericStringsStack<ThemeLabel>(strings: ["-", ""])
+    var valueLabel:ThemeLabel {
+        return valueStack.labels[0]
+    }
+    
+    var totalLabel:ThemeLabel {
+        return valueStack.labels[1]
+    }
+    
     let progressView = M13ProgressViewRing()
     
     override init(frame: CGRect) {
@@ -34,8 +70,22 @@ public class MZMetricProgressView: UIView {
         
         self.backgroundColor = UIColor.clearColor()
         
+        progressView.showPercentage = false
+        progressView.backgroundRingWidth = 2.0
+        progressView.progressRingWidth = 2.0
+        progressView.secondaryColor = UIColor(white: 0.8, alpha: 1.0)
+        progressView.primaryColor = MZThemeVendor.defaultColour(.Main)
         progressView.translatesAutoresizingMaskIntoConstraints = false
+        
         valueStack.stackView.translatesAutoresizingMaskIntoConstraints = false
+        valueStack.stack.spacing = -2.0
+        
+        valueLabel.textStyle = .Display1
+        valueLabel.textAlignment = .Center
+        
+        totalLabel.textStyle = .Caption
+        totalLabel.textAlignment = .Center
+        
         
         addSubview(progressView)
         addSubview(valueStack.stackView)
@@ -44,9 +94,11 @@ public class MZMetricProgressView: UIView {
         
         addConstraints(NSLayoutConstraint.constraintsToAlign(view: progressView, to: self))
         
+        let valueView = valueStack.stackView
+        
         let centerConstrs = [
             
-            NSLayoutConstraint(item: valueStack,
+            NSLayoutConstraint(item: valueView,
                 attribute: .CenterX,
                 relatedBy: .Equal,
                 toItem: self,
@@ -54,7 +106,7 @@ public class MZMetricProgressView: UIView {
                 multiplier: 1.0,
                 constant: 0.0),
             
-            NSLayoutConstraint(item: valueStack,
+            NSLayoutConstraint(item: valueView,
                 attribute: .CenterY,
                 relatedBy: .Equal,
                 toItem: self,
@@ -68,17 +120,17 @@ public class MZMetricProgressView: UIView {
             NSLayoutConstraint(item: self,
                 attribute: .Width,
                 relatedBy: .GreaterThanOrEqual,
-                toItem: valueStack,
+                toItem: valueView,
                 attribute: .Width,
-                multiplier: 2.0,
+                multiplier: 1.25,
                 constant: 0.0),
         
             NSLayoutConstraint(item: self,
                 attribute: .Height,
                 relatedBy: .GreaterThanOrEqual,
-                toItem: valueStack,
+                toItem: valueView,
                 attribute: .Height,
-                multiplier: 2.0,
+                multiplier: 1.25,
                 constant: 0.0)
         ]
         

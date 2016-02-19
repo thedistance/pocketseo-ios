@@ -503,8 +503,8 @@
 			isa = PBXGroup;
 			children = (
 				A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */,
-				A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */,
 				A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */,
+				A5C572351C61034600E2AACF /* MZMozscapeMetricsView.swift */,
 			);
 			path = "Mozscape Data";
 			sourceTree = "<group>";

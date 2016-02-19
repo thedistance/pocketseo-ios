@@ -22,7 +22,7 @@ return NSLocalizedString("URLMozscapeLinksRootDomain", value:"Root Domains", com
 case .URLDataSearchHint:
 return NSLocalizedString("URLDataSearchHint", value:"Search For Metrics", comment:"The text field hint on the URL Data page.")
 case .URLMozscapeAuthorityDomain:
-return NSLocalizedString("URLMozscapeAuthorityDomain", value:"Domain Authorith", comment:"The subtitle for the mozscape domain authority")
+return NSLocalizedString("URLMozscapeAuthorityDomain", value:"Domain Authority", comment:"The subtitle for the mozscape domain authority")
 case .URLPageMetaDataPageTitle:
 return NSLocalizedString("URLPageMetaDataPageTitle", value:"Page Title", comment:"The title on the meta data panel for the page title")
 case .URLMozscapeAuthorityInfo:

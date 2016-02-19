@@ -11,7 +11,7 @@ import StackView
 
 public class MZMozscapeIndexedStack:CreatedStack {
     
-    let dateFormatted: NSDateFormatter = {
+    let dateFormatter: NSDateFormatter = {
        
         let formatter = NSDateFormatter()
         formatter.timeStyle = .NoStyle
@@ -22,20 +22,28 @@ public class MZMozscapeIndexedStack:CreatedStack {
     
     var dates:MZMozscapeIndexedDates? {
         didSet {
-            
+            [(lastDateLabel, dates?.last), (nextDateLabel, dates?.next)]
+                .map({ ($0.0, $0.1 == nil ? "-" : self.dateFormatter.stringFromDate($0.1!)) })
+                .forEach({ $0.0.text = $0.1 })
         }
     }
     
-    let lastDateLabel = ThemeLabel()
-    let lastDateTitleLabel = ThemeLabel()
+    var lastDateLabel:ThemeLabel {
+        return lastStack.labels[1]
+    }
     
-    let nextDateLabel = ThemeLabel()
-    let nextDateTitleLabel = ThemeLabel()
+    
+    var nextDateLabel: ThemeLabel {
+        return nextStack.labels[1]
+    }
+    
+    let lastStack:GenericStringsStack<ThemeLabel>
+    let nextStack:GenericStringsStack<ThemeLabel>
     
     init() {
         
-        let lastStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeLastIndexedTitle), "-"])
-        let nextStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeNextIndexedTitle), "-"])
+        lastStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeLastIndexedTitle), "-"])
+        nextStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeNextIndexedTitle), "-"])
         
         for l in [lastStack.labels[0], nextStack.labels[0]] {
             l.textStyle = .Caption
@@ -67,11 +75,24 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
     var data:MZMozscapeMetrics? {
         didSet {
             
+            pageAuthorityProgressView.setDValue(data?.pageAuthority)
+            domainAuthorityProgressView.setDValue(data?.domainAuthority)
+            spamScoreProgressView.setDValue(data?.spamScore)
+            
+            [(rootLinksStack, data?.establishedLinksRoot), (totalLinksStack, data?.establishedLinksTotal)]
+                .map({ ($0.0.labels[0], $0.1 == nil ? "-" : "\($0.1!)") })
+                .forEach({ $0.0.text = $0.1 })
         }
     }
     
     let authorityHeadingStack:StackView
 
+    let pageAuthorityProgressView =  MZMetricProgressView()
+    let domainAuthorityProgressView = MZMetricProgressView()
+    let spamScoreProgressView = MZMetricProgressView()
+    
+    let linksStack:StackView
+    
     let linksHeadingStack:StackView
     
     let rootLinksStack = GenericStringsStack<ThemeLabel>(strings: ["-", MZLocalizedString(.URLMozscapeLinksRootDomain)])
@@ -105,6 +126,42 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         authorityHeadingStack.spacing = 8.0
         
         // ...create the authority charts
+        
+        pageAuthorityProgressView.total = 100
+        domainAuthorityProgressView.total = 100
+        spamScoreProgressView.total = 17
+        
+        let authInfo:[(progress:MZMetricProgressView, key:MZLocalizationKey)] =
+        [
+            (pageAuthorityProgressView, .URLMozscapeAuthorityPage),
+            (domainAuthorityProgressView, .URLMozscapeAuthorityDomain),
+            (spamScoreProgressView, .URLMozscapeAuthoritySpamScore)
+            ]
+            
+        let authStacks:[StackView] = authInfo.map({ (progress:MZMetricProgressView, key:MZLocalizationKey) -> (MZMetricProgressView, ThemeLabel) in
+            
+            let titleLabel = ThemeLabel()
+            titleLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
+            titleLabel.text = MZLocalizedString(key)
+            titleLabel.textAlignment = .Center
+            titleLabel.numberOfLines = 0
+            titleLabel.textColourStyle = .Text
+            titleLabel.textStyle = .Body1
+            
+            return (progress, titleLabel)
+        }).map({
+            
+            var stack = CreateStackView([$0.0, $0.1])
+            stack.axis = .Vertical
+            stack.spacing = 4.0
+            return stack
+        })
+        
+        var authStack = CreateStackView(authStacks.map({ $0.view }))
+        authStack.axis = .Horizontal
+        authStack.spacing = 16.0
+        authStack.stackDistribution = .EqualCentering
+        authStack.stackAlignment = .Leading
         
         // separate the sections
         
@@ -141,7 +198,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         for var s in [rootLinksStack.stack, totalLinksStack.stack] {
             s.axis = .Horizontal
             s.stackAlignment = .FirstBaseline
-            s.spacing = 8.0
+            s.spacing = 4.0
         }
         
         // separate the sections
@@ -153,16 +210,54 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
             s.addConstraints(NSLayoutConstraint.constraintsToSize(s, toWidth: nil, andHeight: 1.0))
         }
         
-        super.init(titleView: titleImageView, arrangedSubviews: [authorityHeadingStack.view,
-            separator1,
+        linksStack = CreateStackView([separator1,
             linksHeadingStack.view,
             rootLinksStack.stackView,
             totalLinksStack.stackView,
-            separator2,
+            separator2])
+        linksStack.axis = .Vertical
+        linksStack.spacing = 16.0
+        
+        let collapsing = [authorityHeadingStack.view,
+            linksStack.view,
+            indexedStack.stackView]
+        
+        for v in collapsing {
+            v.hidden = true
+        }
+        
+        super.init(titleView: titleImageView, arrangedSubviews: [
+            authorityHeadingStack.view,
+            authStack.view,
+            linksStack.view,
             indexedStack.stackView])
         
         stack.axis = .Vertical
-        stack.spacing = 8.0
+        stack.spacing = 16.0
+        
+        // constrain each auth stack to be equal widths
+        
+        for s in authStacks[1...2] {
+            stack.view.addConstraint(NSLayoutConstraint(item: s.view,
+                attribute: .Width,
+                relatedBy: .Equal,
+                toItem: authStacks[0].view,
+                attribute: .Width,
+                multiplier: 1.0,
+                constant: 0.0))
+        }
     }
     
+    public override func configureAsExpanded(expanded: Bool) {
+        
+        super.configureAsExpanded(expanded)
+        
+        let collapsing = [authorityHeadingStack.view,
+            linksStack.view,
+            indexedStack.stackView]
+        
+        for v in collapsing {
+            v.hidden = !expanded
+        }
+    }
 }

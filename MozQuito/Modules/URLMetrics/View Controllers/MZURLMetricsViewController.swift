@@ -33,6 +33,18 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         }
     }
     
+    var mozscapeMetrics:MZMozscapeMetrics? {
+        didSet {
+            metricsView?.mozscapeMetrics = mozscapeMetrics
+        }
+    }
+    
+    var mozscapeIndexedDates:MZMozscapeIndexedDates? {
+        didSet {
+            metricsView?.mozscapeIndexedDates = mozscapeIndexedDates
+        }
+    }
+    
     @IBOutlet weak var metricsView:MZURLMetricsView?
 
     override func viewDidLoad() {
@@ -59,7 +71,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     // MARK: Mozscape
     
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
-        print(metrics)
+        mozscapeMetrics = metrics
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {
@@ -67,7 +79,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     }
     
     func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
-        print(dates)
+        mozscapeIndexedDates = dates
     }
     
     // MARK: Alexa

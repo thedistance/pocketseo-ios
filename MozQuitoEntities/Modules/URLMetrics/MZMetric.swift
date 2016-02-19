@@ -57,6 +57,26 @@ public enum MZMetricKey: String {
 
 public struct MZMozscapeMetrics {
     
+    init() throws {
+        let jsonInfo = [
+            "flan" : "en",
+            "fsplc" : 1413952826,
+            "pda" : 33.6962235544803,
+            "ut" : "",
+            "us" : 301,
+            "uu" : "thedistance.co.uk/",
+            "fsps" : 200,
+            "uid" : 793,
+            "fspf" : 0,
+            "fspsc" : 1,
+            "upa" : 41.97760739323027,
+            "uifq" : 107,
+            "fspp" : "http://thedistance.co.uk/ http://thedistance.co.uk/what-we-do/ecommerce/ http://thedistance.co.uk/services/ecommerce http://thedistance.co.uk/who-we-are/the-team/anthony-main http://thedistance.co.uk/anthony-main/"
+        ]
+        
+        try self.init(json: JSON(jsonInfo))
+    }
+    
     public let title:String?
     public let canonicalURL:NSURL?
     public let HTTPStatusCode:Int?
@@ -133,13 +153,22 @@ public struct MZMozscapeIndexedDates {
     public let last:NSDate
     public let next:NSDate?
     
+    static func testDates() -> MZMozscapeIndexedDates {
+        return MZMozscapeIndexedDates(last: NSDate().dateByAddingTimeInterval(-(5 * 24 * 60 * 60)), next: nil)
+    }
+    
+    init(last:NSDate, next:NSDate?) {
+        self.last = last
+        self.next = next
+    }
+    
     public init(json:JSON) throws {
         
         if let lastUnixDate = json["last_update"].double {
             
             last = NSDate(timeIntervalSince1970: lastUnixDate)
             
-            if let nextUnixDate = json["last_update"].double {
+            if let nextUnixDate = json["next_update"].double {
                 next = NSDate(timeIntervalSince1970: nextUnixDate)
             } else {
                 next = nil

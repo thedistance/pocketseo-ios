@@ -64,18 +64,7 @@ public class MZPageMetaDataView: GMDView {
         metaStack.stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(metaStack.stackView)
         addConstraints(NSLayoutConstraint.constraintsToAlign(view: metaStack.stackView, to: self, withInsets: UIEdgeInsetsMakeEqual(8.0)))
-
-        metaStack.expandButton.addTarget(self, action: "expandTapped:", forControlEvents: .TouchUpInside)
         
         self.backgroundColor = UIColor.whiteColor()
     }
-    
-    func expandTapped(sender:UIButton) {
-        
-//         UIView.animateWithDuration(0.35, animations: { () -> Void in
-            self.metaStack.toggleExpanded()
-            self.layoutIfNeeded()
-//         })
-    }
-    
 }

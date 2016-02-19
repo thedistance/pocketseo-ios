@@ -7,12 +7,16 @@
 //
 
 import Foundation
+
+import TheDistanceCore
 import StackView
 //import PocketSEOEntities
 
 public class MZExpandingStack: CreatedStack {
     
     let expandButton = ThemeButton(type: .System)
+    private(set) var expandTarget:ObjectTarget<UIButton>?
+    
     private(set) var expandingTitleStack:StackView
     private(set) var expanded:Bool = false
     
@@ -37,6 +41,8 @@ public class MZExpandingStack: CreatedStack {
         expandButton.contentHorizontalAlignment = .Left
         expandButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         
+        expandTarget = ObjectTarget(control: expandButton, forControlEvents: .TouchUpInside, completion: toggleExpanded)
+        
         // configure the title stack
         expandingTitleStack.axis = .Horizontal
         expandingTitleStack.stackAlignment = .Fill
@@ -49,7 +55,7 @@ public class MZExpandingStack: CreatedStack {
         self.stack.spacing = 16.0
     }
     
-    public func toggleExpanded() {
+    public func toggleExpanded(sender:AnyObject?) {
         
         self.configureAsExpanded(!self.expanded)
         self.stackView.layoutIfNeeded()
@@ -69,7 +75,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
     static let dateFormatter:NSDateFormatter = {
         
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .MediumStyle
+        formatter.dateStyle = .NoStyle
         formatter.timeStyle = .MediumStyle
         
         return formatter
