@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        let _ = MZThemeVendor.shared()
+        
         #if DEBUG
             MZLocalization.dumpStringsFunction("MZLocalizedString", typed: "MZLocalizationKey", classed: "MZLocalization", filePath: "/Users/joshcampion/Documents/Client Repositories/MozQuito/MozQuitoEntities/Modules/Localization/MZLocalizedString.swift")
         #endif

@@ -18,50 +18,6 @@ public extension IBThemeable {
     }
 }
 
-/*
-@IBDesignable
-public class ThemeView: TKView, IBThemeable { }
-
-// --- Text Elements --- \\
-
-@IBDesignable
-public class ThemeLabel: TKLabel, IBThemeable { }
-
-@IBDesignable
-public class ThemeTextField: TKTextField, IBThemeable { }
-
-@IBDesignable
-public class ThemeTextView: TKTextView, IBThemeable { }
-
-// --- Controls --- \\
-
-@IBDesignable
-public class ThemeButton: TKButton, IBThemeable { }
-
-@IBDesignable
-public class ThemeSwitch: TKSwitch, IBThemeable { }
-
-@IBDesignable
-public class ThemeSegmentedControl: TKSegmentedControl, IBThemeable { }
-
-@IBDesignable
-public class ThemeStepper: TKStepper, IBThemeable { }
-
-// --- Navigation --- \\
-
-@IBDesignable
-public class ThemeNavigationBar: TKNavigationBar, IBThemeable { }
-
-@IBDesignable
-public class ThemeBarButtonItem: TKBarButtonItem, IBThemeable { }
-
-@IBDesignable
-public class ThemeTabBar: TKTabBar, IBThemeable { }
-
-@IBDesignable
-public class ThemeTabBarItem: TKTabBarItem, IBThemeable { }
-*/
-
 public class MZThemeVendor: TKThemeVendor {
     
     private var _defaultTheme:Theme? = MZTheme()
@@ -72,17 +28,6 @@ public class MZThemeVendor: TKThemeVendor {
         }
         set {
             _defaultTheme = newValue
-        }
-    }
-}
-
-extension TKThemeVendor {
-    
-    override public class func initialize() {
-        super.initialize()
-        
-        if self == TKThemeVendor.self {
-            assert(MZThemeVendor.shared().defaultTheme != nil)
         }
     }
 }

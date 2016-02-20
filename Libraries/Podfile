@@ -41,10 +41,6 @@ target 'PocketSEO' do
     
     pod 'JCPageViewController', :path => 'JCPageViewController'
     
-    pod 'ThemeKit', :path => 'ThemeKit/Debug'
-    
-    #pod 'ThemeKit', :path => 'ThemeKit/Release'
-    
     ### Josh's Development Pods ###
     
     pod 'SwiftInPractice', :path => 'SwiftInPractice'
@@ -60,7 +56,6 @@ target 'PocketSEOTests' do
     
     xcodeproj '../MozQuito'
     
-    pod 'ThemeKit', :path => 'ThemeKit/Debug'
     pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
     pod 'ViperKit', :path => 'ViperKit'
     

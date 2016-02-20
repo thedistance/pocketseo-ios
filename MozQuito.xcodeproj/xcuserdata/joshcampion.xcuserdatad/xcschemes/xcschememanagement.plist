@@ -4,10 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PocketSEO.xcscheme</key>
+		<key>PocketSEO.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>16</integer>
 		</dict>
 		<key>PocketSEOEntities.xcscheme</key>
 		<dict>
@@ -38,6 +38,16 @@
 			<true/>
 		</dict>
 		<key>A5F4E67B1C50E0FD0099010C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5FB61CC1C787B8100E0BC9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5FB61DB1C787BBA00E0BC9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
