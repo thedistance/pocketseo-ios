@@ -77,8 +77,8 @@
 		A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */; };
 		A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */; };
 		A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */; };
-		A5FB61FC1C78804500E0BC9A /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB61FB1C78804500E0BC9A /* ThemeKitCore.framework */; };
-		A5FB61FD1C78804500E0BC9A /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB61FB1C78804500E0BC9A /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; };
+		A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,13 +93,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A5FB61FE1C78804500E0BC9A /* Embed Frameworks */ = {
+		A5FB62051C78B72C00E0BC9A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A5FB61FD1C78804500E0BC9A /* ThemeKitCore.framework in Embed Frameworks */,
+				A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,7 +202,7 @@
 		A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperationTestCase.swift; sourceTree = "<group>"; };
 		A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAssertEqualOptional.swift; sourceTree = "<group>"; };
 		A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnalyticsInteractors.swift; sourceTree = "<group>"; };
-		A5FB61FB1C78804500E0BC9A /* ThemeKitCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThemeKitCore.framework; path = Libraries/ThemeKit/Debug/ThemeKitCore.framework; sourceTree = "<group>"; };
+		A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThemeKitCore.framework; path = Libraries/ThemeKit/Release/ThemeKitCore.framework; sourceTree = "<group>"; };
 		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
 		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,7 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FB61FC1C78804500E0BC9A /* ThemeKitCore.framework in Frameworks */,
+				A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */,
 				809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,7 +507,7 @@
 		A5F4E65F1C50E0FD0099010C = {
 			isa = PBXGroup;
 			children = (
-				A5FB61FB1C78804500E0BC9A /* ThemeKitCore.framework */,
+				A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */,
 				A5F4E66A1C50E0FD0099010C /* MozQuito */,
 				A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */,
 				A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */,
@@ -590,7 +590,7 @@
 				A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */,
 				82CBD3F762B24275BB76B977 /* Copy Pods Resources */,
 				A505BA411C563E4A004F2607 /* ShellScript */,
-				A5FB61FE1C78804500E0BC9A /* Embed Frameworks */,
+				A5FB62051C78B72C00E0BC9A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
