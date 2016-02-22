@@ -62,17 +62,6 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
     }
     
     func installRootViewControllerIntoWindow(window: UIWindow) {
-        
-        let statusView = ThemeView()
-        statusView.backgroundColourStyle = .MainDark
-        
-        let statusFrame = CGRectMake(0, 0, window.frame.size.width, 20.0)
-        statusView.frame = statusFrame
-        statusView.autoresizingMask = .FlexibleWidth
-        statusView.layer.zPosition = 10.0
-
-        window.addSubview(statusView)
-        
         window.rootViewController = rootWireframe.createRootViewController()
     }
     

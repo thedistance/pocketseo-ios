@@ -63,6 +63,10 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         // re-set the properties to assign to the views incase the presenter request finished before viewDidLoad(_:)
         let meta = pageMetaData
         pageMetaData = meta
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         configureMetricsAxis()
     }

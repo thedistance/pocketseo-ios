@@ -49,10 +49,20 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-vp-Tf2" customClass="ThemeView" customModule="PocketSEO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="25"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="backgroundColourStyleId" value="MainDark"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="S6T-vp-Tf2" secondAttribute="trailing" id="2oX-pQ-M2I"/>
                                     <constraint firstAttribute="trailing" secondItem="gA0-BI-hWd" secondAttribute="trailing" id="5H0-y6-CIb"/>
+                                    <constraint firstItem="S6T-vp-Tf2" firstAttribute="leading" secondItem="1ps-V1-z62" secondAttribute="leading" id="5LJ-0t-e7w"/>
+                                    <constraint firstItem="S6T-vp-Tf2" firstAttribute="top" secondItem="1ps-V1-z62" secondAttribute="top" id="Bd6-7K-tRf"/>
                                     <constraint firstItem="2ve-PD-ffy" firstAttribute="leading" secondItem="1ps-V1-z62" secondAttribute="leading" id="M2g-8x-9Jj"/>
                                     <constraint firstAttribute="trailing" secondItem="2ve-PD-ffy" secondAttribute="trailing" id="Rtj-Ez-czC"/>
                                     <constraint firstItem="gA0-BI-hWd" firstAttribute="leading" secondItem="1ps-V1-z62" secondAttribute="leading" id="UGg-sS-1GK"/>
@@ -80,6 +90,7 @@
                             <constraint firstItem="gA0-BI-hWd" firstAttribute="top" secondItem="tcA-F0-xH3" secondAttribute="bottom" id="Qi8-B1-zqH"/>
                             <constraint firstItem="Dfg-3m-gGI" firstAttribute="leading" secondItem="P5G-U3-lTQ" secondAttribute="leading" id="Xxj-g6-Rd4"/>
                             <constraint firstAttribute="trailing" secondItem="1ps-V1-z62" secondAttribute="trailing" id="Ymb-td-Pgd"/>
+                            <constraint firstItem="S6T-vp-Tf2" firstAttribute="bottom" secondItem="tcA-F0-xH3" secondAttribute="bottom" constant="5" id="eMy-3u-lMK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -92,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOu-qG-4kG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="404"/>
+            <point key="canvasLocation" x="38" y="419"/>
         </scene>
         <!--URL Metrics View Controller-->
         <scene sceneID="3SV-G3-mwN">
