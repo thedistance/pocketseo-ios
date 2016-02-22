@@ -9,14 +9,6 @@
 import XCTest
 @testable import PocketSEO
 
-extension MZAlexaData {
-    
-    static func TheDistanceAlexaData() -> MZAlexaData {
-        return MZAlexaData(popularityText: "1316283", reachRank: "1199410", rankDelta: "+29419")
-    }
-    
-}
-
 class URLMetrics_NoNetwork_Tests: AdvancedOperationTestCase {
     
     override func setUp() {

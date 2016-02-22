@@ -23,7 +23,7 @@ public class MZMozscapeIndexedStack:CreatedStack {
     var dates:MZMozscapeIndexedDates? {
         didSet {
             [(lastDateLabel, dates?.last), (nextDateLabel, dates?.next)]
-                .map({ ($0.0, $0.1 == nil ? "-" : self.dateFormatter.stringFromDate($0.1!)) })
+                .map({ ($0.0, $0.1 == nil ? NoValueString : self.dateFormatter.stringFromDate($0.1!)) })
                 .forEach({ $0.0.text = $0.1 })
         }
     }
@@ -42,8 +42,8 @@ public class MZMozscapeIndexedStack:CreatedStack {
     
     init() {
         
-        lastStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeLastIndexedTitle), "-"])
-        nextStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeNextIndexedTitle), "-"])
+        lastStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeLastIndexedTitle), NoValueString])
+        nextStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeNextIndexedTitle), NoValueString])
         
         for l in [lastStack.labels[0], nextStack.labels[0]] {
             l.textStyle = .Caption
@@ -80,7 +80,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
             spamScoreProgressView.setDValue(data?.spamScore)
             
             [(rootLinksStack, data?.establishedLinksRoot), (totalLinksStack, data?.establishedLinksTotal)]
-                .map({ ($0.0.labels[0], $0.1 == nil ? "-" : "\($0.1!)") })
+                .map({ ($0.0.labels[0], $0.1 == nil ? NoValueString : "\($0.1!)") })
                 .forEach({ $0.0.text = $0.1 })
         }
     }
@@ -95,20 +95,20 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
     
     let linksHeadingStack:StackView
     
-    let rootLinksStack = GenericStringsStack<ThemeLabel>(strings: ["-", MZLocalizedString(.URLMozscapeLinksRootDomain)])
+    let rootLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, MZLocalizedString(.URLMozscapeLinksRootDomain)])
     
-    let totalLinksStack = GenericStringsStack<ThemeLabel>(strings: ["-", MZLocalizedString(.URLMozscapeLinksTotalLinks)])
+    let totalLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, MZLocalizedString(.URLMozscapeLinksTotalLinks)])
     
     let indexedStack = MZMozscapeIndexedStack()
     
     init() {
         
         // create the title views
-        let mozImage = UIImage(named: "Moz Logo",
+        let titleImage = UIImage(named: "Moz Logo",
             inBundle: NSBundle(forClass: MZMozscapeMetricsStack.self),
             compatibleWithTraitCollection: nil)
         
-        let titleImageView = UIImageView(image: mozImage)
+        let titleImageView = UIImageView(image: titleImage)
         titleImageView.contentMode = .ScaleAspectFit
         
         // create the authority section

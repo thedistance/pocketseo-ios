@@ -55,6 +55,7 @@
 		A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
 		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
 		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
+		A5E674971C7B313E00A7CDF4 /* MZAlexaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataView.swift */; };
 		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
 		A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */; };
@@ -161,6 +162,7 @@
 		A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextFieldStack.swift; sourceTree = "<group>"; };
 		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
 		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
+		A5E674961C7B313E00A7CDF4 /* MZAlexaDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataView.swift; path = "Alexa Data/MZAlexaDataView.swift"; sourceTree = "<group>"; };
 		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
 		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
 		A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsPresenter.swift; path = Modules/URLMetrics/Viper/MZURLMetricsPresenter.swift; sourceTree = "<group>"; };
@@ -408,6 +410,14 @@
 			path = Modules/Theme;
 			sourceTree = "<group>";
 		};
+		A5E674951C7B312400A7CDF4 /* Alexa Data */ = {
+			isa = PBXGroup;
+			children = (
+				A5E674961C7B313E00A7CDF4 /* MZAlexaDataView.swift */,
+			);
+			name = "Alexa Data";
+			sourceTree = "<group>";
+		};
 		A5EA9A8C1C5681B6004CC9EF /* Viper */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +487,7 @@
 			children = (
 				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
 				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
+				A5E674951C7B312400A7CDF4 /* Alexa Data */,
 				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
 				A5ECBD981C5BA931003350E3 /* Page Meta Data */,
 			);
@@ -835,6 +846,7 @@
 				A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */,
 				A50BD3941C75E26900E7A07F /* MZLocalization.swift in Sources */,
 				A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */,
+				A5E674971C7B313E00A7CDF4 /* MZAlexaDataView.swift in Sources */,
 				A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */,
 				A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */,
 				A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */,

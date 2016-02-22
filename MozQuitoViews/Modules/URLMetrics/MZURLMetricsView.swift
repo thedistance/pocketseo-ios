@@ -15,12 +15,13 @@ public class MZURLMetricsStack:CreatedStack {
     
     public let pageMetaDataView = MZPageMetaDataView(frame: CGRectMake(0, 0, 320, 64))
     public let mozDataView = MZMozscapeMetricsView(frame: CGRectMake(0, 0, 320, 64))
+    public let alexaDataView = MZAlexaDataView(frame: CGRectMake(0, 0, 320, 64))
     
-    let secondStack:StackView
+    var secondStack:StackView
     
     public init() {
         
-        secondStack = CreateStackView([mozDataView])
+        secondStack = CreateStackView([mozDataView, alexaDataView])
         
         super.init(arrangedSubviews: [pageMetaDataView, secondStack.view])
         
@@ -29,11 +30,13 @@ public class MZURLMetricsStack:CreatedStack {
         
         secondStack.axis = .Horizontal
         secondStack.spacing = 8.0
+        secondStack.stackAlignment = .Leading
+        
     }
     
 }
 
-@IBDesignable
+// @IBDesignable
 public class MZURLMetricsView: UIView {
     
     public var pageMetaData:MZPageMetaData? {
@@ -51,6 +54,12 @@ public class MZURLMetricsView: UIView {
     public var mozscapeIndexedDates:MZMozscapeIndexedDates? {
         didSet {
             metricsStack.mozDataView.dataStack.indexedStack.dates = mozscapeIndexedDates
+        }
+    }
+    
+    public var alexaData:MZAlexaData? {
+        didSet {
+            metricsStack.alexaDataView.dataStack.alexaData = alexaData
         }
     }
     
@@ -83,7 +92,9 @@ public class MZURLMetricsView: UIView {
         pageMetaData = MZPageMetaData.TheDistanceMetaData()
         
         metricsStack.mozDataView.dataStack.toggleExpanded(nil)
-        mozscapeMetrics = try? MZMozscapeMetrics()
+        // mozscapeMetrics = try? MZMozscapeMetrics()
         // mozscapeIndexedDates = MZMozscapeIndexedDates.testDates()
+        
+        alexaData = MZAlexaData.TheDistanceAlexaData()
     }
 }

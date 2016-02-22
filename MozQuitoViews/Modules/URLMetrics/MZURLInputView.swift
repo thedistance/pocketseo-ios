@@ -29,7 +29,6 @@ public class MZURLInputStack: CreatedStack {
         safariButton.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         safariButton.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         safariButton.setContentHuggingPriority(255, forAxis: .Horizontal)
-//        safariButton.hidden = true
         
         
         urlTextFieldStack.textField.keyboardType = .URL
@@ -47,7 +46,7 @@ public class MZURLInputStack: CreatedStack {
         refreshButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         refreshButton.tintColourStyle = .LightText
         
-        super.init(arrangedSubviews: [safariButton, urlTextFieldStack.stackView, refreshButton])
+        super.init(arrangedSubviews: [urlTextFieldStack.stackView, safariButton, refreshButton])
         
         stack.stackDistribution = .Fill
         stack.spacing = 8.0

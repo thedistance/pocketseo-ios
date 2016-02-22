@@ -45,6 +45,10 @@ public enum MZLocalizationKey: String {
     
     // -- Alexa Data
     
+    case URLAlexaPopularity
+    case URLAlexaReachRank
+    case URLAlexaRankDelta
+    
     // -- Links
     
     case URLLinksTitle
@@ -82,6 +86,10 @@ public enum MZLocalizationKey: String {
         .URLMozscapeNextIndexedTitle,
         
         // -- Alexa Data
+        
+        .URLAlexaPopularity,
+        .URLAlexaReachRank,
+        .URLAlexaRankDelta,
         
         // -- Links
         
@@ -141,6 +149,14 @@ public struct MZLocalization: LocalizationHandler {
             return ("LAST INDEXED", "The subtitle of the last index date on the mozscape panel")
         case .URLMozscapeNextIndexedTitle:
             return ("NEXT INDEXING", "The subtitle of the next index date on the mozscape panel")
+            
+        case .URLAlexaPopularity:
+            return ("Popularity Text", "The text accompanying the Alexa Popularity Text value")
+        case .URLAlexaReachRank:
+            return ("Reach Rank", "The text accompanying the Alexa Reach Rank value")
+        case .URLAlexaRankDelta:
+            return ("Rank Delta", "The text accompanying the Alexa Rank Delta value")
+
         case .URLLinksTitle:
             return ("Links", "The tab title for the links tab on the URL details screen.")
         }

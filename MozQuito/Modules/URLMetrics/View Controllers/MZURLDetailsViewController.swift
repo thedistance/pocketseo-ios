@@ -15,6 +15,7 @@ import TheDistanceCore
 
 class MZURLDetailsViewController: JCPageViewController {
 
+    @IBOutlet weak var headerBackgroundView:ThemeView!
     @IBOutlet weak var urlInputView:MZURLInputView!
     private(set) var urlStack:StackView!
     
@@ -42,17 +43,27 @@ class MZURLDetailsViewController: JCPageViewController {
         // configure the JCPageViewController settings
         viewControllers = [metricsVC, linksVC]
         
-        (self.pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
+        (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
         
         // configure this view
         urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
         urlInputView.inputStack.safariButton.addTarget(self, action: "safariTapped:", forControlEvents: .TouchUpInside)
         urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
+        
+        headerBackgroundView?.layer.shadowOpacity = 0.27
+        headerBackgroundView?.layer.shadowRadius = 4.0
+        headerBackgroundView?.layer.shadowOffset = CGSizeMake(0, 4.0)
+        headerBackgroundView?.layer.shadowColor = UIColor.blackColor().CGColor
+        
     }
     
     func safariTapped(sender:UIButton) {
         
-        guard let str = urlString where !str.isEmpty else { return }
+        guard var str = urlString where !str.isEmpty else { return }
+        
+        if !(str.hasPrefix("http://") || str.hasPrefix("https://")) {
+            str = "http://" + str
+        }
         
         if let url = NSURL(string: str) {
             self.openInSafari(url)
@@ -84,6 +95,9 @@ class MZURLDetailsViewController: JCPageViewController {
     override func collectionView(collectionView: UICollectionView, layout: UICollectionViewLayout, titleFontForIndexPath indexPath: NSIndexPath) -> UIFont? {
         return MZThemeVendor.defaultFont(.SubHeadline, sizeCategory: nil)
     }
+    
+    /// Standard action to return home
+    @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
     
 }
 

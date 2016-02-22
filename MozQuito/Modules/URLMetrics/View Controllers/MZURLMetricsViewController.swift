@@ -8,8 +8,8 @@
 
 import UIKit
 import TheDistanceCore
-//import PocketSEOViews
-//import PocketSEOEntities
+import ViperKit
+import StackView
 
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
@@ -19,6 +19,10 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         didSet {
             
             pageMetaData = nil
+            mozscapeMetrics = nil
+            mozscapeIndexedDates = nil
+            alexaData = nil
+            
             metricsView?.metricsStack.pageMetaDataView.metaStack.configureAsExpanded(false)
             
             if let str = urlString {
@@ -45,6 +49,12 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         }
     }
     
+    var alexaData:MZAlexaData? {
+        didSet {
+            metricsView?.alexaData = alexaData
+        }
+    }
+    
     @IBOutlet weak var metricsView:MZURLMetricsView?
 
     override func viewDidLoad() {
@@ -53,6 +63,23 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         // re-set the properties to assign to the views incase the presenter request finished before viewDidLoad(_:)
         let meta = pageMetaData
         pageMetaData = meta
+        
+        configureMetricsAxis()
+    }
+    
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animateAlongsideTransition({ (_) -> Void in
+            
+            self.configureMetricsAxis()
+            
+            }, completion: nil)
+    }
+    
+    func configureMetricsAxis() {
+        let isCompact = self.traitCollection.horizontalSizeClass == .Compact
+        metricsView?.metricsStack.secondStack.axis = isCompact ? .Vertical : .Horizontal
+        metricsView?.metricsStack.secondStack.stackAlignment = isCompact ? .Fill : .Leading
+        view.layoutIfNeeded()
     }
     
 
@@ -85,12 +112,15 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     // MARK: Alexa
     
     func showAlexaData(data: MZAlexaData) {
-        print(data)
+        alexaData = data
     }
     
     func showAlexaDataErrors(errors: [NSError]) {
         
     }
     
+    func showTest() {
+        MZStoryboardLoader.instantiateViewControllerForIdentifier(.TestVC, bundle: NSBundle(forClass: TestAnalyticsViewController.self))
+    }
     
 }

@@ -11,7 +11,6 @@ import StackView
 import TheDistanceCore
 
 public class MZMozscapeMetricsView: GMDView {
-
     
     public let dataStack = MZMozscapeMetricsStack()
     

@@ -28,7 +28,7 @@ public class MZMetricProgressView: UIView {
             if let v = value {
                 valueLabel.text = String(Int(round(v)))
             } else {
-                valueLabel.text = "-"
+                valueLabel.text = NoValueString
             }
         }
     }
@@ -38,12 +38,12 @@ public class MZMetricProgressView: UIView {
             if let t = total {
                 totalLabel.text = String(Int(t))
             } else {
-                totalLabel.text = "-"
+                totalLabel.text = NoValueString
             }
         }
     }
     
-    let valueStack = GenericStringsStack<ThemeLabel>(strings: ["-", ""])
+    let valueStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, ""])
     var valueLabel:ThemeLabel {
         return valueStack.labels[0]
     }

@@ -19,4 +19,9 @@ public struct MZAlexaData {
         self.reachRank = reachRank
         self.rankDelta = rankDelta
     }
+    
+    public static func TheDistanceAlexaData() -> MZAlexaData {
+        return MZAlexaData(popularityText: "1316283", reachRank: "1199410", rankDelta: "+29419")
+    }
+    
 }
