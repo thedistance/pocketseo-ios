@@ -22,8 +22,6 @@
 		A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
 		A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
 		A50BD3931C75E25C00E7A07F /* MZPageMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */; };
-		A50BD3941C75E26900E7A07F /* MZLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57FF6FE1C60EBCE00FDA2AF /* MZLocalization.swift */; };
-		A50BD3951C75E26900E7A07F /* MZLocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57FF6FF1C60EBCE00FDA2AF /* MZLocalizedString.swift */; };
 		A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */; };
 		A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */; };
 		A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */; };
@@ -65,6 +63,8 @@
 		A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */; };
 		A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */; };
 		A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
+		A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */ = {isa = PBXBuildFile; fileRef = A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */; };
+		A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
@@ -109,20 +109,15 @@
 
 /* Begin PBXFileReference section */
 		01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0A2CCA56A991C2B778B97D61 /* Pods-PocketSEOEntities.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.beta testing.xcconfig"; sourceTree = "<group>"; };
 		0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.beta testing.xcconfig"; sourceTree = "<group>"; };
 		1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21F9FF84ADEB688B6B2667AA /* Pods-PocketSEOEntities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.release.xcconfig"; sourceTree = "<group>"; };
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.release.xcconfig"; sourceTree = "<group>"; };
 		4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E07B89C07D73E9A63C165A1 /* Pods-PocketSEOViews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.release.xcconfig"; sourceTree = "<group>"; };
 		5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.release.xcconfig"; sourceTree = "<group>"; };
-		50E56C9EEA7577A406F74FD8 /* Pods-PocketSEOViews.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.beta testing.xcconfig"; sourceTree = "<group>"; };
 		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
-		7FFCE0BCF1BD42804115749C /* Pods-PocketSEOViews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOViews.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOViews/Pods-PocketSEOViews.debug.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
 		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
@@ -143,8 +138,6 @@
 		A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
 		A50BD3AD1C75E29500E7A07F /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLDetails.storyboard; sourceTree = "<group>"; };
-		A57FF6FE1C60EBCE00FDA2AF /* MZLocalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocalization.swift; sourceTree = "<group>"; };
-		A57FF6FF1C60EBCE00FDA2AF /* MZLocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZLocalizedString.swift; sourceTree = "<group>"; };
 		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -185,6 +178,8 @@
 		A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetaDataStack.swift; sourceTree = "<group>"; };
 		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
 		A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataView.swift; sourceTree = "<group>"; };
+		A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSEO App Strings.tsv"; sourceTree = "<group>"; };
+		A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStack.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* PocketSEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketSEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -208,7 +203,6 @@
 		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
 		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F419192D39A6C764EFA433A5 /* Pods-PocketSEOEntities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOEntities.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOEntities/Pods-PocketSEOEntities.debug.xcconfig"; sourceTree = "<group>"; };
 		FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -239,15 +233,9 @@
 				E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */,
 				5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */,
 				0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */,
-				F419192D39A6C764EFA433A5 /* Pods-PocketSEOEntities.debug.xcconfig */,
-				21F9FF84ADEB688B6B2667AA /* Pods-PocketSEOEntities.release.xcconfig */,
-				0A2CCA56A991C2B778B97D61 /* Pods-PocketSEOEntities.beta testing.xcconfig */,
 				01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */,
 				4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */,
 				7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */,
-				7FFCE0BCF1BD42804115749C /* Pods-PocketSEOViews.debug.xcconfig */,
-				4E07B89C07D73E9A63C165A1 /* Pods-PocketSEOViews.release.xcconfig */,
-				50E56C9EEA7577A406F74FD8 /* Pods-PocketSEOViews.beta testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -347,16 +335,6 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
-		A57FF6FD1C60EBCE00FDA2AF /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				A57FF6FE1C60EBCE00FDA2AF /* MZLocalization.swift */,
-				A57FF6FF1C60EBCE00FDA2AF /* MZLocalizedString.swift */,
-			);
-			name = Localization;
-			path = Modules/Localization;
-			sourceTree = "<group>";
-		};
 		A59626D91C52743E0076147C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */,
-				A57FF6FD1C60EBCE00FDA2AF /* Localization */,
 				A5ECBD901C5BA5FD003350E3 /* Core */,
 				A5ECBD891C5BA5B2003350E3 /* URLMetrics */,
 				A5ECBD6A1C5BA52F003350E3 /* Info.plist */,
@@ -487,6 +464,7 @@
 			children = (
 				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
 				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
+				A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */,
 				A5E674951C7B312400A7CDF4 /* Alexa Data */,
 				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
 				A5ECBD981C5BA931003350E3 /* Page Meta Data */,
@@ -513,6 +491,14 @@
 				A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */,
 			);
 			path = "Page Meta Data";
+			sourceTree = "<group>";
+		};
+		A5F46D0F1C7B5AE4001417F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A5F4E65F1C50E0FD0099010C = {
@@ -546,6 +532,7 @@
 				A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */,
 				A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */,
 				A5F4E6771C50E0FD0099010C /* Info.plist */,
+				A5F46D0F1C7B5AE4001417F3 /* Resources */,
 				A59626D91C52743E0076147C /* Modules */,
 				A59626DF1C5277250076147C /* Storyboards */,
 				A5F4E6721C50E0FD0099010C /* Assets.xcassets */,
@@ -594,6 +581,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */;
 			buildPhases = (
+				A5F46D0E1C7B5974001417F3 /* ShellScript */,
 				F22743495F1EF2404723081F /* Check Pods Manifest.lock */,
 				A5F4E6641C50E0FD0099010C /* Sources */,
 				A5F4E6651C50E0FD0099010C /* Frameworks */,
@@ -682,6 +670,7 @@
 				A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */,
 				A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */,
 				A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */,
+				A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,6 +743,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 015a3121c76ea8baec90c4a97c7bd1976400adad dc9c94e3c240c0f762b3ba151b9bb3c0ddf4271bf6be439432c002315672794f";
+		};
+		A5F46D0E1C7B5974001417F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/JCLocalization/JCLocalization.sh\" \"${PROJECT_DIR}/MozQuito/Resources/PSEO App Strings.tsv\" \"${PODS_ROOT}/JCLocalization/JCLocalization/LocalizedString.swift\"";
 		};
 		A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -844,9 +846,9 @@
 				A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
 				A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */,
 				A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */,
-				A50BD3941C75E26900E7A07F /* MZLocalization.swift in Sources */,
 				A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */,
 				A5E674971C7B313E00A7CDF4 /* MZAlexaDataView.swift in Sources */,
+				A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */,
 				A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */,
 				A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */,
 				A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */,
@@ -859,7 +861,6 @@
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
 				A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */,
-				A50BD3951C75E26900E7A07F /* MZLocalizedString.swift in Sources */,
 				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
 				A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */,
 				A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */,
@@ -1010,14 +1011,13 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
 					"\"${PODS_ROOT}/Fabric/iOS\"",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
@@ -1048,8 +1048,6 @@
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
 					"\"${PODS_ROOT}/Fabric/iOS\"",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
@@ -1115,8 +1113,6 @@
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
 					"\"${PODS_ROOT}/Fabric/iOS\"",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";

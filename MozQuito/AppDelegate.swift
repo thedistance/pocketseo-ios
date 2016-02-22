@@ -11,8 +11,6 @@ import UIKit
 import Fabric
 import ViperKit
 
-//import PocketSEOEntities
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -21,10 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let _ = MZThemeVendor.shared()
-        
-        #if DEBUG
-            MZLocalization.dumpStringsFunction("MZLocalizedString", typed: "MZLocalizationKey", classed: "MZLocalization", filePath: "/Users/joshcampion/Documents/Client Repositories/MozQuito/MozQuitoEntities/Modules/Localization/MZLocalizedString.swift")
-        #endif
         
         // Override point for customization after application launch.
         let dependencies = MZAppDependencies.sharedInstance()

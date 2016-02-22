@@ -43,6 +43,7 @@ target 'PocketSEO' do
     
     ### Josh's Development Pods ###
     
+    pod 'JCLocalization', :git => 'git@bitbucket.org:joshcampion89/jclocalization.git'
     pod 'SwiftInPractice', :path => 'SwiftInPractice'
     pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
     

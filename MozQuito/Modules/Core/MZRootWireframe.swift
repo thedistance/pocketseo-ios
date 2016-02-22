@@ -8,11 +8,9 @@
 
 import UIKit
 
-//import PocketSEOEntities
+import JCLocalization
 import TheDistanceCore
-
 import JCPageViewController
-
 
 class MZRootWireframe {
     
@@ -34,11 +32,11 @@ class MZRootWireframe {
         let detailsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLDetailsVC) as! MZURLDetailsViewController
         
         let urlMetricsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC) as! MZURLMetricsViewController
-        urlMetricsVC.title = MZLocalizedString(.URLMetricsTitle).uppercaseString
+        urlMetricsVC.title = LocalizedString(.URLMetricsTitle).uppercaseString
         urlMetricsVC.presenter = MZURLMetricsPresenter.configuredPresenterForView(urlMetricsVC)
         
         let linksVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLLinksVC)
-        linksVC.title = MZLocalizedString(.URLLinksTitle).uppercaseString
+        linksVC.title = LocalizedString(.URLLinksTitle).uppercaseString
         
         detailsVC.metricsVC = urlMetricsVC
         detailsVC.linksVC = linksVC

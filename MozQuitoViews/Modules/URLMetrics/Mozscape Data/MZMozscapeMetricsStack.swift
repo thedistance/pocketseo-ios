@@ -8,6 +8,7 @@
 
 import Foundation
 import StackView
+import JCLocalization
 
 public class MZMozscapeIndexedStack:CreatedStack {
     
@@ -42,8 +43,8 @@ public class MZMozscapeIndexedStack:CreatedStack {
     
     init() {
         
-        lastStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeLastIndexedTitle), NoValueString])
-        nextStack = GenericStringsStack<ThemeLabel>(strings: [MZLocalizedString(.URLMozscapeNextIndexedTitle), NoValueString])
+        lastStack = GenericStringsStack<ThemeLabel>(strings: [LocalizedString(.URLMozscapeLastIndexedTitle), NoValueString])
+        nextStack = GenericStringsStack<ThemeLabel>(strings: [LocalizedString(.URLMozscapeNextIndexedTitle), NoValueString])
         
         for l in [lastStack.labels[0], nextStack.labels[0]] {
             l.textStyle = .Caption
@@ -85,6 +86,8 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         }
     }
     
+    let statusCodeLabel = ThemeLabel()
+    
     let authorityHeadingStack:StackView
 
     let pageAuthorityProgressView =  MZMetricProgressView()
@@ -95,9 +98,9 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
     
     let linksHeadingStack:StackView
     
-    let rootLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, MZLocalizedString(.URLMozscapeLinksRootDomain)])
+    let rootLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, LocalizedString(.URLMozscapeLinksRootDomain)])
     
-    let totalLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, MZLocalizedString(.URLMozscapeLinksTotalLinks)])
+    let totalLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, LocalizedString(.URLMozscapeLinksTotalLinks)])
     
     let indexedStack = MZMozscapeIndexedStack()
     
@@ -116,7 +119,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         let authorityTitleLabel = ThemeLabel()
         authorityTitleLabel.textStyle = .SubHeadline
         authorityTitleLabel.textColourStyle = .Text
-        authorityTitleLabel.text = MZLocalizedString(.URLMozscapeAuthorityTitle)
+        authorityTitleLabel.text = LocalizedString(.URLMozscapeAuthorityTitle)
         
         let authorityInfoButton = ThemeButton(type: .InfoDark)
         authorityInfoButton.setContentHuggingPriority(255, forAxis: .Horizontal)
@@ -131,18 +134,18 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         domainAuthorityProgressView.total = 100
         spamScoreProgressView.total = 17
         
-        let authInfo:[(progress:MZMetricProgressView, key:MZLocalizationKey)] =
+        let authInfo:[(progress:MZMetricProgressView, key:LocalizationKey)] =
         [
             (pageAuthorityProgressView, .URLMozscapeAuthorityPage),
             (domainAuthorityProgressView, .URLMozscapeAuthorityDomain),
             (spamScoreProgressView, .URLMozscapeAuthoritySpamScore)
             ]
             
-        let authStacks:[StackView] = authInfo.map({ (progress:MZMetricProgressView, key:MZLocalizationKey) -> (MZMetricProgressView, ThemeLabel) in
+        let authStacks:[StackView] = authInfo.map({ (progress:MZMetricProgressView, key:LocalizationKey) -> (MZMetricProgressView, ThemeLabel) in
             
             let titleLabel = ThemeLabel()
             titleLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
-            titleLabel.text = MZLocalizedString(key)
+            titleLabel.text = LocalizedString(key)
             titleLabel.textAlignment = .Center
             titleLabel.numberOfLines = 0
             titleLabel.textColourStyle = .Text
@@ -173,7 +176,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         let linksTitleLabel = ThemeLabel()
         linksTitleLabel.textStyle = .SubHeadline
         linksTitleLabel.textColourStyle = .Text
-        linksTitleLabel.text = MZLocalizedString(.URLMozscapeLinksTitle)
+        linksTitleLabel.text = LocalizedString(.URLMozscapeLinksTitle)
         
         let linksInfoButton = ThemeButton(type: .InfoDark)
         linksInfoButton.setContentHuggingPriority(255, forAxis: .Horizontal)

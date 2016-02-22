@@ -9,7 +9,7 @@
 import UIKit
 import TheDistanceCore
 import StackView
-
+import JCLocalization
 /// The string used to represent no value from a sever response. This differs from 0 which could have different meaning.
 let NoValueString = "-"
 
@@ -24,9 +24,9 @@ public class MZAlexaDataStack: MZExpandingStack {
         }
     }
     
-    let popularityStack = GenericStringsStack<ThemeLabel>(strings:[NoValueString, MZLocalizedString(.URLAlexaPopularity)])
-    let reachRankStack = GenericStringsStack<ThemeLabel>(strings:[NoValueString, MZLocalizedString(.URLAlexaReachRank)])
-    let rankDeltaStack = GenericStringsStack<ThemeLabel>(strings:[NoValueString, MZLocalizedString(.URLAlexaRankDelta)])
+    let popularityStack = GenericStringsStack<ThemeLabel>(strings:[NoValueString, LocalizedString(.URLAlexaPopularity)])
+    let reachRankStack = GenericStringsStack<ThemeLabel>(strings:[NoValueString, LocalizedString(.URLAlexaReachRank)])
+    let rankDeltaStack = GenericStringsStack<ThemeLabel>(strings:[NoValueString, LocalizedString(.URLAlexaRankDelta)])
     
     init() {
         

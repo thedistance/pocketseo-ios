@@ -8,8 +8,7 @@
 
 import Foundation
 import StackView
-// import ThemeKitCore
-//import PocketSEOEntities
+import JCLocalization
 import TheDistanceCore
 
 public class MZURLInputStack: CreatedStack {
@@ -35,7 +34,7 @@ public class MZURLInputStack: CreatedStack {
         urlTextFieldStack.textField.returnKeyType = .Send
         urlTextFieldStack.textField.autocapitalizationType = .None
         urlTextFieldStack.textField.autocorrectionType = .No
-        urlTextFieldStack.placeholderText = MZLocalizedString(.URLDataSearchHint)
+        urlTextFieldStack.placeholderText = LocalizedString(.URLDataSearchHint)
         (urlTextFieldStack.textField as? ThemeTextField)?.textStyle = .SubHeadline
         (urlTextFieldStack.textField as? ThemeTextField)?.textColourStyle = .LightText
         (urlTextFieldStack.textField as? ThemeTextField)?.placeholderTextColourStyle = .SecondaryLightText

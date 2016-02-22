@@ -63,7 +63,7 @@ public class MZPageMetaDataView: GMDView {
         
         metaStack.stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(metaStack.stackView)
-        addConstraints(NSLayoutConstraint.constraintsToAlign(view: metaStack.stackView, to: self, withInsets: UIEdgeInsetsMakeEqual(8.0)))
+        addConstraints(NSLayoutConstraint.constraintsToAlign(view: metaStack.stackView, to: self, withInsets: UIEdgeInsetsZero, relativeToMargin: (true, true, true, true)))
         
         self.backgroundColor = UIColor.whiteColor()
     }

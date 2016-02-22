@@ -8,7 +8,7 @@
 
 import Foundation
 import StackView
-//import PocketSEOEntities
+import JCLocalization
 
 class MZMetaDataStack: CreatedStack {
     
@@ -37,9 +37,9 @@ class MZMetaDataStack: CreatedStack {
     
     let headingStack:StackView
     
-    init(titleKey:MZLocalizationKey) {
+    init(titleKey:LocalizationKey) {
         
-        titleLabel.text = MZLocalizedString(titleKey).uppercaseString
+        titleLabel.text = LocalizedString(titleKey).uppercaseString
         
         // fonts
         titleLabel.textStyle = .Caption

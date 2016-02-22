@@ -105,8 +105,7 @@ public struct MZMozscapeMetrics {
                     return nil
                 }
             }))
-            
-            //            if {
+
             let title = keyResults[.Title]?.string
             let canURL = keyResults[.CanonicalURL]?.URL
             let http = keyResults[.HTTPStatusCode]?.int
@@ -131,17 +130,23 @@ public struct MZMozscapeMetrics {
             self.establishedLinksRoot = root
             self.establishedLinksTotal = total
             
-            
-            //            } else {
-            //                throw NSError(InitUnexpectedResponseWithDescription: "unknown url-metrics response. Missing parameters.Got\n\(results)")
-            //            }
-            
-            
         } else {
             
             throw NSError(domain: .MozscapeError, code: .UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: "url-metrics response json in unexpected format. Expected Dictionary. Got\n\(json)"])
             
         }
+    }
+    
+    func userFacingStringForHTTPStatusCode(code:Int) -> String? {
+        
+        switch code {
+            
+            
+            
+        default:
+            return nil
+        }
+        
     }
 }
 

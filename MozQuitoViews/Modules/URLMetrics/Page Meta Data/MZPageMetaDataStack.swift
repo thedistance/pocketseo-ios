@@ -10,9 +10,12 @@ import Foundation
 
 import TheDistanceCore
 import StackView
-//import PocketSEOEntities
+import JCLocalization
 
 public class MZExpandingStack: CreatedStack {
+    
+    let loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+    let errorStack = ErrorStack(message: "")
     
     let expandButton = ThemeButton(type: .System)
     private(set) var expandTarget:ObjectTarget<UIButton>?
@@ -22,10 +25,19 @@ public class MZExpandingStack: CreatedStack {
     
     init(titleView:UIView, arrangedSubviews:[UIView]) {
         
+        loadingView.color = MZThemeVendor.defaultColour(.SecondaryText)
+        
         expandingTitleStack = CreateStackView([titleView, expandButton])
         
         var allViews = arrangedSubviews
+        allViews.insert(loadingView, atIndex: 0)
         allViews.insert(expandingTitleStack.view, atIndex: 0)
+        
+        let errorContainer = UIView()
+        errorContainer.backgroundColor = UIColor.clearColor()
+        errorContainer.addSubview(errorStack.stackView)
+        
+        allViews.append(errorContainer)
         
         super.init(arrangedSubviews: allViews)
         
@@ -155,7 +167,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         let titleLabel = ThemeLabel()
         titleLabel.textStyle = .Title
         titleLabel.textColourStyle = .Text
-        titleLabel.text = MZLocalizedString(.URLPageMetaDataHeadline)
+        titleLabel.text = LocalizedString(.URLPageMetaDataHeadline)
         
         super.init(titleView: titleLabel, arrangedSubviews: [detailsStack.view, footerStack.view])
     }
@@ -185,7 +197,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         responseURLLabel.numberOfLines = 0
         usingSSLTitleLabel.numberOfLines = 0
         
-        usingSSLTitleLabel.text = MZLocalizedString(.URLPageMetaDataUsingSSL)
+        usingSSLTitleLabel.text = LocalizedString(.URLPageMetaDataUsingSSL)
         usingSSLStack.stackDistribution = .EqualSpacing
         
         responseURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
