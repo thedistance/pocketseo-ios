@@ -97,4 +97,14 @@ public class MZURLMetricsView: UIView {
         
         alexaData = MZAlexaData.TheDistanceAlexaData()
     }
+    
+    public override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        let isCompact = self.traitCollection.horizontalSizeClass == .Compact
+        metricsStack.secondStack.axis = isCompact ? .Vertical : .Horizontal
+        metricsStack.secondStack.stackAlignment = isCompact ? .Fill : .Leading
+        
+        layoutIfNeeded()
+    }
 }

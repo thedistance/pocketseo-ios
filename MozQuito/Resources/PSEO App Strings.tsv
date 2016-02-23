@@ -32,7 +32,21 @@ URLMozscapeStatusCode10	Page too big	The text to display for a Mozscape HTTP Sta
 URLMozscapeStatusCode11	Currently unused	The text to display for a Mozscape HTTP Status Code error 11
 URLMozscapeStatusCode12	Currently unused	The text to display for a Mozscape HTTP Status Code error 12
 URLMozscapeStatusCode13	Failed to fetch robots.txt	The text to display for a Mozscape HTTP Status Code error 13
+URLMozscapeStatusCodeHTTP	HTTP Response code %d	The text to display for non-Mozscape specific HTTP Status Codes
 URLAlexaPopularity	Popularity Text	The text accompanying the Alexa Popularity Text value
 URLAlexaReachRank	Reach Rank	The text accompanying the Alexa Reach Rank value
 URLAlexaRankDelta	Rank Delta	The text accompanying the Alexa Rank Delta value
+TheDistancePanelHeadline	Developed By	The headline text above TheDistance Logo
+TheDistancePanelTagline	Yorkshire's leading iOS & Android App Developers	The tagline text below TheDistance Logo
+TheDistancePanelButtonGetInTouch	Get In Touch	The button text for the get in touch button on TheDistance panel
+TheDistancePanelGetInTouchOptionEmail	Email	The button text for the sending an email via Get In Touch on TheDistance panel
+TheDistancePanelGetInTouchOptionPhone	Phone	The button text for making a phone call via Get In Touch on TheDistance panel
+TheDistancePanelGetInTouchOptionContact	Add to Contacts	The button text for adding The Distance Contact via Get In Touch on TheDistance panel
+TheDistanceContactCompany	The Distance The company field for The Distance contact
+TheDistanceContactPhone	+441904 217 171 The phone number field for The Distance contact
+TheDistanceContactEmail	hello+pocketseo@thedistance.co.uk The email address field for The Distance contact
+TheDistancePanelButtonSendFeedback	Send Feedback	The button text for the feeback button on TheDistance panel
+TheDistancePanelEmailBody	Sent from %s, version %s	The email body for the feedback and get in touch emails. The first argument should be the app name, the second should be the app version.
+TheDistancePanelSendFeedbackEmailAddress	pocketseo@thedistance.co.uk	The email address for contacting The Distance for feedback
+TheDistancePanelButtonVisitWebsite	Visit Website	The button text for the Visit Website button on TheDistance panel
 URLLinksTitle	Links	The tab title for the links tab on the URL details screen.

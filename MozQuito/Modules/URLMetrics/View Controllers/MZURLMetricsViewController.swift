@@ -64,28 +64,6 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         let meta = pageMetaData
         pageMetaData = meta
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        configureMetricsAxis()
-    }
-    
-    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animateAlongsideTransition({ (_) -> Void in
-            
-            self.configureMetricsAxis()
-            
-            }, completion: nil)
-    }
-    
-    func configureMetricsAxis() {
-        let isCompact = self.traitCollection.horizontalSizeClass == .Compact
-        metricsView?.metricsStack.secondStack.axis = isCompact ? .Vertical : .Horizontal
-        metricsView?.metricsStack.secondStack.stackAlignment = isCompact ? .Fill : .Leading
-        view.layoutIfNeeded()
-    }
-    
 
     // MARK: - URLMetricsView
 

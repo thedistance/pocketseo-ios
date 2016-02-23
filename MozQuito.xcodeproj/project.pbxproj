@@ -65,6 +65,8 @@
 		A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
 		A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */ = {isa = PBXBuildFile; fileRef = A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */; };
 		A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */; };
+		A5F46D171C7C7479001417F3 /* MZDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D161C7C7479001417F3 /* MZDistanceView.swift */; };
+		A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D181C7C759E001417F3 /* GMDView.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
 		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
@@ -180,6 +182,8 @@
 		A5ECBD9C1C5BA931003350E3 /* MZPageMetaDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataView.swift; sourceTree = "<group>"; };
 		A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSEO App Strings.tsv"; sourceTree = "<group>"; };
 		A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStack.swift; sourceTree = "<group>"; };
+		A5F46D161C7C7479001417F3 /* MZDistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceView.swift; sourceTree = "<group>"; };
+		A5F46D181C7C759E001417F3 /* GMDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMDView.swift; path = Modules/GMDView.swift; sourceTree = "<group>"; };
 		A5F4E6681C50E0FD0099010C /* PocketSEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketSEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */,
+				A5F46D181C7C759E001417F3 /* GMDView.swift */,
 				A5C572371C61083C00E2AACF /* Theme */,
 				A5ECBD951C5BA931003350E3 /* URLMetrics */,
 				A5ECBD7D1C5BA53F003350E3 /* Info.plist */,
@@ -464,6 +469,7 @@
 			children = (
 				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
 				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
+				A5F46D161C7C7479001417F3 /* MZDistanceView.swift */,
 				A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */,
 				A5E674951C7B312400A7CDF4 /* Alexa Data */,
 				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
@@ -821,6 +827,7 @@
 				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
 				A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */,
 				A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */,
+				A5F46D171C7C7479001417F3 /* MZDistanceView.swift in Sources */,
 				A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */,
 				A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */,
 				A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */,
@@ -860,6 +867,7 @@
 				A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
+				A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */,
 				A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */,
 				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
 				A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */,

@@ -26,6 +26,7 @@ public class MZExpandingStack: CreatedStack {
     init(titleView:UIView, arrangedSubviews:[UIView]) {
         
         loadingView.color = MZThemeVendor.defaultColour(.SecondaryText)
+        loadingView.hidden = true
         
         expandingTitleStack = CreateStackView([titleView, expandButton])
         
@@ -36,6 +37,7 @@ public class MZExpandingStack: CreatedStack {
         let errorContainer = UIView()
         errorContainer.backgroundColor = UIColor.clearColor()
         errorContainer.addSubview(errorStack.stackView)
+        errorContainer.hidden = true
         
         allViews.append(errorContainer)
         
