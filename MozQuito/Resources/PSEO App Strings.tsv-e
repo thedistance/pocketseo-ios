@@ -36,7 +36,7 @@ URLMozscapeStatusCodeHTTP	HTTP Response code %d	The text to display for non-Mozs
 URLAlexaPopularity	Popularity Text	The text accompanying the Alexa Popularity Text value
 URLAlexaReachRank	Reach Rank	The text accompanying the Alexa Reach Rank value
 URLAlexaRankDelta	Rank Delta	The text accompanying the Alexa Rank Delta value
-TheDistancePanelHeadline	Developed By	The headline text above TheDistance Logo
+TheDistancePanelHeadline	PocketSEO developed by	The headline text above TheDistance Logo
 TheDistancePanelTagline	Yorkshire's leading iOS & Android App Developers	The tagline text below TheDistance Logo
 TheDistancePanelButtonGetInTouch	Get In Touch	The button text for the get in touch button on TheDistance panel
 TheDistancePanelGetInTouchOptionEmail	Email	The button text for the sending an email via Get In Touch on TheDistance panel
@@ -49,4 +49,5 @@ TheDistancePanelButtonSendFeedback	Send Feedback	The button text for the feeback
 TheDistancePanelEmailBody	Sent from %s, version %s	The email body for the feedback and get in touch emails. The first argument should be the app name, the second should be the app version.
 TheDistancePanelSendFeedbackEmailAddress	pocketseo@thedistance.co.uk	The email address for contacting The Distance for feedback
 TheDistancePanelButtonVisitWebsite	Visit Website	The button text for the Visit Website button on TheDistance panel
+TheDistancePanelVisitWebsiteURL	https://thedistance.co.uk	The url the user should visit from the Visit Website button on TheDistance panel.
 URLLinksTitle	Links	The tab title for the links tab on the URL details screen.

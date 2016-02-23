@@ -62,29 +62,14 @@ public class MZAlexaDataStack: MZExpandingStack {
     
 }
 
-public class MZAlexaDataView: GMDView {
+public class MZAlexaDataView: MZPanel {
     
     let dataStack = MZAlexaDataStack()
     
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureHierarchy()
+    override public var stack:CreatedStack? {
+        get {
+            return dataStack
+        }
+        set { }
     }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        configureHierarchy()
-    }
-    
-    func configureHierarchy() {
-        
-        dataStack.stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(dataStack.stackView)
-        addConstraints(NSLayoutConstraint.constraintsToAlign(view: dataStack.stackView, to: self, withInsets: UIEdgeInsetsMakeEqual(8.0)))
-        
-        self.backgroundColor = UIColor.whiteColor()
-    }
-    
 }

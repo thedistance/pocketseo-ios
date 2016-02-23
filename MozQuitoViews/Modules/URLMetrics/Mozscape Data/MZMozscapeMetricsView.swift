@@ -10,9 +10,9 @@ import UIKit
 import StackView
 import TheDistanceCore
 
-public class MZMozscapeMetricsView: GMDView {
+public class MZPanel: GMDView {
     
-    public let dataStack = MZMozscapeMetricsStack()
+    public private(set) var stack:CreatedStack?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,10 +28,32 @@ public class MZMozscapeMetricsView: GMDView {
     
     func configureHierarchy() {
         
-        dataStack.stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(dataStack.stackView)
-        addConstraints(NSLayoutConstraint.constraintsToAlign(view: dataStack.stackView, to: self, withInsets: UIEdgeInsetsMakeEqual(8.0)))
-        
         self.backgroundColor = UIColor.whiteColor()
+        
+        guard let stack = self.stack else { return }
+        
+        stack.stackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stack.stackView)
+        addConstraints(NSLayoutConstraint.constraintsToAlign(view: stack.stackView, to: self, withInsets: UIEdgeInsetsZero, relativeToMargin: (true,true,true,true)))
+    }
+    
+    override public func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        let isCompact = traitCollection.horizontalSizeClass == .Compact
+        self.layoutMargins = isCompact ? UIEdgeInsetsMakeEqual(8.0) : UIEdgeInsetsMakeEqual(20.0)
+        
+    }
+}
+
+public class MZMozscapeMetricsView: MZPanel {
+    
+    public let dataStack = MZMozscapeMetricsStack()
+    
+    override public var stack:CreatedStack? {
+        get {
+            return dataStack
+        }
+        set { }
     }
 }

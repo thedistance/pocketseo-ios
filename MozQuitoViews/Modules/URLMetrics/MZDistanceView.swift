@@ -11,6 +11,7 @@ import Foundation
 import TheDistanceCore
 import StackView
 import JCLocalization
+import MessageUI
 
 class MZButton: GMDThemeButton {
     
@@ -35,6 +36,8 @@ class MZDistanceStack: CreatedStack {
     let sendFeedbackButton = MZButton()
     let visitWebsite = MZButton()
     
+    private(set) var headingStack:StackView
+    private(set) var taglineStack:StackView
     private(set) var buttonStack:StackView
     
     init() {
@@ -42,19 +45,30 @@ class MZDistanceStack: CreatedStack {
         headlineLabel.textStyle = .Title
         headlineLabel.textColourStyle = .Text
         headlineLabel.text = LocalizedString(.TheDistancePanelHeadline)
+        headlineLabel.setContentHuggingPriority(755, forAxis: .Horizontal)
         headlineLabel.numberOfLines = 0
         
         let logoImage = UIImage(named: "TheDistance Logo",
             inBundle: NSBundle(forClass: MZDistanceStack.self),
             compatibleWithTraitCollection: nil)
-        logoImageView.image = logoImage?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 612, 0, 0))
-        logoImageView.contentMode = .ScaleToFill
+        logoImageView.image = logoImage//?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 412, 0, 0))
+        logoImageView.contentMode = .ScaleAspectFit
         
         
         taglineLabel.textStyle = .Body1
         taglineLabel.textColourStyle = .Text
         taglineLabel.text = LocalizedString(.TheDistancePanelTagline)
         taglineLabel.numberOfLines = 0
+        taglineLabel.textAlignment = .Center
+        taglineStack = CreateStackView([logoImageView, taglineLabel])
+        taglineStack.axis = .Vertical
+        taglineStack.spacing = 16.0
+        
+        headingStack = CreateStackView([headlineLabel, taglineStack.view])
+        headingStack.axis = .Horizontal
+        headingStack.stackAlignment = .Leading
+        headingStack.stackDistribution = .EqualSpacing
+        headingStack.spacing = 16.0
         
         sendFeedbackButton.setTitle(LocalizedString(.TheDistancePanelButtonSendFeedback).uppercaseString, forState: .Normal)
         getInTouchButton.setTitle(LocalizedString(.TheDistancePanelButtonGetInTouch).uppercaseString, forState: .Normal)
@@ -64,7 +78,9 @@ class MZDistanceStack: CreatedStack {
         buttonStack.axis = .Vertical
         buttonStack.spacing = 16.0
         
-        super.init(arrangedSubviews: [headlineLabel, logoImageView, taglineLabel, buttonStack.view])
+        
+        
+        super.init(arrangedSubviews: [headingStack.view, buttonStack.view])
         stack.axis = .Vertical
         stack.spacing = 16.0
         
@@ -78,39 +94,46 @@ class MZDistanceStack: CreatedStack {
                 constant: 0.0))
         }
     }
+    
+    func getInTouchTapped(sender:AnyObject?) {
+        
+    }
+    
+    func sendFeedbackTapped(sender:AnyObject?) {
+        
+    }
+    
+    func visitWebsiteTapped(sender:AnyObject?) {
+        
+        guard let url = NSURL(string: LocalizedString(.TheDistancePanelVisitWebsiteURL)) else { return }
+        
+        UIViewController.topPresentedViewController()?.navigationTopViewController()?.openURL(url, fromSourceItem: .View(visitWebsite))
+    }
 }
 
-class MZDistanceView: GMDView {
+class MZDistanceView: MZPanel {
     
     private(set) var tdStack = MZDistanceStack()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureHierarchy()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        configureHierarchy()
-    }
-    
-    func configureHierarchy() {
-        
-        tdStack.stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(tdStack.stackView)
-        addConstraints(NSLayoutConstraint.constraintsToAlign(view: tdStack.stackView, to: self, withInsets: UIEdgeInsetsMake(8, 0, 8, 0), relativeToMargin: (true, true, true, true)))
-        
-        self.backgroundColor = UIColor.whiteColor()
+    override var stack:CreatedStack? {
+        get {
+            return tdStack
+        }
+        set { }
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        let newAxis:UILayoutConstraintAxis = traitCollection.horizontalSizeClass == .Compact ? .Vertical : .Horizontal
+        let isCompact = traitCollection.horizontalSizeClass == .Compact
+        
+        let newAxis:UILayoutConstraintAxis = isCompact ? .Vertical : .Horizontal
         if tdStack.buttonStack.axis != newAxis {
             tdStack.buttonStack.axis = newAxis
+        }
+        
+        if tdStack.headingStack.axis != newAxis {
+            tdStack.headingStack.axis = newAxis
         }
     }
 }

@@ -10,28 +10,14 @@ import UIKit
 import StackView
 import TheDistanceCore
 
-public class MZPageMetaDataView: GMDView {
+public class MZPageMetaDataView: MZPanel {
     
     public let metaStack = MZPageMetaDataStack()
     
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureHierarchy()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        configureHierarchy()
-    }
-    
-    func configureHierarchy() {
-        
-        metaStack.stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(metaStack.stackView)
-        addConstraints(NSLayoutConstraint.constraintsToAlign(view: metaStack.stackView, to: self, withInsets: UIEdgeInsetsZero, relativeToMargin: (true, true, true, true)))
-        
-        self.backgroundColor = UIColor.whiteColor()
+    override public var stack:CreatedStack? {
+        get {
+            return metaStack
+        }
+        set { }
     }
 }

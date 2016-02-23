@@ -74,7 +74,7 @@ public class MZURLInputView: UIView {
         inputStack.stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(inputStack.stackView)
         
-        addConstraints(NSLayoutConstraint.constraintsToAlign(view: inputStack.stackView, to: self, withInsets:UIEdgeInsetsMake(16,8,8,8)))
+        addConstraints(NSLayoutConstraint.constraintsToAlign(view: inputStack.stackView, to: self, withInsets:UIEdgeInsetsZero))
     }
 }
 

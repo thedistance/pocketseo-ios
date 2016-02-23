@@ -66,7 +66,7 @@ class MZURLDetailsViewController: JCPageViewController {
         }
         
         if let url = NSURL(string: str) {
-            self.openInSafari(url)
+            self.openURL(url, fromSourceItem: .View(sender))
         }
     }
     

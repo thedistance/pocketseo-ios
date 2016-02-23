@@ -30,6 +30,7 @@ public class MZURLMetricsStack:CreatedStack {
         
         secondStack.axis = .Horizontal
         secondStack.spacing = 8.0
+        secondStack.stackDistribution = .FillEqually
         secondStack.stackAlignment = .Leading
         
     }
@@ -104,7 +105,24 @@ public class MZURLMetricsView: UIView {
         let isCompact = self.traitCollection.horizontalSizeClass == .Compact
         metricsStack.secondStack.axis = isCompact ? .Vertical : .Horizontal
         metricsStack.secondStack.stackAlignment = isCompact ? .Fill : .Leading
+        metricsStack.secondStack.stackDistribution = isCompact ? .Fill : .FillEqually
         
         layoutIfNeeded()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // when mozscape and alexa are collapsed in horizontally regular environments they should be the same height
+        let newAlignment:StackViewAlignment
+        if metricsStack.mozDataView.dataStack.expanded && traitCollection.horizontalSizeClass != .Compact {
+            newAlignment = .Leading
+        } else {
+            newAlignment = .Fill
+        }
+        
+        if metricsStack.secondStack.stackAlignment != newAlignment {
+            metricsStack.secondStack.stackAlignment = newAlignment
+        }
     }
 }

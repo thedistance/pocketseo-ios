@@ -76,6 +76,35 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
     var data:MZMozscapeMetrics? {
         didSet {
             
+            let httpText:String?
+            
+            if let code = data?.HTTPStatusCode {
+                
+                switch code {
+                case 0...13:
+                    let keyString = "URLMozscapeStatusCode\(code)"
+                    if let key = LocalizationKey(rawValue: keyString) {
+                        httpText = LocalizedString(key)
+                    } else {
+                        httpText = nil
+                    }
+                    
+                default:
+                    httpText = String(format: LocalizedString(.URLMozscapeStatusCodeHTTP), code)
+                }
+            } else {
+                httpText = nil
+            }
+            
+            if let text = httpText {
+                statusCodeLabel.text = text
+                statusCodeLabel.hidden = false
+            } else {
+                statusCodeLabel.text = nil
+                statusCodeLabel.hidden = true
+            }
+            
+            
             pageAuthorityProgressView.setDValue(data?.pageAuthority)
             domainAuthorityProgressView.setDValue(data?.domainAuthority)
             spamScoreProgressView.setDValue(data?.spamScore)
@@ -114,6 +143,9 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         let titleImageView = UIImageView(image: titleImage)
         titleImageView.contentMode = .ScaleAspectFit
         
+        statusCodeLabel.textStyle = .Body1
+        statusCodeLabel.textColourStyle = .SecondaryText
+        
         // create the authority section
         
         let authorityTitleLabel = ThemeLabel()
@@ -125,7 +157,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         authorityInfoButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         authorityInfoButton.tintColourStyle = .Accent
         
-        authorityHeadingStack = CreateStackView([authorityTitleLabel, authorityInfoButton])
+        authorityHeadingStack = CreateStackView([authorityTitleLabel])
         authorityHeadingStack.spacing = 8.0
         
         // ...create the authority charts
@@ -182,7 +214,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         linksInfoButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         linksInfoButton.tintColourStyle = .Accent
         
-        linksHeadingStack = CreateStackView([linksTitleLabel, linksInfoButton])
+        linksHeadingStack = CreateStackView([linksTitleLabel])
         linksHeadingStack.spacing = 8.0
         
         // create the content labels
@@ -230,6 +262,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         }
         
         super.init(titleView: titleImageView, arrangedSubviews: [
+            statusCodeLabel,
             authorityHeadingStack.view,
             authStack.view,
             linksStack.view,
