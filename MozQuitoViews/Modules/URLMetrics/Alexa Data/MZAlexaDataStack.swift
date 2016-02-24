@@ -62,14 +62,4 @@ public class MZAlexaDataStack: MZExpandingStack {
     
 }
 
-public class MZAlexaDataView: MZPanel {
-    
-    let dataStack = MZAlexaDataStack()
-    
-    override public var stack:CreatedStack? {
-        get {
-            return dataStack
-        }
-        set { }
-    }
-}
+

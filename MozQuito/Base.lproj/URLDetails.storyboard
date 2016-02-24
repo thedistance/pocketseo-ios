@@ -119,21 +119,21 @@
                         <viewControllerLayoutGuide type="bottom" id="S5a-Vm-Nil"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pu3-LE-XB9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="As5-Vh-jJy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1T-ab-hsB">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-bj-FND" customClass="MZURLMetricsView" customModule="PocketSEO" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-sN-G4h" customClass="MZDistanceView" customModule="PocketSEO" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="602" width="584" height="290"/>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-sN-G4h" customClass="MZDistanceView" customModule="PocketSEO" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="472" width="584" height="120"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -168,9 +168,8 @@
                             <constraint firstItem="As5-Vh-jJy" firstAttribute="top" secondItem="pu3-LE-XB9" secondAttribute="top" id="xtS-wQ-WIb"/>
                         </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="900"/>
                     <connections>
+                        <outlet property="distanceView" destination="Xvp-sN-G4h" id="okV-BZ-xZY"/>
                         <outlet property="metricsView" destination="zF0-bj-FND" id="WHI-QY-WNd"/>
                     </connections>
                 </viewController>

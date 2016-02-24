@@ -13,19 +13,6 @@ import StackView
 import JCLocalization
 import MessageUI
 
-class MZButton: GMDThemeButton {
-    
-    override func configureAsGMD() {
-        super.configureAsGMD()
-        
-        self.backgroundColourStyle = .Accent
-        self.tintColourStyle = .LightText
-        self.textStyle = .Button
-        self.contentEdgeInsets = UIEdgeInsetsMakeEqual(12.0)
-    }
-    
-}
-
 class MZDistanceStack: CreatedStack {
     
     let headlineLabel = ThemeLabel()
@@ -36,9 +23,9 @@ class MZDistanceStack: CreatedStack {
     let sendFeedbackButton = MZButton()
     let visitWebsite = MZButton()
     
-    private(set) var headingStack:StackView
-    private(set) var taglineStack:StackView
-    private(set) var buttonStack:StackView
+    var headingStack:StackView
+    var taglineStack:StackView
+    var buttonStack:StackView
     
     init() {
         
@@ -53,7 +40,6 @@ class MZDistanceStack: CreatedStack {
             compatibleWithTraitCollection: nil)
         logoImageView.image = logoImage//?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 412, 0, 0))
         logoImageView.contentMode = .ScaleAspectFit
-        
         
         taglineLabel.textStyle = .Body1
         taglineLabel.textColourStyle = .Text
@@ -77,8 +63,6 @@ class MZDistanceStack: CreatedStack {
         buttonStack = CreateStackView([sendFeedbackButton, getInTouchButton, visitWebsite])
         buttonStack.axis = .Vertical
         buttonStack.spacing = 16.0
-        
-        
         
         super.init(arrangedSubviews: [headingStack.view, buttonStack.view])
         stack.axis = .Vertical
@@ -111,29 +95,3 @@ class MZDistanceStack: CreatedStack {
     }
 }
 
-class MZDistanceView: MZPanel {
-    
-    private(set) var tdStack = MZDistanceStack()
-    
-    override var stack:CreatedStack? {
-        get {
-            return tdStack
-        }
-        set { }
-    }
-    
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        let isCompact = traitCollection.horizontalSizeClass == .Compact
-        
-        let newAxis:UILayoutConstraintAxis = isCompact ? .Vertical : .Horizontal
-        if tdStack.buttonStack.axis != newAxis {
-            tdStack.buttonStack.axis = newAxis
-        }
-        
-        if tdStack.headingStack.axis != newAxis {
-            tdStack.headingStack.axis = newAxis
-        }
-    }
-}

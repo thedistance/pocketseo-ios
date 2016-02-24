@@ -13,6 +13,8 @@ import StackView
 
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
+    @IBOutlet weak var distanceView:MZDistanceView?
+    
     var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
     
     var urlString:String? {
@@ -63,6 +65,27 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         // re-set the properties to assign to the views incase the presenter request finished before viewDidLoad(_:)
         let meta = pageMetaData
         pageMetaData = meta
+        
+        #if DEBUG || BETA_TESTING
+            
+        // set up the test view
+        let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
+        tapper.numberOfTouchesRequired = 1
+        tapper.numberOfTapsRequired = 3
+        distanceView?.tdStack.logoImageView.userInteractionEnabled = true
+        distanceView?.tdStack.logoImageView.addGestureRecognizer(tapper)
+        
+        #endif
+    }
+    
+    func logoTripleTapped(sender:AnyObject?) {
+        
+        let testVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.TestVC, bundle: NSBundle(forClass: TestAnalyticsViewController.self))
+        let testNav = UINavigationController(rootViewController: testVC)
+        
+        if let dv = distanceView {
+            self.presentViewController(testNav, fromSourceItem: .View(dv))
+        }
     }
 
     // MARK: - URLMetricsView
