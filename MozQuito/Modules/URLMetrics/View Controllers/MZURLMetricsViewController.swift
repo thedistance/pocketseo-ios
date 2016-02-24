@@ -14,6 +14,7 @@ import StackView
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
     @IBOutlet weak var distanceView:MZDistanceView?
+    @IBOutlet weak var emptyView:UIView?
     
     var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
     
@@ -25,10 +26,18 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             mozscapeIndexedDates = nil
             alexaData = nil
             
+            let validURL = !(urlString?.isEmpty ?? false)
+            emptyView?.hidden = validURL
+            
             if let mv = metricsView {
                 
                 // show the panels as they are initially hidden for the empty view
-                mv.hidden = false
+                // hide the metrics stacks
+                if let svs = metricsView?.metricsStack.stack.arrangedSubviews {
+                    for sv in svs {
+                        sv.hidden = !validURL
+                    }
+                }
                 
                 // reset each panel to start loading
                 let expandingStacks = [mv.metricsStack.pageMetaDataView,
@@ -90,7 +99,11 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         #endif
         
         // hide the metrics stacks
-        metricsView?.hidden = true
+        if let svs = metricsView?.metricsStack.stack.arrangedSubviews {
+            for sv in svs {
+                sv.hidden = true
+            }
+        }
     }
     
     func logoTripleTapped(sender:AnyObject?) {

@@ -43,6 +43,7 @@ public class MZAlexaDataStack: MZExpandingStack {
         
         let titleImageView = UIImageView(image: titleImage)
         titleImageView.contentMode = .ScaleAspectFit
+        titleImageView.setContentHuggingPriority(500, forAxis: .Vertical)
         
         let stacks = [popularityStack, reachRankStack, rankDeltaStack]
 

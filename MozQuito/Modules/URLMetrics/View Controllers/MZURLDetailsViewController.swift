@@ -22,6 +22,9 @@ class MZURLDetailsViewController: JCPageViewController {
     var urlString:String? {
         didSet {
             metricsVC?.urlString = urlString
+            
+            urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
+            urlInputView.inputStack.refreshButton.hidden = urlString?.isEmpty ?? true
         }
     }
     
@@ -48,7 +51,10 @@ class MZURLDetailsViewController: JCPageViewController {
         // configure this view
         urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
         urlInputView.inputStack.safariButton.addTarget(self, action: "safariTapped:", forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.safariButton.hidden = true
+        
         urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.refreshButton.hidden = true
         
         headerBackgroundView?.layer.shadowOpacity = 0.27
         headerBackgroundView?.layer.shadowRadius = 4.0
@@ -118,5 +124,4 @@ extension MZURLDetailsViewController: UITextFieldDelegate {
         
         return true
     }
-    
 }

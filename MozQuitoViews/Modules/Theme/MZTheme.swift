@@ -39,9 +39,14 @@ public struct MZTheme: Theme {
     //    typealias TextStyleType = TextStyle // default
     //    typealias ColourStyleType = ColourStyle // default
     
-    let thinFont = UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1).fontName
-    let normalFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
-    let mediumFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
+    let thinSFFont = ".SFUIText-Light"// UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline).fontName
+    let normalSFFont = ".SFUIText-Regular" //UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
+    let mediumSFFont = ".SFUIText-Semibold" //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
+    
+    let thinHFont = "HelveticaNeue-Light"// UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline).fontName
+    let normalHFont = "HelveticaNeue-Regular" //UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
+    let mediumHFont = ".HelveticaNeue-Semibold" //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
+    
     
     public let defaultTextSizes = MaterialTextSizes // default
     public let textSizeAdjustments = AppleFontAdjustments // default
@@ -50,10 +55,26 @@ public struct MZTheme: Theme {
     
     public func fontName(textStye:TextStyle) -> String {
         
+        let thinFont:String
+        let normalFont:String
+        let mediumFont:String
+        
+        if #available(iOS 9, * ) {
+            thinFont = thinSFFont
+            normalFont = normalSFFont
+            mediumFont = mediumSFFont
+        } else {
+            thinFont = thinHFont
+            normalFont = normalHFont
+            mediumFont = mediumHFont
+        }
+    
         switch textStye {
         case .Display4:
             return thinFont
-        case .Display3, .Display2, .Display1, .Headline:
+        case .Display3, .Display2, .Display1:
+            return thinFont
+        case .Headline:
             return normalFont
         case .Title:
             return mediumFont
@@ -64,7 +85,7 @@ public struct MZTheme: Theme {
         case .Body1, .Custom(_):
             return thinFont
         case .Caption:
-            return thinFont
+            return normalFont
         }
     }
 }

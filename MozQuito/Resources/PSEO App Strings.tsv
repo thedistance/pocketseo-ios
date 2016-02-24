@@ -1,12 +1,16 @@
 URLDataSearchHint	Search For Metrics	The text field hint on the URL Data page.
 URLMetricsTitle	URL Metrics	The tab title for the URL Metrics tab.
+URLMetricsEmptyText	Enter a URL above to get started.	The text displayed on first launch when there is no content to show.
+URLPageMetaDataNoContent	(No Content)	The text shown on the HTML Page Meta Data if there is no data found for a given field.
 URLPageMetaDataHeadline	HTML Metadata	The headline on the top of the HTML Metadata page.
 URLPageMetaDataPageTitle	Page Title	The title on the meta data panel for the page title
 URLPageMetaDataCanonicalURL	Canonincal URL	The title on the meta data panel for the canonical url
 URLPageMetaDataMetaDescription	Meta Description	The title on the meta data panel for the page description
 URLPageMetaDataH1Tags	H1	The title on the meta data panel for the h1 tag elements
 URLPageMetaDataH2Tags	H2	The title on the meta data panel for the h2 tag elements
-URLPageMetaDataUsingSSL	Using SSL	The title on the meta data panel for whether the site is using SSL
+URLPageMetaDataSSLTitle	SSL	The title on the meta data panel for whether the site is using SSL
+URLPageMetaDataUsingSSL	Yes	The affirmative on the meta data panel for whether the site is using SSL
+URLPageMetaDataNotUsingSSL	No	The negative on the meta data panel for whether the site is using SSL
 URLMozscapeAuthorityTitle	AUTHORITY	The title for the Authroity section of the Mozscape panel
 URLMozscapeAuthorityPage	Page Authority	The subtitle for the mozscape page authority
 URLMozscapeAuthorityDomain	Domain Authority	The subtitle for the mozscape domain authority

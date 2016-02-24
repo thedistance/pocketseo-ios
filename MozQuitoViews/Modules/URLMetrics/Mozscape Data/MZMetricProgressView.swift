@@ -71,8 +71,8 @@ public class MZMetricProgressView: UIView {
         self.backgroundColor = UIColor.clearColor()
         
         progressView.showPercentage = false
-        progressView.backgroundRingWidth = 2.0
-        progressView.progressRingWidth = 2.0
+        progressView.backgroundRingWidth = 4.0
+        progressView.progressRingWidth = 4.0
         progressView.secondaryColor = UIColor(white: 0.8, alpha: 1.0)
         progressView.primaryColor = MZThemeVendor.defaultColour(.Main)
         progressView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +85,6 @@ public class MZMetricProgressView: UIView {
         
         totalLabel.textStyle = .Caption
         totalLabel.textAlignment = .Center
-        
         
         addSubview(progressView)
         addSubview(valueStack.stackView)

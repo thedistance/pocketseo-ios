@@ -34,7 +34,8 @@ public class MZPageMetaDataStack: MZExpandingStack {
     private(set) var footerStack:StackView
     
     let usingSSLTitleLabel = ThemeLabel()
-    let usingSSLSwitch = ThemeSwitch()
+    let usingSSLLabel = ThemeLabel()
+    let usingSSLImageView = ThemeImageView()
     let responseURLLabel = ThemeLabel()
     let refreshDateLabel = ThemeLabel()
     
@@ -69,7 +70,13 @@ public class MZPageMetaDataStack: MZExpandingStack {
                 responseURLLabel.text = nil
             }
             
-            usingSSLSwitch.on = pageMetaData?.usingSSL ?? false
+            if pageMetaData?.usingSSL ?? false {
+                usingSSLLabel.text = LocalizedString(.URLPageMetaDataUsingSSL)
+                usingSSLImageView.image = UIImage(named: "ic_lock_outline")
+            } else {
+                usingSSLLabel.text = LocalizedString(.URLPageMetaDataNotUsingSSL)
+                usingSSLImageView.image = UIImage(named: "ic_lock_open")
+            }
         }
     }
     
@@ -82,7 +89,11 @@ public class MZPageMetaDataStack: MZExpandingStack {
         h1Stack.stackView.hidden = true
         h2Stack.stackView.hidden = true
         
-        usingSSLStack = CreateStackView([usingSSLTitleLabel, usingSSLSwitch])
+        var innerSSLStack = CreateStackView([usingSSLTitleLabel, usingSSLLabel])
+        innerSSLStack.axis = .Vertical
+        innerSSLStack.spacing = 8.0
+        
+        usingSSLStack = CreateStackView([innerSSLStack.view, usingSSLImageView])
         
         detailsStack = CreateStackView([pageTitleStack.stackView,
             canonicalStack.stackView,
@@ -121,22 +132,24 @@ public class MZPageMetaDataStack: MZExpandingStack {
         refreshDateLabel.textStyle = .Caption
         refreshDateLabel.textColourStyle = .SecondaryText
         
-        usingSSLTitleLabel.textStyle = .Body1
-        usingSSLTitleLabel.textColourStyle = .Text
+        usingSSLTitleLabel.textStyle = .Caption
+        usingSSLTitleLabel.textColourStyle = .SecondaryText
+        
+        usingSSLLabel.textStyle = .Body1
+        usingSSLLabel.textColourStyle = .Text
+        
+        usingSSLImageView.tintColourStyle = .SecondaryText
+        usingSSLImageView.contentMode = .ScaleAspectFit
         
         responseURLLabel.numberOfLines = 0
         usingSSLTitleLabel.numberOfLines = 0
         
-        usingSSLTitleLabel.text = LocalizedString(.URLPageMetaDataUsingSSL)
+        usingSSLTitleLabel.text = LocalizedString(.URLPageMetaDataSSLTitle)
         usingSSLStack.stackDistribution = .EqualSpacing
         
         responseURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         refreshDateLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         refreshDateLabel.setContentHuggingPriority(255, forAxis: .Horizontal)
-        
-        usingSSLSwitch.userInteractionEnabled = false
-        usingSSLSwitch.onTintColourStyle = .Accent
-        
     }
     
     public override func configureAsExpanded(expanded: Bool) {

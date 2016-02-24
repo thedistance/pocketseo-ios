@@ -64,8 +64,31 @@ public class MZExpandingStack: CreatedStack {
         expandingTitleStack = CreateStackView([titleView, expandButton])
         contentStack = CreateStackView(arrangedSubviews)
         
+        expandButton.contentHorizontalAlignment = .Right
+        
+        errorStack.stackView.translatesAutoresizingMaskIntoConstraints = false
         errorContainer.backgroundColor = UIColor.clearColor()
         errorContainer.addSubview(errorStack.stackView)
+        
+        let alignConstrs = NSLayoutConstraint.constraintsToAlign(view: errorStack.stackView, to: errorContainer)
+        
+        let centerX = NSLayoutConstraint(item: errorStack.stackView,
+            attribute: .CenterX,
+            relatedBy: .Equal,
+            toItem: errorContainer,
+            attribute: .CenterX,
+            multiplier: 1.0,
+            constant: 0.0)
+        
+        let width = NSLayoutConstraint(item: errorStack.stackView,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: .NotAnAttribute,
+            multiplier: 0.0,
+            constant: 288.0)
+        
+        errorContainer.addConstraints([alignConstrs[0], alignConstrs[2], centerX, width])
         errorContainer.hidden = true
         
         super.init(arrangedSubviews: [expandingTitleStack.view, loadingView, contentStack.view, errorContainer])

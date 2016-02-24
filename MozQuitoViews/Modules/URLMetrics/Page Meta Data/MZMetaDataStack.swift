@@ -12,9 +12,16 @@ import JCLocalization
 
 class MZMetaDataStack: CreatedStack {
     
+    let noContentString =  LocalizedString(.URLPageMetaDataNoContent)
+    
     var value:String? {
         didSet {
-            valueLabel.text = value
+            
+            if let v = value where !v.isEmpty {
+                valueLabel.text = v
+            } else {
+                valueLabel.text = noContentString
+            }
         }
     }
     

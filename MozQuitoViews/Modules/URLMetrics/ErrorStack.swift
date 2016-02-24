@@ -30,11 +30,13 @@ public class ErrorStack: CreatedStack {
         label.text = message
         label.textStyle = .Body1
         label.textColourStyle = .SecondaryText
+        label.numberOfLines = 0
+        label.textAlignment = .Center
         
         super.init(arrangedSubviews: [iv, label])
         
         stack.axis = .Vertical
-        stack.spacing = 16.0
+        stack.spacing = 8.0
     }
     
 }
