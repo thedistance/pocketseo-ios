@@ -23,9 +23,15 @@ class MZDistanceStack: CreatedStack {
     let sendFeedbackButton = MZButton()
     let visitWebsite = MZButton()
     
+    private(set) var getInTouchTarget:ObjectTarget<UIButton>?
+    private(set) var feedbackTarget:ObjectTarget<UIButton>?
+    private(set) var websiteTarget:ObjectTarget<UIButton>?
+    
     var headingStack:StackView
     var taglineStack:StackView
     var buttonStack:StackView
+    
+    let mailDelegate = MailDelegate()
     
     init() {
         
@@ -38,7 +44,7 @@ class MZDistanceStack: CreatedStack {
         let logoImage = UIImage(named: "TheDistance Logo",
             inBundle: NSBundle(forClass: MZDistanceStack.self),
             compatibleWithTraitCollection: nil)
-        logoImageView.image = logoImage//?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 412, 0, 0))
+        logoImageView.image = logoImage
         logoImageView.contentMode = .ScaleAspectFit
         
         taglineLabel.textStyle = .Body1
@@ -68,6 +74,10 @@ class MZDistanceStack: CreatedStack {
         stack.axis = .Vertical
         stack.spacing = 16.0
         
+        getInTouchTarget = ObjectTarget(control: getInTouchButton, forControlEvents: .TouchUpInside, completion: getInTouchTapped)
+        feedbackTarget = ObjectTarget(control: sendFeedbackButton, forControlEvents: .TouchUpInside, completion: sendFeedbackTapped)
+        websiteTarget = ObjectTarget(control: visitWebsite, forControlEvents: .TouchUpInside, completion: visitWebsiteTapped)
+        
         for b in [getInTouchButton, visitWebsite] {
             stack.view.addConstraint(NSLayoutConstraint(item: b,
                 attribute: .Width,
@@ -79,19 +89,40 @@ class MZDistanceStack: CreatedStack {
         }
     }
     
-    func getInTouchTapped(sender:AnyObject?) {
+    func getInTouchTapped(sender:UIButton) {
         
     }
     
-    func sendFeedbackTapped(sender:AnyObject?) {
+    func sendFeedbackTapped(sender:UIButton) {
         
+        let mailVC = MFMailComposeViewController()
+        mailVC.mailComposeDelegate = mailDelegate
+        
+        mailVC.setToRecipients([LocalizedString(.TheDistanceContactEmail)])
+        mailVC.setSubject(LocalizedString(.TheDistancePanelSendFeedbackSubject))
+        
+        let appName = (NSBundle.mainBundle().infoDictionary?["CFBundleIdentifier"] as? String) ?? "PocketSEO"
+        let appVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-"
+        let emailBody = String(format: LocalizedString(.TheDistancePanelEmailBody), appName, appVersion)
+        
+        mailVC.setMessageBody(emailBody, isHTML: false)
+        
+        UIViewController.topPresentedViewController()?.navigationTopViewController()?.presentViewController(mailVC, fromSourceItem: .View(sendFeedbackButton))
     }
     
-    func visitWebsiteTapped(sender:AnyObject?) {
+    func visitWebsiteTapped(sender:UIButton) {
         
         guard let url = NSURL(string: LocalizedString(.TheDistancePanelVisitWebsiteURL)) else { return }
         
         UIViewController.topPresentedViewController()?.navigationTopViewController()?.openURL(url, fromSourceItem: .View(visitWebsite))
+    }
+    
+    class MailDelegate: NSObject, MFMailComposeViewControllerDelegate {
+        
+        func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+            controller.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
     }
 }
 
