@@ -25,7 +25,21 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             mozscapeIndexedDates = nil
             alexaData = nil
             
-            metricsView?.metricsStack.pageMetaDataView.metaStack.configureAsExpanded(false)
+            if let mv = metricsView {
+                
+                // show the panels as they are initially hidden for the empty view
+                mv.hidden = false
+                
+                // reset each panel to start loading
+                let expandingStacks = [mv.metricsStack.pageMetaDataView,
+                    mv.metricsStack.mozDataView,
+                    mv.metricsStack.alexaDataView]
+                    .flatMap({ $0.stack as? MZExpandingStack })
+                
+                for s in expandingStacks {
+                    s.state = .Loading
+                }
+            }
             
             if let str = urlString {
                 presenter?.requestMetricsForURLString(str)
@@ -67,15 +81,16 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         pageMetaData = meta
         
         #if DEBUG || BETA_TESTING
-            
-        // set up the test view
-        let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
-        tapper.numberOfTouchesRequired = 1
-        tapper.numberOfTapsRequired = 3
-        distanceView?.tdStack.logoImageView.userInteractionEnabled = true
-        distanceView?.tdStack.logoImageView.addGestureRecognizer(tapper)
-        
+            // set up the test view
+            let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
+            tapper.numberOfTouchesRequired = 1
+            tapper.numberOfTapsRequired = 3
+            distanceView?.tdStack.logoImageView.userInteractionEnabled = true
+            distanceView?.tdStack.logoImageView.addGestureRecognizer(tapper)
         #endif
+        
+        // hide the metrics stacks
+        metricsView?.hidden = true
     }
     
     func logoTripleTapped(sender:AnyObject?) {
@@ -94,20 +109,24 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showPageMetaData(data: MZPageMetaData) {
         pageMetaData = data
+        
+        (metricsView?.metricsStack.pageMetaDataView.stack as? MZExpandingStack)?.state = .Success
     }
     
     func showPageMetaDataErrors(errors: [NSError]) {
-        
+        showErrors(errors, forPanel: metricsView?.metricsStack.pageMetaDataView)
     }
     
     // MARK: Mozscape
     
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
         mozscapeMetrics = metrics
+        
+        (metricsView?.metricsStack.mozDataView.stack as? MZExpandingStack)?.state = .Success
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {
-        
+        showErrors(errors, forPanel: metricsView?.metricsStack.mozDataView)
     }
     
     func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
@@ -118,10 +137,18 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showAlexaData(data: MZAlexaData) {
         alexaData = data
+        
+        (metricsView?.metricsStack.alexaDataView.stack as? MZExpandingStack)?.state = .Success
     }
     
     func showAlexaDataErrors(errors: [NSError]) {
-        
+        showErrors(errors, forPanel: metricsView?.metricsStack.alexaDataView)
+    }
+    
+    func showErrors(errors:[NSError], forPanel panel:MZPanel?) {
+        if let e = errors.first {
+            (panel?.stack as? MZExpandingStack)?.state = .Error(e)
+        }
     }
     
     func showTest() {

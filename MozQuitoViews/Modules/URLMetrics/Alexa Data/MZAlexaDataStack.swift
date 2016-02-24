@@ -17,10 +17,17 @@ public class MZAlexaDataStack: MZExpandingStack {
     
     var alexaData:MZAlexaData? {
         didSet {
-         
-            popularityStack.labels[0].text = alexaData?.popularityText ?? NoValueString
-            reachRankStack.labels[0].text = alexaData?.reachRank ?? NoValueString
-            rankDeltaStack.labels[0].text = alexaData?.rankDelta ?? NoValueString
+            
+            let numberStrings = [alexaData?.popularityText,
+                alexaData?.reachRank,
+                alexaData?.rankDelta]
+                .map({ $0 == nil ? nil : LargeNumberFormatter.numberFromString($0!) })
+                .map({ $0 == nil ? nil : LargeNumberFormatter.stringFromNumber($0!) })
+                .map({ $0 ?? NoValueString })
+            
+            popularityStack.labels[0].text = numberStrings[0]
+            reachRankStack.labels[0].text = numberStrings[1]
+            rankDeltaStack.labels[0].text = numberStrings[2]
         }
     }
     
@@ -54,12 +61,11 @@ public class MZAlexaDataStack: MZExpandingStack {
         
         super.init(titleView: titleImageView, arrangedSubviews:stacks.map({ $0.stackView }))
         
-        expandButton.hidden = true
+        expandButton.alpha = 0.0
         
         stack.axis = .Vertical
         stack.spacing = 16.0
     }
-    
 }
 
 

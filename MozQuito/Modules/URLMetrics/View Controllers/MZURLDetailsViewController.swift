@@ -57,6 +57,10 @@ class MZURLDetailsViewController: JCPageViewController {
         
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     func safariTapped(sender:UIButton) {
         
         guard var str = urlString where !str.isEmpty else { return }

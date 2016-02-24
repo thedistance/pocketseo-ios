@@ -10,6 +10,26 @@ import Foundation
 import StackView
 import TheDistanceCore
 
+public enum PanelState: Equatable {
+    
+    case Loading
+    case Error(NSError)
+    case Success
+}
+
+public func ==(p1:PanelState, p2:PanelState) -> Bool {
+    switch (p1, p2) {
+    case (.Loading, .Loading):
+        return true
+    case (.Success, .Success):
+        return true
+    case (.Error(let e1), .Error(let e2)):
+        return e1.domain == e2.domain && e1.code == e2.code
+    default:
+        return false
+    }
+}
+
 public class MZExpandingStack: CreatedStack {
     
     let loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
@@ -21,27 +41,75 @@ public class MZExpandingStack: CreatedStack {
     private(set) var expandingTitleStack:StackView
     private(set) var expanded:Bool = false
     
+    var state:PanelState = .Loading {
+        didSet {
+            
+            if state != oldValue {
+                configureAsExpanded(false)
+            }
+            
+            configureForState(state)
+        }
+    }
+    
+    let contentStack:StackView
+    let errorContainer = UIView()
+    
     init(titleView:UIView, arrangedSubviews:[UIView]) {
         
         loadingView.color = MZThemeVendor.defaultColour(.SecondaryText)
-        loadingView.hidden = true
+        loadingView.hidesWhenStopped = true
+        loadingView.transform = CGAffineTransformMakeScale(0.75, 0.75)
         
         expandingTitleStack = CreateStackView([titleView, expandButton])
+        contentStack = CreateStackView(arrangedSubviews)
         
-        var allViews = arrangedSubviews
-        allViews.insert(loadingView, atIndex: 0)
-        allViews.insert(expandingTitleStack.view, atIndex: 0)
-        
-        let errorContainer = UIView()
         errorContainer.backgroundColor = UIColor.clearColor()
         errorContainer.addSubview(errorStack.stackView)
         errorContainer.hidden = true
         
-        allViews.append(errorContainer)
-        
-        super.init(arrangedSubviews: allViews)
+        super.init(arrangedSubviews: [expandingTitleStack.view, loadingView, contentStack.view, errorContainer])
         
         configureStack()
+        configureForState(self.state)
+    }
+    
+    func configureForState(state:PanelState) {
+        
+        switch state {
+        case .Success:
+            
+            loadingView.stopAnimating()
+            expandButton.hidden = false
+
+            contentStack.view.hidden = false
+            errorContainer.hidden = true
+            
+        case .Loading:
+            
+            loadingView.startAnimating()
+            expandButton.hidden = true
+            contentStack.view.hidden = true
+            errorContainer.hidden = true
+            
+        case .Error(let error):
+            
+            loadingView.stopAnimating()
+            expandButton.hidden = true
+            contentStack.view.hidden = true
+            errorContainer.hidden = false
+            
+            let ufError = error.userFacingError()
+            errorStack.message = [
+                ufError.localizedDescription,
+                ufError.localizedFailureReason,
+                ufError.localizedRecoverySuggestion
+                ]
+                .flatMap({ $0 })
+                .filter({ !$0.isEmpty })
+                .joinWithSeparator(" ")
+            
+        }
     }
     
     func configureStack() {
@@ -61,10 +129,13 @@ public class MZExpandingStack: CreatedStack {
         expandingTitleStack.stackDistribution = .Fill
         expandingTitleStack.spacing = 8.0
         
-        self.stack.axis = .Vertical
-        self.stack.stackAlignment = .Fill
-        self.stack.stackDistribution = .Fill
-        self.stack.spacing = 16.0
+        for var s in [stack, contentStack] {
+            s.axis = .Vertical
+            s.stackAlignment = .Fill
+            s.stackDistribution = .Fill
+            s.spacing = 16.0
+        }
+        
     }
     
     public func toggleExpanded(sender:AnyObject?) {

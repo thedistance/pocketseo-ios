@@ -10,6 +10,15 @@ import Foundation
 import StackView
 import JCLocalization
 
+let LargeNumberFormatter:NSNumberFormatter = {
+
+    let formatter = NSNumberFormatter()
+    formatter.numberStyle = .DecimalStyle
+    formatter.maximumFractionDigits = 0
+    return formatter
+    
+}()
+
 public class MZMozscapeIndexedStack:CreatedStack {
     
     let dateFormatter: NSDateFormatter = {
@@ -109,9 +118,17 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
             domainAuthorityProgressView.setDValue(data?.domainAuthority)
             spamScoreProgressView.setDValue(data?.spamScore)
             
-            [(rootLinksStack, data?.establishedLinksRoot), (totalLinksStack, data?.establishedLinksTotal)]
-                .map({ ($0.0.labels[0], $0.1 == nil ? NoValueString : "\($0.1!)") })
-                .forEach({ $0.0.text = $0.1 })
+            if let l = data?.establishedLinksRoot {
+                rootLinksStack.labels[0].text = LargeNumberFormatter.stringFromNumber(l)
+            } else {
+                rootLinksStack.labels[0].text = NoValueString
+            }
+            
+            if let l = data?.establishedLinksTotal {
+                totalLinksStack.labels[0].text = LargeNumberFormatter.stringFromNumber(l)
+            } else {
+                totalLinksStack.labels[0].text = NoValueString
+            }
         }
     }
     
@@ -288,7 +305,8 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         
         super.configureAsExpanded(expanded)
         
-        let collapsing = [authorityHeadingStack.view,
+        let collapsing = [statusCodeLabel,
+            authorityHeadingStack.view,
             linksStack.view,
             indexedStack.stackView]
         

@@ -62,7 +62,7 @@ public struct MZTheme: Theme {
         case .Body2, .Button:
             return mediumFont
         case .Body1, .Custom(_):
-            return normalFont
+            return thinFont
         case .Caption:
             return thinFont
         }
