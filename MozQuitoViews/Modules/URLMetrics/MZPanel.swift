@@ -95,18 +95,37 @@ class MZDistanceView: MZPanel {
         set { }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if #available(iOS 9.0, *) { }
+        else {
+            let width = tdStack.headlineLabel.frame.size.width
+            if tdStack.headlineLabel.preferredMaxLayoutWidth != width {
+               tdStack.headlineLabel.preferredMaxLayoutWidth = width 
+            }
+            
+        }
+    }
+    
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
         let isCompact = traitCollection.horizontalSizeClass == .Compact
         
         let newAxis:UILayoutConstraintAxis = isCompact ? .Vertical : .Horizontal
-        if tdStack.buttonStack.axis != newAxis {
-            tdStack.buttonStack.axis = newAxis
+        
+        // dispatch to main queue as editing both at once doesn't work...
+        if tdStack.headingStack.axis != newAxis {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tdStack.headingStack.axis = newAxis
+            })
         }
         
-        if tdStack.headingStack.axis != newAxis {
-            tdStack.headingStack.axis = newAxis
+        if tdStack.buttonStack.axis != newAxis {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tdStack.buttonStack.axis = newAxis
+            })
         }
     }
 }

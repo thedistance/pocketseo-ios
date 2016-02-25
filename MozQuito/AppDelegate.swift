@@ -10,6 +10,7 @@ import UIKit
 
 import Fabric
 import ViperKit
+import DeviceKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let window = self.window {
             dependencies.installRootViewControllerIntoWindow(window)
         }
+        
+        // set the global session scope variable
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(GAIFields.customDimensionForIndex(1), value: Device().description)
         
         if FabricInitialiser.kits.count > 0 {
             // starting Fabric has to be the last method

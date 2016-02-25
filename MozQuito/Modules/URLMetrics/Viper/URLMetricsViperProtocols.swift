@@ -57,6 +57,9 @@ protocol URLMetricsInteractor: VIPERInteractor {
 /// Protocol defining the methods available to request by a `URLMetricsView`, and methods available to a `URLMetricsInteractor` to report results. All results should be reported to a `URLMetricsView`.
 protocol URLMetricsPresenter: VIPERPresenter {
 
+    /// Typically called from a `URLMetricsView` this should refresh the metrics for a `String` typically user entered.
+    func refreshMetricsForURLString(urlString:String)
+    
     /// Typically called from a `URLMetricsView` this should request the multiple sources of metrics from the interactor for a `String` typically user entered.
     func requestMetricsForURLString(urlString:String)
     

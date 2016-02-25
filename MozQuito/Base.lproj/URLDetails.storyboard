@@ -177,7 +177,7 @@
                                                 <constraints>
                                                     <constraint firstItem="twE-KT-Kl5" firstAttribute="centerY" secondItem="mYE-OJ-ube" secondAttribute="centerY" id="OtV-9r-Hyp"/>
                                                     <constraint firstItem="twE-KT-Kl5" firstAttribute="leading" secondItem="mYE-OJ-ube" secondAttribute="leading" id="eJt-fr-6AQ"/>
-                                                    <constraint firstItem="twE-KT-Kl5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mYE-OJ-ube" secondAttribute="top" id="gIV-m5-STC"/>
+                                                    <constraint firstItem="twE-KT-Kl5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mYE-OJ-ube" secondAttribute="top" constant="8" id="gIV-m5-STC"/>
                                                     <constraint firstAttribute="trailing" secondItem="twE-KT-Kl5" secondAttribute="trailing" id="rUM-Hu-bsk"/>
                                                 </constraints>
                                             </view>

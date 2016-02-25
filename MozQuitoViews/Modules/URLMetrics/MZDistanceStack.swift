@@ -38,7 +38,9 @@ class MZDistanceStack: CreatedStack {
         headlineLabel.textStyle = .Title
         headlineLabel.textColourStyle = .Text
         headlineLabel.text = LocalizedString(.TheDistancePanelHeadline)
-        headlineLabel.setContentHuggingPriority(755, forAxis: .Horizontal)
+        // explicit layout width for iOS 8
+        headlineLabel.preferredMaxLayoutWidth = 320.0
+        headlineLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         headlineLabel.numberOfLines = 0
         
         let logoImage = UIImage(named: "TheDistance Logo",
@@ -58,7 +60,7 @@ class MZDistanceStack: CreatedStack {
         
         headingStack = CreateStackView([headlineLabel, taglineStack.view])
         headingStack.axis = .Horizontal
-        headingStack.stackAlignment = .Leading
+        headingStack.stackAlignment = .Fill
         headingStack.stackDistribution = .EqualSpacing
         headingStack.spacing = 16.0
         
@@ -91,19 +93,54 @@ class MZDistanceStack: CreatedStack {
     
     func getInTouchTapped(sender:UIButton) {
         
+        
+        let contactSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionEmail),
+            style: .Default,
+            handler: { (_) -> Void in
+                self.email([LocalizedString(.TheDistanceContactEmail)],
+                    withSubject:"")
+        }))
+        
+        contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionPhone),
+            style: .Default,
+            handler: { (_) -> Void in
+                
+                guard let urlPhoneNumber = LocalizedString(.TheDistanceContactPhone).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet()),
+                    let phoneURL = NSURL(string: "telprompt://" + urlPhoneNumber)
+                    where UIApplication.sharedApplication().canOpenURL(phoneURL) else { return }
+                
+                UIApplication.sharedApplication().openURL(phoneURL)
+        }))
+        
+        contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionCancel),
+            style: .Cancel,
+            handler: nil))
+        
+        contactSheet.modalInPopover = true
+        contactSheet.modalPresentationStyle = .Popover
+        
+        UIViewController.topPresentedViewController()?.navigationTopViewController()?.presentViewController(contactSheet, fromSourceItem: .View(sender))
     }
     
     func sendFeedbackTapped(sender:UIButton) {
         
+        email([LocalizedString(.TheDistancePanelSendFeedbackEmailAddress)],
+            withSubject:LocalizedString(.TheDistancePanelSendFeedbackSubject))
+    }
+    
+    func email(recipients:[String], withSubject subject:String) {
+        
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = mailDelegate
         
-        mailVC.setToRecipients([LocalizedString(.TheDistanceContactEmail)])
-        mailVC.setSubject(LocalizedString(.TheDistancePanelSendFeedbackSubject))
+        mailVC.setToRecipients(recipients)
+        mailVC.setSubject(subject)
         
-        let appName = (NSBundle.mainBundle().infoDictionary?["CFBundleIdentifier"] as? String) ?? "PocketSEO"
+        let appName = (NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String) ?? "PocketSEO"
         let appVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-"
-        let emailBody = String(format: LocalizedString(.TheDistancePanelEmailBody), appName, appVersion)
+        let emailBody = "\n\n" + String(format: LocalizedString(.TheDistancePanelEmailBody), appName, appVersion)
         
         mailVC.setMessageBody(emailBody, isHTML: false)
         
@@ -113,6 +150,9 @@ class MZDistanceStack: CreatedStack {
     func visitWebsiteTapped(sender:UIButton) {
         
         guard let url = NSURL(string: LocalizedString(.TheDistancePanelVisitWebsiteURL)) else { return }
+        
+        let websiteEvent = AnalyticEvent(category: .Meta, action: .viewDistanceWebsite, label: nil)
+        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(websiteEvent)
         
         UIViewController.topPresentedViewController()?.navigationTopViewController()?.openURL(url, fromSourceItem: .View(visitWebsite))
     }

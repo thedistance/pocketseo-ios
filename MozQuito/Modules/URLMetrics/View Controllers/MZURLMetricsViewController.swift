@@ -51,7 +51,12 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             }
             
             if let str = urlString {
-                presenter?.requestMetricsForURLString(str)
+                
+                if str != oldValue {
+                    presenter?.requestMetricsForURLString(str)
+                } else {
+                    presenter?.refreshMetricsForURLString(str)
+                }
             }
         }
     }

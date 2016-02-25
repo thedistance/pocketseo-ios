@@ -44,8 +44,8 @@ public struct MZTheme: Theme {
     let mediumSFFont = ".SFUIText-Semibold" //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
     
     let thinHFont = "HelveticaNeue-Light"// UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline).fontName
-    let normalHFont = "HelveticaNeue-Regular" //UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
-    let mediumHFont = ".HelveticaNeue-Semibold" //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
+    let normalHFont = "HelveticaNeue" //UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontName
+    let mediumHFont = "HelveticaNeue-Medium" //UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline).fontName
     
     
     public let defaultTextSizes = MaterialTextSizes // default

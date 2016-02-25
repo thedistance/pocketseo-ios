@@ -22,5 +22,9 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>LSApplicationQuerySchemes</key>
+	<array>
+		<string>telprompt</string>
+	</array>
 </dict>
 </plist>

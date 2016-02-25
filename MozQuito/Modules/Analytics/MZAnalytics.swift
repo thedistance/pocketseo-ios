@@ -21,6 +21,7 @@ let GoogleAnalyticsTrackingIDStaging = "UA-58260965-6"
 
 enum AnalyticScreen:String {
     case Test
+    case URLMetrics
 }
 
 // MARK: Analytic Categories
@@ -28,6 +29,8 @@ enum AnalyticScreen:String {
 enum AnalyticCategory:String {
     case Screens
     case Test
+    case DataRequest
+    case Meta
 }
 
 // MARK: Analytic Actions
@@ -37,4 +40,8 @@ enum AnalyticAction:String {
     // Category: Screens
     case Viewed
     case Test
+    case loadUrl
+    case refreshData
+    case openInBrowser
+    case viewDistanceWebsite
 }

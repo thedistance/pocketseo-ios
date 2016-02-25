@@ -44,7 +44,7 @@ class MZURLDetailsViewController: JCPageViewController {
         super.viewDidLoad()
         
         // configure the JCPageViewController settings
-        viewControllers = [metricsVC, linksVC]
+        viewControllers = [metricsVC]
         
         (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
         
@@ -76,6 +76,10 @@ class MZURLDetailsViewController: JCPageViewController {
         }
         
         if let url = NSURL(string: str) {
+            
+            let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
+            AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(openEvent)
+            
             self.openURL(url, fromSourceItem: .View(sender))
         }
     }

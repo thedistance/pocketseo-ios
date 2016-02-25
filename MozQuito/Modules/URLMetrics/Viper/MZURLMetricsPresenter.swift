@@ -32,7 +32,23 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
         return presenter
     }
     
+    func refreshMetricsForURLString(urlString: String) {
+        
+        let refreshEvent = AnalyticEvent(category: .DataRequest, action: .refreshData, label: urlString)
+        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(refreshEvent)
+        
+        // no need to refresh the indexed dates and the mozscape data as they change ~monthly.
+        interactor?.getPageMetaDataForURLString(urlString)
+        interactor?.getAlexaDataFromURLString(urlString)
+    }
+    
     func requestMetricsForURLString(urlString:String) {
+        
+        let requestEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: urlString)
+        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(requestEvent)
+        
+        let screenView = AnalyticEvent(screenName: .URLMetrics)
+        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(screenView)
         
         if MZAppDependencies.sharedDependencies().shouldIgnoreCacheForRequest(.MozscapeIndexedDates) {
             interactor?.getMozscapeIndexDates()
