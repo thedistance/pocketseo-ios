@@ -8,11 +8,49 @@
 
 import Foundation
 import ViperKit
+import TheDistanceCore
+import ThemeKitCore
+//import PocketSEOViews
 
-class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor {
+let isTesting:Bool = {
+    return NSProcessInfo.processInfo().environment["TESTING"] != nil
+}()
+
+enum RequestKeys:String, RequestCacheKey {
+    case MozscapeIndexedDates
+    
+    var keyString:String {
+        return rawValue
+    }
+    
+    static var allValues:[RequestKeys] = [.MozscapeIndexedDates]
+}
+
+class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor, RequestCache {
+    
+    typealias RequestCacheKeyType = RequestKeys
+    
+    let rootWireframe = MZRootWireframe()
+    
+    private var _authenticationToken:MZAuthenicationToken?
+    
+    var currentAuthenticationToken:MZAuthenicationToken {
+        
+        let expiryBuffer:NSTimeInterval = -10
+        
+        if let token = _authenticationToken where NSDate().timeIntervalSinceDate(token.expiryDate) < expiryBuffer {
+            return token
+        } else {
+            let token = MZAuthenicationToken()
+            _authenticationToken = token
+            return token
+        }
+    }
     
     override required init() {
         super.init()
+        
+        guard !isTesting else { return }
         
         setDefaultPreferences()
         preferencesInteractor = self
@@ -24,9 +62,7 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
     }
     
     func installRootViewControllerIntoWindow(window: UIWindow) {
-        
-        window.rootViewController = MZStoryboardLoader.instantiateViewControllerForIdentifier(.TestVC)
-        
+        window.rootViewController = rootWireframe.createRootViewController()
     }
     
 }

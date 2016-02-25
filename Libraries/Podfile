@@ -9,54 +9,57 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-# define 
+# define
 workspace '../MozQuito'
 xcodeproj '../MozQuito'
 
-
-target 'MozQuito' do
-
-xcodeproj '../MozQuito'
-
-### CORE PODS ###
-
-pod 'TheDistanceCore', :path => 'TheDistanceCore'
-pod 'ViperKit', :path => 'ViperKit'
-
-### DISTRIBUTION PODS ###
-
-pod 'GoogleAnalytics'
-pod 'Fabric'
-pod 'Crashlytics'
-
-### NETWORKING PODS ###
-
-pod 'Alamofire'
-pod 'SwiftyJSON'
-pod 'PSOperations'
-
-### UI PODS ###
-
-pod 'M13ProgressSuite'
-pod 'StackView', :path => 'StackView'
-
-### Josh's Development Pods ###
-
-pod 'SwiftInPractice', :path => 'SwiftInPractice'
-pod 'AdvancedOperationKit', :path => 'AdvancedOperationKit'
-
+target 'PocketSEO' do
+    
+    xcodeproj '../MozQuito'
+    
+    ### CORE PODS ###
+    
+    pod 'TheDistanceCore', :path => 'TheDistanceCore'
+    pod 'ViperKit', :path => 'ViperKit'
+    pod 'MagicalRecord'
+    
+    ### DISTRIBUTION PODS ###
+    
+    pod 'GoogleAnalytics'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
+    ### NETWORKING PODS ###
+    
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'PSOperations'
+    
+    pod 'hpple'
+    
+    ### UI PODS ###
+    
+    pod 'JCPageViewController', :path => 'JCPageViewController'
+    
+    ### Josh's Development Pods ###
+    
+    pod 'JCLocalization', :git => 'git@bitbucket.org:joshcampion89/jclocalization.git'
+    pod 'SwiftInPractice', :path => 'SwiftInPractice'
+    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
+    
+    pod 'M13ProgressSuite'
+    pod 'StackView', :path => 'StackView'
+    
 end
 
-target 'MozQuitoTests' do
 
-xcodeproj '../MozQuito'
-
+target 'PocketSEOTests' do
+    
+    xcodeproj '../MozQuito'
+    
+    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
+    pod 'ViperKit', :path => 'ViperKit'
+    
 end
 
-# Disable bitcode for Google Analytics
 
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        puts "#{target.name}"
-    end
-end

@@ -2,9 +2,6 @@
 	path = Libraries/StackView
 	url = git@bitbucket.org:joshcampion89/stackview.git
 	branch = develop
-[submodule "Libraries/AdvancedOperationKit"]
-	path = Libraries/AdvancedOperationKit
-	url = git@bitbucket.org:joshcampion89/advancedoperationkit.git
 [submodule "Libraries/SwiftInPractice"]
 	path = Libraries/SwiftInPractice
 	url = git@bitbucket.org:joshcampion89/swiftinpractice.git
@@ -15,3 +12,9 @@
 [submodule "Libraries/TheDistanceCore"]
 	path = Libraries/TheDistanceCore
 	url = git@bitbucket.org:thedistance/thedistancecore.git
+[submodule "Libraries/JCPageViewController"]
+	path = Libraries/JCPageViewController
+	url = git@bitbucket.org:joshcampion89/jcpageviewcontroller.git
+[submodule "Libraries/AdvancedOperationKit"]
+    path = Libraries/AdvancedOperationKit
+    url = git@bitbucket.org:joshcampion89/advancedoperationkit.git

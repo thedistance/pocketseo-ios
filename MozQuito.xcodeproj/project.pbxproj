@@ -7,52 +7,211 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4087E065765E5258925F1D8D /* Pods_MozQuito.framework */; };
+		809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; };
 		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
-		A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626DB1C5274670076147C /* AnalyticsInteractors.swift */; };
-		A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59626E01C5277820076147C /* TestAnalyticsViewController.swift */; };
-		A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627091C5289870076147C /* AnalyticEntities.swift */; };
+		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
+		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
+		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
+		A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
+		A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
+		A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */; };
+		A50BD38D1C75E25200E7A07F /* MZURLMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */; };
+		A50BD38E1C75E25200E7A07F /* MZURLInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */; };
+		A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
+		A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
+		A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
+		A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */; };
+		A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */; };
+		A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */; };
+		A50BD3991C75E28500E7A07F /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */; };
+		A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */; };
+		A50BD3AE1C75E29500E7A07F /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39D1C75E29500E7A07F /* ThemeButton.swift */; };
+		A50BD3AF1C75E29500E7A07F /* ThemeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */; };
+		A50BD3B01C75E29500E7A07F /* ThemeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */; };
+		A50BD3B11C75E29500E7A07F /* ThemeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */; };
+		A50BD3B21C75E29500E7A07F /* ThemeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */; };
+		A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */; };
+		A50BD3B41C75E29500E7A07F /* ThemeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */; };
+		A50BD3B51C75E29500E7A07F /* ThemeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */; };
+		A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */; };
+		A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */; };
+		A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */; };
+		A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */; };
+		A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */; };
+		A50BD3BB1C75E29500E7A07F /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */; };
+		A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AD1C75E29500E7A07F /* ThemeView.swift */; };
+		A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
 		A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
 		A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
+		A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */; };
+		A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */; };
+		A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
+		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
+		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
+		A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
+		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
+		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
+		A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */; };
+		A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */; };
+		A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */; };
+		A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */; };
+		A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */; };
+		A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */; };
+		A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
+		A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */ = {isa = PBXBuildFile; fileRef = A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */; };
+		A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */; };
+		A5F46D171C7C7479001417F3 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D161C7C7479001417F3 /* MZDistanceStack.swift */; };
+		A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D181C7C759E001417F3 /* GMDView.swift */; };
+		A5F46D1F1C7DB071001417F3 /* MZPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D1E1C7DB071001417F3 /* MZPanel.swift */; };
+		A5F46D211C7DB144001417F3 /* MZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D201C7DB144001417F3 /* MZButton.swift */; };
+		A5F46D231C7DB1AD001417F3 /* MZExpandingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */; };
+		A5F46D251C7DBAED001417F3 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F46D241C7DBAED001417F3 /* Test.storyboard */; };
+		A5F46D271C7DBB86001417F3 /* MZAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */; };
+		A5F46D2B1C7DBBED001417F3 /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */; };
+		A5F46D2C1C7DBBED001417F3 /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */; };
+		A5F46D2D1C7DBBED001417F3 /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
-		A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Test.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
-		A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */; };
+		A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */; };
+		A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */; };
+		A5FB61EF1C787BDF00E0BC9A /* thedistance-alexa.xml in Resources */ = {isa = PBXBuildFile; fileRef = A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */; };
+		A5FB61F01C787BDF00E0BC9A /* thedistance.html in Resources */ = {isa = PBXBuildFile; fileRef = A5FB61EB1C787BDF00E0BC9A /* thedistance.html */; };
+		A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */; };
+		A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */; };
+		A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */; };
+		A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */; };
+		A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */; };
+		A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; };
+		A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A5F4E67D1C50E0FD0099010C /* PBXContainerItemProxy */ = {
+		A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5F4E6671C50E0FD0099010C;
-			remoteInfo = MozQuito;
+			remoteInfo = PocketSEO;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A5FB62051C78B72C00E0BC9A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.beta testing.xcconfig"; sourceTree = "<group>"; };
+		01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.beta testing.xcconfig"; sourceTree = "<group>"; };
+		1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.debug.xcconfig"; sourceTree = "<group>"; };
-		6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MozQuito.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito.release.xcconfig"; sourceTree = "<group>"; };
+		4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.release.xcconfig"; sourceTree = "<group>"; };
+		4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.release.xcconfig"; sourceTree = "<group>"; };
+		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
-		A59626DB1C5274670076147C /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Modules/Analytics/AnalyticsInteractors.swift; sourceTree = "<group>"; };
-		A59626E01C5277820076147C /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Modules/Analytics/TestAnalyticsViewController.swift; sourceTree = "<group>"; };
+		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
+		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
+		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
+		A50BD39D1C75E29500E7A07F /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
+		A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSegmentedControl.swift; sourceTree = "<group>"; };
+		A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSlider.swift; sourceTree = "<group>"; };
+		A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStepper.swift; sourceTree = "<group>"; };
+		A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSwitch.swift; sourceTree = "<group>"; };
+		A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBarButtonItem.swift; sourceTree = "<group>"; };
+		A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeNavigationBar.swift; sourceTree = "<group>"; };
+		A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBar.swift; sourceTree = "<group>"; };
+		A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBarItem.swift; sourceTree = "<group>"; };
+		A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeToolbar.swift; sourceTree = "<group>"; };
+		A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
+		A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
+		A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextView.swift; sourceTree = "<group>"; };
+		A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
+		A50BD3AD1C75E29500E7A07F /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLDetails.storyboard; sourceTree = "<group>"; };
 		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
-		A59627091C5289870076147C /* AnalyticEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticEntities.swift; path = Modules/Analytics/AnalyticEntities.swift; sourceTree = "<group>"; };
 		A596270B1C528C1D0076147C /* MZAppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAppDependencies.swift; path = Modules/Core/MZAppDependencies.swift; sourceTree = "<group>"; };
 		A59627101C5292740076147C /* MZStoryboardLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZStoryboardLoader.swift; path = Modules/Core/MZStoryboardLoader.swift; sourceTree = "<group>"; };
-		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsInteractor.swift; path = Modules/URLMetrics/Viper/MZURLMetricsInteractor.swift; sourceTree = "<group>"; };
+		A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsWireframe.swift; path = Modules/URLMetrics/Viper/MZURLMetricsWireframe.swift; sourceTree = "<group>"; };
+		A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetricProgressView.swift; sourceTree = "<group>"; };
+		A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsStack.swift; sourceTree = "<group>"; };
+		A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLInputView.swift; sourceTree = "<group>"; };
+		A5C572381C61083C00E2AACF /* MZTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZTheme.swift; sourceTree = "<group>"; };
+		A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLDetailsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLDetailsViewController.swift"; sourceTree = "<group>"; };
+		A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextFieldStack.swift; sourceTree = "<group>"; };
+		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
+		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
+		A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataStack.swift; path = "Alexa Data/MZAlexaDataStack.swift"; sourceTree = "<group>"; };
+		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
+		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
+		A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsPresenter.swift; path = Modules/URLMetrics/Viper/MZURLMetricsPresenter.swift; sourceTree = "<group>"; };
+		A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeIndexDatesOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeIndexDatesOperation.swift; sourceTree = "<group>"; };
+		A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetPageMetaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetPageMetaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZParseHTMLDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZParseHTMLDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZAlexaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZParseAlexaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLMetricsViewController.swift"; sourceTree = "<group>"; };
+		A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoEntities.h; sourceTree = "<group>"; };
+		A5ECBD6A1C5BA52F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoViews.h; sourceTree = "<group>"; };
+		A5ECBD7D1C5BA53F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZAlexaData.swift; sourceTree = "<group>"; };
+		A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetric.swift; sourceTree = "<group>"; };
+		A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaData.swift; sourceTree = "<group>"; };
+		A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZErrors.swift; sourceTree = "<group>"; };
+		A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZNetworking.swift; sourceTree = "<group>"; };
+		A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLMetricsView.swift; sourceTree = "<group>"; };
+		A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetaDataStack.swift; sourceTree = "<group>"; };
+		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
+		A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSEO App Strings.tsv"; sourceTree = "<group>"; };
+		A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStack.swift; sourceTree = "<group>"; };
+		A5F46D161C7C7479001417F3 /* MZDistanceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceStack.swift; sourceTree = "<group>"; };
+		A5F46D181C7C759E001417F3 /* GMDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMDView.swift; path = Modules/GMDView.swift; sourceTree = "<group>"; };
+		A5F46D1E1C7DB071001417F3 /* MZPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPanel.swift; sourceTree = "<group>"; };
+		A5F46D201C7DB144001417F3 /* MZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZButton.swift; sourceTree = "<group>"; };
+		A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZExpandingStack.swift; sourceTree = "<group>"; };
+		A5F46D241C7DBAED001417F3 /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Test.storyboard; path = Libraries/ViperKit/ViperKit/Templates/Test.storyboard; sourceTree = SOURCE_ROOT; };
+		A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAnalytics.swift; path = Modules/Analytics/MZAnalytics.swift; sourceTree = "<group>"; };
+		A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticEntities.swift; path = Libraries/ViperKit/ViperKit/Templates/Analytics/AnalyticEntities.swift; sourceTree = SOURCE_ROOT; };
+		A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Libraries/ViperKit/ViperKit/Templates/Analytics/AnalyticsInteractors.swift; sourceTree = SOURCE_ROOT; };
+		A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Libraries/ViperKit/ViperKit/Templates/Analytics/TestAnalyticsViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5F4E6681C50E0FD0099010C /* PocketSEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketSEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Test.storyboard; sourceTree = "<group>"; };
 		A5F4E6721C50E0FD0099010C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5F4E6751C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5F4E6771C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MozQuitoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MozQuitoTests.swift; sourceTree = "<group>"; };
-		A5F4E6821C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F4E6A71C5113D00099010C /* MozQuito-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Info.h"; sourceTree = "<group>"; };
+		A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketSEOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketSEOTests.swift; sourceTree = "<group>"; };
+		A5FB61E01C787BBA00E0BC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperTester.swift; sourceTree = "<group>"; };
+		A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "thedistance-alexa.xml"; sourceTree = "<group>"; };
+		A5FB61EB1C787BDF00E0BC9A /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thedistance.html; sourceTree = "<group>"; };
+		A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
+		A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_NoNetwork_Tests.swift; sourceTree = "<group>"; };
+		A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketSEOTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperationTestCase.swift; sourceTree = "<group>"; };
+		A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAssertEqualOptional.swift; sourceTree = "<group>"; };
+		A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnalyticsInteractors.swift; sourceTree = "<group>"; };
+		A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThemeKitCore.framework; path = Libraries/ThemeKit/Release/ThemeKitCore.framework; sourceTree = "<group>"; };
+		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
+		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +219,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1303F15E435FCCB59E345884 /* Pods_MozQuito.framework in Frameworks */,
+				A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */,
+				809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F4E6791C50E0FD0099010C /* Frameworks */ = {
+		A5FB61D91C787BBA00E0BC9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +238,12 @@
 		4AD738720430DE630F07D53C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */,
-				6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */,
-				347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */,
+				E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */,
+				5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */,
+				0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */,
+				01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */,
+				4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */,
+				7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -88,13 +252,101 @@
 			isa = PBXGroup;
 			children = (
 				4087E065765E5258925F1D8D /* Pods_MozQuito.framework */,
+				661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */,
+				D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */,
+				1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */,
+				58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */,
+				4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */,
+				F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */,
+				FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A505BA441C567017004F2607 /* URL Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD5E1C5BA365003350E3 /* View Controllers */,
+				A5EA9A8C1C5681B6004CC9EF /* Viper */,
+				A505BA451C567025004F2607 /* Network Operations */,
+			);
+			name = "URL Metrics";
+			sourceTree = "<group>";
+		};
+		A505BA451C567025004F2607 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */,
+				A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */,
+				A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */,
+				A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */,
+				A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */,
+				A5ECBD441C5B610B003350E3 /* MZParseAlexaDataOperation.swift */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		A505BA461C567035004F2607 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */,
+				A505BA471C567057004F2607 /* MZAuthenticationToken.swift */,
+				A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		A50BD39B1C75E29400E7A07F /* IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD39C1C75E29500E7A07F /* Controls */,
+				A50BD3A21C75E29500E7A07F /* Navigation */,
+				A50BD3A81C75E29500E7A07F /* Text */,
+				A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */,
+				A50BD3AD1C75E29500E7A07F /* ThemeView.swift */,
+			);
+			name = IBInspectable;
+			path = Libraries/ThemeKit/IBInspectable;
+			sourceTree = SOURCE_ROOT;
+		};
+		A50BD39C1C75E29500E7A07F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD39D1C75E29500E7A07F /* ThemeButton.swift */,
+				A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */,
+				A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */,
+				A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */,
+				A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		A50BD3A21C75E29500E7A07F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */,
+				A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */,
+				A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */,
+				A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */,
+				A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A50BD3A81C75E29500E7A07F /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */,
+				A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */,
+				A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 		A59626D91C52743E0076147C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A505BA441C567017004F2607 /* URL Metrics */,
 				A59626DA1C5274460076147C /* Analytics */,
 				A596270D1C528C300076147C /* Core */,
 			);
@@ -104,9 +356,10 @@
 		A59626DA1C5274460076147C /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				A59626DB1C5274670076147C /* AnalyticsInteractors.swift */,
-				A59627091C5289870076147C /* AnalyticEntities.swift */,
-				A59626E01C5277820076147C /* TestAnalyticsViewController.swift */,
+				A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */,
+				A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */,
+				A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */,
+				A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
@@ -115,7 +368,8 @@
 			isa = PBXGroup;
 			children = (
 				A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */,
-				A5F4E66F1C50E0FD0099010C /* Test.storyboard */,
+				A5F46D241C7DBAED001417F3 /* Test.storyboard */,
+				A57DBA121C59009500F246C2 /* URLDetails.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -123,17 +377,150 @@
 		A596270D1C528C300076147C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A505BA461C567035004F2607 /* Network Operations */,
 				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
+				A5C572401C61131800E2AACF /* MZRootWireframe.swift */,
 				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
 		};
+		A5C572371C61083C00E2AACF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A5C572381C61083C00E2AACF /* MZTheme.swift */,
+				A5F46D201C7DB144001417F3 /* MZButton.swift */,
+				A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */,
+				A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */,
+				A50BD39B1C75E29400E7A07F /* IBInspectable */,
+			);
+			name = Theme;
+			path = Modules/Theme;
+			sourceTree = "<group>";
+		};
+		A5E674951C7B312400A7CDF4 /* Alexa Data */ = {
+			isa = PBXGroup;
+			children = (
+				A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */,
+			);
+			name = "Alexa Data";
+			sourceTree = "<group>";
+		};
+		A5EA9A8C1C5681B6004CC9EF /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */,
+				A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */,
+				A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */,
+				A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */,
+			);
+			name = Viper;
+			sourceTree = "<group>";
+		};
+		A5ECBD5E1C5BA365003350E3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */,
+				A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */,
+				A5ECBD901C5BA5FD003350E3 /* Core */,
+				A5ECBD891C5BA5B2003350E3 /* URLMetrics */,
+				A5ECBD6A1C5BA52F003350E3 /* Info.plist */,
+			);
+			path = MozQuitoEntities;
+			sourceTree = "<group>";
+		};
+		A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */,
+				A5F46D181C7C759E001417F3 /* GMDView.swift */,
+				A5C572371C61083C00E2AACF /* Theme */,
+				A5ECBD951C5BA931003350E3 /* URLMetrics */,
+				A5ECBD7D1C5BA53F003350E3 /* Info.plist */,
+			);
+			path = MozQuitoViews;
+			sourceTree = "<group>";
+		};
+		A5ECBD891C5BA5B2003350E3 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */,
+				A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */,
+				A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */,
+			);
+			name = URLMetrics;
+			path = Modules/URLMetrics;
+			sourceTree = "<group>";
+		};
+		A5ECBD901C5BA5FD003350E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */,
+				A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */,
+			);
+			name = Core;
+			path = Modules/Core;
+			sourceTree = "<group>";
+		};
+		A5ECBD951C5BA931003350E3 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5F46D1E1C7DB071001417F3 /* MZPanel.swift */,
+				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
+				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
+				A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */,
+				A5F46D161C7C7479001417F3 /* MZDistanceStack.swift */,
+				A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */,
+				A5E674951C7B312400A7CDF4 /* Alexa Data */,
+				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
+				A5ECBD981C5BA931003350E3 /* Page Meta Data */,
+			);
+			name = URLMetrics;
+			path = Modules/URLMetrics;
+			sourceTree = "<group>";
+		};
+		A5ECBD961C5BA931003350E3 /* Mozscape Data */ = {
+			isa = PBXGroup;
+			children = (
+				A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */,
+				A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */,
+			);
+			path = "Mozscape Data";
+			sourceTree = "<group>";
+		};
+		A5ECBD981C5BA931003350E3 /* Page Meta Data */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */,
+				A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */,
+			);
+			path = "Page Meta Data";
+			sourceTree = "<group>";
+		};
+		A5F46D0F1C7B5AE4001417F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A5F4E65F1C50E0FD0099010C = {
 			isa = PBXGroup;
 			children = (
+				A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */,
 				A5F4E66A1C50E0FD0099010C /* MozQuito */,
-				A5F4E67F1C50E0FD0099010C /* MozQuitoTests */,
+				A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */,
+				A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */,
+				A5FB61DD1C787BBA00E0BC9A /* PocketSEOTests */,
 				A5F4E6691C50E0FD0099010C /* Products */,
 				4AD738720430DE630F07D53C /* Pods */,
 				69D7909DEAB1572C76C0D2F1 /* Frameworks */,
@@ -143,8 +530,8 @@
 		A5F4E6691C50E0FD0099010C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5F4E6681C50E0FD0099010C /* MozQuito.app */,
-				A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */,
+				A5F4E6681C50E0FD0099010C /* PocketSEO.app */,
+				A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +544,7 @@
 				A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */,
 				A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */,
 				A5F4E6771C50E0FD0099010C /* Info.plist */,
+				A5F46D0F1C7B5AE4001417F3 /* Resources */,
 				A59626D91C52743E0076147C /* Modules */,
 				A59626DF1C5277250076147C /* Storyboards */,
 				A5F4E6721C50E0FD0099010C /* Assets.xcassets */,
@@ -164,22 +552,48 @@
 			path = MozQuito;
 			sourceTree = "<group>";
 		};
-		A5F4E67F1C50E0FD0099010C /* MozQuitoTests */ = {
+		A5FB61DD1C787BBA00E0BC9A /* PocketSEOTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */,
-				A5F4E6821C50E0FD0099010C /* Info.plist */,
+				A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */,
+				A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */,
+				A5FB61E71C787BDF00E0BC9A /* Libraries */,
+				A5FB61E91C787BDF00E0BC9A /* Resources */,
+				A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */,
+				A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */,
+				A5FB61E01C787BBA00E0BC9A /* Info.plist */,
 			);
-			path = MozQuitoTests;
+			path = PocketSEOTests;
+			sourceTree = "<group>";
+		};
+		A5FB61E71C787BDF00E0BC9A /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */,
+				A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */,
+				A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */,
+				A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		A5FB61E91C787BDF00E0BC9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */,
+				A5FB61EB1C787BDF00E0BC9A /* thedistance.html */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5F4E6671C50E0FD0099010C /* MozQuito */ = {
+		A5F4E6671C50E0FD0099010C /* PocketSEO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */;
+			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */;
 			buildPhases = (
+				A5F46D0E1C7B5974001417F3 /* ShellScript */,
 				F22743495F1EF2404723081F /* Check Pods Manifest.lock */,
 				A5F4E6641C50E0FD0099010C /* Sources */,
 				A5F4E6651C50E0FD0099010C /* Frameworks */,
@@ -187,32 +601,36 @@
 				A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */,
 				82CBD3F762B24275BB76B977 /* Copy Pods Resources */,
 				A505BA411C563E4A004F2607 /* ShellScript */,
+				A5FB62051C78B72C00E0BC9A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MozQuito;
+			name = PocketSEO;
 			productName = MozQuito;
-			productReference = A5F4E6681C50E0FD0099010C /* MozQuito.app */;
+			productReference = A5F4E6681C50E0FD0099010C /* PocketSEO.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5F4E67B1C50E0FD0099010C /* MozQuitoTests */ = {
+		A5FB61DB1C787BBA00E0BC9A /* PocketSEOTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */;
+			buildConfigurationList = A5FB61E31C787BBA00E0BC9A /* Build configuration list for PBXNativeTarget "PocketSEOTests" */;
 			buildPhases = (
-				A5F4E6781C50E0FD0099010C /* Sources */,
-				A5F4E6791C50E0FD0099010C /* Frameworks */,
-				A5F4E67A1C50E0FD0099010C /* Resources */,
+				E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */,
+				A5FB61D81C787BBA00E0BC9A /* Sources */,
+				A5FB61D91C787BBA00E0BC9A /* Frameworks */,
+				A5FB61DA1C787BBA00E0BC9A /* Resources */,
+				204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */,
+				955999B786551A95197F6A24 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */,
+				A5FB61E21C787BBA00E0BC9A /* PBXTargetDependency */,
 			);
-			name = MozQuitoTests;
-			productName = MozQuitoTests;
-			productReference = A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */;
+			name = PocketSEOTests;
+			productName = PocketSEOTests;
+			productReference = A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +647,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = RA4PB2C3M4;
 					};
-					A5F4E67B1C50E0FD0099010C = {
+					A5FB61DB1C787BBA00E0BC9A = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = A5F4E6671C50E0FD0099010C;
 					};
@@ -248,8 +666,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5F4E6671C50E0FD0099010C /* MozQuito */,
-				A5F4E67B1C50E0FD0099010C /* MozQuitoTests */,
+				A5F4E6671C50E0FD0099010C /* PocketSEO */,
+				A5FB61DB1C787BBA00E0BC9A /* PocketSEOTests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,23 +677,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F46D251C7DBAED001417F3 /* Test.storyboard in Resources */,
 				A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */,
 				A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */,
 				A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */,
-				A5F4E6711C50E0FD0099010C /* Test.storyboard in Resources */,
+				A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */,
+				A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F4E67A1C50E0FD0099010C /* Resources */ = {
+		A5FB61DA1C787BBA00E0BC9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FB61EF1C787BDF00E0BC9A /* thedistance-alexa.xml in Resources */,
+				A5FB61F01C787BDF00E0BC9A /* thedistance.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82CBD3F762B24275BB76B977 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,7 +725,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		955999B786551A95197F6A24 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A505BA411C563E4A004F2607 /* ShellScript */ = {
@@ -304,6 +756,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 015a3121c76ea8baec90c4a97c7bd1976400adad dc9c94e3c240c0f762b3ba151b9bb3c0ddf4271bf6be439432c002315672794f";
 		};
+		A5F46D0E1C7B5974001417F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/JCLocalization/JCLocalization.sh\" \"${PROJECT_DIR}/MozQuito/Resources/PSEO App Strings.tsv\" \"${PODS_ROOT}/JCLocalization/JCLocalization/LocalizedString.swift\"";
+		};
 		A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,7 +781,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-MozQuito/Pods-MozQuito-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F22743495F1EF2404723081F /* Check Pods Manifest.lock */ = {
@@ -341,40 +821,99 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */,
+				A5F46D1F1C7DB071001417F3 /* MZPanel.swift in Sources */,
+				A50BD38E1C75E25200E7A07F /* MZURLInputView.swift in Sources */,
+				A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */,
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
-				A59626E11C5277820076147C /* TestAnalyticsViewController.swift in Sources */,
-				A596270A1C5289870076147C /* AnalyticEntities.swift in Sources */,
+				A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */,
+				A50BD3AF1C75E29500E7A07F /* ThemeSegmentedControl.swift in Sources */,
+				A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */,
+				A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */,
+				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
+				A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */,
+				A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */,
+				A5F46D171C7C7479001417F3 /* MZDistanceStack.swift in Sources */,
+				A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */,
+				A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */,
+				A5F46D2C1C7DBBED001417F3 /* AnalyticsInteractors.swift in Sources */,
+				A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */,
+				A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */,
+				A50BD3991C75E28500E7A07F /* MZMetric.swift in Sources */,
+				A50BD3B41C75E29500E7A07F /* ThemeNavigationBar.swift in Sources */,
+				A50BD3B01C75E29500E7A07F /* ThemeSlider.swift in Sources */,
+				A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */,
+				A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */,
+				A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */,
+				A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */,
+				A50BD3BB1C75E29500E7A07F /* ThemeImageView.swift in Sources */,
+				A5F46D2B1C7DBBED001417F3 /* AnalyticEntities.swift in Sources */,
+				A50BD3B11C75E29500E7A07F /* ThemeStepper.swift in Sources */,
+				A50BD3B51C75E29500E7A07F /* ThemeTabBar.swift in Sources */,
+				A50BD3AE1C75E29500E7A07F /* ThemeButton.swift in Sources */,
+				A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */,
+				A5F46D2D1C7DBBED001417F3 /* TestAnalyticsViewController.swift in Sources */,
+				A50BD38D1C75E25200E7A07F /* MZURLMetricsView.swift in Sources */,
+				A50BD3B21C75E29500E7A07F /* ThemeSwitch.swift in Sources */,
+				A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
+				A5F46D231C7DB1AD001417F3 /* MZExpandingStack.swift in Sources */,
+				A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
+				A5F46D271C7DBB86001417F3 /* MZAnalytics.swift in Sources */,
+				A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */,
+				A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */,
+				A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */,
+				A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */,
+				A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */,
+				A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */,
+				A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */,
+				A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */,
+				A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */,
+				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
+				A5ECBD451C5B610B003350E3 /* MZParseAlexaDataOperation.swift in Sources */,
+				A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */,
+				A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */,
+				A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
 				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
-				A59626DC1C5274670076147C /* AnalyticsInteractors.swift in Sources */,
+				A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */,
+				A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */,
+				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
+				A5F46D211C7DB144001417F3 /* MZButton.swift in Sources */,
+				A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F4E6781C50E0FD0099010C /* Sources */ = {
+		A5FB61D81C787BBA00E0BC9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */,
+				A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */,
+				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
+				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
+				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,
+				A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */,
+				A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */,
+				A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */ = {
+		A5FB61E21C787BBA00E0BC9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5F4E6671C50E0FD0099010C /* MozQuito */;
-			targetProxy = A5F4E67D1C50E0FD0099010C /* PBXContainerItemProxy */;
+			target = A5F4E6671C50E0FD0099010C /* PocketSEO */;
+			targetProxy = A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5F4E66F1C50E0FD0099010C /* Test.storyboard */ = {
+		A57DBA121C59009500F246C2 /* URLDetails.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A5F4E6701C50E0FD0099010C /* Base */,
+				A57DBA131C59009500F246C2 /* Base */,
 			);
-			name = Test.storyboard;
+			name = URLDetails.storyboard;
 			sourceTree = "<group>";
 		};
 		A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */ = {
@@ -391,7 +930,7 @@
 		A5F4E6831C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -436,7 +975,7 @@
 		A5F4E6841C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -473,18 +1012,28 @@
 		};
 		A5F4E6861C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 517D4BD0F05C6076366BC3EA /* Pods-MozQuito.debug.xcconfig */;
+			baseConfigurationReference = E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
@@ -494,50 +1043,35 @@
 		};
 		A5F4E6871C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B13841D79603ED17EA63090 /* Pods-MozQuito.release.xcconfig */;
+			baseConfigurationReference = 5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		A5F4E6891C50E0FD0099010C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MozQuitoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
-			};
-			name = Debug;
-		};
-		A5F4E68A1C50E0FD0099010C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MozQuitoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
 			};
 			name = Release;
 		};
 		A5F4E6A41C5112450099010C /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -574,33 +1108,78 @@
 		};
 		A5F4E6A51C5112450099010C /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 347BBE64CFE0BEDD005ADC56 /* Pods-MozQuito.beta testing.xcconfig */;
+			baseConfigurationReference = 0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA_TESTING\"";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8e580fd0-d92b-4712-ac77-2a0f3b3c9428";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
 			name = "Beta Testing";
 		};
-		A5F4E6A61C5112450099010C /* Beta Testing */ = {
+		A5FB61E41C787BBA00E0BC9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MozQuitoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				INFOPLIST_FILE = PocketSEOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
+			};
+			name = Debug;
+		};
+		A5FB61E51C787BBA00E0BC9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				INFOPLIST_FILE = PocketSEOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
+			};
+			name = Release;
+		};
+		A5FB61E61C787BBA00E0BC9A /* Beta Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				INFOPLIST_FILE = PocketSEOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
 			};
 			name = "Beta Testing";
 		};
@@ -617,7 +1196,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Beta Testing";
 		};
-		A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */ = {
+		A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5F4E6861C50E0FD0099010C /* Debug */,
@@ -627,12 +1206,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Beta Testing";
 		};
-		A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */ = {
+		A5FB61E31C787BBA00E0BC9A /* Build configuration list for PBXNativeTarget "PocketSEOTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5F4E6891C50E0FD0099010C /* Debug */,
-				A5F4E68A1C50E0FD0099010C /* Release */,
-				A5F4E6A61C5112450099010C /* Beta Testing */,
+				A5FB61E41C787BBA00E0BC9A /* Debug */,
+				A5FB61E51C787BBA00E0BC9A /* Release */,
+				A5FB61E61C787BBA00E0BC9A /* Beta Testing */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Beta Testing";
