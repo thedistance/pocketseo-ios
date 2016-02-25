@@ -21,7 +21,6 @@ target 'PocketSEO' do
     
     pod 'TheDistanceCore', :path => 'TheDistanceCore'
     pod 'ViperKit', :path => 'ViperKit'
-    pod 'MagicalRecord'
     
     ### DISTRIBUTION PODS ###
     
@@ -33,7 +32,7 @@ target 'PocketSEO' do
     
     pod 'Alamofire'
     pod 'SwiftyJSON'
-    pod 'PSOperations'
+    pod 'PSOperations', :git => 'git@github.com:joshc89/PSOperations.git'
     
     pod 'hpple'
     
@@ -44,14 +43,47 @@ target 'PocketSEO' do
     ### Josh's Development Pods ###
     
     pod 'JCLocalization', :git => 'git@bitbucket.org:joshcampion89/jclocalization.git'
-    pod 'SwiftInPractice', :path => 'SwiftInPractice'
-    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
     
-    pod 'M13ProgressSuite'
+    pod 'M13ProgressSuite', :git => 'https://github.com/Marxon13/M13ProgressSuite.git'
     pod 'StackView', :path => 'StackView'
     
 end
 
+target 'URLDetailsExtension' do
+    
+    xcodeproj '../MozQuito'
+    
+    ### CORE PODS ###
+    
+    pod 'TheDistanceCore', :path => 'TheDistanceCore'
+    pod 'ViperKit', :path => 'ViperKit'
+    
+    ### DISTRIBUTION PODS ###
+    
+    pod 'GoogleAnalytics'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
+    ### NETWORKING PODS ###
+    
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'PSOperations', :git => 'git@github.com:joshc89/PSOperations.git'
+    
+    pod 'hpple'
+    
+    ### UI PODS ###
+    
+    pod 'JCPageViewController', :path => 'JCPageViewController'
+    
+    ### Josh's Development Pods ###
+    
+    pod 'JCLocalization', :git => 'git@bitbucket.org:joshcampion89/jclocalization.git'
+    
+    pod 'M13ProgressSuite', :git => 'https://github.com/Marxon13/M13ProgressSuite.git'
+    pod 'StackView', :path => 'StackView'
+    
+end
 
 target 'PocketSEOTests' do
     
@@ -62,4 +94,27 @@ target 'PocketSEOTests' do
     
 end
 
+## Add necesary macros for App Extensions
 
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        
+        if target.name == "M13ProgressSuite"
+            target.build_configurations.each do |config|
+                s = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']
+                s = [ '$(inherited)' ] if s == nil;
+                s.push('M13_APP_EXTENSIONS=1')
+                config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = s
+            end
+        end
+        
+        if target.name == "TheDistanceCore"
+            target.build_configurations.each do |config|
+                s = config.build_settings['OTHER_SWIFT_FLAGS']
+                s = [ '$(inherited)' ] if s == nil;
+                s.push('"-DTD_APP_EXTENSION"')
+                config.build_settings['OTHER_SWIFT_FLAGS'] = s
+            end
+        end
+    end
+end

@@ -12,6 +12,16 @@ import Fabric
 import ViperKit
 import DeviceKit
 
+class MZApplicationAppDependencies: MZAppDependencies {
+    
+    let rootWireframe = MZRootWireframe()
+    
+    override func installRootViewControllerIntoWindow(window: UIWindow) {
+        window.rootViewController = rootWireframe.createRootViewController()
+    }
+    
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -22,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = MZThemeVendor.shared()
         
         // Override point for customization after application launch.
-        let dependencies = MZAppDependencies.sharedInstance()
+        let dependencies = MZApplicationAppDependencies.sharedInstance()
         
         dependencies.crashReportingInteractor?.logToCrashReport("App Launched")
         

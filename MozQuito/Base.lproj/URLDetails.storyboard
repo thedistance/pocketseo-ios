@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--URL Details View Controller-->
+        <!--Input URL Details View Controller-->
         <scene sceneID="BDD-Fc-uTb">
             <objects>
-                <viewController storyboardIdentifier="URLDetailsVC" id="iZj-Kv-mgg" customClass="MZURLDetailsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLDetailsVC" id="iZj-Kv-mgg" customClass="MZInputURLDetailsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tcA-F0-xH3"/>
                         <viewControllerLayoutGuide type="bottom" id="jYy-1D-wng"/>
@@ -140,7 +140,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYE-OJ-ube">
                                                 <rect key="frame" x="75" y="0.0" width="450" height="472"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twE-KT-Kl5">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twE-KT-Kl5">
                                                         <rect key="frame" x="0.0" y="200" width="450" height="73"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BW Icon" translatesAutoresizingMaskIntoConstraints="NO" id="qd2-Wv-Q8m" customClass="ThemeImageView" customModule="PocketSEO" customModuleProvider="target">
@@ -149,7 +149,7 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="SecondaryText"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-bV-A7g" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-bV-A7g" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="56" width="450" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgo-f5-XXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="404"/>
+            <point key="canvasLocation" x="778" y="419"/>
         </scene>
         <!--URL Metrics View Controller-->
         <scene sceneID="swk-ZZ-cv9">
@@ -239,7 +239,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                 <rect key="frame" x="214" y="286" width="173" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

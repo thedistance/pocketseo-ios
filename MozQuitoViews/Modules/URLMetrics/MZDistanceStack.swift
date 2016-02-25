@@ -11,7 +11,15 @@ import Foundation
 import TheDistanceCore
 import StackView
 import JCLocalization
-import MessageUI
+
+
+protocol MZDistanceStackDelegate {
+    
+    func distanceStackRequestsSendFeedback(stack:MZDistanceStack, sender:UIButton)
+    func distanceStackRequestsGetInTouch(stack:MZDistanceStack, sender:UIButton)
+    func distanceStackRequestsWebsite(stack:MZDistanceStack, sender:UIButton)
+    
+}
 
 class MZDistanceStack: CreatedStack {
     
@@ -30,8 +38,8 @@ class MZDistanceStack: CreatedStack {
     var headingStack:StackView
     var taglineStack:StackView
     var buttonStack:StackView
-    
-    let mailDelegate = MailDelegate()
+        
+    var delegate:MZDistanceStackDelegate?
     
     init() {
         
@@ -92,77 +100,15 @@ class MZDistanceStack: CreatedStack {
     }
     
     func getInTouchTapped(sender:UIButton) {
-        
-        
-        let contactSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        
-        contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionEmail),
-            style: .Default,
-            handler: { (_) -> Void in
-                self.email([LocalizedString(.TheDistanceContactEmail)],
-                    withSubject:"")
-        }))
-        
-        contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionPhone),
-            style: .Default,
-            handler: { (_) -> Void in
-                
-                guard let urlPhoneNumber = LocalizedString(.TheDistanceContactPhone).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet()),
-                    let phoneURL = NSURL(string: "telprompt://" + urlPhoneNumber)
-                    where UIApplication.sharedApplication().canOpenURL(phoneURL) else { return }
-                
-                UIApplication.sharedApplication().openURL(phoneURL)
-        }))
-        
-        contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionCancel),
-            style: .Cancel,
-            handler: nil))
-        
-        contactSheet.modalInPopover = true
-        contactSheet.modalPresentationStyle = .Popover
-        
-        UIViewController.topPresentedViewController()?.navigationTopViewController()?.presentViewController(contactSheet, fromSourceItem: .View(sender))
+        delegate?.distanceStackRequestsGetInTouch(self, sender: sender)
     }
     
     func sendFeedbackTapped(sender:UIButton) {
-        
-        email([LocalizedString(.TheDistancePanelSendFeedbackEmailAddress)],
-            withSubject:LocalizedString(.TheDistancePanelSendFeedbackSubject))
-    }
-    
-    func email(recipients:[String], withSubject subject:String) {
-        
-        let mailVC = MFMailComposeViewController()
-        mailVC.mailComposeDelegate = mailDelegate
-        
-        mailVC.setToRecipients(recipients)
-        mailVC.setSubject(subject)
-        
-        let appName = (NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String) ?? "PocketSEO"
-        let appVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-"
-        let emailBody = "\n\n" + String(format: LocalizedString(.TheDistancePanelEmailBody), appName, appVersion)
-        
-        mailVC.setMessageBody(emailBody, isHTML: false)
-        
-        UIViewController.topPresentedViewController()?.navigationTopViewController()?.presentViewController(mailVC, fromSourceItem: .View(sendFeedbackButton))
+        delegate?.distanceStackRequestsSendFeedback(self, sender: sender)
     }
     
     func visitWebsiteTapped(sender:UIButton) {
-        
-        guard let url = NSURL(string: LocalizedString(.TheDistancePanelVisitWebsiteURL)) else { return }
-        
-        let websiteEvent = AnalyticEvent(category: .Meta, action: .viewDistanceWebsite, label: nil)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(websiteEvent)
-        
-        UIViewController.topPresentedViewController()?.navigationTopViewController()?.openURL(url, fromSourceItem: .View(visitWebsite))
-    }
-    
-    class MailDelegate: NSObject, MFMailComposeViewControllerDelegate {
-        
-        func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-            controller.dismissViewControllerAnimated(true, completion: nil)
-        }
-        
+        delegate?.distanceStackRequestsWebsite(self, sender: sender)
     }
 }
 
