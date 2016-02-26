@@ -11,6 +11,8 @@ import JCLocalization
 
 class MZInputURLDetailsViewController: MZURLDetailsViewController {
 
+    @IBOutlet weak var urlInputView:MZURLInputView!
+    
     override var urlString:String? {
         didSet {
             urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
@@ -81,7 +83,7 @@ extension MZInputURLDetailsViewController: MZDistanceStackDelegate {
     
     func distanceStackRequestsWebsite(stack: MZDistanceStack, sender: UIButton) {
         
-        guard let url = NSURL(string: LocalizedString(.TheDistancePanelVisitWebsiteURL)) else { return }
+        guard let url = NSURL(string: LocalizedString(.TheDistanceContactWebsiteURL)) else { return }
         
         let websiteEvent = AnalyticEvent(category: .Meta, action: .viewDistanceWebsite, label: nil)
         AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(websiteEvent)

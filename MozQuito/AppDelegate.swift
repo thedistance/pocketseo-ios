@@ -14,12 +14,22 @@ import DeviceKit
 
 class MZApplicationAppDependencies: MZAppDependencies {
     
-    let rootWireframe = MZRootWireframe()
+    let rootWireframe = MZApplicationRootWireframe()
     
     override func installRootViewControllerIntoWindow(window: UIWindow) {
         window.rootViewController = rootWireframe.createRootViewController()
     }
+}
+
+class MZApplicationRootWireframe: MZRootWireframe {
     
+    func getRootViewController() -> UIViewController? {
+        return UIApplication.sharedApplication().keyWindow?.rootViewController
+    }
+    
+    func setRootViewController(vc:UIViewController) {
+        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+    }
 }
 
 @UIApplicationMain
@@ -47,7 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // set the global session scope variable
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(GAIFields.customDimensionForIndex(1), value: Device().description)
+        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.DeviceType.rawValue), value: Device().description)
+        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.ContextType.rawValue), value: "In App")
         
         if FabricInitialiser.kits.count > 0 {
             // starting Fabric has to be the last method

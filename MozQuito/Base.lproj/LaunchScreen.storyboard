@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="RAl-97-p82">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="RAl-97-p82">
                                 <rect key="frame" x="93" y="93" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RAl-97-p82" secondAttribute="height" multiplier="1:1" id="yVp-t9-IJH"/>

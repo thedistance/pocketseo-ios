@@ -14,14 +14,6 @@ import JCPageViewController
 
 class MZRootWireframe {
     
-    func getRootViewController() -> UIViewController? {
-        return UIApplication.sharedApplication().keyWindow?.rootViewController
-    }
-    
-    func setRootViewController(vc:UIViewController) {
-        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
-    }
-    
     func createRootViewController() -> UIViewController {
         
         if isTesting {
@@ -29,7 +21,14 @@ class MZRootWireframe {
             return UIViewController()
         }
         
-        let detailsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLDetailsVC) as! MZURLDetailsViewController
+        let detailsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLInputDetailsVC) as! MZURLDetailsViewController
+        
+        configureChildViewControllersForURLDetailsViewController(detailsVC)
+        
+        return detailsVC
+    }
+    
+    func configureChildViewControllersForURLDetailsViewController(detailsVC:MZURLDetailsViewController) {
         
         let urlMetricsVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLMetricsVC) as! MZURLMetricsViewController
         urlMetricsVC.title = LocalizedString(.URLMetricsTitle).uppercaseString
@@ -41,6 +40,6 @@ class MZRootWireframe {
         detailsVC.metricsVC = urlMetricsVC
         detailsVC.linksVC = linksVC
         
-        return detailsVC
+        
     }
 }

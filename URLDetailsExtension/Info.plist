@@ -22,6 +22,25 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>BUILD_VERSION</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>015a3121c76ea8baec90c4a97c7bd1976400adad</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -33,7 +52,7 @@
 			</dict>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
-		<string>URLDetails</string>
+		<string>Extension</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.ui-services</string>
 	</dict>

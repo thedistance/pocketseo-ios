@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iZj-Kv-mgg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CIC-ij-RE7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -7,110 +7,6 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--URL Details View Controller-->
-        <scene sceneID="BDD-Fc-uTb">
-            <objects>
-                <viewController storyboardIdentifier="URLDetailsVC" id="iZj-Kv-mgg" customClass="MZURLDetailsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tcA-F0-xH3"/>
-                        <viewControllerLayoutGuide type="bottom" id="jYy-1D-wng"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="P5G-U3-lTQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfg-3m-gGI">
-                                <rect key="frame" x="0.0" y="144" width="600" height="456"/>
-                            </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ps-V1-z62" customClass="ThemeView" customModule="PocketSEO" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="144"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-BI-hWd" customClass="MZURLInputView" customModule="PocketSEO" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="36" width="560" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="4Jb-1F-J0U"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="4Jb-1F-J0U"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ve-PD-ffy">
-                                        <rect key="frame" x="0.0" y="88" width="600" height="56"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="1Pl-HO-1Ze"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="otX-tg-AUs">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-vp-Tf2" customClass="ThemeView" customModule="PocketSEO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="backgroundColourStyleId" value="MainDark"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="S6T-vp-Tf2" secondAttribute="trailing" id="2oX-pQ-M2I"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="gA0-BI-hWd" secondAttribute="trailing" id="5H0-y6-CIb"/>
-                                    <constraint firstItem="S6T-vp-Tf2" firstAttribute="leading" secondItem="1ps-V1-z62" secondAttribute="leading" id="5LJ-0t-e7w"/>
-                                    <constraint firstItem="S6T-vp-Tf2" firstAttribute="top" secondItem="1ps-V1-z62" secondAttribute="top" id="Bd6-7K-tRf"/>
-                                    <constraint firstItem="2ve-PD-ffy" firstAttribute="leading" secondItem="1ps-V1-z62" secondAttribute="leading" id="M2g-8x-9Jj"/>
-                                    <constraint firstAttribute="trailing" secondItem="2ve-PD-ffy" secondAttribute="trailing" id="Rtj-Ez-czC"/>
-                                    <constraint firstItem="gA0-BI-hWd" firstAttribute="leading" secondItem="1ps-V1-z62" secondAttribute="leadingMargin" id="UGg-sS-1GK"/>
-                                    <constraint firstAttribute="bottom" secondItem="gA0-BI-hWd" secondAttribute="bottom" id="ir0-EF-XT5"/>
-                                    <constraint firstAttribute="bottom" secondItem="2ve-PD-ffy" secondAttribute="bottom" id="lYL-vI-wEv"/>
-                                    <constraint firstItem="2ve-PD-ffy" firstAttribute="top" secondItem="gA0-BI-hWd" secondAttribute="bottom" constant="8" id="lg0-OY-g9Q"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="backgroundColourStyleId" value="Main"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ir0-EF-XT5"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                </variation>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1ps-V1-z62" firstAttribute="leading" secondItem="P5G-U3-lTQ" secondAttribute="leading" id="0oQ-hl-76D"/>
-                            <constraint firstItem="1ps-V1-z62" firstAttribute="top" secondItem="P5G-U3-lTQ" secondAttribute="top" id="1XJ-Zy-NNv"/>
-                            <constraint firstItem="Dfg-3m-gGI" firstAttribute="top" secondItem="1ps-V1-z62" secondAttribute="bottom" id="6Cq-uY-BL1"/>
-                            <constraint firstAttribute="trailing" secondItem="Dfg-3m-gGI" secondAttribute="trailing" id="BdI-M0-J3p"/>
-                            <constraint firstItem="jYy-1D-wng" firstAttribute="top" secondItem="Dfg-3m-gGI" secondAttribute="bottom" id="CQN-pQ-ROz"/>
-                            <constraint firstItem="gA0-BI-hWd" firstAttribute="top" secondItem="tcA-F0-xH3" secondAttribute="bottom" constant="16" id="Qi8-B1-zqH"/>
-                            <constraint firstItem="Dfg-3m-gGI" firstAttribute="leading" secondItem="P5G-U3-lTQ" secondAttribute="leading" id="Xxj-g6-Rd4"/>
-                            <constraint firstAttribute="trailing" secondItem="1ps-V1-z62" secondAttribute="trailing" id="Ymb-td-Pgd"/>
-                            <constraint firstItem="S6T-vp-Tf2" firstAttribute="bottom" secondItem="tcA-F0-xH3" secondAttribute="bottom" id="eMy-3u-lMK"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="headerBackgroundView" destination="1ps-V1-z62" id="bgr-g4-9eY"/>
-                        <outlet property="pageContainer" destination="Dfg-3m-gGI" id="VEu-Sb-Ewb"/>
-                        <outlet property="pageControl" destination="2ve-PD-ffy" id="4OL-Dv-LWU"/>
-                        <outlet property="pageControlHeightConstraint" destination="1Pl-HO-1Ze" id="a7d-Jv-Rw0"/>
-                        <outlet property="urlInputView" destination="gA0-BI-hWd" id="Xlx-tA-ILn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eOu-qG-4kG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="38" y="419"/>
-        </scene>
         <!--URL Metrics View Controller-->
         <scene sceneID="3SV-G3-mwN">
             <objects>
