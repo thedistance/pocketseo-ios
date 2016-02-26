@@ -11,8 +11,6 @@ import JCLocalization
 
 class MZInputURLDetailsViewController: MZURLDetailsViewController {
 
-    @IBOutlet weak var urlInputView:MZURLInputView!
-    
     override var urlString:String? {
         didSet {
             urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
@@ -25,12 +23,16 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
 
         // Do any additional setup after loading the view.
         
+        // configure the input stack
         urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
         urlInputView.inputStack.safariButton.addTarget(self, action: "safariTapped:", forControlEvents: .TouchUpInside)
         urlInputView.inputStack.safariButton.hidden = true
         
         urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
         urlInputView.inputStack.refreshButton.hidden = true
+        
+        // configure the distance stack
+        metricsVC.distanceView?.tdStack.delegate = self
     }
 
 }

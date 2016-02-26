@@ -105,6 +105,7 @@
 		A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
 		A585611A1C7F6323005221B3 /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; };
 		A58561211C7F65B3005221B3 /* MZInputURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585611F1C7F65AF005221B3 /* MZInputURLDetailsViewController.swift */; };
+		A58561221C804B14005221B3 /* MZURLInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */; };
 		A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
 		A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
 		A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */; };
@@ -1058,6 +1059,7 @@
 				A58561081C7F48D4005221B3 /* ThemeTabBarItem.swift in Sources */,
 				A58561091C7F48D4005221B3 /* ThemeToolbar.swift in Sources */,
 				A585610A1C7F48D4005221B3 /* ThemeLabel.swift in Sources */,
+				A58561221C804B14005221B3 /* MZURLInputView.swift in Sources */,
 				A585610B1C7F48D4005221B3 /* ThemeTextField.swift in Sources */,
 				A585610C1C7F48D4005221B3 /* ThemeTextView.swift in Sources */,
 				A585610D1C7F48D4005221B3 /* ThemeImageView.swift in Sources */,
@@ -1209,7 +1211,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/ThemeKit/Release",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1218,7 +1220,7 @@
 				);
 				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -1280,7 +1282,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/ThemeKit/Release",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1289,7 +1291,7 @@
 				);
 				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
@@ -1349,7 +1351,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/ThemeKit/Release",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1358,7 +1360,7 @@
 				);
 				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",

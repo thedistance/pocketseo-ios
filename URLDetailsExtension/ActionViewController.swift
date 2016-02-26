@@ -8,46 +8,65 @@
 
 import UIKit
 import MobileCoreServices
+import JCLocalization
 
-class ActionViewController: UIViewController {
-
-    @IBOutlet weak var label: UILabel!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class MZExtensionURLDetailsViewController: MZURLDetailsViewController {
     
-        // Get the item[s] we're handling from the extension context.
+    /// Gets the single we're handling from the extension context.
+    func extensionURL(completion:(url:NSURL) -> ())  {
         
-        // For example, look for an image and place it into an image view.
-        // Replace this with something appropriate for the type[s] your extension supports.
-        var imageFound = false
+        var urlFound = false
         for item: AnyObject in self.extensionContext!.inputItems {
             let inputItem = item as! NSExtensionItem
             for provider: AnyObject in inputItem.attachments! {
                 let itemProvider = provider as! NSItemProvider
                 if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
-
-                    // This is a URL. We'll load it, then place it in our image view.
-                    weak var weakLabel = self.label
                     
-                    itemProvider.loadItemForTypeIdentifier(kUTTypeURL as String, options: nil, completionHandler: { (url, error) in
-                        NSOperationQueue.mainQueue().addOperationWithBlock {
-                            if let strongLabel = weakLabel {
-                                strongLabel.text = (url as? NSURL)?.absoluteString
-                            }
+                    // This is a URL. We'll load it, then return it
+                    itemProvider.loadItemForTypeIdentifier(kUTTypeURL as String, options: nil, completionHandler: { (urlObject, error) in
+                        
+                        if let url = urlObject as? NSURL {
+                            completion(url: url)
                         }
                     })
                     
-                    imageFound = true
+                    urlFound = true
                     break
                 }
             }
             
-            if (imageFound) {
+            if (urlFound) {
                 // We only handle one image, so stop looking for more.
                 break
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        // get the url from the extension
+        extensionURL { (url) -> () in
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.urlString = url.absoluteString
+            }
+        }
+        
+        // configure the view
+        urlInputView.hidden = true
+        
+        let cancelBBI = UIBarButtonItem(image: UIImage(named: "ic_clear"),
+            style: .Plain,
+            target: self,
+            action: "cancel:")
+        
+        let openInAppBBI = UIBarButtonItem(title: LocalizedString(.URLExtensionOpenInAppButtonTitle),
+            style: .Plain,
+            target: self,
+            action: "openInApp:")
+        
+        self.navigationItem.leftBarButtonItem = cancelBBI
+        self.navigationItem.rightBarButtonItem = openInAppBBI
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +74,14 @@ class ActionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func cancel() {
+    @IBAction func cancel(sender:AnyObject?) {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
 //        self.extensionContext!.completeRequestReturningItems(<#T##items: [AnyObject]?##[AnyObject]?#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
         self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
     }
     
-    @IBAction func openInApp() {
+    @IBAction func openInApp(sender:AnyObject?) {
         
     }
 

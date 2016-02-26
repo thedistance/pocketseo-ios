@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Input URL Details View Controller-->
+        <!--URL Details View Controller-->
         <scene sceneID="BDD-Fc-uTb">
             <objects>
-                <viewController storyboardIdentifier="URLDetailsVC" id="iZj-Kv-mgg" customClass="MZInputURLDetailsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLDetailsVC" id="iZj-Kv-mgg" customClass="MZURLDetailsViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tcA-F0-xH3"/>
                         <viewControllerLayoutGuide type="bottom" id="jYy-1D-wng"/>

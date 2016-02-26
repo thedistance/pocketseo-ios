@@ -18,9 +18,10 @@ import JCLocalization
 
 class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControllerDelegate {
 
+    @IBOutlet weak var urlInputView:MZURLInputView!
+    
     @IBOutlet weak var headerBackgroundView:ThemeView!
 
-    
     var urlString:String? {
         didSet {
             metricsVC?.urlString = urlString
