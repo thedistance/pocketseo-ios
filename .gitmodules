@@ -18,3 +18,6 @@
 [submodule "Libraries/AdvancedOperationKit"]
     path = Libraries/AdvancedOperationKit
     url = git@bitbucket.org:joshcampion89/advancedoperationkit.git
+[submodule "Libraries/PSOperations"]
+	path = Libraries/PSOperations
+	url = git@github.com:joshc89/PSOperations.git

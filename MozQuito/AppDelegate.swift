@@ -12,6 +12,45 @@ import Fabric
 import ViperKit
 import DeviceKit
 
+class MZApplicationAppDependencies: MZAppDependencies {
+    
+    let rootWireframe = MZApplicationRootWireframe()
+    
+    override func installRootViewControllerIntoWindow(window: UIWindow) {
+        window.rootViewController = rootWireframe.createRootViewController()
+    }
+    
+    func openURL(url:NSURL) -> Bool {
+        
+        guard let urlString = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?
+            .queryItems?
+            .filter({ $0.name == "urlString" })
+            .first?
+            .value?
+            .stringByRemovingPercentEncoding
+            else { return false }
+        
+        // This will need to be more complex when the view hierarchy is more complex
+        if let urlDetailsVC = rootWireframe.getRootViewController() as? MZURLDetailsViewController {
+            urlDetailsVC.urlString = urlString
+            urlDetailsVC.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        return true
+    }
+}
+
+class MZApplicationRootWireframe: MZRootWireframe {
+    
+    func getRootViewController() -> UIViewController? {
+        return UIApplication.sharedApplication().keyWindow?.rootViewController
+    }
+    
+    func setRootViewController(vc:UIViewController) {
+        UIApplication.sharedApplication().keyWindow?.rootViewController = vc
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -22,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = MZThemeVendor.shared()
         
         // Override point for customization after application launch.
-        let dependencies = MZAppDependencies.sharedInstance()
+        let dependencies = MZApplicationAppDependencies.sharedInstance()
         
         dependencies.crashReportingInteractor?.logToCrashReport("App Launched")
         
@@ -37,7 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // set the global session scope variable
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(GAIFields.customDimensionForIndex(1), value: Device().description)
+        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.DeviceType.rawValue), value: Device().description)
+        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.ContextType.rawValue), value: "In App")
         
         if FabricInitialiser.kits.count > 0 {
             // starting Fabric has to be the last method
@@ -45,6 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return MZApplicationAppDependencies.sharedDependencies().openURL(url)
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        return MZApplicationAppDependencies.sharedDependencies().openURL(url)
     }
     
     func applicationWillResignActive(application: UIApplication) {

@@ -30,8 +30,6 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
     
     typealias RequestCacheKeyType = RequestKeys
     
-    let rootWireframe = MZRootWireframe()
-    
     private var _authenticationToken:MZAuthenicationToken?
     
     var currentAuthenticationToken:MZAuthenicationToken {
@@ -61,8 +59,8 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
         crashReportingInteractor?.setupCrashReporting()
     }
     
-    func installRootViewControllerIntoWindow(window: UIWindow) {
-        window.rootViewController = rootWireframe.createRootViewController()
-    }
+    // App Specific Code
+    
+    func installRootViewControllerIntoWindow(window: UIWindow) { }
     
 }

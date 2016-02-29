@@ -59,4 +59,8 @@ public class ThemeButton: TKButton, BackgroundColourInspectable, TintColourInspe
             }
         }
     }
+    
+    public func applyTheme(theme: Theme) {
+        super.applyTheme(theme)
+    }
 }

@@ -10,6 +10,13 @@ import Foundation
 
 // APP SPECIFIC
 
+enum AnalyticsCustomMetric: UInt {
+    
+    case DeviceType = 1
+    case ContextType = 2
+    
+}
+
 // MARK: - App Keys
 
 let GoogleAnalyticsTrackingIDLive = "UA-21295891-5"
@@ -44,4 +51,5 @@ enum AnalyticAction:String {
     case refreshData
     case openInBrowser
     case viewDistanceWebsite
+    case quickLookupOpenInApp
 }

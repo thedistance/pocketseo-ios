@@ -13,18 +13,16 @@ import ThemeKitCore
 import JCPageViewController
 import TheDistanceCore
 
-class MZURLDetailsViewController: JCPageViewController {
+import MessageUI
+import JCLocalization
+
+class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var headerBackgroundView:ThemeView!
-    @IBOutlet weak var urlInputView:MZURLInputView!
-    private(set) var urlStack:StackView!
-    
+
     var urlString:String? {
         didSet {
             metricsVC?.urlString = urlString
-            
-            urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
-            urlInputView.inputStack.refreshButton.hidden = urlString?.isEmpty ?? true
         }
     }
     
@@ -49,18 +47,10 @@ class MZURLDetailsViewController: JCPageViewController {
         (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
         
         // configure this view
-        urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
-        urlInputView.inputStack.safariButton.addTarget(self, action: "safariTapped:", forControlEvents: .TouchUpInside)
-        urlInputView.inputStack.safariButton.hidden = true
-        
-        urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
-        urlInputView.inputStack.refreshButton.hidden = true
-        
         headerBackgroundView?.layer.shadowOpacity = 0.27
         headerBackgroundView?.layer.shadowRadius = 4.0
         headerBackgroundView?.layer.shadowOffset = CGSizeMake(0, 4.0)
         headerBackgroundView?.layer.shadowColor = UIColor.blackColor().CGColor
-        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -113,16 +103,26 @@ class MZURLDetailsViewController: JCPageViewController {
     /// Standard action to return home
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
     
-}
-
-extension MZURLDetailsViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func sendEmail(recipients:[String], withSubject subject:String, fromSender:UIView) {
         
-        textField.resignFirstResponder()
+        let mailVC = MFMailComposeViewController()
+        mailVC.mailComposeDelegate = self
         
-        urlString = textField.text
+        mailVC.setToRecipients(recipients)
+        mailVC.setSubject(subject)
         
-        return true
+        let appName = (NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String) ?? "PocketSEO"
+        let appVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-"
+        let emailBody = "\n\n" + String(format: LocalizedString(.TheDistancePanelEmailBody), appName, appVersion)
+        
+        mailVC.setMessageBody(emailBody, isHTML: false)
+        
+        self.presentViewController(mailVC, fromSourceItem: .View(fromSender))
     }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

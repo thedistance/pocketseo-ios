@@ -9,6 +9,7 @@
     "2B5C8C4FE519356928A8451B901B37371565B49D" : 0,
     "E2035A6DF4203F67B47399AA3AC7BFDD102EBD79" : 0,
     "88B77B9FB810D126A3C04FBF9F5E647DB6A05416" : 0,
+    "96537D3FF3D17DC5A7DEC8ED2F25A3DEC93C21A6" : 0,
     "873F8EB6D3AFFA25C2D49E87C11E621A53CC75ED" : 0,
     "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1" : 0
   },
@@ -19,6 +20,7 @@
     "2B5C8C4FE519356928A8451B901B37371565B49D" : "MozQuito\/Libraries\/StackView\/",
     "E2035A6DF4203F67B47399AA3AC7BFDD102EBD79" : "MozQuito\/Libraries\/AdvancedOperationKit\/",
     "88B77B9FB810D126A3C04FBF9F5E647DB6A05416" : "MozQuito\/Libraries\/ViperKit\/",
+    "96537D3FF3D17DC5A7DEC8ED2F25A3DEC93C21A6" : "MozQuito\/Libraries\/PSOperations\/",
     "873F8EB6D3AFFA25C2D49E87C11E621A53CC75ED" : "MozQuito\/Libraries\/SwiftInPractice\/",
     "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1" : "MozQuito\/Libraries\/JCPageViewController\/"
   },
@@ -50,6 +52,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/viperkit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "88B77B9FB810D126A3C04FBF9F5E647DB6A05416"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:joshc89\/PSOperations.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96537D3FF3D17DC5A7DEC8ED2F25A3DEC93C21A6"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:joshcampion89\/jcpageviewcontroller.git",
