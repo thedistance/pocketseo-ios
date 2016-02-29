@@ -85,7 +85,6 @@ extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {
             style: .Cancel,
             handler: nil))
         
-        contactSheet.modalInPopover = true
         contactSheet.modalPresentationStyle = .Popover
         
         self.presentViewController(contactSheet, fromSourceItem: .View(sender))

@@ -28,7 +28,7 @@ public class MZURLInputStack: CreatedStack {
         safariButton.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
         safariButton.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         safariButton.setContentHuggingPriority(255, forAxis: .Horizontal)
-        
+        safariButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
         
         urlTextFieldStack.textField.keyboardType = .URL
         urlTextFieldStack.textField.returnKeyType = .Send
@@ -44,11 +44,12 @@ public class MZURLInputStack: CreatedStack {
         refreshButton.setContentCompressionResistancePriority(755, forAxis: .Vertical)
         refreshButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         refreshButton.tintColourStyle = .LightText
+        refreshButton.contentEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 12)
         
         super.init(arrangedSubviews: [urlTextFieldStack.stackView, safariButton, refreshButton])
         
         stack.stackDistribution = .Fill
-        stack.spacing = 8.0
+        stack.spacing = 0.0
     }
 }
 

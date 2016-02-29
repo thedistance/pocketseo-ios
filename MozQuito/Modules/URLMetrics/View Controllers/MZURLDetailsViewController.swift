@@ -15,6 +15,7 @@ import TheDistanceCore
 
 import MessageUI
 import JCLocalization
+import DeviceKit
 
 class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControllerDelegate {
 
@@ -112,9 +113,12 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         mailVC.setToRecipients(recipients)
         mailVC.setSubject(subject)
         
+        
+        let platformInfo = "\(Device().description) \(UIDevice.currentDevice().systemName) \(UIDevice.currentDevice().systemVersion)"
+        
         let appName = (NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String) ?? "PocketSEO"
         let appVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String) ?? "-"
-        let emailBody = "\n\n" + String(format: LocalizedString(.TheDistancePanelEmailBody), appName, appVersion)
+        let emailBody = "\n\n" + String(format: LocalizedString(.TheDistancePanelEmailBody), appName, platformInfo, appVersion)
         
         mailVC.setMessageBody(emailBody, isHTML: false)
         

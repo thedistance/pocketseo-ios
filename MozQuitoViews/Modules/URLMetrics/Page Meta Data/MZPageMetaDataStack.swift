@@ -85,7 +85,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         // init as collapsed
         pageTitleStack.headingStack.view.hidden = true
         canonicalStack.stackView.hidden = true
-        descriptionStack.stackView.hidden = true
+        descriptionStack.headingStack.view.hidden = true
         h1Stack.stackView.hidden = true
         h2Stack.stackView.hidden = true
         
@@ -158,7 +158,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         
         pageTitleStack.headingStack.view.hidden = !expanded
         canonicalStack.stackView.hidden = !expanded
-        descriptionStack.stackView.hidden = !expanded
+        descriptionStack.headingStack.view.hidden = !expanded
         h1Stack.stackView.hidden = !expanded
         h2Stack.stackView.hidden = !expanded
         
