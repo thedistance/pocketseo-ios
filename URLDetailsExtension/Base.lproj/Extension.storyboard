@@ -8,7 +8,7 @@
         <!--Extension URL Details View Controller-->
         <scene sceneID="oPx-CL-tjW">
             <objects>
-                <viewController storyboardIdentifier="URLExtensionDetailsVC" id="7aB-AY-CJQ" customClass="MZExtensionURLDetailsViewController" customModule="URLDetailsExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLExtensionDetailsVC" automaticallyAdjustsScrollViewInsets="NO" id="7aB-AY-CJQ" customClass="MZExtensionURLDetailsViewController" customModule="URLDetailsExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RVK-Wa-yYy"/>
                         <viewControllerLayoutGuide type="bottom" id="Dsa-Dg-23P"/>

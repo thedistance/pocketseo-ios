@@ -19,6 +19,25 @@ class MZApplicationAppDependencies: MZAppDependencies {
     override func installRootViewControllerIntoWindow(window: UIWindow) {
         window.rootViewController = rootWireframe.createRootViewController()
     }
+    
+    func openURL(url:NSURL) -> Bool {
+        
+        guard let urlString = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?
+            .queryItems?
+            .filter({ $0.name == "urlString" })
+            .first?
+            .value?
+            .stringByRemovingPercentEncoding
+            else { return false }
+        
+        // This will need to be more complex when the view hierarchy is more complex
+        if let urlDetailsVC = rootWireframe.getRootViewController() as? MZURLDetailsViewController {
+            urlDetailsVC.urlString = urlString
+            urlDetailsVC.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        return true
+    }
 }
 
 class MZApplicationRootWireframe: MZRootWireframe {
@@ -66,6 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return MZApplicationAppDependencies.sharedDependencies().openURL(url)
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        return MZApplicationAppDependencies.sharedDependencies().openURL(url)
     }
     
     func applicationWillResignActive(application: UIApplication) {

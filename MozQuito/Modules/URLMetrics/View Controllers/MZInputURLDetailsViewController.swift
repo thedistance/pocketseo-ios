@@ -15,6 +15,12 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
     
     override var urlString:String? {
         didSet {
+            
+            if urlInputView.inputStack.urlTextFieldStack.text != urlString {
+                // this will typically be from opening the app via the
+               urlInputView.inputStack.urlTextFieldStack.text = urlString
+            }
+            
             urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
             urlInputView.inputStack.refreshButton.hidden = urlString?.isEmpty ?? true
         }
@@ -32,14 +38,18 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         
         urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
         urlInputView.inputStack.refreshButton.hidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         // configure the distance stack
-        metricsVC.distanceView?.tdStack.delegate = self
+        (metricsVC.distanceView?.distanceStack as? MZDistanceApplicationStack)?.delegate = self
     }
 
 }
 
-extension MZInputURLDetailsViewController: MZDistanceStackDelegate {
+extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {
 
     func distanceStackRequestsSendFeedback(stack: MZDistanceStack, sender: UIButton) {
         sendEmail([LocalizedString(.TheDistancePanelSendFeedbackEmailAddress)],

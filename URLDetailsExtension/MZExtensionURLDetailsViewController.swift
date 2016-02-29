@@ -12,7 +12,7 @@ import JCLocalization
 import DeviceKit
 import Fabric
 
-class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanceStackDelegate {
+class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanceExtensionStackDelegate {
     
     let rootWireframe = MZRootWireframe()
     
@@ -53,26 +53,22 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
             }
         }
         
-        // configure the distance stack
-        metricsVC.distanceView?.tdStack.delegate = self
-        
         // configure the view
         let cancelBBI = ThemeBarButtonItem(image: UIImage(named: "ic_clear"),
             style: .Plain,
             target: self,
             action: "cancel:")
         
-        let openInAppBBI = ThemeBarButtonItem(title: LocalizedString(.URLExtensionOpenInAppButtonTitle),
-            style: .Plain,
-            target: self,
-            action: "openInApp:")
-        
-        openInAppBBI.textStyle = .Body2
-        
         self.navigationItem.leftBarButtonItem = cancelBBI
-        self.navigationItem.rightBarButtonItem = openInAppBBI
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // configure the distance stack
+        (metricsVC.distanceView?.distanceStack as? MZDistanceExtensionStack)?.delegate = self
     }
 
     // MARK: - Actions
@@ -86,31 +82,33 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
     
     @IBAction func openInApp(sender:AnyObject?) {
         
+        guard let urlString = self.urlString?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet()),
+            let appURL = NSURL(string: "pocketseo://?urlString=\(urlString)")
+            else { return }
+        
         let event = AnalyticEvent(category: .DataRequest, action: .quickLookupOpenInApp, label: nil)
         AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(event)
         
+        var responder = self.nextResponder()
+        while responder != nil {
+            
+            if responder is UIApplication {
+                break
+            } else {
+                responder = responder?.nextResponder()
+            }
+        }
+        
+        if let application = responder as? UIApplication {
+            application.performSelector("openURL:", withObject: appURL)
+            return
+        }
     }
     
     // MARK: - Distance Delegate
     
-    func distanceStackRequestsSendFeedback(stack: MZDistanceStack, sender: UIButton) {
-        
-    }
-    
-    func distanceStackRequestsGetInTouch(stack: MZDistanceStack, sender: UIButton) {
-        
-    }
-    
-    func distanceStackRequestsWebsite(stack: MZDistanceStack, sender: UIButton) {
-        
-        guard let url = NSURL(string: LocalizedString(.TheDistanceContactWebsiteURL)) else { return }
-        
-        let websiteEvent = AnalyticEvent(category: .Meta, action: .viewDistanceWebsite, label: nil)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(websiteEvent)
-        
-        let item = NSExtensionItem()
-        item.attachments = [url]
-        self.extensionContext!.completeRequestReturningItems([item], completionHandler: nil)
+    func distanceStackRequestsOpenInApp(stack: MZDistanceStack, sender: UIButton) {
+        openInApp(sender)
     }
 
     // MARK: - Extension

@@ -94,21 +94,32 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         let meta = pageMetaData
         pageMetaData = meta
         
-        #if DEBUG || BETA_TESTING
-            // set up the test view
-            let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
-            tapper.numberOfTouchesRequired = 1
-            tapper.numberOfTapsRequired = 3
-            distanceView?.tdStack.logoImageView.userInteractionEnabled = true
-            distanceView?.tdStack.logoImageView.addGestureRecognizer(tapper)
-        #endif
-        
         // hide the metrics stacks
         if let svs = metricsView?.metricsStack.stack.arrangedSubviews {
             for sv in svs {
                 sv.hidden = true
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Configure TheDistanceStack based on context
+        if extensionContext != nil {
+            distanceView?.distanceStack = MZDistanceExtensionStack()
+        } else {
+            distanceView?.distanceStack = MZDistanceApplicationStack()
+        }
+        
+        #if DEBUG || BETA_TESTING
+            // set up the test view
+            let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
+            tapper.numberOfTouchesRequired = 1
+            tapper.numberOfTapsRequired = 3
+            distanceView?.distanceStack?.logoImageView.userInteractionEnabled = true
+            distanceView?.distanceStack?.logoImageView.addGestureRecognizer(tapper)
+        #endif
     }
     
     func logoTripleTapped(sender:AnyObject?) {
