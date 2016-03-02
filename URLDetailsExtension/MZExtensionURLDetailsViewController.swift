@@ -46,13 +46,6 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
         
         self.title = "PocketSEO"
         
-        // get the url from the extension
-        extensionURL { (url) -> () in
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                self.urlString = url.absoluteString
-            }
-        }
-        
         // configure the view
         let cancelBBI = ThemeBarButtonItem(image: UIImage(named: "ic_clear"),
             style: .Plain,
@@ -69,6 +62,13 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
         
         // configure the distance stack
         (metricsVC.distanceView?.distanceStack as? MZDistanceExtensionStack)?.delegate = self
+        
+        // get the url from the extension
+        extensionURL { (url) -> () in
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.urlString = url.absoluteString
+            }
+        }
     }
 
     // MARK: - Actions
