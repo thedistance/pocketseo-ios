@@ -21,7 +21,7 @@ public enum MZMetricKey: String {
     case DomainAuthority = "pda"
     case SpamScore = "fspsc"
     case TimeLastCrawled = "ulc"
-    case EstablishedLinksRootDomains = "uifq"
+    case EstablishedLinksRootDomains = "uipl"
     case EstablishedLinksTotalLinks = "uid"
     
     public var colValue:UInt64 {
@@ -47,7 +47,7 @@ public enum MZMetricKey: String {
         case .TimeLastCrawled:
             return 144115188075855872
         case .EstablishedLinksRootDomains:
-            return 512
+            return 1024
         case .EstablishedLinksTotalLinks:
             return 2048
         }

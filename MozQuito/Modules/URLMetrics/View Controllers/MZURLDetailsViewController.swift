@@ -46,6 +46,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         viewControllers = [metricsVC]
         
         (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
+        pageContainer?.bounces = false
         
         // configure this view
         headerBackgroundView?.layer.shadowOpacity = 0.27

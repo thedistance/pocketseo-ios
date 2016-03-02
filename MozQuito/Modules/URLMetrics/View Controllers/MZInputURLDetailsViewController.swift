@@ -43,6 +43,7 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        //self.urlString = "thedistance.co.uk"
         // configure the distance stack
         (metricsVC.distanceView?.distanceStack as? MZDistanceApplicationStack)?.delegate = self
     }

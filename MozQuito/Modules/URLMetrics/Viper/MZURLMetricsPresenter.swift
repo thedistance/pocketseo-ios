@@ -39,6 +39,7 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
         
         // no need to refresh the indexed dates and the mozscape data as they change ~monthly.
         interactor?.getPageMetaDataForURLString(urlString)
+        interactor?.getMozscapeMetricsForURLString(urlString)
         interactor?.getAlexaDataFromURLString(urlString)
     }
     

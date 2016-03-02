@@ -107,12 +107,9 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
             
             if let text = httpText {
                 statusCodeLabel.text = text
-                statusCodeLabel.hidden = false
             } else {
                 statusCodeLabel.text = nil
-                statusCodeLabel.hidden = true
             }
-            
             
             pageAuthorityProgressView.setDValue(data?.pageAuthority)
             domainAuthorityProgressView.setDValue(data?.domainAuthority)
@@ -149,6 +146,8 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
     let totalLinksStack = GenericStringsStack<ThemeLabel>(strings: [NoValueString, LocalizedString(.URLMozscapeLinksTotalLinks)])
     
     let indexedStack = MZMozscapeIndexedStack()
+    
+    var authStack:StackView
     
     init() {
         
@@ -209,7 +208,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
             return stack
         })
         
-        var authStack = CreateStackView(authStacks.map({ $0.view }))
+        authStack = CreateStackView(authStacks.map({ $0.view }))
         authStack.axis = .Horizontal
         authStack.spacing = 16.0
         authStack.stackDistribution = .EqualCentering
@@ -270,7 +269,8 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         linksStack.axis = .Vertical
         linksStack.spacing = 16.0
         
-        let collapsing = [authorityHeadingStack.view,
+        let collapsing = [statusCodeLabel,
+            authorityHeadingStack.view,
             linksStack.view,
             indexedStack.stackView]
         

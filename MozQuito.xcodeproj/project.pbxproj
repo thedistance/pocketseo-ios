@@ -21,7 +21,6 @@
 		A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
 		A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
 		A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */; };
-		A50BD38D1C75E25200E7A07F /* MZURLMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */; };
 		A50BD38E1C75E25200E7A07F /* MZURLInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */; };
 		A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
 		A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
@@ -60,7 +59,6 @@
 		A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
 		A58560D11C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58560D01C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift */; };
 		A58560D41C7F3FFF005221B3 /* Extension.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58560D21C7F3FFF005221B3 /* Extension.storyboard */; };
-		A58560D81C7F3FFF005221B3 /* URLDetailsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A58560DE1C7F4883005221B3 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
 		A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
 		A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
@@ -108,7 +106,6 @@
 		A585610D1C7F48D4005221B3 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */; };
 		A585610E1C7F48D4005221B3 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AD1C75E29500E7A07F /* ThemeView.swift */; };
 		A585610F1C7F48D4005221B3 /* MZPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D1E1C7DB071001417F3 /* MZPanel.swift */; };
-		A58561111C7F48D4005221B3 /* MZURLMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */; };
 		A58561121C7F48D4005221B3 /* ErrorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */; };
 		A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */; };
 		A58561151C7F48D4005221B3 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
@@ -166,13 +163,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A58560D61C7F3FFF005221B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A58560CD1C7F3FFF005221B3;
-			remoteInfo = URLDetailsExtension;
-		};
 		A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
@@ -193,17 +183,6 @@
 				A508D8C81C80A9660099BBD4 /* Pods_URLDetailsExtension.framework in CopyFiles */,
 				A508D8C71C80A9570099BBD4 /* ThemeKitCore.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A58560DD1C7F3FFF005221B3 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				A58560D81C7F3FFF005221B3 /* URLDetailsExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5FB62051C78B72C00E0BC9A /* Embed Frameworks */ = {
@@ -294,7 +273,6 @@
 		A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaData.swift; sourceTree = "<group>"; };
 		A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZErrors.swift; sourceTree = "<group>"; };
 		A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZNetworking.swift; sourceTree = "<group>"; };
-		A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLMetricsView.swift; sourceTree = "<group>"; };
 		A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetaDataStack.swift; sourceTree = "<group>"; };
 		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
 		A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSEO App Strings.tsv"; sourceTree = "<group>"; };
@@ -630,7 +608,6 @@
 			children = (
 				A5F46D1E1C7DB071001417F3 /* MZPanel.swift */,
 				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
-				A5ECBD971C5BA931003350E3 /* MZURLMetricsView.swift */,
 				A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */,
 				A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */,
 				A579DD7C1C845EB9006C0FB5 /* Distance Views */,
@@ -782,12 +759,10 @@
 				82CBD3F762B24275BB76B977 /* Copy Pods Resources */,
 				A505BA411C563E4A004F2607 /* ShellScript */,
 				A5FB62051C78B72C00E0BC9A /* Embed Frameworks */,
-				A58560DD1C7F3FFF005221B3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A58560D71C7F3FFF005221B3 /* PBXTargetDependency */,
 			);
 			name = PocketSEO;
 			productName = MozQuito;
@@ -1130,7 +1105,6 @@
 				A585610D1C7F48D4005221B3 /* ThemeImageView.swift in Sources */,
 				A585610E1C7F48D4005221B3 /* ThemeView.swift in Sources */,
 				A585610F1C7F48D4005221B3 /* MZPanel.swift in Sources */,
-				A58561111C7F48D4005221B3 /* MZURLMetricsView.swift in Sources */,
 				A58561121C7F48D4005221B3 /* ErrorStack.swift in Sources */,
 				A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */,
 				A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */,
@@ -1179,7 +1153,6 @@
 				A50BD3AE1C75E29500E7A07F /* ThemeButton.swift in Sources */,
 				A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */,
 				A5F46D2D1C7DBBED001417F3 /* TestAnalyticsViewController.swift in Sources */,
-				A50BD38D1C75E25200E7A07F /* MZURLMetricsView.swift in Sources */,
 				A50BD3B21C75E29500E7A07F /* ThemeSwitch.swift in Sources */,
 				A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
 				A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */,
@@ -1230,11 +1203,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A58560D71C7F3FFF005221B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */;
-			targetProxy = A58560D61C7F3FFF005221B3 /* PBXContainerItemProxy */;
-		};
 		A5FB61E21C787BBA00E0BC9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5F4E6671C50E0FD0099010C /* PocketSEO */;
@@ -1588,7 +1556,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1619,7 +1586,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1685,7 +1651,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",

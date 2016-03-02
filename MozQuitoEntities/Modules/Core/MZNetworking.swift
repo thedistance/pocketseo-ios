@@ -25,7 +25,8 @@ public enum RequestPath: String, URLStringConvertible {
     // --- URL Metrics --- \\
     
     case MozscapeURLMetrics = "url-metrics"
-    case MozscapeIndexedDates = "metadata/last_update.json"
+    case MozscapeIndexedLastDate = "metadata/last_update.json"
+    case MozscapeIndexedNextDate = "metadata/next_update.json"
     
     public var URLString:String {
         return rawValue

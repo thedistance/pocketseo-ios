@@ -83,9 +83,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
     init() {
         
         // init as collapsed
-        pageTitleStack.headingStack.view.hidden = true
         canonicalStack.stackView.hidden = true
-        descriptionStack.headingStack.view.hidden = true
         h1Stack.stackView.hidden = true
         h2Stack.stackView.hidden = true
         
@@ -108,6 +106,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         let titleLabel = ThemeLabel()
         titleLabel.textStyle = .Title
         titleLabel.textColourStyle = .Text
+        titleLabel.textAlignment = .Center
         titleLabel.text = LocalizedString(.URLPageMetaDataHeadline)
         
         super.init(titleView: titleLabel, arrangedSubviews: [detailsStack.view, footerStack.view])
@@ -156,9 +155,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         
         super.configureAsExpanded(expanded)
         
-        pageTitleStack.headingStack.view.hidden = !expanded
         canonicalStack.stackView.hidden = !expanded
-        descriptionStack.headingStack.view.hidden = !expanded
         h1Stack.stackView.hidden = !expanded
         h2Stack.stackView.hidden = !expanded
         

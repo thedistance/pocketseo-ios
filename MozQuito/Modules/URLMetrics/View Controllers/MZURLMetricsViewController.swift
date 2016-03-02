@@ -28,34 +28,25 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             
             let validURL = !(urlString?.isEmpty ?? false)
             emptyView?.hidden = validURL
+            contentToBottomConstraint?.priority = validURL ? 990 : 740
             
-            if let mv = metricsView {
-                
-                // show the panels as they are initially hidden for the empty view
-                // hide the metrics stacks
-                if let svs = metricsView?.metricsStack.stack.arrangedSubviews {
-                    for sv in svs {
-                        sv.hidden = !validURL
-                    }
-                }
-                
-                // reset each panel to start loading
-                let expandingStacks = [mv.metricsStack.pageMetaDataView,
-                    mv.metricsStack.mozDataView,
-                    mv.metricsStack.alexaDataView]
-                    .flatMap({ $0.stack as? MZExpandingStack })
-                
-                for s in expandingStacks {
-                    s.state = .Loading
-                }
+            for p in metricsViews {
+                p?.hidden = !validURL
             }
             
-            if let str = urlString {
+            if validURL {
+            
+                for p in metricsViews {
+                    (p?.stack as? MZExpandingStack)?.state = .Loading
+                }
                 
-                if str != oldValue {
-                    presenter?.requestMetricsForURLString(str)
-                } else {
-                    presenter?.refreshMetricsForURLString(str)
+                if let str = urlString {
+                    
+                    if str != oldValue {
+                        presenter?.requestMetricsForURLString(str)
+                    } else {
+                        presenter?.refreshMetricsForURLString(str)
+                    }
                 }
             }
         }
@@ -63,30 +54,37 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     var pageMetaData:MZPageMetaData? {
         didSet {
-            metricsView?.pageMetaData = pageMetaData
+            metaDataView?.metaStack.pageMetaData = pageMetaData
         }
     }
     
     var mozscapeMetrics:MZMozscapeMetrics? {
         didSet {
-            metricsView?.mozscapeMetrics = mozscapeMetrics
+            mozscapeView?.dataStack.data = mozscapeMetrics
         }
     }
     
     var mozscapeIndexedDates:MZMozscapeIndexedDates? {
         didSet {
-            metricsView?.mozscapeIndexedDates = mozscapeIndexedDates
+            mozscapeView?.dataStack.indexedStack.dates = mozscapeIndexedDates
         }
     }
     
     var alexaData:MZAlexaData? {
         didSet {
-            metricsView?.alexaData = alexaData
+            alexaDataView?.dataStack.alexaData = alexaData
         }
     }
+    @IBOutlet weak var contentToBottomConstraint:NSLayoutConstraint?
+    //@IBOutlet weak var contentHeightConstraint:NSLayoutConstraint?
+    @IBOutlet weak var metaDataView:MZPageMetaDataView?
+    @IBOutlet weak var mozscapeView:MZMozscapeMetricsView?
+    @IBOutlet weak var alexaDataView:MZAlexaDataView?
     
-    @IBOutlet weak var metricsView:MZURLMetricsView?
-
+    var metricsViews:[MZPanel?] {
+        return [metaDataView, mozscapeView, alexaDataView]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,10 +93,8 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         pageMetaData = meta
         
         // hide the metrics stacks
-        if let svs = metricsView?.metricsStack.stack.arrangedSubviews {
-            for sv in svs {
-                sv.hidden = true
-            }
+        for sv in metricsViews {
+            sv?.hidden = true
         }
     }
     
@@ -139,11 +135,11 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     func showPageMetaData(data: MZPageMetaData) {
         pageMetaData = data
         
-        (metricsView?.metricsStack.pageMetaDataView.stack as? MZExpandingStack)?.state = .Success
+        metaDataView?.metaStack.state = .Success
     }
     
     func showPageMetaDataErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: metricsView?.metricsStack.pageMetaDataView)
+        showErrors(errors, forPanel: metaDataView)
     }
     
     // MARK: Mozscape
@@ -151,11 +147,11 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
         mozscapeMetrics = metrics
         
-        (metricsView?.metricsStack.mozDataView.stack as? MZExpandingStack)?.state = .Success
+        mozscapeView?.dataStack.state = .Success
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: metricsView?.metricsStack.mozDataView)
+        showErrors(errors, forPanel: mozscapeView)
     }
     
     func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
@@ -167,11 +163,11 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     func showAlexaData(data: MZAlexaData) {
         alexaData = data
         
-        (metricsView?.metricsStack.alexaDataView.stack as? MZExpandingStack)?.state = .Success
+        alexaDataView?.dataStack.state = .Success
     }
     
     func showAlexaDataErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: metricsView?.metricsStack.alexaDataView)
+        showErrors(errors, forPanel: alexaDataView)
     }
     
     func showErrors(errors:[NSError], forPanel panel:MZPanel?) {

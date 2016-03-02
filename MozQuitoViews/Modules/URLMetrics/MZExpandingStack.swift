@@ -61,10 +61,24 @@ public class MZExpandingStack: CreatedStack {
         loadingView.hidesWhenStopped = true
         loadingView.transform = CGAffineTransformMakeScale(0.75, 0.75)
         
+        let buttonWidthConstraint = NSLayoutConstraint(item: expandButton,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: .NotAnAttribute,
+            multiplier: 1.0,
+            constant: 48.0)
+        let buttonHeightConstraint = NSLayoutConstraint(item: expandButton,
+            attribute: .Height,
+            relatedBy: .GreaterThanOrEqual,
+            toItem: nil,
+            attribute: .NotAnAttribute,
+            multiplier: 1.0,
+            constant: 34.0)
+        expandButton.addConstraints([buttonWidthConstraint, buttonHeightConstraint])
+        
         expandingTitleStack = CreateStackView([titleView, expandButton])
         contentStack = CreateStackView(arrangedSubviews)
-        
-        expandButton.contentHorizontalAlignment = .Right
         
         errorStack.stackView.translatesAutoresizingMaskIntoConstraints = false
         errorContainer.backgroundColor = UIColor.clearColor()
@@ -141,7 +155,7 @@ public class MZExpandingStack: CreatedStack {
         let expandImage = UIImage(named: "ic_expand_more", inBundle: NSBundle(forClass: MZPageMetaDataStack.self), compatibleWithTraitCollection: nil)
         expandButton.setImage(expandImage, forState: .Normal)
         expandButton.tintColourStyle = .SecondaryText
-        expandButton.contentHorizontalAlignment = .Left
+        expandButton.contentHorizontalAlignment = .Right
         expandButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         
         expandTarget = ObjectTarget(control: expandButton, forControlEvents: .TouchUpInside, completion: toggleExpanded)
@@ -150,7 +164,7 @@ public class MZExpandingStack: CreatedStack {
         expandingTitleStack.axis = .Horizontal
         expandingTitleStack.stackAlignment = .Fill
         expandingTitleStack.stackDistribution = .Fill
-        expandingTitleStack.spacing = 8.0
+        expandingTitleStack.spacing = -48.0
         
         for var s in [stack, contentStack] {
             s.axis = .Vertical
@@ -164,7 +178,7 @@ public class MZExpandingStack: CreatedStack {
     public func toggleExpanded(sender:AnyObject?) {
         
         self.configureAsExpanded(!self.expanded)
-        self.stackView.layoutIfNeeded()
+//        self.stackView.layoutIfNeeded()
     }
     
     public func configureAsExpanded(expanded:Bool) {
@@ -172,6 +186,6 @@ public class MZExpandingStack: CreatedStack {
         self.expanded = expanded
         
         let pi = CGFloat(M_PI)
-        expandButton.transform = expanded ? CGAffineTransformMakeRotation(pi) : CGAffineTransformMakeRotation(2.0 * pi)
+        expandButton.imageView?.transform = expanded ? CGAffineTransformMakeRotation(pi) : CGAffineTransformMakeRotation(2.0 * pi)
     }
 }
