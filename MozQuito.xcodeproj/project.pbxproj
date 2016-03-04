@@ -7,17 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		508FE16FFE33637A27F1E31F /* Pods_URLDetailsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */; };
-		6D1A5E849314A1627B66ED84 /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; };
-		809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; };
+		53A449BB354563A5E4780309 /* Pods_URLDetailsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */; };
 		A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
 		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
 		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
-		A508D8C71C80A9570099BBD4 /* ThemeKitCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A508D8C81C80A9660099BBD4 /* Pods_URLDetailsExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A508D8C91C80A96E0099BBD4 /* Pods_PocketSEO.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A508D8CA1C80ABCA0099BBD4 /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
 		A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
 		A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
@@ -161,6 +156,7 @@
 		A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; };
 		A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
+		E73094DFA553B2157CECF3E1 /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,18 +186,6 @@
 				A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A508D8C61C80A94C0099BBD4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A508D8C91C80A96E0099BBD4 /* Pods_PocketSEO.framework in CopyFiles */,
-				A508D8C81C80A9660099BBD4 /* Pods_URLDetailsExtension.framework in CopyFiles */,
-				A508D8C71C80A9570099BBD4 /* ThemeKitCore.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5FB62051C78B72C00E0BC9A /* Embed Frameworks */ = {
@@ -324,8 +308,11 @@
 		A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAssertEqualOptional.swift; sourceTree = "<group>"; };
 		A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnalyticsInteractors.swift; sourceTree = "<group>"; };
 		A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThemeKitCore.framework; path = Libraries/ThemeKit/Release/ThemeKitCore.framework; sourceTree = "<group>"; };
+		B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.release.xcconfig"; sourceTree = "<group>"; };
+		C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDetailsExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.beta testing.xcconfig"; sourceTree = "<group>"; };
 		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
 		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,8 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A585611A1C7F6323005221B3 /* ThemeKitCore.framework in Frameworks */,
-				6D1A5E849314A1627B66ED84 /* Pods_PocketSEO.framework in Frameworks */,
-				508FE16FFE33637A27F1E31F /* Pods_URLDetailsExtension.framework in Frameworks */,
+				53A449BB354563A5E4780309 /* Pods_URLDetailsExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */,
-				809771E4F451B72D08588E7D /* Pods_PocketSEO.framework in Frameworks */,
+				E73094DFA553B2157CECF3E1 /* Pods_PocketSEO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +357,9 @@
 				01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */,
 				4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */,
 				7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */,
+				C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */,
+				B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */,
+				DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -747,13 +736,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A58560DC1C7F3FFF005221B3 /* Build configuration list for PBXNativeTarget "URLDetailsExtension" */;
 			buildPhases = (
-				1546AC733BF9DF4E148BD8B3 /* Check Pods Manifest.lock */,
+				540D2E2E8F143950A1AFBCC3 /* Check Pods Manifest.lock */,
+				E7AAA0041C89B279003EE3D4 /* ShellScript */,
 				A58560CA1C7F3FFF005221B3 /* Sources */,
 				A58560CB1C7F3FFF005221B3 /* Frameworks */,
 				A58560CC1C7F3FFF005221B3 /* Resources */,
-				31640847DD68A7B8995ABA9A /* Embed Pods Frameworks */,
-				E45779C3C7680D90AF19BFFF /* Copy Pods Resources */,
-				A508D8C61C80A94C0099BBD4 /* CopyFiles */,
+				4BD6939A64AB9885D2745371 /* Embed Pods Frameworks */,
+				A2B1060C9506A7C5A5F8D110 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -768,17 +757,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */;
 			buildPhases = (
-				A5F46D0E1C7B5974001417F3 /* ShellScript */,
+				14975816AD92C57C6570A2B2 /* Check Pods Manifest.lock */,
 				A579DD8E1C8470A0006C0FB5 /* ShellScript */,
-				F22743495F1EF2404723081F /* Check Pods Manifest.lock */,
 				A5F4E6641C50E0FD0099010C /* Sources */,
 				A5F4E6651C50E0FD0099010C /* Frameworks */,
 				A5F4E6661C50E0FD0099010C /* Resources */,
-				A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */,
-				82CBD3F762B24275BB76B977 /* Copy Pods Resources */,
 				A505BA411C563E4A004F2607 /* ShellScript */,
 				A5FB62051C78B72C00E0BC9A /* Embed Frameworks */,
 				A504A0751C8715A9001A214D /* Embed App Extensions */,
+				3E6BB89C0748D68F4103A815 /* Embed Pods Frameworks */,
+				12AB8D6991A5097B544E843E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -893,7 +881,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1546AC733BF9DF4E148BD8B3 /* Check Pods Manifest.lock */ = {
+		12AB8D6991A5097B544E843E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14975816AD92C57C6570A2B2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -923,7 +926,22 @@
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31640847DD68A7B8995ABA9A /* Embed Pods Frameworks */ = {
+		3E6BB89C0748D68F4103A815 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BD6939A64AB9885D2745371 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -938,19 +956,19 @@
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		82CBD3F762B24275BB76B977 /* Copy Pods Resources */ = {
+		540D2E2E8F143950A1AFBCC3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		955999B786551A95197F6A24 /* Copy Pods Resources */ = {
@@ -966,6 +984,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2B1060C9506A7C5A5F8D110 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A505BA411C563E4A004F2607 /* ShellScript */ = {
@@ -994,34 +1027,6 @@
 			shellPath = /bin/sh;
 			shellScript = "version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n/usr/libexec/PlistBuddy -c \"set PreferenceSpecifiers:1:DefaultValue $version\" \"$SRCROOT/MozQuito/Settings.bundle/Root.plist\"";
 		};
-		A5F46D0E1C7B5974001417F3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/JCLocalization/JCLocalization.sh\" \"${PROJECT_DIR}/MozQuito/Resources/PSEO App Strings.tsv\" \"${PODS_ROOT}/JCLocalization/JCLocalization/LocalizedString.swift\" \"${PODS_ROOT}/JCLocalization/JCLocalization/JCLocalization.strings\"";
-		};
-		A9F5ED1605A0517D85BD62FA /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1037,35 +1042,18 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E45779C3C7680D90AF19BFFF /* Copy Pods Resources */ = {
+		E7AAA0041C89B279003EE3D4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F22743495F1EF2404723081F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/JCLocalization/JCLocalization.sh\" \"${PROJECT_DIR}/MozQuito/Resources/PSEO App Strings.tsv\" \"${PODS_ROOT}/JCLocalization/JCLocalization/LocalizedString.swift\" \"${PODS_ROOT}/JCLocalization/JCLocalization/JCLocalization.strings\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1274,13 +1262,13 @@
 /* Begin XCBuildConfiguration section */
 		A58560D91C7F3FFF005221B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */;
+			baseConfigurationReference = C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Extension Icon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
@@ -1338,7 +1326,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
+				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1347,13 +1335,13 @@
 		};
 		A58560DA1C7F3FFF005221B3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */;
+			baseConfigurationReference = B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Extension Icon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
@@ -1411,6 +1399,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fe882295-658e-4cb5-b2e2-1d7cadbda4e9";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
 			};
@@ -1418,13 +1407,13 @@
 		};
 		A58560DB1C7F3FFF005221B3 /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */;
+			baseConfigurationReference = DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Extension Icon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
@@ -1482,7 +1471,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\" \"-DBETA_TESTING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52fb509d-a304-4dcd-a0ea-10d6328c6ebe";
+				PROVISIONING_PROFILE = "0a50d28f-dc18-4480-ac35-7d84f86abcee";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
 			};
@@ -1505,7 +1494,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1527,6 +1516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1550,7 +1540,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1565,6 +1555,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "eb184ccb-aeef-48e7-987f-163a063675f0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1579,10 +1570,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1597,7 +1588,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
+				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1611,9 +1602,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1627,6 +1618,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eb184ccb-aeef-48e7-987f-163a063675f0";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
 			name = Release;
@@ -1648,7 +1640,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1663,6 +1655,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "0a50d28f-dc18-4480-ac35-7d84f86abcee";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1677,9 +1670,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1694,7 +1687,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA_TESTING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52fb509d-a304-4dcd-a0ea-10d6328c6ebe";
+				PROVISIONING_PROFILE = "0a50d28f-dc18-4480-ac35-7d84f86abcee";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
 			name = "Beta Testing";
@@ -1721,11 +1714,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				INFOPLIST_FILE = PocketSEOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c5ecd5c4-4f71-4a6c-adb4-d6e2e8d9b52b";
 				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
 			};
