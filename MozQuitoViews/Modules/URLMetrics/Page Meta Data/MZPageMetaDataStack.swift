@@ -17,7 +17,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
     static let dateFormatter:NSDateFormatter = {
         
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .NoStyle
+        formatter.dateStyle = .MediumStyle
         formatter.timeStyle = .MediumStyle
         
         return formatter
@@ -82,11 +82,6 @@ public class MZPageMetaDataStack: MZExpandingStack {
     
     init() {
         
-        // init as collapsed
-        canonicalStack.stackView.hidden = true
-        h1Stack.stackView.hidden = true
-        h2Stack.stackView.hidden = true
-        
         var innerSSLStack = CreateStackView([usingSSLTitleLabel, usingSSLLabel])
         innerSSLStack.axis = .Vertical
         innerSSLStack.spacing = 8.0
@@ -108,6 +103,13 @@ public class MZPageMetaDataStack: MZExpandingStack {
         titleLabel.textColourStyle = .Text
         titleLabel.textAlignment = .Center
         titleLabel.text = LocalizedString(.URLPageMetaDataHeadline)
+        
+        // init as collapsed
+        canonicalStack.stackView.hidden = true
+        h1Stack.stackView.hidden = true
+        h2Stack.stackView.hidden = true
+        usingSSLStack.view.hidden = true
+        footerStack.view.hidden = true
         
         super.init(titleView: titleLabel, arrangedSubviews: [detailsStack.view, footerStack.view])
     }
@@ -147,7 +149,7 @@ public class MZPageMetaDataStack: MZExpandingStack {
         usingSSLStack.stackDistribution = .EqualSpacing
         
         responseURLLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
-        refreshDateLabel.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
+        refreshDateLabel.setContentCompressionResistancePriority(760, forAxis: .Horizontal)
         refreshDateLabel.setContentHuggingPriority(255, forAxis: .Horizontal)
     }
     
@@ -158,8 +160,8 @@ public class MZPageMetaDataStack: MZExpandingStack {
         canonicalStack.stackView.hidden = !expanded
         h1Stack.stackView.hidden = !expanded
         h2Stack.stackView.hidden = !expanded
-        
         usingSSLStack.view.hidden = !expanded
+        footerStack.view.hidden = !expanded
     }
     
 }
