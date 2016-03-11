@@ -160,13 +160,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A504A0731C8715A8001A214D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A58560CD1C7F3FFF005221B3;
-			remoteInfo = URLDetailsExtension;
-		};
 		A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
@@ -174,12 +167,19 @@
 			remoteGlobalIDString = A5F4E6671C50E0FD0099010C;
 			remoteInfo = PocketSEO;
 		};
+		E7E1A1BC1C92FA860031D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A58560CD1C7F3FFF005221B3;
+			remoteInfo = URLDetailsExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A504A0751C8715A9001A214D /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -741,7 +741,6 @@
 				A58560CA1C7F3FFF005221B3 /* Sources */,
 				A58560CB1C7F3FFF005221B3 /* Frameworks */,
 				A58560CC1C7F3FFF005221B3 /* Resources */,
-				4BD6939A64AB9885D2745371 /* Embed Pods Frameworks */,
 				A2B1060C9506A7C5A5F8D110 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -771,7 +770,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A504A0741C8715A8001A214D /* PBXTargetDependency */,
+				E7E1A1BD1C92FA860031D1AE /* PBXTargetDependency */,
 			);
 			name = PocketSEO;
 			productName = MozQuito;
@@ -939,21 +938,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4BD6939A64AB9885D2745371 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		540D2E2E8F143950A1AFBCC3 /* Check Pods Manifest.lock */ = {
@@ -1212,15 +1196,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A504A0741C8715A8001A214D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */;
-			targetProxy = A504A0731C8715A8001A214D /* PBXContainerItemProxy */;
-		};
 		A5FB61E21C787BBA00E0BC9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A5F4E6671C50E0FD0099010C /* PocketSEO */;
 			targetProxy = A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */;
+		};
+		E7E1A1BD1C92FA860031D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */;
+			targetProxy = E7E1A1BC1C92FA860031D1AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1269,6 +1253,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
@@ -1279,6 +1264,7 @@
 					"M13_APP_EXTENSIONS=1",
 				);
 				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				OTHER_CFLAGS = (
@@ -1342,6 +1328,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
@@ -1352,6 +1339,7 @@
 					"M13_APP_EXTENSIONS=1",
 				);
 				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				OTHER_CFLAGS = (
@@ -1414,6 +1402,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
@@ -1424,6 +1413,7 @@
 					"M13_APP_EXTENSIONS=1",
 				);
 				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				OTHER_CFLAGS = (
@@ -1573,7 +1563,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1604,7 +1594,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",
@@ -1618,7 +1608,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eb184ccb-aeef-48e7-987f-163a063675f0";
+				PROVISIONING_PROFILE = "35975edb-2e70-4a70-8216-6fd641a16b39";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
 			name = Release;
@@ -1672,7 +1662,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Crashlytics/iOS\"",

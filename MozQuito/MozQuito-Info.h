@@ -1,1 +1,1 @@
-#define BUILD_VERSION 0.1_rc_01
+#define BUILD_VERSION 0.1
