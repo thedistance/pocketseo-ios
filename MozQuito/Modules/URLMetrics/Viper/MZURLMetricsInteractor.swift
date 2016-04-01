@@ -17,6 +17,8 @@ class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
     
     weak var presenter: MZURLMetricsPresenter<ViewType>?
     
+    required init() { }
+    
     func getMozscapeMetricsForURLString(urlString: String) {
         
         let metricsOperation = MZGetMozscapeURLMetricsOperation(requestURLString: urlString)

@@ -15,6 +15,8 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     var interactor:MZURLMetricsInteractor<ViewType>?
     var wireframe:MZURLMetricsWireframe<ViewType>?
     
+    required init() { }
+    
     static func configuredPresenterForView(view:ViewType) -> MZURLMetricsPresenter<ViewType> {
         
         let presenter = MZURLMetricsPresenter<ViewType>()

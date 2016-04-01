@@ -12,4 +12,5 @@ class MZURLMetricsWireframe<ViewType:URLMetricsView>: VIPERWireframe {
     
     weak var view:ViewType?
     
+    required init() { }
 }
