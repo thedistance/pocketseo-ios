@@ -8,59 +8,16 @@
 
 import Foundation
 
-import Fabric
-import Crashlytics
-
-import ViperKit
-
-/// Helper class to allow submodules within Fabric to be registered for starting, allowing the final line of `application(_:didFinishLaunchingWithOptions:)` to be called in a clean, but dynamic manner.
-final class FabricInitialiser {
-    
-    /// The Fabric kits to be started at the end of `application(_:didFinishLaunchingWithOptions:)` using `Fabric.with(_:)`.
-    static var kits = [AnyObject]()
-}
-
-/**
- 
- Default implementation of crash reporting using Crashlytics, through Fabric. This class should not be subclassed and is therefore 'final' for optimization.
- 
- Crashlytics is not initialised when in `DEBUG` mode. If not in `DEBUG` the `preferences` interactor is queried. If the user has given permission `Crashlytics()` is appended to the `FabricInitialiser.kits` array to be initialised at the end of `application(_:didFinishLaunchingWithOptions:)`.
- */
-final class FabricCrashReportingInteractor: CrashReportingInteractor
-{
-    var preferences:PreferencesInteractor?
-    
-    func setupCrashReporting() {
-        #if DEBUG
-            print("Not starting Crashlytics in Debug")
-        #else
-            if let canSend = preferences?.canSendCrashReports() where canSend {
-                FabricInitialiser.kits.append(Crashlytics())
-            }
-        #endif
-    }
-    
-    func simulateCrash() {
-        Crashlytics.sharedInstance().crash()
-    }
-    
-    func logToCrashReport(message:String) {
-        #if !DEBUG
-            CLSLogv(message, getVaList([]))
-        #else
-            print(message)
-        #endif
-    }
-    
-    func logNonFatalError(error: NSError) {
-        
-    }
-}
+import Components
 
 /// Default implementation of analytics using Google Analytics. This class should not be subclassed and is therefore 'final' for optimization.
-final class GoogleAnalyticsInteractor:AnalyticsInteractor {
+final class GoogleAnalyticsInteractor:AnalyticsReporter {
     
-    var preferences:PreferencesInteractor?
+    var preferences:PreferencesInteractor
+    
+    init(preferences:PreferencesInteractor) {
+        self.preferences = preferences
+    }
     
     func enableAnalytics(enable: Bool) {
         GAI.sharedInstance().optOut = !enable
@@ -74,7 +31,7 @@ final class GoogleAnalyticsInteractor:AnalyticsInteractor {
             let trackingID = GoogleAnalyticsTrackingIDLive
         #endif
         
-        enableAnalytics(preferences?.canSendAnalytics() ?? false)
+        enableAnalytics(preferences.canSendAnalytics() ?? false)
         
         // Configure tracker from GoogleService-Info.plist.
         GAI.sharedInstance().defaultTracker = GAI.sharedInstance().trackerWithTrackingId(trackingID)
@@ -120,7 +77,7 @@ final class GoogleAnalyticsInteractor:AnalyticsInteractor {
             }
         }
         
-        AppDependencies.sharedDependencies().crashReportingInteractor?.logToCrashReport(event.description)
+        AppDependencies.sharedDependencies().crashReporter?.logToCrashReport(event.description)
         
         // send the event
         tracker.send(builder.build() as [NSObject: AnyObject])

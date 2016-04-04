@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import ViperKit
+
+import Components
 import TheDistanceCore
 import ThemeKitCore
 //import PocketSEOViews
@@ -26,7 +27,7 @@ enum RequestKeys:String, RequestCacheKey {
     static var allValues:[RequestKeys] = [.MozscapeIndexedDates]
 }
 
-class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteractor, RequestCache {
+class MZAppDependencies : AppDependencies, _AppDependencies, RequestCache {
     
     typealias RequestCacheKeyType = RequestKeys
     
@@ -52,11 +53,13 @@ class MZAppDependencies : AppDependencies, _AppDependencies, PreferencesInteract
         
         setDefaultPreferences()
         preferencesInteractor = self
-        analyticsInteractor = GoogleAnalyticsInteractor()
-        crashReportingInteractor = FabricCrashReportingInteractor()
         
-        analyticsInteractor?.setupAnalytics()
-        crashReportingInteractor?.setupCrashReporting()
+        // pass the preferences as a reference for dependebct injection and to prevent cyclic loop
+        analyticsReporter = GoogleAnalyticsInteractor(preferences: self)
+        crashReporter = FabricCrashReportingInteractor(preferences: self)
+        
+        analyticsReporter?.setupAnalytics()
+        crashReporter?.setupCrashReporting()
     }
     
     // App Specific Code

@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-import ViperKit
+import Components
 
 // MARK: - Enum Extensions
 
@@ -46,6 +45,6 @@ protocol AnalyticScreenView {
 extension AnalyticScreenView where Self:UIViewController {
     
     func registerScreenView() {
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(AnalyticEvent(screenName: screenName))
+        AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(AnalyticEvent(screenName: screenName))
     }
 }

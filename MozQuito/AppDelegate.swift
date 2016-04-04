@@ -9,7 +9,7 @@
 import UIKit
 
 import Fabric
-import ViperKit
+import Components
 import DeviceKit
 
 class MZApplicationAppDependencies: MZAppDependencies {
@@ -61,9 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = MZThemeVendor.shared()
         
         // Override point for customization after application launch.
-        let dependencies = MZApplicationAppDependencies.sharedInstance()
+        let dependencies = MZApplicationAppDependencies.sharedDependencies()
         
-        dependencies.crashReportingInteractor?.logToCrashReport("App Launched")
+        dependencies.crashReporter?.logToCrashReport("App Launched")
         
         window = UIWindow()
         window?.makeKeyAndVisible()

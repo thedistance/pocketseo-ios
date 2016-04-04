@@ -20,19 +20,15 @@ target 'PocketSEO' do
     ### CORE PODS ###
     
     pod 'TheDistanceCore', :git => 'git@bitbucket.org:thedistance/thedistancecore.git'
-    pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
     
     ### DISTRIBUTION PODS ###
     
     pod 'GoogleAnalytics'
     pod 'Fabric'
     pod 'Crashlytics'
-    #pod 'DeviceKit'
     
     ### NETWORKING PODS ###
     
-    #pod 'Alamofire'
-    #pod 'SwiftyJSON'
     pod 'PSOperations'
     
     pod 'hpple'
@@ -57,8 +53,6 @@ target 'URLDetailsExtension' do
     ### CORE PODS ###
     
     pod 'TheDistanceCore', :git => 'git@bitbucket.org:thedistance/thedistancecore.git'
-    pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
-    #pod 'DeviceKit'
     
     ### DISTRIBUTION PODS ###
     
@@ -68,8 +62,6 @@ target 'URLDetailsExtension' do
     
     ### NETWORKING PODS ###
     
-    #pod 'Alamofire'
-    #pod 'SwiftyJSON'
     pod 'PSOperations'
     
     pod 'hpple'
@@ -91,7 +83,7 @@ target 'PocketSEOTests' do
     
     xcodeproj '../MozQuito'
     
-    pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
+    #pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
     
 end
 

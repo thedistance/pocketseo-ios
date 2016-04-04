@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import PocketSEOEntities
+import Components
 
 class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     
@@ -37,7 +37,7 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     func refreshMetricsForURLString(urlString: String) {
         
         let refreshEvent = AnalyticEvent(category: .DataRequest, action: .refreshData, label: urlString)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(refreshEvent)
+        MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(refreshEvent)
         
         // no need to refresh the indexed dates and the mozscape data as they change ~monthly.
         interactor?.getPageMetaDataForURLString(urlString)
@@ -48,10 +48,10 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     func requestMetricsForURLString(urlString:String) {
         
         let requestEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: urlString)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(requestEvent)
+        MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(requestEvent)
         
         let screenView = AnalyticEvent(screenName: .URLMetrics)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(screenView)
+        MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(screenView)
         
         if MZAppDependencies.sharedDependencies().shouldIgnoreCacheForRequest(.MozscapeIndexedDates) {
             interactor?.getMozscapeIndexDates()

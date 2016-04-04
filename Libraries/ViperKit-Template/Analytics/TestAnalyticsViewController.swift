@@ -8,7 +8,7 @@
 
 import UIKit
 
-import ViperKit
+import Components
 
 class TestAnalyticsViewController: UIViewController, AnalyticScreenView {
 
@@ -27,12 +27,12 @@ class TestAnalyticsViewController: UIViewController, AnalyticScreenView {
     }
     
     @IBAction func crashTapped() {
-        AppDependencies.sharedInstance().crashReportingInteractor?.simulateCrash()
+        AppDependencies.sharedDependencies().crashReporter?.simulateCrash()
     }
 
     @IBAction func eventTapped() {
         let testEvent = AnalyticEvent(category: .Test, action: .Test, label: nil)
-        AppDependencies.sharedInstance().analyticsInteractor?.sendAnalytic(testEvent)
+        AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(testEvent)
     }
     
     /*

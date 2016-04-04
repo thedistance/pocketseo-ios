@@ -120,8 +120,6 @@
 		A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */; };
 		A59E9FDF1CB25E6200888DFA /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E9FDC1CB25E6200888DFA /* AnalyticEntities.swift */; };
 		A59E9FE01CB25E6200888DFA /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E9FDC1CB25E6200888DFA /* AnalyticEntities.swift */; };
-		A59E9FE11CB25E6200888DFA /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E9FDD1CB25E6200888DFA /* AnalyticsInteractors.swift */; };
-		A59E9FE21CB25E6200888DFA /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E9FDD1CB25E6200888DFA /* AnalyticsInteractors.swift */; };
 		A59E9FE31CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E9FDE1CB25E6200888DFA /* TestAnalyticsViewController.swift */; };
 		A59E9FE41CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E9FDE1CB25E6200888DFA /* TestAnalyticsViewController.swift */; };
 		A59E9FE61CB25E6A00888DFA /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59E9FE51CB25E6A00888DFA /* Test.storyboard */; };
@@ -150,6 +148,16 @@
 		A59EA00D1CB277FF00888DFA /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA00B1CB277FF00888DFA /* Components.framework */; };
 		A59EA00E1CB2780D00888DFA /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA00B1CB277FF00888DFA /* Components.framework */; };
 		A59EA00F1CB2780D00888DFA /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA00B1CB277FF00888DFA /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A59EA0121CB27B4500888DFA /* FabricCrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EA0101CB27B4500888DFA /* FabricCrashReporter.swift */; };
+		A59EA0131CB27B4500888DFA /* FabricCrashReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EA0101CB27B4500888DFA /* FabricCrashReporter.swift */; };
+		A59EA0141CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EA0111CB27B4500888DFA /* GoogleAnalyticsReporter.swift */; };
+		A59EA0151CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59EA0111CB27B4500888DFA /* GoogleAnalyticsReporter.swift */; };
+		A59EA0181CB27FA500888DFA /* ReactiveCocoaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */; };
+		A59EA0191CB27FB700888DFA /* ReactiveCocoaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */; };
+		A59EA01A1CB27FB700888DFA /* ReactiveCocoaConvenience.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A59EA01D1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */; };
+		A59EA01E1CB2808600888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */; };
+		A59EA01F1CB2808600888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
 		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
 		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
@@ -230,12 +238,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A59EA01F1CB2808600888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Embed Frameworks */,
 				A59E9FEA1CB25F0500888DFA /* ThemeKitCore.framework in Embed Frameworks */,
 				A59EA0071CB2762D00888DFA /* Result.framework in Embed Frameworks */,
 				A59E9FF31CB2631200888DFA /* Alamofire.framework in Embed Frameworks */,
 				A59E9FF71CB2631200888DFA /* DeviceKit.framework in Embed Frameworks */,
 				A59E9FF91CB2631200888DFA /* SwiftyJSON.framework in Embed Frameworks */,
 				A59EA0051CB2762D00888DFA /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework in Embed Frameworks */,
+				A59EA01A1CB27FB700888DFA /* ReactiveCocoaConvenience.framework in Embed Frameworks */,
 				A59EA00F1CB2780D00888DFA /* Components.framework in Embed Frameworks */,
 				A59EA0031CB2762D00888DFA /* ReactiveCocoa.framework in Embed Frameworks */,
 			);
@@ -295,7 +305,6 @@
 		A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsWireframe.swift; path = Modules/URLMetrics/Viper/MZURLMetricsWireframe.swift; sourceTree = "<group>"; };
 		A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetricProgressView.swift; sourceTree = "<group>"; };
 		A59E9FDC1CB25E6200888DFA /* AnalyticEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticEntities.swift; path = "Libraries/ViperKit-Template/Analytics/AnalyticEntities.swift"; sourceTree = SOURCE_ROOT; };
-		A59E9FDD1CB25E6200888DFA /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = "Libraries/ViperKit-Template/Analytics/AnalyticsInteractors.swift"; sourceTree = SOURCE_ROOT; };
 		A59E9FDE1CB25E6200888DFA /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = "Libraries/ViperKit-Template/Analytics/TestAnalyticsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A59E9FE51CB25E6A00888DFA /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Test.storyboard; path = "Libraries/ViperKit-Template/Test.storyboard"; sourceTree = SOURCE_ROOT; };
 		A59E9FE81CB25F0500888DFA /* ThemeKitCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThemeKitCore.framework; path = Libraries/ThemeKit/Build/iOS/ThemeKitCore.framework; sourceTree = "<group>"; };
@@ -306,6 +315,10 @@
 		A59EA0001CB2762D00888DFA /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework; path = Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework; sourceTree = "<group>"; };
 		A59EA0011CB2762D00888DFA /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Libraries/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		A59EA00B1CB277FF00888DFA /* Components.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Components.framework; path = Libraries/Carthage/Build/iOS/Components.framework; sourceTree = "<group>"; };
+		A59EA0101CB27B4500888DFA /* FabricCrashReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FabricCrashReporter.swift; path = "Libraries/ViperKit-Template/Analytics/FabricCrashReporter.swift"; sourceTree = SOURCE_ROOT; };
+		A59EA0111CB27B4500888DFA /* GoogleAnalyticsReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleAnalyticsReporter.swift; path = "Libraries/ViperKit-Template/Analytics/GoogleAnalyticsReporter.swift"; sourceTree = SOURCE_ROOT; };
+		A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoaConvenience.framework; path = Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience.framework; sourceTree = "<group>"; };
+		A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoaConvenience_Alamofire.framework; path = Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire.framework; sourceTree = "<group>"; };
 		A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsStack.swift; sourceTree = "<group>"; };
 		A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLInputView.swift; sourceTree = "<group>"; };
 		A5C572381C61083C00E2AACF /* MZTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZTheme.swift; sourceTree = "<group>"; };
@@ -370,9 +383,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59EA01D1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */,
 				A59E9FEC1CB25F9700888DFA /* ThemeKitCore.framework in Frameworks */,
 				A59E9FFB1CB2637600888DFA /* Alamofire.framework in Frameworks */,
 				A59EA00D1CB277FF00888DFA /* Components.framework in Frameworks */,
+				A59EA0181CB27FA500888DFA /* ReactiveCocoaConvenience.framework in Frameworks */,
 				A59E9FFD1CB2637600888DFA /* DeviceKit.framework in Frameworks */,
 				A59E9FFE1CB2637600888DFA /* SwiftyJSON.framework in Frameworks */,
 				A59EA0081CB2763900888DFA /* ReactiveCocoa.framework in Frameworks */,
@@ -387,7 +402,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59EA01E1CB2808600888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */,
 				A59E9FE91CB25F0500888DFA /* ThemeKitCore.framework in Frameworks */,
+				A59EA0191CB27FB700888DFA /* ReactiveCocoaConvenience.framework in Frameworks */,
 				A59EA00E1CB2780D00888DFA /* Components.framework in Frameworks */,
 				A59EA0021CB2762D00888DFA /* ReactiveCocoa.framework in Frameworks */,
 				A59E9FF21CB2631200888DFA /* Alamofire.framework in Frameworks */,
@@ -555,7 +572,8 @@
 			isa = PBXGroup;
 			children = (
 				A59E9FDC1CB25E6200888DFA /* AnalyticEntities.swift */,
-				A59E9FDD1CB25E6200888DFA /* AnalyticsInteractors.swift */,
+				A59EA0101CB27B4500888DFA /* FabricCrashReporter.swift */,
+				A59EA0111CB27B4500888DFA /* GoogleAnalyticsReporter.swift */,
 				A59E9FDE1CB25E6200888DFA /* TestAnalyticsViewController.swift */,
 				A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */,
 			);
@@ -587,6 +605,8 @@
 		A59E9FFA1CB2631600888DFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */,
+				A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */,
 				A59EA00B1CB277FF00888DFA /* Components.framework */,
 				A59E9FFF1CB2762D00888DFA /* ReactiveCocoa.framework */,
 				A59EA0001CB2762D00888DFA /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework */,
@@ -1074,6 +1094,8 @@
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/Components.framework",
+				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience.framework",
+				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -1095,6 +1117,8 @@
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/Components.framework",
+				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience.framework",
+				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -1185,7 +1209,7 @@
 				A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */,
 				A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */,
 				A579DD821C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
-				A59E9FE21CB25E6200888DFA /* AnalyticsInteractors.swift in Sources */,
+				A59EA0151CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */,
 				A58560E21C7F48D4005221B3 /* URLMetricsViperProtocols.swift in Sources */,
 				A58560E31C7F48D4005221B3 /* MZURLMetricsPresenter.swift in Sources */,
 				A58560E41C7F48D4005221B3 /* MZURLMetricsInteractor.swift in Sources */,
@@ -1239,6 +1263,7 @@
 				A59E9FE01CB25E6200888DFA /* AnalyticEntities.swift in Sources */,
 				A58561151C7F48D4005221B3 /* MZAlexaDataStack.swift in Sources */,
 				A58561161C7F48D4005221B3 /* MZMetricProgressView.swift in Sources */,
+				A59EA0131CB27B4500888DFA /* FabricCrashReporter.swift in Sources */,
 				A58561171C7F48D4005221B3 /* MZMozscapeMetricsStack.swift in Sources */,
 				A58561181C7F48D4005221B3 /* MZMetaDataStack.swift in Sources */,
 				A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */,
@@ -1266,6 +1291,7 @@
 				A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */,
 				A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */,
 				A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */,
+				A59EA0141CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */,
 				A50BD3991C75E28500E7A07F /* MZMetric.swift in Sources */,
 				A58561211C7F65B3005221B3 /* MZInputURLDetailsViewController.swift in Sources */,
 				A59E9FE31CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */,
@@ -1291,12 +1317,12 @@
 				A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */,
 				A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */,
 				A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */,
-				A59E9FE11CB25E6200888DFA /* AnalyticsInteractors.swift in Sources */,
 				A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */,
 				A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */,
 				A579DD871C846013006C0FB5 /* MZDistanceViews.swift in Sources */,
 				A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */,
 				A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
+				A59EA0121CB27B4500888DFA /* FabricCrashReporter.swift in Sources */,
 				A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */,
 				A579DD8A1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */,
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,

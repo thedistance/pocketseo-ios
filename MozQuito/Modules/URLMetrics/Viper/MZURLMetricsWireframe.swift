@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MZURLMetricsWireframe<ViewType:URLMetricsView>: VIPERWireframe {
+class MZURLMetricsWireframe<ViewType:URLMetricsView> {
     
     weak var view:ViewType?
     
