@@ -63,6 +63,10 @@
 		A56072371CB2B43D007F7E65 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56072361CB2B43D007F7E65 /* Nimble.framework */; };
 		A56072391CB2B5B5007F7E65 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A56072361CB2B43D007F7E65 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A560723B1CB2B65A007F7E65 /* MozscapeMetrics.json in Resources */ = {isa = PBXBuildFile; fileRef = A560723A1CB2B65A007F7E65 /* MozscapeMetrics.json */; };
+		A560723E1CB2BDCC007F7E65 /* URLMetricsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560723D1CB2BDCC007F7E65 /* URLMetricsViewModel.swift */; };
+		A560723F1CB2BDCC007F7E65 /* URLMetricsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560723D1CB2BDCC007F7E65 /* URLMetricsViewModel.swift */; };
+		A56072401CB2C050007F7E65 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56072161CB2A184007F7E65 /* APIManager.swift */; };
+		A56072421CB2C84A007F7E65 /* MozscapeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56072411CB2C84A007F7E65 /* MozscapeViewModelTests.swift */; };
 		A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
 		A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
 		A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */; };
@@ -309,6 +313,8 @@
 		A56072271CB2AA11007F7E65 /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thedistance.html; sourceTree = "<group>"; };
 		A56072361CB2B43D007F7E65 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Libraries/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		A560723A1CB2B65A007F7E65 /* MozscapeMetrics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MozscapeMetrics.json; sourceTree = "<group>"; };
+		A560723D1CB2BDCC007F7E65 /* URLMetricsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViewModel.swift; path = "Modules/URLMetrics/View Models/URLMetricsViewModel.swift"; sourceTree = "<group>"; };
+		A56072411CB2C84A007F7E65 /* MozscapeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MozscapeViewModelTests.swift; path = URLMetrics/MozscapeViewModelTests.swift; sourceTree = "<group>"; };
 		A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceStack.swift; sourceTree = "<group>"; };
 		A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceApplicationStack.swift; sourceTree = "<group>"; };
 		A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceExtensionStack.swift; sourceTree = "<group>"; };
@@ -498,6 +504,7 @@
 		A505BA441C567017004F2607 /* URL Metrics */ = {
 			isa = PBXGroup;
 			children = (
+				A560723C1CB2BDAB007F7E65 /* View Models */,
 				A5ECBD5E1C5BA365003350E3 /* View Controllers */,
 				A5EA9A8C1C5681B6004CC9EF /* Viper */,
 				A505BA451C567025004F2607 /* Network Operations */,
@@ -578,8 +585,9 @@
 		A560721A1CB2A811007F7E65 /* URLMetrics */ = {
 			isa = PBXGroup;
 			children = (
-				A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */,
 				A560721B1CB2A833007F7E65 /* URLMetrics-ModelTests.swift */,
+				A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */,
+				A56072411CB2C84A007F7E65 /* MozscapeViewModelTests.swift */,
 			);
 			name = URLMetrics;
 			sourceTree = "<group>";
@@ -594,6 +602,14 @@
 				A560723A1CB2B65A007F7E65 /* MozscapeMetrics.json */,
 			);
 			path = URLMetrics;
+			sourceTree = "<group>";
+		};
+		A560723C1CB2BDAB007F7E65 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				A560723D1CB2BDCC007F7E65 /* URLMetricsViewModel.swift */,
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 		A579DD7C1C845EB9006C0FB5 /* Distance Views */ = {
@@ -1259,6 +1275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56072401CB2C050007F7E65 /* APIManager.swift in Sources */,
 				A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */,
 				A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */,
 				A579DD821C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
@@ -1320,6 +1337,7 @@
 				A58561171C7F48D4005221B3 /* MZMozscapeMetricsStack.swift in Sources */,
 				A58561181C7F48D4005221B3 /* MZMetaDataStack.swift in Sources */,
 				A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */,
+				A560723F1CB2BDCC007F7E65 /* URLMetricsViewModel.swift in Sources */,
 				A58560D11C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1332,6 +1350,7 @@
 				A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */,
 				A5F46D1F1C7DB071001417F3 /* MZPanel.swift in Sources */,
 				A50BD38E1C75E25200E7A07F /* MZURLInputView.swift in Sources */,
+				A560723E1CB2BDCC007F7E65 /* URLMetricsViewModel.swift in Sources */,
 				A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */,
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
 				A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */,
@@ -1401,6 +1420,7 @@
 			files = (
 				A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */,
 				A560721E1CB2A868007F7E65 /* TestURLStore.swift in Sources */,
+				A56072421CB2C84A007F7E65 /* MozscapeViewModelTests.swift in Sources */,
 				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
 				A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */,
 				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,

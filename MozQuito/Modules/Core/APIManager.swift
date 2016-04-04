@@ -8,8 +8,10 @@
 
 import Foundation
 
+import Alamofire
 import ReactiveCocoa
 import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
+import TheDistanceCore
 
 protocol URLStore {
     
@@ -53,7 +55,7 @@ class APIManager {
         self.urlStore = urlStore
     }
     
-    func authenticationParameters(existing:[String: AnyObject]) -> [String: AnyObject] {
+    func authenticationParameters(existing:[String: AnyObject] = [String: AnyObject]()) -> [String: AnyObject] {
         
         let token = MZAppDependencies.sharedDependencies().currentAuthenticationToken
         var authenticatedParameters = existing ?? [String:AnyObject]()
@@ -65,12 +67,61 @@ class APIManager {
     }
     
     func mozscapeURLMetricsForString(requestURLString:String) -> SignalProducer<MZMozscapeMetrics, NSError> {
-        return SignalProducer.empty
         
+        let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
+        let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
+        
+    
+        let urlString = urlStore.mozscapeMetricsURLForRequest(requestURLString)?.absoluteString ?? ""
+        
+        return Alamofire.request(.GET, urlString,
+                                         parameters: authenticationParameters(["Cols": String(colsValue)]),
+                                         encoding: .URL,
+                                         headers: nil)
+            .validate()
+            .rac_responseSwiftyJSONCreated()
+            .map({ $0.1 })
+            .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NSError> in
+                return SignalProducer(error: error.userFacingError())
+            })
     }
     
-    func mozscapeIndexedDates() -> SignalProducer<MZMozscapeIndexedDates, NSError> {
-        return SignalProducer.empty
+    func dateProducer(url:NSURL, jsonKey:String) -> SignalProducer<NSDate?, NSError> {
+        
+        return Alamofire.request(.GET, url,
+            parameters: authenticationParameters(),
+            encoding: .URL,
+            headers: nil)
+            .validate()
+            .rac_responseSwiftyJSON()
+            .map { (json) -> NSDate? in
+                
+                if let seconds = json[jsonKey].double {
+                    return NSDate(timeIntervalSince1970: seconds)
+                } else {
+                    return nil
+                }
+            }.flatMapError({ (error) -> SignalProducer<NSDate?, NSError> in
+                return SignalProducer(error: error.userFacingError())
+            })
+
+    }
+    
+    func mozscapeIndexedDates() -> SignalProducer<MZMozscapeIndexedDates?, NSError> {
+        
+        let lastProducer = dateProducer(urlStore.mozscapeLastIndexedDatesURL, jsonKey: "last_update")
+        let nextProducer = dateProducer(urlStore.mozscapeNextIndexedDatesURL, jsonKey: "next_update")
+        
+        let bothDatesProducer = combineLatest(lastProducer, nextProducer).map { (last, next) -> MZMozscapeIndexedDates? in
+            
+            if let lastDate = last {
+                return MZMozscapeIndexedDates(last: lastDate, next: next)
+            } else {
+                return nil
+            }
+        }
+        
+        return bothDatesProducer
     }
     
     func htmlMetaDataForString(requestURLString:String) -> SignalProducer<MZPageMetaData, NSError> {

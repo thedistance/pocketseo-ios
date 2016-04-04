@@ -8,7 +8,16 @@
 
 import XCTest
 
+import ReactiveCocoa
+import Result
+import Nimble
+
+@testable import PocketSEO
+
 class URLMetrics_APIManager: XCTestCase {
+    
+    let apiManager = APIManager(urlStore: TestURLStore())
+    let emptyAPIManager = APIManager(urlStore: EmptyURLStore())
     
     override func setUp() {
         super.setUp()
@@ -20,16 +29,46 @@ class URLMetrics_APIManager: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMozscapeMetrics() {
+        
+        let metrics = MutableProperty<MZMozscapeMetrics?>(nil)
+        
+        metrics <~ apiManager.mozscapeURLMetricsForString("thedistance.co.uk")
+            .observeOn(UIScheduler())
+            .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NoError> in
+                XCTFail("Failed to get mozscape metrics")
+                return SignalProducer.empty
+            })
+            .map({ $0 as MZMozscapeMetrics? })
+        
+        let testMetrics = MZMozscapeMetrics.theDistanceMetrics()
+        
+        expect(metrics.value?.HTTPStatusCode).toEventually(equal(testMetrics.HTTPStatusCode))
+        expect(metrics.value?.pageAuthority).toEventually(equal(testMetrics.pageAuthority))
+        expect(metrics.value?.domainAuthority).toEventually(equal(testMetrics.domainAuthority))
+        expect(metrics.value?.spamScore).toEventually(equal(testMetrics.spamScore))
+        expect(metrics.value?.establishedLinksRoot).toEventually(equal(testMetrics.establishedLinksRoot))
+        expect(metrics.value?.establishedLinksTotal).toEventually(equal(testMetrics.establishedLinksTotal))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    let testDates = MZMozscapeIndexedDates.theDistanceDates()
+    
+    func testMozscapeDates() {
+        
+        let dates = MutableProperty<MZMozscapeIndexedDates?>(nil)
+        
+        dates <~ apiManager.mozscapeIndexedDates()
+            .observeOn(UIScheduler())
+            .flatMapError({ (error) -> SignalProducer<MZMozscapeIndexedDates?, NoError> in
+                XCTFail("Failed to get mozscape metrics")
+                return SignalProducer.empty
+            })
+            .map({ $0 as MZMozscapeIndexedDates? })
+        
+        let testDates = MZMozscapeIndexedDates.theDistanceDates()
+        
+        expect(dates.value?.last.timeIntervalSince1970).toEventually(equal(testDates.last.timeIntervalSince1970))
+        expect(dates.value?.next?.timeIntervalSince1970).toEventually(equal(testDates.next?.timeIntervalSince1970))
     }
     
 }

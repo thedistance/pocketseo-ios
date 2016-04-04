@@ -23,3 +23,15 @@ class TestURLStore:NSObject, URLStore {
     
     let alexaURL = testBundle.URLForResource("thedistance-alexa", withExtension: "xml")!
 }
+
+class EmptyURLStore:NSObject, URLStore {
+    
+    func mozscapeMetricsURLForRequest(request: String) -> NSURL? {
+        return NSURL()
+    }
+    
+    let mozscapeLastIndexedDatesURL = NSURL()
+    let mozscapeNextIndexedDatesURL = NSURL()
+    
+    let alexaURL = NSURL()
+}

@@ -31,7 +31,6 @@ class URLMetrics_ModelTests: XCTestCase {
         let jsonData = NSData(contentsOfURL: urlStore.mozscapeMetricsURLForRequest("")!)!
         let returnedMetrics = try? MZMozscapeMetrics(json: JSON(data: jsonData))
         let testMetrics = MZMozscapeMetrics.theDistanceMetrics()
-        
         expect(returnedMetrics?.HTTPStatusCode).to(equal(testMetrics.HTTPStatusCode))
         expect(returnedMetrics?.pageAuthority).to(equal(testMetrics.pageAuthority))
         expect(returnedMetrics?.domainAuthority).to(equal(testMetrics.domainAuthority))

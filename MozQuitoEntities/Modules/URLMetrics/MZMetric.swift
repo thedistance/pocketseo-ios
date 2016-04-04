@@ -137,6 +137,11 @@ public struct MZMozscapeIndexedDates {
         return MZMozscapeIndexedDates(last: NSDate().dateByAddingTimeInterval(-(5 * 24 * 60 * 60)), next: nil)
     }
     
+    static func theDistanceDates() -> MZMozscapeIndexedDates {
+        return MZMozscapeIndexedDates(last: NSDate(timeIntervalSince1970: 1459451654),
+                                      next: NSDate(timeIntervalSince1970: 1462906800))
+    }
+    
     init(last:NSDate, next:NSDate?) {
         self.last = last
         self.next = next
