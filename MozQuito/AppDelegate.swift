@@ -75,9 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // set the global session scope variable
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.DeviceType.rawValue), value: Device().description)
-        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.ContextType.rawValue), value: "In App")
+        if let tracker = GAI.sharedInstance().defaultTracker {
+            tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.DeviceType.rawValue), value: Device().description)
+            tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.ContextType.rawValue), value: "In App")
+        }
         
         if FabricInitialiser.kits.count > 0 {
             // starting Fabric has to be the last method

@@ -83,6 +83,7 @@ target 'PocketSEOTests' do
     
     xcodeproj '../MozQuito'
     
+    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
     #pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
     
 end

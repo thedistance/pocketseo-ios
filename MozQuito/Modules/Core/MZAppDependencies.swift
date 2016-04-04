@@ -54,12 +54,14 @@ class MZAppDependencies : AppDependencies, _AppDependencies, RequestCache {
         setDefaultPreferences()
         preferencesInteractor = self
         
-        // pass the preferences as a reference for dependebct injection and to prevent cyclic loop
-        analyticsReporter = GoogleAnalyticsInteractor(preferences: self)
-        crashReporter = FabricCrashReportingInteractor(preferences: self)
-        
-        analyticsReporter?.setupAnalytics()
-        crashReporter?.setupCrashReporting()
+        if !isTesting {
+            // pass the preferences as a reference for dependebct injection and to prevent cyclic loop
+            analyticsReporter = GoogleAnalyticsInteractor(preferences: self)
+            crashReporter = FabricCrashReportingInteractor(preferences: self)
+            
+            analyticsReporter?.setupAnalytics()
+            crashReporter?.setupCrashReporting()
+        }
     }
     
     // App Specific Code

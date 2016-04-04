@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A8374654599FC9832D9C0E1 /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939DC3C92237C49642BD66DA /* Pods_PocketSEO.framework */; };
+		9E161B61FECA8E5B857D47EA /* Pods_URLDetailsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7484853E007FBEB9AC2BC70 /* Pods_URLDetailsExtension.framework */; };
 		A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
@@ -41,6 +43,23 @@
 		A50BD3BB1C75E29500E7A07F /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */; };
 		A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AD1C75E29500E7A07F /* ThemeView.swift */; };
 		A56072171CB2A184007F7E65 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56072161CB2A184007F7E65 /* APIManager.swift */; };
+		A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */; };
+		A560721C1CB2A833007F7E65 /* URLMetrics-ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560721B1CB2A833007F7E65 /* URLMetrics-ModelTests.swift */; };
+		A560721E1CB2A868007F7E65 /* TestURLStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560721D1CB2A868007F7E65 /* TestURLStore.swift */; };
+		A56072281CB2AA11007F7E65 /* MozscapeLastUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = A56072241CB2AA11007F7E65 /* MozscapeLastUpdated.json */; };
+		A56072291CB2AA11007F7E65 /* MozscapeNextUpdated.json in Resources */ = {isa = PBXBuildFile; fileRef = A56072251CB2AA11007F7E65 /* MozscapeNextUpdated.json */; };
+		A560722A1CB2AA11007F7E65 /* thedistance-alexa.xml in Resources */ = {isa = PBXBuildFile; fileRef = A56072261CB2AA11007F7E65 /* thedistance-alexa.xml */; };
+		A560722B1CB2AA11007F7E65 /* thedistance.html in Resources */ = {isa = PBXBuildFile; fileRef = A56072271CB2AA11007F7E65 /* thedistance.html */; };
+		A560722C1CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */; };
+		A560722D1CB2B009007F7E65 /* ReactiveCocoaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */; };
+		A560722E1CB2B009007F7E65 /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA00B1CB277FF00888DFA /* Components.framework */; };
+		A560722F1CB2B009007F7E65 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FFF1CB2762D00888DFA /* ReactiveCocoa.framework */; };
+		A56072301CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0001CB2762D00888DFA /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework */; };
+		A56072311CB2B009007F7E65 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0011CB2762D00888DFA /* Result.framework */; };
+		A56072321CB2B009007F7E65 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FEE1CB2631200888DFA /* Alamofire.framework */; };
+		A56072331CB2B009007F7E65 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FF01CB2631200888DFA /* DeviceKit.framework */; };
+		A56072341CB2B009007F7E65 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FF11CB2631200888DFA /* SwiftyJSON.framework */; };
+		A56072351CB2B009007F7E65 /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FE81CB25F0500888DFA /* ThemeKitCore.framework */; };
 		A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
 		A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
 		A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */; };
@@ -178,13 +197,10 @@
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
 		A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */; };
 		A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */; };
-		A5FB61EF1C787BDF00E0BC9A /* thedistance-alexa.xml in Resources */ = {isa = PBXBuildFile; fileRef = A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */; };
-		A5FB61F01C787BDF00E0BC9A /* thedistance.html in Resources */ = {isa = PBXBuildFile; fileRef = A5FB61EB1C787BDF00E0BC9A /* thedistance.html */; };
 		A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */; };
 		A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */; };
 		A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */; };
 		A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */; };
-		A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */; };
 		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -250,6 +266,7 @@
 		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
+		939DC3C92237C49642BD66DA /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
 		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
@@ -270,6 +287,13 @@
 		A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
 		A50BD3AD1C75E29500E7A07F /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		A56072161CB2A184007F7E65 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Modules/Core/APIManager.swift; sourceTree = "<group>"; };
+		A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLMetrics-APIManagerTests.swift"; path = "URLMetrics/URLMetrics-APIManagerTests.swift"; sourceTree = "<group>"; };
+		A560721B1CB2A833007F7E65 /* URLMetrics-ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLMetrics-ModelTests.swift"; path = "URLMetrics/URLMetrics-ModelTests.swift"; sourceTree = "<group>"; };
+		A560721D1CB2A868007F7E65 /* TestURLStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestURLStore.swift; sourceTree = "<group>"; };
+		A56072241CB2AA11007F7E65 /* MozscapeLastUpdated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MozscapeLastUpdated.json; sourceTree = "<group>"; };
+		A56072251CB2AA11007F7E65 /* MozscapeNextUpdated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MozscapeNextUpdated.json; sourceTree = "<group>"; };
+		A56072261CB2AA11007F7E65 /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "thedistance-alexa.xml"; sourceTree = "<group>"; };
+		A56072271CB2AA11007F7E65 /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thedistance.html; sourceTree = "<group>"; };
 		A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceStack.swift; sourceTree = "<group>"; };
 		A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceApplicationStack.swift; sourceTree = "<group>"; };
 		A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceExtensionStack.swift; sourceTree = "<group>"; };
@@ -349,16 +373,14 @@
 		A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketSEOTests.swift; sourceTree = "<group>"; };
 		A5FB61E01C787BBA00E0BC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperTester.swift; sourceTree = "<group>"; };
-		A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "thedistance-alexa.xml"; sourceTree = "<group>"; };
-		A5FB61EB1C787BDF00E0BC9A /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thedistance.html; sourceTree = "<group>"; };
 		A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
 		A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_NoNetwork_Tests.swift; sourceTree = "<group>"; };
 		A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketSEOTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperationTestCase.swift; sourceTree = "<group>"; };
 		A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAssertEqualOptional.swift; sourceTree = "<group>"; };
-		A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnalyticsInteractors.swift; sourceTree = "<group>"; };
 		B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		C7484853E007FBEB9AC2BC70 /* Pods_URLDetailsExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDetailsExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDetailsExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.beta testing.xcconfig"; sourceTree = "<group>"; };
@@ -382,6 +404,7 @@
 				A59EA0081CB2763900888DFA /* ReactiveCocoa.framework in Frameworks */,
 				A59EA0091CB2763900888DFA /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework in Frameworks */,
 				A59EA00A1CB2763900888DFA /* Result.framework in Frameworks */,
+				9E161B61FECA8E5B857D47EA /* Pods_URLDetailsExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +422,7 @@
 				A59E9FF81CB2631200888DFA /* SwiftyJSON.framework in Frameworks */,
 				A59EA0041CB2762D00888DFA /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework in Frameworks */,
 				A59E9FF61CB2631200888DFA /* DeviceKit.framework in Frameworks */,
+				9A8374654599FC9832D9C0E1 /* Pods_PocketSEO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +431,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */,
+				A560722C1CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */,
+				A560722D1CB2B009007F7E65 /* ReactiveCocoaConvenience.framework in Frameworks */,
+				A560722E1CB2B009007F7E65 /* Components.framework in Frameworks */,
+				A560722F1CB2B009007F7E65 /* ReactiveCocoa.framework in Frameworks */,
+				A56072301CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework in Frameworks */,
+				A56072311CB2B009007F7E65 /* Result.framework in Frameworks */,
+				A56072321CB2B009007F7E65 /* Alamofire.framework in Frameworks */,
+				A56072331CB2B009007F7E65 /* DeviceKit.framework in Frameworks */,
+				A56072341CB2B009007F7E65 /* SwiftyJSON.framework in Frameworks */,
+				A56072351CB2B009007F7E65 /* ThemeKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +559,26 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
+		A560721A1CB2A811007F7E65 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */,
+				A560721B1CB2A833007F7E65 /* URLMetrics-ModelTests.swift */,
+			);
+			name = URLMetrics;
+			sourceTree = "<group>";
+		};
+		A56072231CB2AA11007F7E65 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A56072241CB2AA11007F7E65 /* MozscapeLastUpdated.json */,
+				A56072251CB2AA11007F7E65 /* MozscapeNextUpdated.json */,
+				A56072261CB2AA11007F7E65 /* thedistance-alexa.xml */,
+				A56072271CB2AA11007F7E65 /* thedistance.html */,
+			);
+			path = URLMetrics;
+			sourceTree = "<group>";
+		};
 		A579DD7C1C845EB9006C0FB5 /* Distance Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +659,8 @@
 				A59E9FF01CB2631200888DFA /* DeviceKit.framework */,
 				A59E9FF11CB2631200888DFA /* SwiftyJSON.framework */,
 				A59E9FE81CB25F0500888DFA /* ThemeKitCore.framework */,
+				939DC3C92237C49642BD66DA /* Pods_PocketSEO.framework */,
+				C7484853E007FBEB9AC2BC70 /* Pods_URLDetailsExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -788,6 +844,8 @@
 				A5FB61E91C787BDF00E0BC9A /* Resources */,
 				A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */,
 				A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */,
+				A560721D1CB2A868007F7E65 /* TestURLStore.swift */,
+				A560721A1CB2A811007F7E65 /* URLMetrics */,
 				A5FB61E01C787BBA00E0BC9A /* Info.plist */,
 			);
 			path = PocketSEOTests;
@@ -799,7 +857,6 @@
 				A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */,
 				A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */,
 				A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */,
-				A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -807,8 +864,7 @@
 		A5FB61E91C787BDF00E0BC9A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */,
-				A5FB61EB1C787BDF00E0BC9A /* thedistance.html */,
+				A56072231CB2AA11007F7E65 /* URLMetrics */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -826,6 +882,8 @@
 				A58560CB1C7F3FFF005221B3 /* Frameworks */,
 				A58560CC1C7F3FFF005221B3 /* Resources */,
 				A59E9FED1CB25FFE00888DFA /* ShellScript */,
+				39E2E8BB7FFC9CCE1EA10913 /* Embed Pods Frameworks */,
+				1B139426F4AB27B44233C34C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -957,8 +1015,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FB61EF1C787BDF00E0BC9A /* thedistance-alexa.xml in Resources */,
-				A5FB61F01C787BDF00E0BC9A /* thedistance.html in Resources */,
+				A560722A1CB2AA11007F7E65 /* thedistance-alexa.xml in Resources */,
+				A56072291CB2AA11007F7E65 /* MozscapeNextUpdated.json in Resources */,
+				A56072281CB2AA11007F7E65 /* MozscapeLastUpdated.json in Resources */,
+				A560722B1CB2AA11007F7E65 /* thedistance.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,6 +1055,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		1B139426F4AB27B44233C34C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1008,6 +1083,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39E2E8BB7FFC9CCE1EA10913 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3E6BB89C0748D68F4103A815 /* Embed Pods Frameworks */ = {
@@ -1290,11 +1380,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */,
+				A560721E1CB2A868007F7E65 /* TestURLStore.swift in Sources */,
 				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
+				A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */,
 				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
 				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,
+				A560721C1CB2A833007F7E65 /* URLMetrics-ModelTests.swift in Sources */,
 				A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */,
-				A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */,
 				A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1806,7 +1898,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+					"$(PROJECT_DIR)/Libraries/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Libraries/ThemeKit/Build/iOS",
+				);
 				INFOPLIST_FILE = PocketSEOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
@@ -1823,7 +1919,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
-				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+					"$(PROJECT_DIR)/Libraries/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Libraries/ThemeKit/Build/iOS",
+				);
 				INFOPLIST_FILE = PocketSEOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
@@ -1840,7 +1940,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+					"$(PROJECT_DIR)/Libraries/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Libraries/ThemeKit/Build/iOS",
+				);
 				INFOPLIST_FILE = PocketSEOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;

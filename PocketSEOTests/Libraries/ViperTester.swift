@@ -57,10 +57,10 @@ protocol ViperTesting:class {
 extension ViperTesting {
     
     func setupDependencies() {
-        let dependencies = AppDependencies.sharedDependencies()
-        
-        dependencies.preferencesInteractor = TestPreferences()
-        dependencies.analyticsInteractor = TestAnalyticsInteractor()
+//        let dependencies = AppDependencies.sharedDependencies()
+//        
+//        dependencies.preferencesInteractor = TestPreferences()
+//        dependencies.analyticsInteractor = TestAnalyticsInteractor()
     }
     
 }

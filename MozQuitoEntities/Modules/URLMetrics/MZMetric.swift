@@ -136,18 +136,6 @@ public struct MZMozscapeMetrics {
             
         }
     }
-    
-    func userFacingStringForHTTPStatusCode(code:Int) -> String? {
-        
-        switch code {
-            
-            
-            
-        default:
-            return nil
-        }
-        
-    }
 }
 
 public struct MZMozscapeIndexedDates {
@@ -165,23 +153,6 @@ public struct MZMozscapeIndexedDates {
     init(last:NSDate, next:NSDate?) {
         self.last = last
         self.next = next
-    }
-    
-    public init(json:JSON) throws {
-        
-        if let lastUnixDate = json["last_update"].double {
-            
-            last = NSDate(timeIntervalSince1970: lastUnixDate)
-            
-            if let nextUnixDate = json["next_update"].double {
-                next = NSDate(timeIntervalSince1970: nextUnixDate)
-            } else {
-                next = nil
-            }
-            
-        } else {
-            throw NSError(InitUnexpectedResponseWithDescription: "Failed to create \(self.dynamicType). last_update not found in json: \(json)")
-        }
     }
     
     public init?(info:[String:AnyObject]) {
