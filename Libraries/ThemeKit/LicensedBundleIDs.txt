@@ -1,0 +1,6 @@
+ThemeKit is licensed as defined in 'LICENSE' for iOS apps with the following BundleIDs:
+
+* io.pocketseo
+* io.pocketseo.URLMetricsExtension
+* io.pocketseoTests
+* io.pocketseoUITests

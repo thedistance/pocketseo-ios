@@ -4,20 +4,71 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MozQuito.xcscheme</key>
+		<key>PocketSEO.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>PocketSEO.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>PocketSEOEntities.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>PocketSEOViews.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>URLDetailsExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A58560CD1C7F3FFF005221B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5ECBD651C5BA52F003350E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5ECBD781C5BA53F003350E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A5F4E6671C50E0FD0099010C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A5F4E67B1C50E0FD0099010C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5FB61CC1C787B8100E0BC9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5FB61DB1C787BBA00E0BC9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

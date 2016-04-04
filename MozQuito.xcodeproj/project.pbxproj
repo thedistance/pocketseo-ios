@@ -7,69 +7,673 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A449BB354563A5E4780309 /* Pods_URLDetailsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */; };
+		A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */; };
+		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
+		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
+		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
+		A508D8CA1C80ABCA0099BBD4 /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
+		A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
+		A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
+		A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */; };
+		A50BD38E1C75E25200E7A07F /* MZURLInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */; };
+		A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
+		A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
+		A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
+		A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */; };
+		A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */; };
+		A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */; };
+		A50BD3991C75E28500E7A07F /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */; };
+		A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */; };
+		A50BD3AE1C75E29500E7A07F /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39D1C75E29500E7A07F /* ThemeButton.swift */; };
+		A50BD3AF1C75E29500E7A07F /* ThemeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */; };
+		A50BD3B01C75E29500E7A07F /* ThemeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */; };
+		A50BD3B11C75E29500E7A07F /* ThemeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */; };
+		A50BD3B21C75E29500E7A07F /* ThemeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */; };
+		A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */; };
+		A50BD3B41C75E29500E7A07F /* ThemeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */; };
+		A50BD3B51C75E29500E7A07F /* ThemeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */; };
+		A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */; };
+		A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */; };
+		A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */; };
+		A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */; };
+		A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */; };
+		A50BD3BB1C75E29500E7A07F /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */; };
+		A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AD1C75E29500E7A07F /* ThemeView.swift */; };
+		A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
+		A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
+		A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */; };
+		A579DD821C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */; };
+		A579DD841C845ED4006C0FB5 /* MZDistanceExtensionStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */; };
+		A579DD851C845ED4006C0FB5 /* MZDistanceExtensionStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */; };
+		A579DD871C846013006C0FB5 /* MZDistanceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD861C846013006C0FB5 /* MZDistanceViews.swift */; };
+		A579DD881C846013006C0FB5 /* MZDistanceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD861C846013006C0FB5 /* MZDistanceViews.swift */; };
+		A579DD8A1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD891C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift */; };
+		A579DD8B1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD891C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift */; };
+		A579DD8D1C847001006C0FB5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A579DD8C1C847001006C0FB5 /* Settings.bundle */; };
+		A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
+		A58560D11C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58560D01C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift */; };
+		A58560D41C7F3FFF005221B3 /* Extension.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58560D21C7F3FFF005221B3 /* Extension.storyboard */; };
+		A58560DE1C7F4883005221B3 /* URLDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57DBA121C59009500F246C2 /* URLDetails.storyboard */; };
+		A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
+		A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
+		A58560E21C7F48D4005221B3 /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
+		A58560E31C7F48D4005221B3 /* MZURLMetricsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */; };
+		A58560E41C7F48D4005221B3 /* MZURLMetricsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */; };
+		A58560E51C7F48D4005221B3 /* MZURLMetricsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */; };
+		A58560E61C7F48D4005221B3 /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
+		A58560E71C7F48D4005221B3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */; };
+		A58560E81C7F48D4005221B3 /* MZGetPageMetaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */; };
+		A58560E91C7F48D4005221B3 /* MZParseHTMLDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */; };
+		A58560EA1C7F48D4005221B3 /* MZAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */; };
+		A58560EC1C7F48D4005221B3 /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */; };
+		A58560ED1C7F48D4005221B3 /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */; };
+		A58560EE1C7F48D4005221B3 /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */; };
+		A58560EF1C7F48D4005221B3 /* MZAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */; };
+		A58560F01C7F48D4005221B3 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
+		A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
+		A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
+		A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
+		A58560F51C7F48D4005221B3 /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
+		A58560F61C7F48D4005221B3 /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */; };
+		A58560F71C7F48D4005221B3 /* MZNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */; };
+		A58560F81C7F48D4005221B3 /* MZAlexaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */; };
+		A58560F91C7F48D4005221B3 /* MZMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */; };
+		A58560FA1C7F48D4005221B3 /* MZPageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */; };
+		A58560FB1C7F48D4005221B3 /* GMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D181C7C759E001417F3 /* GMDView.swift */; };
+		A58560FC1C7F48D4005221B3 /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
+		A58560FD1C7F48D4005221B3 /* MZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D201C7DB144001417F3 /* MZButton.swift */; };
+		A58560FE1C7F48D4005221B3 /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
+		A58560FF1C7F48D4005221B3 /* ThemeTextViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */; };
+		A58561001C7F48D4005221B3 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39D1C75E29500E7A07F /* ThemeButton.swift */; };
+		A58561011C7F48D4005221B3 /* ThemeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */; };
+		A58561021C7F48D4005221B3 /* ThemeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */; };
+		A58561031C7F48D4005221B3 /* ThemeStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */; };
+		A58561041C7F48D4005221B3 /* ThemeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */; };
+		A58561051C7F48D4005221B3 /* ThemeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */; };
+		A58561061C7F48D4005221B3 /* ThemeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */; };
+		A58561071C7F48D4005221B3 /* ThemeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */; };
+		A58561081C7F48D4005221B3 /* ThemeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */; };
+		A58561091C7F48D4005221B3 /* ThemeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */; };
+		A585610A1C7F48D4005221B3 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */; };
+		A585610B1C7F48D4005221B3 /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */; };
+		A585610C1C7F48D4005221B3 /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */; };
+		A585610D1C7F48D4005221B3 /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */; };
+		A585610E1C7F48D4005221B3 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AD1C75E29500E7A07F /* ThemeView.swift */; };
+		A585610F1C7F48D4005221B3 /* MZPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D1E1C7DB071001417F3 /* MZPanel.swift */; };
+		A58561121C7F48D4005221B3 /* ErrorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */; };
+		A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */; };
+		A58561151C7F48D4005221B3 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
+		A58561161C7F48D4005221B3 /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
+		A58561171C7F48D4005221B3 /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
+		A58561181C7F48D4005221B3 /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
+		A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
+		A585611A1C7F6323005221B3 /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; };
+		A58561211C7F65B3005221B3 /* MZInputURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585611F1C7F65AF005221B3 /* MZInputURLDetailsViewController.swift */; };
+		A58561221C804B14005221B3 /* MZURLInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */; };
+		A58561251C80557F005221B3 /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58561231C80557F005221B3 /* App.storyboard */; };
+		A58561261C805D66005221B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
+		A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
+		A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
+		A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */; };
+		A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */; };
+		A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
+		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
+		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
+		A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
+		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
+		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
+		A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */; };
+		A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */; };
+		A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */; };
+		A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */; };
+		A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */; };
+		A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
+		A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */ = {isa = PBXBuildFile; fileRef = A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */; };
+		A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */; };
+		A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D181C7C759E001417F3 /* GMDView.swift */; };
+		A5F46D1F1C7DB071001417F3 /* MZPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D1E1C7DB071001417F3 /* MZPanel.swift */; };
+		A5F46D211C7DB144001417F3 /* MZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D201C7DB144001417F3 /* MZButton.swift */; };
+		A5F46D231C7DB1AD001417F3 /* MZExpandingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */; };
+		A5F46D251C7DBAED001417F3 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F46D241C7DBAED001417F3 /* Test.storyboard */; };
+		A5F46D271C7DBB86001417F3 /* MZAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */; };
+		A5F46D2B1C7DBBED001417F3 /* AnalyticEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */; };
+		A5F46D2C1C7DBBED001417F3 /* AnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */; };
+		A5F46D2D1C7DBBED001417F3 /* TestAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */; };
 		A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */; };
-		A5F4E66E1C50E0FD0099010C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E66D1C50E0FD0099010C /* ViewController.swift */; };
-		A5F4E6711C50E0FD0099010C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E66F1C50E0FD0099010C /* Main.storyboard */; };
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
-		A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */; };
+		A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */; };
+		A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */; };
+		A5FB61EF1C787BDF00E0BC9A /* thedistance-alexa.xml in Resources */ = {isa = PBXBuildFile; fileRef = A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */; };
+		A5FB61F01C787BDF00E0BC9A /* thedistance.html in Resources */ = {isa = PBXBuildFile; fileRef = A5FB61EB1C787BDF00E0BC9A /* thedistance.html */; };
+		A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */; };
+		A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */; };
+		A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */; };
+		A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */; };
+		A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */; };
+		A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; };
+		A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
+		E73094DFA553B2157CECF3E1 /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A5F4E67D1C50E0FD0099010C /* PBXContainerItemProxy */ = {
+		A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A5F4E6671C50E0FD0099010C;
-			remoteInfo = MozQuito;
+			remoteInfo = PocketSEO;
+		};
+		E7E1A1BC1C92FA860031D1AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5F4E6601C50E0FD0099010C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A58560CD1C7F3FFF005221B3;
+			remoteInfo = URLDetailsExtension;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A504A0751C8715A9001A214D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5FB62051C78B72C00E0BC9A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5FB62041C78B72B00E0BC9A /* ThemeKitCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		A5F4E6681C50E0FD0099010C /* MozQuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MozQuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.beta testing.xcconfig"; sourceTree = "<group>"; };
+		1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4087E065765E5258925F1D8D /* Pods_MozQuito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.release.xcconfig"; sourceTree = "<group>"; };
+		4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.release.xcconfig"; sourceTree = "<group>"; };
+		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
+		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
+		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
+		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
+		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
+		A50BD39D1C75E29500E7A07F /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
+		A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSegmentedControl.swift; sourceTree = "<group>"; };
+		A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSlider.swift; sourceTree = "<group>"; };
+		A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStepper.swift; sourceTree = "<group>"; };
+		A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSwitch.swift; sourceTree = "<group>"; };
+		A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBarButtonItem.swift; sourceTree = "<group>"; };
+		A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeNavigationBar.swift; sourceTree = "<group>"; };
+		A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBar.swift; sourceTree = "<group>"; };
+		A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTabBarItem.swift; sourceTree = "<group>"; };
+		A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeToolbar.swift; sourceTree = "<group>"; };
+		A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
+		A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
+		A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextView.swift; sourceTree = "<group>"; };
+		A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
+		A50BD3AD1C75E29500E7A07F /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceStack.swift; sourceTree = "<group>"; };
+		A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceApplicationStack.swift; sourceTree = "<group>"; };
+		A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceExtensionStack.swift; sourceTree = "<group>"; };
+		A579DD861C846013006C0FB5 /* MZDistanceViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceViews.swift; sourceTree = "<group>"; };
+		A579DD891C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZParseAlexaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZParseAlexaDataOperation.swift; sourceTree = "<group>"; };
+		A579DD8C1C847001006C0FB5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A57DBA131C59009500F246C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/URLDetails.storyboard; sourceTree = "<group>"; };
+		A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = URLDetailsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A58560D01C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZExtensionURLDetailsViewController.swift; sourceTree = "<group>"; };
+		A58560D31C7F3FFF005221B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Extension.storyboard; sourceTree = "<group>"; };
+		A58560D51C7F3FFF005221B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A585611B1C7F63A9005221B3 /* URLDetailsExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "URLDetailsExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		A585611F1C7F65AF005221B3 /* MZInputURLDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZInputURLDetailsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZInputURLDetailsViewController.swift"; sourceTree = "<group>"; };
+		A58561241C80557F005221B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/App.storyboard; sourceTree = "<group>"; };
+		A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Bridging-Header.h"; sourceTree = "<group>"; };
+		A596270B1C528C1D0076147C /* MZAppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAppDependencies.swift; path = Modules/Core/MZAppDependencies.swift; sourceTree = "<group>"; };
+		A59627101C5292740076147C /* MZStoryboardLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZStoryboardLoader.swift; path = Modules/Core/MZStoryboardLoader.swift; sourceTree = "<group>"; };
+		A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsInteractor.swift; path = Modules/URLMetrics/Viper/MZURLMetricsInteractor.swift; sourceTree = "<group>"; };
+		A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsWireframe.swift; path = Modules/URLMetrics/Viper/MZURLMetricsWireframe.swift; sourceTree = "<group>"; };
+		A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetricProgressView.swift; sourceTree = "<group>"; };
+		A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsStack.swift; sourceTree = "<group>"; };
+		A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLInputView.swift; sourceTree = "<group>"; };
+		A5C572381C61083C00E2AACF /* MZTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZTheme.swift; sourceTree = "<group>"; };
+		A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLDetailsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLDetailsViewController.swift"; sourceTree = "<group>"; };
+		A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextFieldStack.swift; sourceTree = "<group>"; };
+		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
+		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
+		A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataStack.swift; path = "Alexa Data/MZAlexaDataStack.swift"; sourceTree = "<group>"; };
+		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
+		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
+		A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsPresenter.swift; path = Modules/URLMetrics/Viper/MZURLMetricsPresenter.swift; sourceTree = "<group>"; };
+		A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeIndexDatesOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeIndexDatesOperation.swift; sourceTree = "<group>"; };
+		A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetPageMetaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetPageMetaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZParseHTMLDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZParseHTMLDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZAlexaDataOperation.swift; sourceTree = "<group>"; };
+		A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLMetricsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLMetricsViewController.swift"; sourceTree = "<group>"; };
+		A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoEntities.h; sourceTree = "<group>"; };
+		A5ECBD6A1C5BA52F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MozQuitoViews.h; sourceTree = "<group>"; };
+		A5ECBD7D1C5BA53F003350E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZAlexaData.swift; sourceTree = "<group>"; };
+		A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetric.swift; sourceTree = "<group>"; };
+		A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaData.swift; sourceTree = "<group>"; };
+		A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZErrors.swift; sourceTree = "<group>"; };
+		A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZNetworking.swift; sourceTree = "<group>"; };
+		A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMetaDataStack.swift; sourceTree = "<group>"; };
+		A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPageMetaDataStack.swift; sourceTree = "<group>"; };
+		A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSEO App Strings.tsv"; sourceTree = "<group>"; };
+		A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStack.swift; sourceTree = "<group>"; };
+		A5F46D181C7C759E001417F3 /* GMDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMDView.swift; path = Modules/GMDView.swift; sourceTree = "<group>"; };
+		A5F46D1E1C7DB071001417F3 /* MZPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZPanel.swift; sourceTree = "<group>"; };
+		A5F46D201C7DB144001417F3 /* MZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZButton.swift; sourceTree = "<group>"; };
+		A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZExpandingStack.swift; sourceTree = "<group>"; };
+		A5F46D241C7DBAED001417F3 /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Test.storyboard; path = Libraries/ViperKit/ViperKit/Templates/Test.storyboard; sourceTree = SOURCE_ROOT; };
+		A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAnalytics.swift; path = Modules/Analytics/MZAnalytics.swift; sourceTree = "<group>"; };
+		A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticEntities.swift; path = Libraries/ViperKit/ViperKit/Templates/Analytics/AnalyticEntities.swift; sourceTree = SOURCE_ROOT; };
+		A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalyticsInteractors.swift; path = Libraries/ViperKit/ViperKit/Templates/Analytics/AnalyticsInteractors.swift; sourceTree = SOURCE_ROOT; };
+		A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestAnalyticsViewController.swift; path = Libraries/ViperKit/ViperKit/Templates/Analytics/TestAnalyticsViewController.swift; sourceTree = SOURCE_ROOT; };
+		A5F4E6681C50E0FD0099010C /* PocketSEO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketSEO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5F4E66D1C50E0FD0099010C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A5F4E6701C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5F4E6721C50E0FD0099010C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5F4E6751C50E0FD0099010C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5F4E6771C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MozQuitoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MozQuitoTests.swift; sourceTree = "<group>"; };
-		A5F4E6821C50E0FD0099010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F4E6A71C5113D00099010C /* MozQuito-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MozQuito-Info.h"; sourceTree = "<group>"; };
+		A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketSEOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketSEOTests.swift; sourceTree = "<group>"; };
+		A5FB61E01C787BBA00E0BC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperTester.swift; sourceTree = "<group>"; };
+		A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "thedistance-alexa.xml"; sourceTree = "<group>"; };
+		A5FB61EB1C787BDF00E0BC9A /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thedistance.html; sourceTree = "<group>"; };
+		A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
+		A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_NoNetwork_Tests.swift; sourceTree = "<group>"; };
+		A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketSEOTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperationTestCase.swift; sourceTree = "<group>"; };
+		A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAssertEqualOptional.swift; sourceTree = "<group>"; };
+		A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnalyticsInteractors.swift; sourceTree = "<group>"; };
+		A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThemeKitCore.framework; path = Libraries/ThemeKit/Release/ThemeKitCore.framework; sourceTree = "<group>"; };
+		B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.release.xcconfig"; sourceTree = "<group>"; };
+		C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDetailsExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.beta testing.xcconfig"; sourceTree = "<group>"; };
+		E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.debug.xcconfig"; sourceTree = "<group>"; };
+		F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A58560CB1C7F3FFF005221B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A585611A1C7F6323005221B3 /* ThemeKitCore.framework in Frameworks */,
+				53A449BB354563A5E4780309 /* Pods_URLDetailsExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F4E6651C50E0FD0099010C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FB62031C78B72B00E0BC9A /* ThemeKitCore.framework in Frameworks */,
+				E73094DFA553B2157CECF3E1 /* Pods_PocketSEO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F4E6791C50E0FD0099010C /* Frameworks */ = {
+		A5FB61D91C787BBA00E0BC9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AD738720430DE630F07D53C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */,
+				5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */,
+				0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */,
+				01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */,
+				4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */,
+				7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */,
+				C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */,
+				B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */,
+				DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69D7909DEAB1572C76C0D2F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4087E065765E5258925F1D8D /* Pods_MozQuito.framework */,
+				661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */,
+				D2E8D088356226BE6AD003AC /* Pods_MozQuitoEntities.framework */,
+				1B10837E57F7EE56FE578281 /* Pods_MozQuitoViews.framework */,
+				58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */,
+				4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */,
+				F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */,
+				FF902543745532F0BB177805 /* Pods_PocketSEOViews.framework */,
+				D7AF2866580EBFA752166750 /* Pods_URLDetailsExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A505BA441C567017004F2607 /* URL Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD5E1C5BA365003350E3 /* View Controllers */,
+				A5EA9A8C1C5681B6004CC9EF /* Viper */,
+				A505BA451C567025004F2607 /* Network Operations */,
+			);
+			name = "URL Metrics";
+			sourceTree = "<group>";
+		};
+		A505BA451C567025004F2607 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */,
+				A5ECBD2E1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift */,
+				A5ECBD331C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift */,
+				A5ECBD371C5A7084003350E3 /* MZParseHTMLDataOperation.swift */,
+				A5ECBD391C5A7F2A003350E3 /* MZAlexaDataOperation.swift */,
+				A579DD891C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		A505BA461C567035004F2607 /* Network Operations */ = {
+			isa = PBXGroup;
+			children = (
+				A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */,
+				A505BA471C567057004F2607 /* MZAuthenticationToken.swift */,
+				A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */,
+			);
+			name = "Network Operations";
+			sourceTree = "<group>";
+		};
+		A50BD39B1C75E29400E7A07F /* IBInspectable */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD39C1C75E29500E7A07F /* Controls */,
+				A50BD3A21C75E29500E7A07F /* Navigation */,
+				A50BD3A81C75E29500E7A07F /* Text */,
+				A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */,
+				A50BD3AD1C75E29500E7A07F /* ThemeView.swift */,
+			);
+			name = IBInspectable;
+			path = Libraries/ThemeKit/IBInspectable;
+			sourceTree = SOURCE_ROOT;
+		};
+		A50BD39C1C75E29500E7A07F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD39D1C75E29500E7A07F /* ThemeButton.swift */,
+				A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */,
+				A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */,
+				A50BD3A01C75E29500E7A07F /* ThemeStepper.swift */,
+				A50BD3A11C75E29500E7A07F /* ThemeSwitch.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		A50BD3A21C75E29500E7A07F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD3A31C75E29500E7A07F /* ThemeBarButtonItem.swift */,
+				A50BD3A41C75E29500E7A07F /* ThemeNavigationBar.swift */,
+				A50BD3A51C75E29500E7A07F /* ThemeTabBar.swift */,
+				A50BD3A61C75E29500E7A07F /* ThemeTabBarItem.swift */,
+				A50BD3A71C75E29500E7A07F /* ThemeToolbar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A50BD3A81C75E29500E7A07F /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				A50BD3A91C75E29500E7A07F /* ThemeLabel.swift */,
+				A50BD3AA1C75E29500E7A07F /* ThemeTextField.swift */,
+				A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		A579DD7C1C845EB9006C0FB5 /* Distance Views */ = {
+			isa = PBXGroup;
+			children = (
+				A579DD861C846013006C0FB5 /* MZDistanceViews.swift */,
+				A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */,
+				A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */,
+				A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */,
+			);
+			path = "Distance Views";
+			sourceTree = "<group>";
+		};
+		A58560CF1C7F3FFF005221B3 /* URLDetailsExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A58560D01C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift */,
+				A58560D21C7F3FFF005221B3 /* Extension.storyboard */,
+				A58560D51C7F3FFF005221B3 /* Info.plist */,
+				A585611B1C7F63A9005221B3 /* URLDetailsExtension-Bridging-Header.h */,
+			);
+			path = URLDetailsExtension;
+			sourceTree = "<group>";
+		};
+		A59626D91C52743E0076147C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A505BA441C567017004F2607 /* URL Metrics */,
+				A59626DA1C5274460076147C /* Analytics */,
+				A596270D1C528C300076147C /* Core */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		A59626DA1C5274460076147C /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				A5F46D281C7DBBED001417F3 /* AnalyticEntities.swift */,
+				A5F46D291C7DBBED001417F3 /* AnalyticsInteractors.swift */,
+				A5F46D2A1C7DBBED001417F3 /* TestAnalyticsViewController.swift */,
+				A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		A59626DF1C5277250076147C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */,
+				A5F46D241C7DBAED001417F3 /* Test.storyboard */,
+				A57DBA121C59009500F246C2 /* URLDetails.storyboard */,
+				A58561231C80557F005221B3 /* App.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A596270D1C528C300076147C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A505BA461C567035004F2607 /* Network Operations */,
+				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
+				A5C572401C61131800E2AACF /* MZRootWireframe.swift */,
+				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A5C572371C61083C00E2AACF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A5C572381C61083C00E2AACF /* MZTheme.swift */,
+				A5F46D201C7DB144001417F3 /* MZButton.swift */,
+				A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */,
+				A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */,
+				A50BD39B1C75E29400E7A07F /* IBInspectable */,
+			);
+			name = Theme;
+			path = Modules/Theme;
+			sourceTree = "<group>";
+		};
+		A5E674951C7B312400A7CDF4 /* Alexa Data */ = {
+			isa = PBXGroup;
+			children = (
+				A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */,
+			);
+			name = "Alexa Data";
+			sourceTree = "<group>";
+		};
+		A5EA9A8C1C5681B6004CC9EF /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */,
+				A5EA9A911C5686FB004CC9EF /* MZURLMetricsPresenter.swift */,
+				A599C8B51C5BCF81006B7FAC /* MZURLMetricsInteractor.swift */,
+				A599C8B71C5BD018006B7FAC /* MZURLMetricsWireframe.swift */,
+			);
+			name = Viper;
+			sourceTree = "<group>";
+		};
+		A5ECBD5E1C5BA365003350E3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */,
+				A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */,
+				A585611F1C7F65AF005221B3 /* MZInputURLDetailsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */,
+				A5ECBD901C5BA5FD003350E3 /* Core */,
+				A5ECBD891C5BA5B2003350E3 /* URLMetrics */,
+				A5ECBD6A1C5BA52F003350E3 /* Info.plist */,
+			);
+			path = MozQuitoEntities;
+			sourceTree = "<group>";
+		};
+		A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD7B1C5BA53F003350E3 /* MozQuitoViews.h */,
+				A5F46D181C7C759E001417F3 /* GMDView.swift */,
+				A5C572371C61083C00E2AACF /* Theme */,
+				A5ECBD951C5BA931003350E3 /* URLMetrics */,
+				A5ECBD7D1C5BA53F003350E3 /* Info.plist */,
+			);
+			path = MozQuitoViews;
+			sourceTree = "<group>";
+		};
+		A5ECBD891C5BA5B2003350E3 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD8A1C5BA5B2003350E3 /* MZAlexaData.swift */,
+				A5ECBD8B1C5BA5B2003350E3 /* MZMetric.swift */,
+				A5ECBD8C1C5BA5B2003350E3 /* MZPageMetaData.swift */,
+			);
+			name = URLMetrics;
+			path = Modules/URLMetrics;
+			sourceTree = "<group>";
+		};
+		A5ECBD901C5BA5FD003350E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */,
+				A5ECBD921C5BA5FD003350E3 /* MZNetworking.swift */,
+			);
+			name = Core;
+			path = Modules/Core;
+			sourceTree = "<group>";
+		};
+		A5ECBD951C5BA931003350E3 /* URLMetrics */ = {
+			isa = PBXGroup;
+			children = (
+				A5F46D1E1C7DB071001417F3 /* MZPanel.swift */,
+				A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */,
+				A5F46D141C7B5EB0001417F3 /* ErrorStack.swift */,
+				A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */,
+				A579DD7C1C845EB9006C0FB5 /* Distance Views */,
+				A5E674951C7B312400A7CDF4 /* Alexa Data */,
+				A5ECBD961C5BA931003350E3 /* Mozscape Data */,
+				A5ECBD981C5BA931003350E3 /* Page Meta Data */,
+			);
+			name = URLMetrics;
+			path = Modules/URLMetrics;
+			sourceTree = "<group>";
+		};
+		A5ECBD961C5BA931003350E3 /* Mozscape Data */ = {
+			isa = PBXGroup;
+			children = (
+				A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */,
+				A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */,
+			);
+			path = "Mozscape Data";
+			sourceTree = "<group>";
+		};
+		A5ECBD981C5BA931003350E3 /* Page Meta Data */ = {
+			isa = PBXGroup;
+			children = (
+				A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */,
+				A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */,
+			);
+			path = "Page Meta Data";
+			sourceTree = "<group>";
+		};
+		A5F46D0F1C7B5AE4001417F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5F46D121C7B5B35001417F3 /* PSEO App Strings.tsv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A5F4E65F1C50E0FD0099010C = {
 			isa = PBXGroup;
 			children = (
+				A5FB62021C78B72B00E0BC9A /* ThemeKitCore.framework */,
 				A5F4E66A1C50E0FD0099010C /* MozQuito */,
-				A5F4E67F1C50E0FD0099010C /* MozQuitoTests */,
+				A5ECBD671C5BA52F003350E3 /* MozQuitoEntities */,
+				A5ECBD7A1C5BA53F003350E3 /* MozQuitoViews */,
+				A5FB61DD1C787BBA00E0BC9A /* PocketSEOTests */,
+				A58560CF1C7F3FFF005221B3 /* URLDetailsExtension */,
 				A5F4E6691C50E0FD0099010C /* Products */,
+				4AD738720430DE630F07D53C /* Pods */,
+				69D7909DEAB1572C76C0D2F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A5F4E6691C50E0FD0099010C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5F4E6681C50E0FD0099010C /* MozQuito.app */,
-				A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */,
+				A5F4E6681C50E0FD0099010C /* PocketSEO.app */,
+				A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */,
+				A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,60 +682,120 @@
 			isa = PBXGroup;
 			children = (
 				A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */,
-				A5F4E66D1C50E0FD0099010C /* ViewController.swift */,
-				A5F4E66F1C50E0FD0099010C /* Main.storyboard */,
-				A5F4E6721C50E0FD0099010C /* Assets.xcassets */,
-				A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */,
+				A5F4E6A71C5113D00099010C /* MozQuito-Info.h */,
+				A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */,
+				A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */,
 				A5F4E6771C50E0FD0099010C /* Info.plist */,
+				A579DD8C1C847001006C0FB5 /* Settings.bundle */,
+				A5F46D0F1C7B5AE4001417F3 /* Resources */,
+				A59626D91C52743E0076147C /* Modules */,
+				A59626DF1C5277250076147C /* Storyboards */,
+				A5F4E6721C50E0FD0099010C /* Assets.xcassets */,
 			);
 			path = MozQuito;
 			sourceTree = "<group>";
 		};
-		A5F4E67F1C50E0FD0099010C /* MozQuitoTests */ = {
+		A5FB61DD1C787BBA00E0BC9A /* PocketSEOTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5F4E6801C50E0FD0099010C /* MozQuitoTests.swift */,
-				A5F4E6821C50E0FD0099010C /* Info.plist */,
+				A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */,
+				A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */,
+				A5FB61E71C787BDF00E0BC9A /* Libraries */,
+				A5FB61E91C787BDF00E0BC9A /* Resources */,
+				A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */,
+				A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */,
+				A5FB61E01C787BBA00E0BC9A /* Info.plist */,
 			);
-			path = MozQuitoTests;
+			path = PocketSEOTests;
+			sourceTree = "<group>";
+		};
+		A5FB61E71C787BDF00E0BC9A /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */,
+				A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */,
+				A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */,
+				A5FB61F71C787ED100E0BC9A /* TestAnalyticsInteractors.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		A5FB61E91C787BDF00E0BC9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB61EA1C787BDF00E0BC9A /* thedistance-alexa.xml */,
+				A5FB61EB1C787BDF00E0BC9A /* thedistance.html */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5F4E6671C50E0FD0099010C /* MozQuito */ = {
+		A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */;
+			buildConfigurationList = A58560DC1C7F3FFF005221B3 /* Build configuration list for PBXNativeTarget "URLDetailsExtension" */;
 			buildPhases = (
+				540D2E2E8F143950A1AFBCC3 /* Check Pods Manifest.lock */,
+				E7AAA0041C89B279003EE3D4 /* ShellScript */,
+				A58560CA1C7F3FFF005221B3 /* Sources */,
+				A58560CB1C7F3FFF005221B3 /* Frameworks */,
+				A58560CC1C7F3FFF005221B3 /* Resources */,
+				A2B1060C9506A7C5A5F8D110 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = URLDetailsExtension;
+			productName = URLDetailsExtension;
+			productReference = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A5F4E6671C50E0FD0099010C /* PocketSEO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */;
+			buildPhases = (
+				14975816AD92C57C6570A2B2 /* Check Pods Manifest.lock */,
+				A579DD8E1C8470A0006C0FB5 /* ShellScript */,
 				A5F4E6641C50E0FD0099010C /* Sources */,
 				A5F4E6651C50E0FD0099010C /* Frameworks */,
 				A5F4E6661C50E0FD0099010C /* Resources */,
+				A505BA411C563E4A004F2607 /* ShellScript */,
+				A5FB62051C78B72C00E0BC9A /* Embed Frameworks */,
+				A504A0751C8715A9001A214D /* Embed App Extensions */,
+				3E6BB89C0748D68F4103A815 /* Embed Pods Frameworks */,
+				12AB8D6991A5097B544E843E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E7E1A1BD1C92FA860031D1AE /* PBXTargetDependency */,
 			);
-			name = MozQuito;
+			name = PocketSEO;
 			productName = MozQuito;
-			productReference = A5F4E6681C50E0FD0099010C /* MozQuito.app */;
+			productReference = A5F4E6681C50E0FD0099010C /* PocketSEO.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5F4E67B1C50E0FD0099010C /* MozQuitoTests */ = {
+		A5FB61DB1C787BBA00E0BC9A /* PocketSEOTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */;
+			buildConfigurationList = A5FB61E31C787BBA00E0BC9A /* Build configuration list for PBXNativeTarget "PocketSEOTests" */;
 			buildPhases = (
-				A5F4E6781C50E0FD0099010C /* Sources */,
-				A5F4E6791C50E0FD0099010C /* Frameworks */,
-				A5F4E67A1C50E0FD0099010C /* Resources */,
+				E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */,
+				A5FB61D81C787BBA00E0BC9A /* Sources */,
+				A5FB61D91C787BBA00E0BC9A /* Frameworks */,
+				A5FB61DA1C787BBA00E0BC9A /* Resources */,
+				204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */,
+				955999B786551A95197F6A24 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */,
+				A5FB61E21C787BBA00E0BC9A /* PBXTargetDependency */,
 			);
-			name = MozQuitoTests;
-			productName = MozQuitoTests;
-			productReference = A5F4E67C1C50E0FD0099010C /* MozQuitoTests.xctest */;
+			name = PocketSEOTests;
+			productName = PocketSEOTests;
+			productReference = A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -144,10 +808,15 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "The Distance";
 				TargetAttributes = {
+					A58560CD1C7F3FFF005221B3 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = RA4PB2C3M4;
+					};
 					A5F4E6671C50E0FD0099010C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = RA4PB2C3M4;
 					};
-					A5F4E67B1C50E0FD0099010C = {
+					A5FB61DB1C787BBA00E0BC9A = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = A5F4E6671C50E0FD0099010C;
 					};
@@ -166,67 +835,402 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5F4E6671C50E0FD0099010C /* MozQuito */,
-				A5F4E67B1C50E0FD0099010C /* MozQuitoTests */,
+				A5F4E6671C50E0FD0099010C /* PocketSEO */,
+				A5FB61DB1C787BBA00E0BC9A /* PocketSEOTests */,
+				A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A58560CC1C7F3FFF005221B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A58560DE1C7F4883005221B3 /* URLDetails.storyboard in Resources */,
+				A58561261C805D66005221B3 /* Assets.xcassets in Resources */,
+				A58560D41C7F3FFF005221B3 /* Extension.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F4E6661C50E0FD0099010C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A579DD8D1C847001006C0FB5 /* Settings.bundle in Resources */,
+				A5F46D251C7DBAED001417F3 /* Test.storyboard in Resources */,
+				A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */,
 				A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */,
 				A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */,
-				A5F4E6711C50E0FD0099010C /* Main.storyboard in Resources */,
+				A58561251C80557F005221B3 /* App.storyboard in Resources */,
+				A57DBA141C59009500F246C2 /* URLDetails.storyboard in Resources */,
+				A5F46D131C7B5B35001417F3 /* PSEO App Strings.tsv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F4E67A1C50E0FD0099010C /* Resources */ = {
+		A5FB61DA1C787BBA00E0BC9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FB61EF1C787BDF00E0BC9A /* thedistance-alexa.xml in Resources */,
+				A5FB61F01C787BDF00E0BC9A /* thedistance.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12AB8D6991A5097B544E843E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14975816AD92C57C6570A2B2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E6BB89C0748D68F4103A815 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		540D2E2E8F143950A1AFBCC3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		955999B786551A95197F6A24 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2B1060C9506A7C5A5F8D110 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A505BA411C563E4A004F2607 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 015a3121c76ea8baec90c4a97c7bd1976400adad dc9c94e3c240c0f762b3ba151b9bb3c0ddf4271bf6be439432c002315672794f";
+		};
+		A579DD8E1C8470A0006C0FB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\n/usr/libexec/PlistBuddy -c \"set PreferenceSpecifiers:1:DefaultValue $version\" \"$SRCROOT/MozQuito/Settings.bundle/Root.plist\"";
+		};
+		E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AAA0041C89B279003EE3D4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/JCLocalization/JCLocalization.sh\" \"${PROJECT_DIR}/MozQuito/Resources/PSEO App Strings.tsv\" \"${PODS_ROOT}/JCLocalization/JCLocalization/LocalizedString.swift\" \"${PODS_ROOT}/JCLocalization/JCLocalization/JCLocalization.strings\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		A58560CA1C7F3FFF005221B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */,
+				A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */,
+				A579DD821C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
+				A58560E21C7F48D4005221B3 /* URLMetricsViperProtocols.swift in Sources */,
+				A58560E31C7F48D4005221B3 /* MZURLMetricsPresenter.swift in Sources */,
+				A58560E41C7F48D4005221B3 /* MZURLMetricsInteractor.swift in Sources */,
+				A58560E51C7F48D4005221B3 /* MZURLMetricsWireframe.swift in Sources */,
+				A58560E61C7F48D4005221B3 /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
+				A58560E71C7F48D4005221B3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
+				A579DD8B1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */,
+				A58560E81C7F48D4005221B3 /* MZGetPageMetaDataOperation.swift in Sources */,
+				A58560E91C7F48D4005221B3 /* MZParseHTMLDataOperation.swift in Sources */,
+				A58560EA1C7F48D4005221B3 /* MZAlexaDataOperation.swift in Sources */,
+				A58560EC1C7F48D4005221B3 /* AnalyticEntities.swift in Sources */,
+				A58560ED1C7F48D4005221B3 /* AnalyticsInteractors.swift in Sources */,
+				A58560EE1C7F48D4005221B3 /* TestAnalyticsViewController.swift in Sources */,
+				A58560EF1C7F48D4005221B3 /* MZAnalytics.swift in Sources */,
+				A58560F01C7F48D4005221B3 /* AlamofireJSONOperation.swift in Sources */,
+				A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */,
+				A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */,
+				A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */,
+				A508D8CA1C80ABCA0099BBD4 /* MZRootWireframe.swift in Sources */,
+				A58560F51C7F48D4005221B3 /* MZStoryboardLoader.swift in Sources */,
+				A579DD851C845ED4006C0FB5 /* MZDistanceExtensionStack.swift in Sources */,
+				A58560F61C7F48D4005221B3 /* MZErrors.swift in Sources */,
+				A58560F71C7F48D4005221B3 /* MZNetworking.swift in Sources */,
+				A58560F81C7F48D4005221B3 /* MZAlexaData.swift in Sources */,
+				A58560F91C7F48D4005221B3 /* MZMetric.swift in Sources */,
+				A579DD881C846013006C0FB5 /* MZDistanceViews.swift in Sources */,
+				A58560FA1C7F48D4005221B3 /* MZPageMetaData.swift in Sources */,
+				A58560FB1C7F48D4005221B3 /* GMDView.swift in Sources */,
+				A58560FC1C7F48D4005221B3 /* MZTheme.swift in Sources */,
+				A58560FD1C7F48D4005221B3 /* MZButton.swift in Sources */,
+				A58560FE1C7F48D4005221B3 /* ThemeTextFieldStack.swift in Sources */,
+				A58560FF1C7F48D4005221B3 /* ThemeTextViewStack.swift in Sources */,
+				A58561001C7F48D4005221B3 /* ThemeButton.swift in Sources */,
+				A58561011C7F48D4005221B3 /* ThemeSegmentedControl.swift in Sources */,
+				A58561021C7F48D4005221B3 /* ThemeSlider.swift in Sources */,
+				A58561031C7F48D4005221B3 /* ThemeStepper.swift in Sources */,
+				A58561041C7F48D4005221B3 /* ThemeSwitch.swift in Sources */,
+				A58561051C7F48D4005221B3 /* ThemeBarButtonItem.swift in Sources */,
+				A58561061C7F48D4005221B3 /* ThemeNavigationBar.swift in Sources */,
+				A58561071C7F48D4005221B3 /* ThemeTabBar.swift in Sources */,
+				A58561081C7F48D4005221B3 /* ThemeTabBarItem.swift in Sources */,
+				A58561091C7F48D4005221B3 /* ThemeToolbar.swift in Sources */,
+				A585610A1C7F48D4005221B3 /* ThemeLabel.swift in Sources */,
+				A58561221C804B14005221B3 /* MZURLInputView.swift in Sources */,
+				A585610B1C7F48D4005221B3 /* ThemeTextField.swift in Sources */,
+				A585610C1C7F48D4005221B3 /* ThemeTextView.swift in Sources */,
+				A585610D1C7F48D4005221B3 /* ThemeImageView.swift in Sources */,
+				A585610E1C7F48D4005221B3 /* ThemeView.swift in Sources */,
+				A585610F1C7F48D4005221B3 /* MZPanel.swift in Sources */,
+				A58561121C7F48D4005221B3 /* ErrorStack.swift in Sources */,
+				A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */,
+				A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */,
+				A58561151C7F48D4005221B3 /* MZAlexaDataStack.swift in Sources */,
+				A58561161C7F48D4005221B3 /* MZMetricProgressView.swift in Sources */,
+				A58561171C7F48D4005221B3 /* MZMozscapeMetricsStack.swift in Sources */,
+				A58561181C7F48D4005221B3 /* MZMetaDataStack.swift in Sources */,
+				A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */,
+				A58560D11C7F3FFF005221B3 /* MZExtensionURLDetailsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5F4E6641C50E0FD0099010C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F4E66E1C50E0FD0099010C /* ViewController.swift in Sources */,
+				A5ECBD381C5A7084003350E3 /* MZParseHTMLDataOperation.swift in Sources */,
+				A5F46D1F1C7DB071001417F3 /* MZPanel.swift in Sources */,
+				A50BD38E1C75E25200E7A07F /* MZURLInputView.swift in Sources */,
+				A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */,
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
+				A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */,
+				A50BD3AF1C75E29500E7A07F /* ThemeSegmentedControl.swift in Sources */,
+				A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */,
+				A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */,
+				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
+				A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */,
+				A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */,
+				A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */,
+				A5ECBD3A1C5A7F2A003350E3 /* MZAlexaDataOperation.swift in Sources */,
+				A5F46D2C1C7DBBED001417F3 /* AnalyticsInteractors.swift in Sources */,
+				A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */,
+				A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */,
+				A50BD3991C75E28500E7A07F /* MZMetric.swift in Sources */,
+				A58561211C7F65B3005221B3 /* MZInputURLDetailsViewController.swift in Sources */,
+				A50BD3B41C75E29500E7A07F /* ThemeNavigationBar.swift in Sources */,
+				A50BD3B01C75E29500E7A07F /* ThemeSlider.swift in Sources */,
+				A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */,
+				A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */,
+				A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */,
+				A5ECBD601C5BA3A8003350E3 /* MZURLMetricsViewController.swift in Sources */,
+				A50BD3BB1C75E29500E7A07F /* ThemeImageView.swift in Sources */,
+				A5F46D2B1C7DBBED001417F3 /* AnalyticEntities.swift in Sources */,
+				A50BD3B11C75E29500E7A07F /* ThemeStepper.swift in Sources */,
+				A50BD3B51C75E29500E7A07F /* ThemeTabBar.swift in Sources */,
+				A50BD3AE1C75E29500E7A07F /* ThemeButton.swift in Sources */,
+				A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */,
+				A5F46D2D1C7DBBED001417F3 /* TestAnalyticsViewController.swift in Sources */,
+				A50BD3B21C75E29500E7A07F /* ThemeSwitch.swift in Sources */,
+				A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
+				A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */,
+				A5F46D231C7DB1AD001417F3 /* MZExpandingStack.swift in Sources */,
+				A5ECBD2F1C5A593B003350E3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
+				A5F46D271C7DBB86001417F3 /* MZAnalytics.swift in Sources */,
+				A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */,
+				A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */,
+				A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */,
+				A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */,
+				A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */,
+				A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */,
+				A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */,
+				A579DD871C846013006C0FB5 /* MZDistanceViews.swift in Sources */,
+				A50BD38F1C75E25700E7A07F /* MZMetricProgressView.swift in Sources */,
+				A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
+				A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */,
+				A579DD8A1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */,
+				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
+				A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */,
+				A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */,
+				A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */,
+				A579DD841C845ED4006C0FB5 /* MZDistanceExtensionStack.swift in Sources */,
+				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,
+				A59627111C5292740076147C /* MZStoryboardLoader.swift in Sources */,
+				A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */,
+				A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */,
+				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
+				A5F46D211C7DB144001417F3 /* MZButton.swift in Sources */,
+				A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5F4E6781C50E0FD0099010C /* Sources */ = {
+		A5FB61D81C787BBA00E0BC9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F4E6811C50E0FD0099010C /* MozQuitoTests.swift in Sources */,
+				A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */,
+				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
+				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
+				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,
+				A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */,
+				A5FB61FA1C787ED100E0BC9A /* TestAnalyticsInteractors.swift in Sources */,
+				A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A5F4E67E1C50E0FD0099010C /* PBXTargetDependency */ = {
+		A5FB61E21C787BBA00E0BC9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5F4E6671C50E0FD0099010C /* MozQuito */;
-			targetProxy = A5F4E67D1C50E0FD0099010C /* PBXContainerItemProxy */;
+			target = A5F4E6671C50E0FD0099010C /* PocketSEO */;
+			targetProxy = A5FB61E11C787BBA00E0BC9A /* PBXContainerItemProxy */;
+		};
+		E7E1A1BD1C92FA860031D1AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */;
+			targetProxy = E7E1A1BC1C92FA860031D1AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5F4E66F1C50E0FD0099010C /* Main.storyboard */ = {
+		A57DBA121C59009500F246C2 /* URLDetails.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A5F4E6701C50E0FD0099010C /* Base */,
+				A57DBA131C59009500F246C2 /* Base */,
 			);
-			name = Main.storyboard;
+			name = URLDetails.storyboard;
+			sourceTree = "<group>";
+		};
+		A58560D21C7F3FFF005221B3 /* Extension.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A58560D31C7F3FFF005221B3 /* Base */,
+			);
+			name = Extension.storyboard;
+			sourceTree = "<group>";
+		};
+		A58561231C80557F005221B3 /* App.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A58561241C80557F005221B3 /* Base */,
+			);
+			name = App.storyboard;
 			sourceTree = "<group>";
 		};
 		A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */ = {
@@ -240,10 +1244,233 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A58560D91C7F3FFF005221B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Extension Icon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"M13_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/AdvancedOperationKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/DeviceKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/JCLocalization.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/JCPageViewController.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/M13ProgressSuite.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/MagicalRecord.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/PSOperations.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/StackView.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/SwiftInPractice.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/SwiftyJSON.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/TZStackView.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/TheDistanceCore.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/ViperKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/hpple.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"-DM13_APP_EXTENSIONS",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\" \"-DDEBUG\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A58560DA1C7F3FFF005221B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Extension Icon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"M13_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/AdvancedOperationKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/DeviceKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/JCLocalization.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/JCPageViewController.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/M13ProgressSuite.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/MagicalRecord.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/PSOperations.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/StackView.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/SwiftInPractice.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/SwiftyJSON.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/TZStackView.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/TheDistanceCore.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/ViperKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/hpple.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"-DM13_APP_EXTENSIONS",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fe882295-658e-4cb5-b2e2-1d7cadbda4e9";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		A58560DB1C7F3FFF005221B3 /* Beta Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB9A1456D58C7AE935C12FC1 /* Pods-URLDetailsExtension.beta testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Extension Icon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"M13_APP_EXTENSIONS=1",
+				);
+				INFOPLIST_FILE = URLDetailsExtension/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/AdvancedOperationKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/DeviceKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/JCLocalization.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/JCPageViewController.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/M13ProgressSuite.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/MagicalRecord.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/PSOperations.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/StackView.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/SwiftInPractice.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/SwiftyJSON.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/TZStackView.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/TheDistanceCore.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/ViperKit.framework/Headers\"",
+					"-iquote",
+					"\"$CONFIGURATION_BUILD_DIR/hpple.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"-DM13_APP_EXTENSIONS",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\" \"-DBETA_TESTING\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0a50d28f-dc18-4480-ac35-7d84f86abcee";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
+			};
+			name = "Beta Testing";
+		};
 		A5F4E6831C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -257,7 +1484,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Anthony Main (6D22PCH782)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -279,6 +1506,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -288,7 +1516,7 @@
 		A5F4E6841C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -302,7 +1530,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -317,6 +1545,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "eb184ccb-aeef-48e7-987f-163a063675f0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -325,77 +1554,226 @@
 		};
 		A5F4E6861C50E0FD0099010C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E93CFB0E1A89454BA4A36973 /* Pods-PocketSEO.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
+				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A5F4E6871C50E0FD0099010C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
 				INFOPLIST_FILE = MozQuito/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuito;
+				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "35975edb-2e70-4a70-8216-6fd641a16b39";
+				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 			};
 			name = Release;
 		};
-		A5F4E6891C50E0FD0099010C /* Debug */ = {
+		A5F4E6A41C5112450099010C /* Beta Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MozQuitoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "0a50d28f-dc18-4480-ac35-7d84f86abcee";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Beta Testing";
+		};
+		A5F4E6A51C5112450099010C /* Beta Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E34E98DDA00421FD5F5C346 /* Pods-PocketSEO.beta testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Crashlytics/iOS\"",
+					"\"${PODS_ROOT}/Fabric/iOS\"",
+					"\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"",
+				);
+				INFOPLIST_FILE = MozQuito/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "MozQuito/MozQuito-info.h";
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\" @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DBETA_TESTING\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
+				PROVISIONING_PROFILE = "0a50d28f-dc18-4480-ac35-7d84f86abcee";
+				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
+			};
+			name = "Beta Testing";
+		};
+		A5FB61E41C787BBA00E0BC9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01ABC5A75D303D147D1EF1F4 /* Pods-PocketSEOTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				INFOPLIST_FILE = PocketSEOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
 			};
 			name = Debug;
 		};
-		A5F4E68A1C50E0FD0099010C /* Release */ = {
+		A5FB61E51C787BBA00E0BC9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4418D6C2B5053BC4D4A04EAF /* Pods-PocketSEOTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MozQuitoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.thedistance.MozQuitoTests;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: The Distance (mobile) Limited (RA4PB2C3M4)";
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				INFOPLIST_FILE = PocketSEOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MozQuito.app/MozQuito";
+				PROVISIONING_PROFILE = "c5ecd5c4-4f71-4a6c-adb4-d6e2e8d9b52b";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
 			};
 			name = Release;
+		};
+		A5FB61E61C787BBA00E0BC9A /* Beta Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				INFOPLIST_FILE = PocketSEOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks \"${PROJECT_DIR}/Libraries/ThemeKit/${CONFIGURATION}\"";
+				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.PocketSEOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketSEOTests/PocketSEOTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketSEO.app/PocketSEO";
+			};
+			name = "Beta Testing";
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A58560DC1C7F3FFF005221B3 /* Build configuration list for PBXNativeTarget "URLDetailsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A58560D91C7F3FFF005221B3 /* Debug */,
+				A58560DA1C7F3FFF005221B3 /* Release */,
+				A58560DB1C7F3FFF005221B3 /* Beta Testing */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Beta Testing";
+		};
 		A5F4E6631C50E0FD0099010C /* Build configuration list for PBXProject "MozQuito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5F4E6831C50E0FD0099010C /* Debug */,
 				A5F4E6841C50E0FD0099010C /* Release */,
+				A5F4E6A41C5112450099010C /* Beta Testing */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Beta Testing";
 		};
-		A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuito" */ = {
+		A5F4E6851C50E0FD0099010C /* Build configuration list for PBXNativeTarget "PocketSEO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5F4E6861C50E0FD0099010C /* Debug */,
 				A5F4E6871C50E0FD0099010C /* Release */,
+				A5F4E6A51C5112450099010C /* Beta Testing */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Beta Testing";
 		};
-		A5F4E6881C50E0FD0099010C /* Build configuration list for PBXNativeTarget "MozQuitoTests" */ = {
+		A5FB61E31C787BBA00E0BC9A /* Build configuration list for PBXNativeTarget "PocketSEOTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5F4E6891C50E0FD0099010C /* Debug */,
-				A5F4E68A1C50E0FD0099010C /* Release */,
+				A5FB61E41C787BBA00E0BC9A /* Debug */,
+				A5FB61E51C787BBA00E0BC9A /* Release */,
+				A5FB61E61C787BBA00E0BC9A /* Beta Testing */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Beta Testing";
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Afu-k5-dMT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Extension URL Details View Controller-->
+        <scene sceneID="oPx-CL-tjW">
+            <objects>
+                <viewController storyboardIdentifier="URLExtensionDetailsVC" automaticallyAdjustsScrollViewInsets="NO" id="7aB-AY-CJQ" customClass="MZExtensionURLDetailsViewController" customModule="URLDetailsExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RVK-Wa-yYy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dsa-Dg-23P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QeP-HZ-BLA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5F-VA-Qbn">
+                                <rect key="frame" x="0.0" y="128" width="320" height="440"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-D7-Toe" customClass="ThemeView" customModule="URLDetailsExtension" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UF2-YH-e5g">
+                                        <rect key="frame" x="0.0" y="72" width="320" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="JRd-Km-zQp"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tsB-h8-4pU">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UF2-YH-e5g" secondAttribute="trailing" id="BGU-nr-50Y"/>
+                                    <constraint firstItem="UF2-YH-e5g" firstAttribute="leading" secondItem="DKq-D7-Toe" secondAttribute="leading" id="Zd4-YN-gOj"/>
+                                    <constraint firstAttribute="bottom" secondItem="UF2-YH-e5g" secondAttribute="bottom" id="wHL-aC-nXj"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="backgroundColourStyleId" value="Main"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact">
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UF2-YH-e5g" firstAttribute="top" secondItem="RVK-Wa-yYy" secondAttribute="bottom" constant="8" id="CPE-BU-H6n"/>
+                            <constraint firstAttribute="trailing" secondItem="DKq-D7-Toe" secondAttribute="trailing" id="EH3-0J-DcH"/>
+                            <constraint firstItem="y5F-VA-Qbn" firstAttribute="top" secondItem="DKq-D7-Toe" secondAttribute="bottom" id="Etp-q9-0XQ"/>
+                            <constraint firstItem="DKq-D7-Toe" firstAttribute="top" secondItem="QeP-HZ-BLA" secondAttribute="top" id="OK6-11-1wa"/>
+                            <constraint firstItem="y5F-VA-Qbn" firstAttribute="leading" secondItem="QeP-HZ-BLA" secondAttribute="leading" id="Rhb-hL-OQq"/>
+                            <constraint firstAttribute="trailing" secondItem="y5F-VA-Qbn" secondAttribute="trailing" id="W9U-DV-8Vi"/>
+                            <constraint firstItem="DKq-D7-Toe" firstAttribute="leading" secondItem="QeP-HZ-BLA" secondAttribute="leading" id="yZ0-Cs-rlx"/>
+                            <constraint firstItem="Dsa-Dg-23P" firstAttribute="top" secondItem="y5F-VA-Qbn" secondAttribute="bottom" id="ydP-Uz-IqE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kfS-9C-OAj"/>
+                    <connections>
+                        <outlet property="headerBackgroundView" destination="DKq-D7-Toe" id="bh0-ZV-vKq"/>
+                        <outlet property="pageContainer" destination="y5F-VA-Qbn" id="64i-nJ-bv9"/>
+                        <outlet property="pageControl" destination="UF2-YH-e5g" id="p6l-aJ-yMU"/>
+                        <outlet property="pageControlHeightConstraint" destination="JRd-Km-zQp" id="d87-1e-fgp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFZ-KO-uu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="425"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jqs-nv-f5u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Afu-k5-dMT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ao1-7N-OOm" customClass="ThemeNavigationBar" customModule="URLDetailsExtension" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="LightText"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Title"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="LightText"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7aB-AY-CJQ" kind="relationship" relationship="rootViewController" id="oI2-We-ei4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgV-BX-b3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="425"/>
+        </scene>
+    </scenes>
+</document>

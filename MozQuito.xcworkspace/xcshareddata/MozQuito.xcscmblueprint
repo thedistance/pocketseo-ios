@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5B5B76590D2E278C02A7AEC720BE6A622F7661A5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2B5C8C4FE519356928A8451B901B37371565B49D" : 0,
+    "88B77B9FB810D126A3C04FBF9F5E647DB6A05416" : 0,
+    "5B5B76590D2E278C02A7AEC720BE6A622F7661A5" : 0,
+    "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1" : 0,
+    "0A416A89222000977E3236F80C477D618054091C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1DCF8875-74CC-4AE7-9038-30393CC02711",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2B5C8C4FE519356928A8451B901B37371565B49D" : "mozquito-ios\/Libraries\/StackView\/",
+    "88B77B9FB810D126A3C04FBF9F5E647DB6A05416" : "mozquito-ios\/Libraries\/ViperKit\/",
+    "5B5B76590D2E278C02A7AEC720BE6A622F7661A5" : "mozquito-ios\/",
+    "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1" : "mozquito-ios\/Libraries\/JCPageViewController\/",
+    "0A416A89222000977E3236F80C477D618054091C" : "mozquito-ios\/Libraries\/TheDistanceCore\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MozQuito",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MozQuito.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/thedistancecore.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A416A89222000977E3236F80C477D618054091C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:joshcampion89\/stackview.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B5C8C4FE519356928A8451B901B37371565B49D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/mozquito-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5B5B76590D2E278C02A7AEC720BE6A622F7661A5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/viperkit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "88B77B9FB810D126A3C04FBF9F5E647DB6A05416"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:joshcampion89\/jcpageviewcontroller.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E0807240A9779E7AD9E875F956D7B2FFB52BE7A1"
+    }
+  ]
+}
