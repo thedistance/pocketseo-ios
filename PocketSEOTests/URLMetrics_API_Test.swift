@@ -38,8 +38,6 @@ class URLMetrics_API_Test: AdvancedOperationTestCase, ViperTesting {
             return
         }
         
-        XCTAssertNotNil(returnedMetrics.title, "Missing Title")
-        XCTAssertNotNil(returnedMetrics.canonicalURL, "Missing CanonicalURL")
         XCTAssertNotNil(returnedMetrics.HTTPStatusCode, "Missing HTTPStatusCode")
         XCTAssertNotNil(returnedMetrics.pageAuthority, "Missing PageAuthority")
         XCTAssertNotNil(returnedMetrics.domainAuthority, "Missing DomainAuthority")

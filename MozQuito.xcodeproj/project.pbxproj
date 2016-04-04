@@ -60,6 +60,9 @@
 		A56072331CB2B009007F7E65 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FF01CB2631200888DFA /* DeviceKit.framework */; };
 		A56072341CB2B009007F7E65 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FF11CB2631200888DFA /* SwiftyJSON.framework */; };
 		A56072351CB2B009007F7E65 /* ThemeKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59E9FE81CB25F0500888DFA /* ThemeKitCore.framework */; };
+		A56072371CB2B43D007F7E65 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56072361CB2B43D007F7E65 /* Nimble.framework */; };
+		A56072391CB2B5B5007F7E65 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A56072361CB2B43D007F7E65 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A560723B1CB2B65A007F7E65 /* MozscapeMetrics.json in Resources */ = {isa = PBXBuildFile; fileRef = A560723A1CB2B65A007F7E65 /* MozscapeMetrics.json */; };
 		A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
 		A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */; };
 		A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */; };
@@ -233,6 +236,16 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A56072381CB2B5AE007F7E65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A56072391CB2B5B5007F7E65 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5FB62051C78B72C00E0BC9A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +307,8 @@
 		A56072251CB2AA11007F7E65 /* MozscapeNextUpdated.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MozscapeNextUpdated.json; sourceTree = "<group>"; };
 		A56072261CB2AA11007F7E65 /* thedistance-alexa.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "thedistance-alexa.xml"; sourceTree = "<group>"; };
 		A56072271CB2AA11007F7E65 /* thedistance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = thedistance.html; sourceTree = "<group>"; };
+		A56072361CB2B43D007F7E65 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Libraries/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		A560723A1CB2B65A007F7E65 /* MozscapeMetrics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MozscapeMetrics.json; sourceTree = "<group>"; };
 		A579DD7D1C845EB9006C0FB5 /* MZDistanceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceStack.swift; sourceTree = "<group>"; };
 		A579DD801C845EC9006C0FB5 /* MZDistanceApplicationStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceApplicationStack.swift; sourceTree = "<group>"; };
 		A579DD831C845ED4006C0FB5 /* MZDistanceExtensionStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZDistanceExtensionStack.swift; sourceTree = "<group>"; };
@@ -433,6 +448,7 @@
 				BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */,
 				A560722C1CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */,
 				A560722D1CB2B009007F7E65 /* ReactiveCocoaConvenience.framework in Frameworks */,
+				A56072371CB2B43D007F7E65 /* Nimble.framework in Frameworks */,
 				A560722E1CB2B009007F7E65 /* Components.framework in Frameworks */,
 				A560722F1CB2B009007F7E65 /* ReactiveCocoa.framework in Frameworks */,
 				A56072301CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire_SwiftyJSON.framework in Frameworks */,
@@ -575,6 +591,7 @@
 				A56072251CB2AA11007F7E65 /* MozscapeNextUpdated.json */,
 				A56072261CB2AA11007F7E65 /* thedistance-alexa.xml */,
 				A56072271CB2AA11007F7E65 /* thedistance.html */,
+				A560723A1CB2B65A007F7E65 /* MozscapeMetrics.json */,
 			);
 			path = URLMetrics;
 			sourceTree = "<group>";
@@ -649,6 +666,7 @@
 		A59E9FFA1CB2631600888DFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A56072361CB2B43D007F7E65 /* Nimble.framework */,
 				A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */,
 				A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */,
 				A59EA00B1CB277FF00888DFA /* Components.framework */,
@@ -929,6 +947,7 @@
 				A5FB61DA1C787BBA00E0BC9A /* Resources */,
 				204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */,
 				955999B786551A95197F6A24 /* Copy Pods Resources */,
+				A56072381CB2B5AE007F7E65 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1015,6 +1034,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A560723B1CB2B65A007F7E65 /* MozscapeMetrics.json in Resources */,
 				A560722A1CB2AA11007F7E65 /* thedistance-alexa.xml in Resources */,
 				A56072291CB2AA11007F7E65 /* MozscapeNextUpdated.json in Resources */,
 				A56072281CB2AA11007F7E65 /* MozscapeLastUpdated.json in Resources */,

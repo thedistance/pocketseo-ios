@@ -17,6 +17,8 @@ protocol URLStore {
     
     var mozscapeLastIndexedDatesURL:NSURL { get }
     var mozscapeNextIndexedDatesURL:NSURL { get }
+    
+    var alexaURL:NSURL { get }
 }
 
 extension String {
@@ -40,6 +42,7 @@ struct LiveURLStore:URLStore {
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     
+    let alexaURL = NSURL(string: BaseURL.Alexa.URLString)!
 }
 
 class APIManager {

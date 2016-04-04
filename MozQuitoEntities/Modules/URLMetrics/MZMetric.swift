@@ -9,6 +9,8 @@
 import Foundation
 import TheDistanceCore
 import SwiftyJSON
+import Components
+import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
 
 public enum MZMetricKey: String {
     case Title = "ut"
@@ -57,28 +59,16 @@ public enum MZMetricKey: String {
 
 public struct MZMozscapeMetrics {
     
-    init() throws {
-        let jsonInfo = [
-            "flan" : "en",
-            "fsplc" : 1413952826,
-            "pda" : 33.6962235544803,
-            "ut" : "",
-            "us" : 301,
-            "uu" : "thedistance.co.uk/",
-            "fsps" : 200,
-            "uid" : 793,
-            "fspf" : 0,
-            "fspsc" : 1,
-            "upa" : 41.97760739323027,
-            "uifq" : 107,
-            "fspp" : "http://thedistance.co.uk/ http://thedistance.co.uk/what-we-do/ecommerce/ http://thedistance.co.uk/services/ecommerce http://thedistance.co.uk/who-we-are/the-team/anthony-main http://thedistance.co.uk/anthony-main/"
-        ]
+    static func theDistanceMetrics() -> MZMozscapeMetrics {
         
-        try self.init(json: JSON(jsonInfo))
+        return MZMozscapeMetrics(HTTPStatusCode: 301,
+                  pageAuthority: 46.13596103561107,
+                  domainAuthority: 39.03236788583709,
+                  spamScore: 0,
+                  establishedLinksRoot: 86,
+                  establishedLinksTotal: 657)
     }
-    
-    public let title:String?
-    public let canonicalURL:NSURL?
+
     public let HTTPStatusCode:Int?
     
     public let pageAuthority:Double?
@@ -92,7 +82,9 @@ public struct MZMozscapeMetrics {
     
     public let establishedLinksRoot:Int?
     public let establishedLinksTotal:Int?
-    
+}
+
+extension MZMozscapeMetrics: JSONCreated {
     public init(json:JSON) throws {
         
         if let results = json.dictionary {
@@ -105,18 +97,14 @@ public struct MZMozscapeMetrics {
                     return nil
                 }
             }))
-
-            let title = keyResults[.Title]?.string
-            let canURL = keyResults[.CanonicalURL]?.URL
+            
             let http = keyResults[.HTTPStatusCode]?.int
             let pageAuth = keyResults[.PageAuthority]?.double
             let domainAuth = keyResults[.DomainAuthority]?.double
- 
+            
             let root = keyResults[.EstablishedLinksRootDomains]?.int
             let total = keyResults[.EstablishedLinksTotalLinks]?.int
             
-            self.title = title
-            self.canonicalURL = canURL
             self.HTTPStatusCode = http
             self.pageAuthority = pageAuth
             self.domainAuthority = domainAuth
@@ -131,11 +119,10 @@ public struct MZMozscapeMetrics {
             self.establishedLinksTotal = total
             
         } else {
-            
-            throw NSError(domain: .MozscapeError, code: .UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: "url-metrics response json in unexpected format. Expected Dictionary. Got\n\(json)"])
-            
+            throw NSError.unexpectedTypeErrorForJSON(json, expectedType: .Dictionary)
         }
     }
+
 }
 
 public struct MZMozscapeIndexedDates {
@@ -172,92 +159,3 @@ public struct MZMozscapeIndexedDates {
         return info
     }
 }
-
-/*
-
-enum MZMetricValueType: Equatable {
-case ValueAbsolute(Double)
-case ValueOutOf(Double, Double)
-case StringMetric(String)
-case DateMetric(NSDate)
-}
-
-func ==(v1:MZMetricValueType, v2:MZMetricValueType) -> Bool {
-
-switch (v1, v2) {
-case (.ValueAbsolute(let a1), .ValueAbsolute(let a2)):
-return a1 == a2
-case (.ValueOutOf(let a1, let t1), .ValueOutOf(let a2, let t2)):
-return a1 == a2 && t1 == t2
-case (.StringMetric(let a1), .StringMetric(let a2)):
-return a1 == a2
-case (.DateMetric(let a1), .DateMetric(let a2)):
-return a1 == a2
-default:
-return false
-}
-}
-
-
-struct MZMetric {
-
-let key:MZMetricKey
-let value:MZMetricValueType
-
-init(key:MZMetricKey, value:MZMetricValueType) {
-self.key = key
-self.value = value
-}
-
-init?(keyString:String, value:JSON) throws {
-
-if let key = MZMetricKey(rawValue: keyString) {
-
-let metricValue:MZMetricValueType
-
-switch (key) {
-case .Title, .CanonicalURL:
-
-if let str = value.string {
-metricValue = .StringMetric(str)
-} else {
-throw NSError(InitUnexpectedResponseWithDescription: "expected String with \"\(key)\", got: \(value)")
-}
-
-case .ExternalEquityLinks:
-
-if let count = value.double {
-metricValue = .ValueAbsolute(count)
-} else {
-throw NSError(InitUnexpectedResponseWithDescription: "expected Number with \"\(key)\", got: \(value)")
-}
-
-case .MozRankURL:
-<#statement#>
-case .MozRankSubdomain:
-<#statement#>
-case .HTTPStatusCode:
-<#statement#>
-case .PageAuthority:
-<#statement#>
-case .DomainAuthroirty:
-<#statement#>
-case .SpamScore:
-<#statement#>
-case .TimeLastCrawled:
-<#statement#>
-case .EstablishedLinksRootDomains:
-<#statement#>
-case .EstablishedLinksTotalLinks:
-<#statement#>
-}
-
-} else {
-
-throw NSError(InitUnexpectedResponseWithDescription: "Unknown metric \"\(keyString)\" with value: \(value)")
-
-}
-
-}
-}
-*/

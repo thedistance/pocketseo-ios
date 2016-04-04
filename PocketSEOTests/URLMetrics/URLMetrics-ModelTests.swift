@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Nimble
+import SwiftyJSON
 
 @testable import PocketSEO
 
@@ -24,34 +26,51 @@ class URLMetrics_ModelTests: XCTestCase {
         super.tearDown()
     }
     
+    func testMozscapeMetaData() {
+        
+        let jsonData = NSData(contentsOfURL: urlStore.mozscapeMetricsURLForRequest("")!)!
+        let returnedMetrics = try? MZMozscapeMetrics(json: JSON(data: jsonData))
+        let testMetrics = MZMozscapeMetrics.theDistanceMetrics()
+        
+        expect(returnedMetrics?.HTTPStatusCode).to(equal(testMetrics.HTTPStatusCode))
+        expect(returnedMetrics?.pageAuthority).to(equal(testMetrics.pageAuthority))
+        expect(returnedMetrics?.domainAuthority).to(equal(testMetrics.domainAuthority))
+        expect(returnedMetrics?.spamScore).to(equal(testMetrics.spamScore))
+        expect(returnedMetrics?.establishedLinksRoot).to(equal(testMetrics.establishedLinksRoot))
+        expect(returnedMetrics?.establishedLinksTotal).to(equal(testMetrics.establishedLinksTotal))
+    }
+    
     func testHTMLMetaData() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        let htmlURL = urlStore.mozscapeMetricsURLForRequest("")!
+        let htmlURL = testBundle.URLForResource("thedistance", withExtension: "html")!
         
         let testMeta = MZHTMLMetaData.TheDistanceMetaData()
         let returnedMeta = try? MZHTMLMetaData(htmlData: NSData(contentsOfURL: htmlURL)!)
         
-        /*
-        XCTAssertEqual(returnedMeta?.title,                      testMeta.title,                     "Parsed title incorrectly.")
-        XCTAssertEqual(returnedMeta?.titleCharacterCount,        testMeta.titleCharacterCount,       "Parsed title cc incorrectly.")
-        XCTAssertEqual(returnedMeta?.description,                testMeta.description,               "Parsed description incorrectly.")
-        XCTAssertEqual(returnedMeta?.descriptionCharacterCount,  testMeta.descriptionCharacterCount, "Parsed description cc incorrectly.")
-        XCTAssertEqual(returnedMeta?.canonicalURL,               testMeta.canonicalURL,              "Parsed canonicalURL incorrectly.")
-        XCTAssertEqual(returnedMeta?.canonicalURLCharacterCount, testMeta.canonicalURLCharacterCount, "Parsed canonicalURLCharacterCount incorrectly.")
-        XCTAssertEqual(returnedMeta?.h1Tags,                     testMeta.h1Tags,                    "Parsed h1Tags incorrectly.")
-        XCTAssertEqual(returnedMeta?.h1TagsCharacterCount,       testMeta.h1TagsCharacterCount,      "Parsed h1TagsCharacterCount incorrectly.")
-        XCTAssertEqual(returnedMeta?.h2Tags,                     testMeta.h2Tags,                    "Parsed h2Tags incorrectly.")
-        XCTAssertEqual(returnedMeta?.h2TagsCharacterCount,       testMeta.h2TagsCharacterCount,      "Parsed h2TagsCharacterCount incorrectly.")
- */
+        expect(returnedMeta?.title).to(equal(testMeta.title))
+        expect(returnedMeta?.titleCharacterCount).to(equal(testMeta.titleCharacterCount))
+        expect(returnedMeta?.description).to(equal(testMeta.description))
+        expect(returnedMeta?.descriptionCharacterCount).to(equal(testMeta.descriptionCharacterCount))
+        expect(returnedMeta?.canonicalURL).to(equal(testMeta.canonicalURL))
+        expect(returnedMeta?.canonicalURLCharacterCount).to(equal(testMeta.canonicalURLCharacterCount))
+        expect(returnedMeta?.h1Tags).to(equal(testMeta.h1Tags))
+        expect(returnedMeta?.h1TagsCharacterCount).to(equal(testMeta.h1TagsCharacterCount))
+        expect(returnedMeta?.h2Tags).to(equal(testMeta.h2Tags))
+        expect(returnedMeta?.h2TagsCharacterCount).to(equal(testMeta.h2TagsCharacterCount))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testAlexaData() {
+        
+        let alexaData = NSData(contentsOfURL: urlStore.alexaURL)!
+        
+        let returnedAlexa = try? MZAlexaData(xmlData: alexaData)
+        let testAlexa = MZAlexaData.TheDistanceAlexaData()
+        
+        expect(returnedAlexa?.popularityText).to(equal(testAlexa.popularityText))
+        expect(returnedAlexa?.reachRank).to(equal(testAlexa.reachRank))
+        expect(returnedAlexa?.rankDelta).to(equal(testAlexa.rankDelta))
     }
     
 }

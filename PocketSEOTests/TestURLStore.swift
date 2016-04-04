@@ -15,10 +15,11 @@ let testBundle = NSBundle(forClass: TestURLStore.self)
 class TestURLStore:NSObject, URLStore {
  
     func mozscapeMetricsURLForRequest(request: String) -> NSURL? {
-        return testBundle.URLForResource("thedistance", withExtension: "html")
+        return testBundle.URLForResource("MozscapeMetrics", withExtension: "json")
     }
     
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     
+    let alexaURL = testBundle.URLForResource("thedistance-alexa", withExtension: "xml")!
 }
