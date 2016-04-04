@@ -1,6 +1,5 @@
 github "Alamofire/Alamofire"
 github "SwiftyJSON/SwiftyJSON"
-
-github "topfunky/hpple"
-
 github "dennisweissmann/DeviceKit"
+
+git "git@bitbucket.org:thedistance/component-library-ios.git"
