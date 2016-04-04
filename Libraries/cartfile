@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire"
+github "SwiftyJSON/SwiftyJSON"
+
+github "topfunky/hpple"
+
+github "dennisweissmann/DeviceKit"
