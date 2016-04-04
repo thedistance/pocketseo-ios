@@ -8,6 +8,7 @@
 
 import UIKit
 import JCLocalization
+import Components
 
 class MZInputURLDetailsViewController: MZURLDetailsViewController {
 
@@ -96,7 +97,7 @@ extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {
         guard let url = NSURL(string: LocalizedString(.TheDistanceContactWebsiteURL)) else { return }
         
         let websiteEvent = AnalyticEvent(category: .Meta, action: .viewDistanceWebsite, label: nil)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(websiteEvent)
+        AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(websiteEvent)
         
         self.openURL(url, fromSourceItem: .View(sender))
     }

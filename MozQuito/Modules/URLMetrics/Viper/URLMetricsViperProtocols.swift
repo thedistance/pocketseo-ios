@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import ViperKit
+//import ViperKit
 //import PocketSEOEntities
 
 /// Protocol defining the methods required on an object to provide network results to a `URLMetricsPresenter`.
-protocol URLMetricsInteractor: VIPERInteractor {
+protocol URLMetricsInteractor {
     
     /**
 
@@ -55,7 +55,7 @@ protocol URLMetricsInteractor: VIPERInteractor {
 }
 
 /// Protocol defining the methods available to request by a `URLMetricsView`, and methods available to a `URLMetricsInteractor` to report results. All results should be reported to a `URLMetricsView`.
-protocol URLMetricsPresenter: VIPERPresenter {
+protocol URLMetricsPresenter {
 
     /// Typically called from a `URLMetricsView` this should refresh the metrics for a `String` typically user entered.
     func refreshMetricsForURLString(urlString:String)
@@ -87,7 +87,7 @@ protocol URLMetricsPresenter: VIPERPresenter {
 }
 
 /// Protocol defining the methods required on a object to respond to results from a `URLMetricsPresenter`.
-protocol URLMetricsView: VIPERView {
+protocol URLMetricsView: class {
     
     /// Should update the UI to show the given metrics.
     func showMozscapeMetrics(metrics:MZMozscapeMetrics)

@@ -13,6 +13,8 @@ import ThemeKitCore
 import JCPageViewController
 import TheDistanceCore
 
+import Components
+
 import MessageUI
 import JCLocalization
 import DeviceKit
@@ -70,7 +72,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         if let url = NSURL(string: str) {
             
             let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
-            AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(openEvent)
+            AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
             
             self.openURL(url, fromSourceItem: .View(sender))
         }
