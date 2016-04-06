@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0FB0871CB41DA3001614BE /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0861CB41DA3001614BE /* LinksViewModel.swift */; };
+		5E0FB0891CB50024001614BE /* MZLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0881CB50024001614BE /* MZLinksViewController.swift */; };
+		5E0FB08B1CB50096001614BE /* Links.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FB08A1CB50096001614BE /* Links.storyboard */; };
+		5E0FB08D1CB5017B001614BE /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */; };
+		5E3085131CB3D76A00F89EB7 /* MozscapeLinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3085121CB3D76A00F89EB7 /* MozscapeLinks.json */; };
+		5E3085181CB401A200F89EB7 /* Links-ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */; };
+		5E3085191CB4098C00F89EB7 /* MZLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085151CB3D95500F89EB7 /* MZLinks.swift */; };
+		5E30851A1CB4098D00F89EB7 /* MZLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085151CB3D95500F89EB7 /* MZLinks.swift */; };
+		5E93715D1CB53B7F009C8248 /* Links.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FB08A1CB50096001614BE /* Links.storyboard */; };
+		5E93715E1CB53B8B009C8248 /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0861CB41DA3001614BE /* LinksViewModel.swift */; };
+		5E93715F1CB53B8E009C8248 /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */; };
+		5E9371601CB53BB0009C8248 /* MZLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0881CB50024001614BE /* MZLinksViewController.swift */; };
+		5EA09B931CB3BDB000E3C5F3 /* Links-APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA09B921CB3BDB000E3C5F3 /* Links-APIManagerTests.swift */; };
 		9A8374654599FC9832D9C0E1 /* Pods_PocketSEO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939DC3C92237C49642BD66DA /* Pods_PocketSEO.framework */; };
 		9E161B61FECA8E5B857D47EA /* Pods_URLDetailsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7484853E007FBEB9AC2BC70 /* Pods_URLDetailsExtension.framework */; };
 		A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -281,6 +294,14 @@
 		4AA0996214303769C26C0AC1 /* Pods_PocketSEOEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEOEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5077DAD3CD18E184FEAEA979 /* Pods-PocketSEO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEO.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEO/Pods-PocketSEO.release.xcconfig"; sourceTree = "<group>"; };
 		58208ADF763EB5D6187D050F /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0FB0861CB41DA3001614BE /* LinksViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinksViewModel.swift; path = "Modules/Links/View Models/LinksViewModel.swift"; sourceTree = "<group>"; };
+		5E0FB0881CB50024001614BE /* MZLinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksViewController.swift; path = "Modules/Links/View Controller/MZLinksViewController.swift"; sourceTree = "<group>"; };
+		5E0FB08A1CB50096001614BE /* Links.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Links.storyboard; sourceTree = "<group>"; };
+		5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinksTableViewCell.swift; path = Modules/Links/Views/LinksTableViewCell.swift; sourceTree = "<group>"; };
+		5E3085121CB3D76A00F89EB7 /* MozscapeLinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MozscapeLinks.json; path = Links/MozscapeLinks.json; sourceTree = "<group>"; };
+		5E3085151CB3D95500F89EB7 /* MZLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinks.swift; path = Modules/Links/MZLinks.swift; sourceTree = "<group>"; };
+		5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Links-ModelTests.swift"; path = "Links/Links-ModelTests.swift"; sourceTree = "<group>"; };
+		5EA09B921CB3BDB000E3C5F3 /* Links-APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Links-APIManagerTests.swift"; path = "Links/Links-APIManagerTests.swift"; sourceTree = "<group>"; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
 		939DC3C92237C49642BD66DA /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -485,6 +506,73 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5E3085141CB3D91B00F89EB7 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				5E3085151CB3D95500F89EB7 /* MZLinks.swift */,
+			);
+			name = Links;
+			sourceTree = "<group>";
+		};
+		5EA09B8B1CB3AED900E3C5F3 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				5EA09B8F1CB3AF1C00E3C5F3 /* Models */,
+				5EA09B8C1CB3AEE600E3C5F3 /* View Models */,
+				5EA09B901CB3AF3400E3C5F3 /* Views */,
+				5EA09B8D1CB3AEEF00E3C5F3 /* View Controllers */,
+			);
+			name = Links;
+			sourceTree = "<group>";
+		};
+		5EA09B8C1CB3AEE600E3C5F3 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E0FB0861CB41DA3001614BE /* LinksViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		5EA09B8D1CB3AEEF00E3C5F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E0FB0881CB50024001614BE /* MZLinksViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5EA09B8F1CB3AF1C00E3C5F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5EA09B901CB3AF3400E3C5F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5EA09B911CB3BD8100E3C5F3 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				5EA09B921CB3BDB000E3C5F3 /* Links-APIManagerTests.swift */,
+				5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */,
+			);
+			name = Links;
+			sourceTree = "<group>";
+		};
+		5EA09B941CB3C05B00E3C5F3 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				5E3085121CB3D76A00F89EB7 /* MozscapeLinks.json */,
+			);
+			name = Links;
+			sourceTree = "<group>";
+		};
 		69D7909DEAB1572C76C0D2F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +725,7 @@
 		A59626D91C52743E0076147C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5EA09B8B1CB3AED900E3C5F3 /* Links */,
 				A505BA441C567017004F2607 /* URL Metrics */,
 				A59626DA1C5274460076147C /* Analytics */,
 				A596270D1C528C300076147C /* Core */,
@@ -662,6 +751,7 @@
 				A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */,
 				A59E9FE51CB25E6A00888DFA /* Test.storyboard */,
 				A57DBA121C59009500F246C2 /* URLDetails.storyboard */,
+				5E0FB08A1CB50096001614BE /* Links.storyboard */,
 				A58561231C80557F005221B3 /* App.storyboard */,
 			);
 			name = Storyboards;
@@ -746,6 +836,7 @@
 			children = (
 				A5ECBD681C5BA52F003350E3 /* MozQuitoEntities.h */,
 				A5ECBD901C5BA5FD003350E3 /* Core */,
+				5E3085141CB3D91B00F89EB7 /* Links */,
 				A5ECBD891C5BA5B2003350E3 /* URLMetrics */,
 				A5ECBD6A1C5BA52F003350E3 /* Info.plist */,
 			);
@@ -880,6 +971,7 @@
 				A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */,
 				A560721D1CB2A868007F7E65 /* TestURLStore.swift */,
 				A560721A1CB2A811007F7E65 /* URLMetrics */,
+				5EA09B911CB3BD8100E3C5F3 /* Links */,
 				A5FB61E01C787BBA00E0BC9A /* Info.plist */,
 			);
 			path = PocketSEOTests;
@@ -898,6 +990,7 @@
 		A5FB61E91C787BDF00E0BC9A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5EA09B941CB3C05B00E3C5F3 /* Links */,
 				A56072231CB2AA11007F7E65 /* URLMetrics */,
 			);
 			path = Resources;
@@ -1024,6 +1117,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E93715D1CB53B7F009C8248 /* Links.storyboard in Resources */,
 				A58560DE1C7F4883005221B3 /* URLDetails.storyboard in Resources */,
 				A58561261C805D66005221B3 /* Assets.xcassets in Resources */,
 				A59E9FE71CB25E6A00888DFA /* Test.storyboard in Resources */,
@@ -1037,6 +1131,7 @@
 			files = (
 				A579DD8D1C847001006C0FB5 /* Settings.bundle in Resources */,
 				A505BA431C56512E004F2607 /* Beta Testing Release Notes.txt in Resources */,
+				5E0FB08B1CB50096001614BE /* Links.storyboard in Resources */,
 				A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */,
 				A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */,
 				A58561251C80557F005221B3 /* App.storyboard in Resources */,
@@ -1054,6 +1149,7 @@
 				A560722A1CB2AA11007F7E65 /* thedistance-alexa.xml in Resources */,
 				A56072291CB2AA11007F7E65 /* MozscapeNextUpdated.json in Resources */,
 				A56072281CB2AA11007F7E65 /* MozscapeLastUpdated.json in Resources */,
+				5E3085131CB3D76A00F89EB7 /* MozscapeLinks.json in Resources */,
 				A560722B1CB2AA11007F7E65 /* thedistance.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1296,7 +1392,9 @@
 				A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */,
 				A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */,
 				A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */,
+				5E9371601CB53BB0009C8248 /* MZLinksViewController.swift in Sources */,
 				A508D8CA1C80ABCA0099BBD4 /* MZRootWireframe.swift in Sources */,
+				5E93715E1CB53B8B009C8248 /* LinksViewModel.swift in Sources */,
 				A58560F51C7F48D4005221B3 /* MZStoryboardLoader.swift in Sources */,
 				A579DD851C845ED4006C0FB5 /* MZDistanceExtensionStack.swift in Sources */,
 				A58560F61C7F48D4005221B3 /* MZErrors.swift in Sources */,
@@ -1320,6 +1418,7 @@
 				A58561071C7F48D4005221B3 /* ThemeTabBar.swift in Sources */,
 				A58561081C7F48D4005221B3 /* ThemeTabBarItem.swift in Sources */,
 				A58561091C7F48D4005221B3 /* ThemeToolbar.swift in Sources */,
+				5E30851A1CB4098D00F89EB7 /* MZLinks.swift in Sources */,
 				A585610A1C7F48D4005221B3 /* ThemeLabel.swift in Sources */,
 				A58561221C804B14005221B3 /* MZURLInputView.swift in Sources */,
 				A585610B1C7F48D4005221B3 /* ThemeTextField.swift in Sources */,
@@ -1328,6 +1427,7 @@
 				A585610E1C7F48D4005221B3 /* ThemeView.swift in Sources */,
 				A585610F1C7F48D4005221B3 /* MZPanel.swift in Sources */,
 				A58561121C7F48D4005221B3 /* ErrorStack.swift in Sources */,
+				5E93715F1CB53B8E009C8248 /* LinksTableViewCell.swift in Sources */,
 				A579DD7F1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */,
 				A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */,
 				A59E9FE01CB25E6200888DFA /* AnalyticEntities.swift in Sources */,
@@ -1355,6 +1455,7 @@
 				A5F4E66C1C50E0FD0099010C /* AppDelegate.swift in Sources */,
 				A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */,
 				A50BD3AF1C75E29500E7A07F /* ThemeSegmentedControl.swift in Sources */,
+				5E0FB0871CB41DA3001614BE /* LinksViewModel.swift in Sources */,
 				A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */,
 				A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */,
 				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
@@ -1366,7 +1467,9 @@
 				A5EA9A921C5686FB004CC9EF /* MZURLMetricsPresenter.swift in Sources */,
 				A59EA0141CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */,
 				A50BD3991C75E28500E7A07F /* MZMetric.swift in Sources */,
+				5E0FB0891CB50024001614BE /* MZLinksViewController.swift in Sources */,
 				A58561211C7F65B3005221B3 /* MZInputURLDetailsViewController.swift in Sources */,
+				5E0FB08D1CB5017B001614BE /* LinksTableViewCell.swift in Sources */,
 				A59E9FE31CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */,
 				A50BD3B41C75E29500E7A07F /* ThemeNavigationBar.swift in Sources */,
 				A50BD3B01C75E29500E7A07F /* ThemeSlider.swift in Sources */,
@@ -1380,6 +1483,7 @@
 				A50BD3AE1C75E29500E7A07F /* ThemeButton.swift in Sources */,
 				A50BD38C1C75E24E00E7A07F /* ThemeTextViewStack.swift in Sources */,
 				A50BD3B21C75E29500E7A07F /* ThemeSwitch.swift in Sources */,
+				5E3085191CB4098C00F89EB7 /* MZLinks.swift in Sources */,
 				A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
 				A579DD7E1C845EB9006C0FB5 /* MZDistanceStack.swift in Sources */,
 				A5F46D231C7DB1AD001417F3 /* MZExpandingStack.swift in Sources */,
@@ -1423,9 +1527,11 @@
 				A56072421CB2C84A007F7E65 /* MozscapeViewModelTests.swift in Sources */,
 				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
 				A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */,
+				5E3085181CB401A200F89EB7 /* Links-ModelTests.swift in Sources */,
 				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
 				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,
 				A560721C1CB2A833007F7E65 /* URLMetrics-ModelTests.swift in Sources */,
+				5EA09B931CB3BDB000E3C5F3 /* Links-APIManagerTests.swift in Sources */,
 				A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */,
 				A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */,
 			);
