@@ -38,7 +38,7 @@ class URLMetrics_NoNetwork_Tests: AdvancedOperationTestCase {
             meta = responseMeta
         }
         
-        registerAndRunOperation(parseOperation, named: __FUNCTION__) { (operation, errors) -> () in
+        registerAndRunOperation(parseOperation, named: #function) { (operation, errors) -> () in
             XCTAssertEqual(errors.count, 0, "Failed to parse test html: \(errors)")
         }
         

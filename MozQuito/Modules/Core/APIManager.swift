@@ -21,6 +21,8 @@ protocol URLStore {
     var mozscapeNextIndexedDatesURL:NSURL { get }
     
     var alexaURL:NSURL { get }
+    
+    func backlinksURLForRequest(request:String, page:UInt) -> NSURL?
 }
 
 extension String {
@@ -45,6 +47,10 @@ struct LiveURLStore:URLStore {
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     
     let alexaURL = NSURL(string: BaseURL.Alexa.URLString)!
+    
+    func backlinksURLForRequest(request:String, page:UInt) -> NSURL? {
+        return nil
+    }
 }
 
 class APIManager {
@@ -65,6 +71,27 @@ class APIManager {
         
         return authenticatedParameters
     }
+    
+    func linksForString(requestURLString:String, page:UInt, count:UInt = 25) -> SignalProducer<[BackLink], NSError> {
+        
+        let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
+        let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
+        
+        
+        let urlString = urlStore.mozscapeMetricsURLForRequest(requestURLString)?.absoluteString ?? ""
+        
+        return Alamofire.request(.GET, urlString,
+            parameters: authenticationParameters(["Cols": "\(colsValue)", "Limit": count, "Page": page]),
+            encoding: .URL,
+            headers: nil)
+            .validate()
+            .rac_responseArraySwiftyJSONCreated()
+            .map({ $0.1 })
+            .flatMapError({ (error) -> SignalProducer<[BackLink], NSError> in
+                return SignalProducer(error: error.userFacingError())
+            })
+    }
+
     
     func mozscapeURLMetricsForString(requestURLString:String) -> SignalProducer<MZMozscapeMetrics, NSError> {
         

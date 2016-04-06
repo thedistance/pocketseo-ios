@@ -42,6 +42,8 @@
 		A50BD3BA1C75E29500E7A07F /* ThemeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */; };
 		A50BD3BB1C75E29500E7A07F /* ThemeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */; };
 		A50BD3BC1C75E29500E7A07F /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50BD3AD1C75E29500E7A07F /* ThemeView.swift */; };
+		A55AB9911CB5644A00F462A4 /* BackLinks-APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AB9901CB5644A00F462A4 /* BackLinks-APIManagerTests.swift */; };
+		A55AB9951CB5672B00F462A4 /* BackLinks-ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55AB9941CB5672B00F462A4 /* BackLinks-ViewModelTests.swift */; };
 		A56072171CB2A184007F7E65 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56072161CB2A184007F7E65 /* APIManager.swift */; };
 		A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */; };
 		A560721C1CB2A833007F7E65 /* URLMetrics-ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560721B1CB2A833007F7E65 /* URLMetrics-ModelTests.swift */; };
@@ -303,6 +305,8 @@
 		A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextView.swift; sourceTree = "<group>"; };
 		A50BD3AC1C75E29500E7A07F /* ThemeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImageView.swift; sourceTree = "<group>"; };
 		A50BD3AD1C75E29500E7A07F /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		A55AB9901CB5644A00F462A4 /* BackLinks-APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BackLinks-APIManagerTests.swift"; path = "BackLinks/BackLinks-APIManagerTests.swift"; sourceTree = "<group>"; };
+		A55AB9941CB5672B00F462A4 /* BackLinks-ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BackLinks-ViewModelTests.swift"; path = "BackLinks/BackLinks-ViewModelTests.swift"; sourceTree = "<group>"; };
 		A56072161CB2A184007F7E65 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Modules/Core/APIManager.swift; sourceTree = "<group>"; };
 		A56072181CB2A80D007F7E65 /* URLMetrics-APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLMetrics-APIManagerTests.swift"; path = "URLMetrics/URLMetrics-APIManagerTests.swift"; sourceTree = "<group>"; };
 		A560721B1CB2A833007F7E65 /* URLMetrics-ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLMetrics-ModelTests.swift"; path = "URLMetrics/URLMetrics-ModelTests.swift"; sourceTree = "<group>"; };
@@ -580,6 +584,15 @@
 				A50BD3AB1C75E29500E7A07F /* ThemeTextView.swift */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		A55AB98F1CB563BA00F462A4 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+				A55AB9901CB5644A00F462A4 /* BackLinks-APIManagerTests.swift */,
+				A55AB9941CB5672B00F462A4 /* BackLinks-ViewModelTests.swift */,
+			);
+			name = Links;
 			sourceTree = "<group>";
 		};
 		A560721A1CB2A811007F7E65 /* URLMetrics */ = {
@@ -879,6 +892,7 @@
 				A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */,
 				A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */,
 				A560721D1CB2A868007F7E65 /* TestURLStore.swift */,
+				A55AB98F1CB563BA00F462A4 /* Links */,
 				A560721A1CB2A811007F7E65 /* URLMetrics */,
 				A5FB61E01C787BBA00E0BC9A /* Info.plist */,
 			);
@@ -1421,7 +1435,9 @@
 				A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */,
 				A560721E1CB2A868007F7E65 /* TestURLStore.swift in Sources */,
 				A56072421CB2C84A007F7E65 /* MozscapeViewModelTests.swift in Sources */,
+				A55AB9951CB5672B00F462A4 /* BackLinks-ViewModelTests.swift in Sources */,
 				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
+				A55AB9911CB5644A00F462A4 /* BackLinks-APIManagerTests.swift in Sources */,
 				A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */,
 				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
 				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,

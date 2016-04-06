@@ -22,6 +22,10 @@ class TestURLStore:NSObject, URLStore {
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     
     let alexaURL = testBundle.URLForResource("thedistance-alexa", withExtension: "xml")!
+    
+    func backlinksURLForRequest(request:String, page:UInt) -> NSURL? {
+        return nil
+    }
 }
 
 class EmptyURLStore:NSObject, URLStore {
@@ -34,4 +38,8 @@ class EmptyURLStore:NSObject, URLStore {
     let mozscapeNextIndexedDatesURL = NSURL()
     
     let alexaURL = NSURL()
+    
+    func backlinksURLForRequest(request:String, page:UInt) -> NSURL? {
+        return nil
+    }
 }
