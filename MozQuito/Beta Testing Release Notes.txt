@@ -1,3 +1,7 @@
+Version 0.2:
+
+- Backlinks
+
 Version 0.1:
 
 - Project Set Up

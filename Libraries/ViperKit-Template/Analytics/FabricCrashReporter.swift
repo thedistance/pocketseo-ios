@@ -36,7 +36,7 @@ final class FabricCrashReportingInteractor: CrashReporter
         #if DEBUG
             print("Not starting Crashlytics in Debug")
         #else
-            if let canSend = preferences?.canSendCrashReports() where canSend {
+            if preferences.canSendCrashReports() {
                 FabricInitialiser.kits.append(Crashlytics())
             }
         #endif
