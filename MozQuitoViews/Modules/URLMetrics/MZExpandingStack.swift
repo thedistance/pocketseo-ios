@@ -33,7 +33,7 @@ public func ==(p1:PanelState, p2:PanelState) -> Bool {
 public class MZExpandingStack: CreatedStack {
     
     let loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-    let errorStack = ErrorStack(message: "")
+    let errorView = MZErrorView(image:UIImage(named:"Error"), message: "")
     
     let expandButton = ThemeButton(type: .System)
     private(set) var expandTarget:ObjectTarget<UIButton>?
@@ -80,13 +80,13 @@ public class MZExpandingStack: CreatedStack {
         expandingTitleStack = CreateStackView([titleView, expandButton])
         contentStack = CreateStackView(arrangedSubviews)
         
-        errorStack.stackView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.translatesAutoresizingMaskIntoConstraints = false
         errorContainer.backgroundColor = UIColor.clearColor()
-        errorContainer.addSubview(errorStack.stackView)
+        errorContainer.addSubview(errorView)
         
-        let alignConstrs = NSLayoutConstraint.constraintsToAlign(view: errorStack.stackView, to: errorContainer)
+        let alignConstrs = NSLayoutConstraint.constraintsToAlign(view: errorView, to: errorContainer)
         
-        let centerX = NSLayoutConstraint(item: errorStack.stackView,
+        let centerX = NSLayoutConstraint(item: errorView,
             attribute: .CenterX,
             relatedBy: .Equal,
             toItem: errorContainer,
@@ -94,7 +94,7 @@ public class MZExpandingStack: CreatedStack {
             multiplier: 1.0,
             constant: 0.0)
         
-        let width = NSLayoutConstraint(item: errorStack.stackView,
+        let width = NSLayoutConstraint(item: errorView,
             attribute: .Width,
             relatedBy: .Equal,
             toItem: nil,
@@ -137,7 +137,7 @@ public class MZExpandingStack: CreatedStack {
             errorContainer.hidden = false
             
             let ufError = error.userFacingError()
-            errorStack.message = [
+            errorView.label.text = [
                 ufError.localizedDescription,
                 ufError.localizedFailureReason,
                 ufError.localizedRecoverySuggestion

@@ -72,12 +72,6 @@ class MZDistanceView: MZPanel {
                 distanceStack.headingStack.axis = newAxis
             })
         }
-        
-        if distanceStack.buttonStack.axis != newAxis {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                distanceStack.buttonStack.axis = newAxis
-            })
-        }
 
     }
 }

@@ -19,7 +19,7 @@ protocol MZDistanceExtensionStackDelegate {
 
 class MZDistanceExtensionStack: MZDistanceStack {
     
-    let openInAppButton = MZButton()
+    let openInAppButton = MZButton(frame: CGRectMake(0,0,120,20))
     
     private(set) var openInAppTarget:ObjectTarget<UIButton>?
     

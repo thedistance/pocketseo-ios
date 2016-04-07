@@ -22,9 +22,9 @@ protocol MZDistanceApplicationStackDelegate {
 
 class MZDistanceApplicationStack: MZDistanceStack {
     
-    let getInTouchButton = MZButton()
-    let sendFeedbackButton = MZButton()
-    let visitWebsite = MZButton()
+    let getInTouchButton = MZButton(type: .System)
+    let sendFeedbackButton = MZButton(type: .System)
+    let visitWebsite = MZButton(type: .System)
     
     private(set) var getInTouchTarget:ObjectTarget<UIButton>?
     private(set) var feedbackTarget:ObjectTarget<UIButton>?

@@ -9,6 +9,7 @@
 import XCTest
 import Nimble
 import SwiftyJSON
+import Components
 
 @testable import PocketSEO
 

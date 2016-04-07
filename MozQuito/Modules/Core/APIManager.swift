@@ -11,11 +11,13 @@ import Foundation
 import Alamofire
 import ReactiveCocoa
 import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
+import SwiftyJSON
 import TheDistanceCore
 
 protocol URLStore {
     
     func mozscapeMetricsURLForRequest(request:String) -> NSURL?
+    func mozscapeLinksForRequest(request:String, page:UInt) -> NSURL?
     
     var mozscapeLastIndexedDatesURL:NSURL { get }
     var mozscapeNextIndexedDatesURL:NSURL { get }
@@ -41,10 +43,21 @@ struct LiveURLStore:URLStore {
         return NSURL(string:BaseURL.Mozscape + RequestPath.MozscapeURLMetrics)!.URLByAppendingPathComponent(requestURLString)
     }
     
+    func mozscapeLinksForRequest(request: String, page:UInt) -> NSURL? {
+        guard let requestURLString = request.stringByAddingURLPathEncoding()
+            else { return nil  }
+        
+        return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(requestURLString)
+    }
+    
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     
     let alexaURL = NSURL(string: BaseURL.Alexa.URLString)!
+    
+    func backlinksURLForRequest(request:String, page:UInt) -> NSURL? {
+        return nil
+    }
 }
 
 class APIManager {
@@ -82,6 +95,38 @@ class APIManager {
             .rac_responseSwiftyJSONCreated()
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NSError> in
+                return SignalProducer(error: error.userFacingError())
+            })
+    }
+    
+    // Backlinks
+    func mozscapeLinksForString(requestURLString:String, page:UInt, count:UInt = 25) -> SignalProducer<[MZMozscapeLinks], NSError> {
+        
+        let cols:[MZLinksKey] = [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore]
+        let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
+        
+        let urlString = urlStore.mozscapeLinksForRequest(requestURLString, page: page)?.absoluteString ?? ""
+        
+        //authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
+        
+        return Alamofire.request(.GET, urlString,
+//            parameters: authenticationParameters([
+//                "SourceCols": String(colsValue),
+//                "Sort":"page_authority",
+//                "Limit":"25",
+//                "Offset": "\(page * count)",
+//                "TargetCols": "4",
+//                "LinksCols": "8"]),
+            parameters: authenticationParameters(["Sort":"page_authority", "Limit":"25","Offset": "\(page * count)", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
+            encoding: .URL,
+            headers:  nil)
+            .validate()
+            .rac_responseArraySwiftyJSONCreated()
+            .on(next: { (json, _) in
+                print(json)
+            })
+            .map({ $0.1 })
+            .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
             })
     }

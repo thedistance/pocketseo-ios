@@ -19,7 +19,7 @@ target 'PocketSEO' do
     
     ### CORE PODS ###
     
-    pod 'TheDistanceCore', :git => 'git@bitbucket.org:thedistance/thedistancecore.git'
+    pod 'TheDistanceCore', '0.6'
     
     ### DISTRIBUTION PODS ###
     
@@ -52,7 +52,7 @@ target 'URLDetailsExtension' do
     
     ### CORE PODS ###
     
-    pod 'TheDistanceCore', :git => 'git@bitbucket.org:thedistance/thedistancecore.git'
+    pod 'TheDistanceCore', '0.6'
     
     ### DISTRIBUTION PODS ###
     

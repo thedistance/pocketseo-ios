@@ -28,6 +28,10 @@ public enum RequestPath: String, URLStringConvertible {
     case MozscapeIndexedLastDate = "metadata/last_update.json"
     case MozscapeIndexedNextDate = "metadata/next_update.json"
     
+    // --- Links --- \\
+    
+    case MozscapeLinks = "links"
+    
     public var URLString:String {
         return rawValue
     }

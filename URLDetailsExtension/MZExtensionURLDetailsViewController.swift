@@ -16,7 +16,7 @@ import Components
 
 class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanceExtensionStackDelegate {
     
-    let rootWireframe = MZRootWireframe()
+    let rootWireframe = MZRootWireframe(urlStore: LiveURLStore())
     
     // This is the launch point for the extension, application(_:didFinishLaunchingWithOptions:) does not get all in this context
     required init?(coder aDecoder: NSCoder) {

@@ -19,6 +19,8 @@ import MessageUI
 import JCLocalization
 import DeviceKit
 
+import ReactiveCocoa
+
 class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var headerBackgroundView:ThemeView!
@@ -26,11 +28,12 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     var urlString:String? {
         didSet {
             metricsVC?.urlString = urlString
+            linksVC?.urlString = urlString
         }
     }
     
     var metricsVC:MZURLMetricsViewController!
-    var linksVC:UIViewController!
+    var linksVC:MZLinksViewController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +48,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         super.viewDidLoad()
         
         // configure the JCPageViewController settings
-        viewControllers = [metricsVC]
+        viewControllers = [metricsVC,linksVC]
         
         (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
         pageContainer?.bounces = false
@@ -55,6 +58,8 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         headerBackgroundView?.layer.shadowRadius = 4.0
         headerBackgroundView?.layer.shadowOffset = CGSizeMake(0, 4.0)
         headerBackgroundView?.layer.shadowColor = UIColor.blackColor().CGColor
+        
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
