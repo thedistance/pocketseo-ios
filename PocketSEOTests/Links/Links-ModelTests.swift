@@ -28,7 +28,8 @@ class Links_ModelTests: XCTestCase {
     
     func testMozscapeLinkData() {
         
-        let jsonData = NSData(contentsOfURL: urlStore.mozscapeLinksForRequest("")!)!
+        let jsonData = NSData(contentsOfURL: testBundle.URLForResource("MozscapeLink", withExtension: "json")!)!
+        
         let returnedLinks = try? MZMozscapeLinks(json: JSON(data: jsonData))
         let testLinks = MZMozscapeLinks.theDistanceLinks()
         

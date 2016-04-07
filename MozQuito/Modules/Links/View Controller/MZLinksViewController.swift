@@ -42,11 +42,14 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         }
     }
     
-    var listDataSource:ListDataSource<String,[MZMozscapeLinks]>?
+    var listDataSource:ListDataSource<(urlRequest:String, nextPage:Bool),LinksOutput>?
     
     var urlString:String? {
         didSet {
-            viewModel?.refreshObserver.sendNext(urlString)
+            
+            if let request = urlString {
+                viewModel?.refreshObserver.sendNext((urlRequest:request, nextPage:false))
+            }
         }
     }
     
@@ -78,7 +81,11 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         
         let refresh = UIRefreshControl()
         refresh.rac_signalForControlEvents(.ValueChanged).toSignalProducer().startWithNext { _ in
-            self.viewModel?.refreshObserver.sendNext(self.urlString)
+            if let str = self.urlString {
+                self.urlString = str
+            } else {
+                refresh.endRefreshing()
+            }
         }
         
         tableView?.addSubview(refresh)

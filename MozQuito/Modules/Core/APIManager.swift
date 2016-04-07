@@ -17,14 +17,12 @@ import TheDistanceCore
 protocol URLStore {
     
     func mozscapeMetricsURLForRequest(request:String) -> NSURL?
-    func mozscapeLinksForRequest(request:String) -> NSURL?
+    func mozscapeLinksForRequest(request:String, page:UInt) -> NSURL?
     
     var mozscapeLastIndexedDatesURL:NSURL { get }
     var mozscapeNextIndexedDatesURL:NSURL { get }
     
     var alexaURL:NSURL { get }
-    
-    func backlinksURLForRequest(request:String, page:UInt) -> NSURL?
 }
 
 extension String {
@@ -45,7 +43,7 @@ struct LiveURLStore:URLStore {
         return NSURL(string:BaseURL.Mozscape + RequestPath.MozscapeURLMetrics)!.URLByAppendingPathComponent(requestURLString)
     }
     
-    func mozscapeLinksForRequest(request: String) -> NSURL? {
+    func mozscapeLinksForRequest(request: String, page:UInt) -> NSURL? {
         guard let requestURLString = request.stringByAddingURLPathEncoding()
             else { return nil  }
         
@@ -81,27 +79,6 @@ class APIManager {
         return authenticatedParameters
     }
     
-    func linksForString(requestURLString:String, page:UInt, count:UInt = 25) -> SignalProducer<[BackLink], NSError> {
-        
-        let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
-        let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
-        
-        
-        let urlString = urlStore.mozscapeMetricsURLForRequest(requestURLString)?.absoluteString ?? ""
-        
-        return Alamofire.request(.GET, urlString,
-            parameters: authenticationParameters(["Cols": "\(colsValue)", "Limit": count, "Page": page]),
-            encoding: .URL,
-            headers: nil)
-            .validate()
-            .rac_responseArraySwiftyJSONCreated()
-            .map({ $0.1 })
-            .flatMapError({ (error) -> SignalProducer<[BackLink], NSError> in
-                return SignalProducer(error: error.userFacingError())
-            })
-    }
-
-    
     func mozscapeURLMetricsForString(requestURLString:String) -> SignalProducer<MZMozscapeMetrics, NSError> {
         
         let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
@@ -123,19 +100,23 @@ class APIManager {
     }
     
     // Backlinks
-    func mozscapeLinksForString(requestURLString:String) -> SignalProducer<[MZMozscapeLinks], NSError> {
+    func mozscapeLinksForString(requestURLString:String, page:UInt, count:UInt = 25) -> SignalProducer<[MZMozscapeLinks], NSError> {
         
         let cols:[MZLinksKey] = [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore, .AnchorText]
         let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
         
-        let urlString = urlStore.mozscapeLinksForRequest(requestURLString)?.absoluteString ?? ""
+        let urlString = urlStore.mozscapeLinksForRequest(requestURLString, page: page)?.absoluteString ?? ""
         
         //authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
-
-        //authenticationParameters(["SourceCols": String(colsValue), "Sort":"page_authority", "Limit":"25", "TargetCols": "4"]),
         
         return Alamofire.request(.GET, urlString,
-            parameters: authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
+            parameters: authenticationParameters([
+                "SourceCols": String(colsValue),
+                "Sort":"page_authority",
+                "Limit":"25",
+                "Offset": "\(page * count)",
+                "TargetCols": "4",
+                "LinksCols": "8"]),
             encoding: .URL,
             headers:  nil)
             .validate()
