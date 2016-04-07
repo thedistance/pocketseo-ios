@@ -25,9 +25,14 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<String, [MZMozscapeLinks]>
     
     override func loadingProducerWithInput(input: String?) -> SignalProducer<[MZMozscapeLinks], NSError> {
         
-        let linksProducer = apiManager.mozscapeLinksForString(input ?? "")
-        
-        return linksProducer
+        if let requestURL = input where !requestURL.isEmpty {
+            
+            let linksProducer = apiManager.mozscapeLinksForString(requestURL)
+            return linksProducer
+            
+        } else {
+            return SignalProducer(value: [])
+        }
     }
     
 }

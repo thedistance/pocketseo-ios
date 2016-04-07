@@ -45,7 +45,7 @@ public struct MZMozscapeLinks: ContentEquatable {
     public let canonicalURL:NSURL?
     public let pageAuthority:Double?
     public let domainAuthority:Double?
-    public let spamScore:Double?
+    public let spamScore:SpamScore
     public let anchorText:String?
     
     public init(title:String, canonicalURL:NSURL?, pageAuthority:Double?, domainAuthority:Double?, spamScore:Double?, anchorText:String?) {
@@ -54,7 +54,7 @@ public struct MZMozscapeLinks: ContentEquatable {
         self.canonicalURL = canonicalURL
         self.pageAuthority = pageAuthority
         self.domainAuthority = domainAuthority
-        self.spamScore = spamScore
+        self.spamScore = SpamScore(score: spamScore)
         self.anchorText = anchorText
     }
     
@@ -107,9 +107,9 @@ extension MZMozscapeLinks: JSONCreated {
             self.domainAuthority = keyResults[.DomainAuthority]?.double
             
             if let s = keyResults[.SpamScore]?.double where s > 0 {
-                self.spamScore = s - 1.0
+                self.spamScore = SpamScore.init(score: s - 1.0)
             } else {
-                self.spamScore = nil
+                self.spamScore = SpamScore.init(score: nil)
             }
             
             self.anchorText = keyResults[.AnchorText]?.string

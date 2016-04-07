@@ -18,7 +18,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     typealias ValueType = MZMozscapeLinks
 
     var errorView = ErrorView(image: UIImage(named: "Error"), message: "")
-    var emptyView = ErrorView(image: UIImage(named: "Error"), message: "No Links Found")
+    var emptyView = ErrorView(image: nil, message: "No Links Found")
     
     var viewModel:MozscapeLinksViewModel? {
         didSet {
@@ -87,6 +87,13 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         
         self.refreshControl = refresh
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showErrorViewForError(nil)
+        showNoContent(false)
+    }
 
     func showErrorViewForError(error: NSError?) {
         
@@ -98,10 +105,32 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             .joinWithSeparator(" ")
         
         errorView.alpha = error == nil ? 0.0 : 1.0
+        
     }
     
     func showNoContent(show:Bool) {
         emptyView.alpha = show ? 1.0 : 0.0
     }
 
+}
+
+extension MZLinksViewController : UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if var selectedLinkURL = viewModel?.entityForIndexPath(indexPath)?.canonicalURL?.absoluteString {
+            
+            if !(selectedLinkURL.hasPrefix("http://") || selectedLinkURL.hasPrefix("https://")) {
+                selectedLinkURL = "http://" + selectedLinkURL
+            }
+            
+            if let url = NSURL(string: selectedLinkURL) {
+                
+                let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
+                AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
+                
+                self.openURL(url, fromSourceItem: .View(self.view))
+            }
+        }
+    }
 }

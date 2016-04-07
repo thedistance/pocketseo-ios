@@ -105,12 +105,17 @@ class APIManager {
         
         //authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
 
+        //authenticationParameters(["SourceCols": String(colsValue), "Sort":"page_authority", "Limit":"25", "TargetCols": "4"]),
+        
         return Alamofire.request(.GET, urlString,
-            parameters: authenticationParameters(["SourceCols": String(colsValue), "Sort":"page_authority", "Limit":"25", "TargetCols": "4", "LinksCols": "8"]),
+            parameters: authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
             encoding: .URL,
             headers:  nil)
             .validate()
             .rac_responseArraySwiftyJSONCreated()
+//            .on(next: { (json, _) in
+//                print(json)
+//            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
