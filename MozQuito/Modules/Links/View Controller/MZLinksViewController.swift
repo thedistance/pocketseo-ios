@@ -18,7 +18,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     typealias ValueType = MZMozscapeLinks
 
     var errorView = ErrorView(image: UIImage(named: "Error"), message: "")
-    var emptyView = ErrorView(image: nil, message: "Nothing found...")
+    var emptyView = ErrorView(image: UIImage(named: "Error"), message: "No Links Found")
     
     var viewModel:MozscapeLinksViewModel? {
         didSet {
@@ -82,7 +82,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         }
         
         tableView?.addSubview(refresh)
-        tableView?.estimatedRowHeight = 136
+        tableView?.estimatedRowHeight = 114
         tableView?.rowHeight = UITableViewAutomaticDimension
         
         self.refreshControl = refresh
