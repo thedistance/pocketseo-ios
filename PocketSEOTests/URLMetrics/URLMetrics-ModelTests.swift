@@ -11,23 +11,6 @@ import Nimble
 import SwiftyJSON
 import Components
 
-public func contentEqual<T: ContentEquatable>(expectedValue: T?) -> NonNilMatcherFunc<T> {
-    return NonNilMatcherFunc { actualExpression, failureMessage in
-        failureMessage.postfixMessage = "equal <\(expectedValue)>"
-        let actualValue = try actualExpression.evaluate()
-        
-        if let expected = expectedValue,
-            actual = actualValue {
-            return actual.contentMatches(expected)
-        } else {
-            if expectedValue == nil {
-                failureMessage.postfixActual = " (use beNil() to match nils)"
-            }
-            return false
-        }
-    }
-}
-
 @testable import PocketSEO
 
 class URLMetrics_ModelTests: XCTestCase {

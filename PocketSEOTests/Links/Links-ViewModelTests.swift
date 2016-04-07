@@ -40,7 +40,7 @@ class BackLinks_ViewModelTests: XCTestCase {
     var errors = MutableProperty<NSError?>(nil)
     var found = MutableProperty<LinksOutput?>(nil)
     
-    let viewModel = LinksViewModel(apiManager: APIManager(urlStore: TestURLStore()))
+    let viewModel = MozscapeLinksViewModel(apiManager: APIManager(urlStore: TestURLStore()))
     
     override func setUp() {
         super.setUp()
@@ -68,6 +68,8 @@ class BackLinks_ViewModelTests: XCTestCase {
     // test no content is loaded on willAppear
     func testEmptyWillAppear() {
         
+        viewModel.viewLifetime.value = .WillAppear
+        
         waitForTime(withDescription: #function)
         
         expect(self.found.value).to(beNil())
@@ -76,9 +78,9 @@ class BackLinks_ViewModelTests: XCTestCase {
     
     func testInitialPage() {
         
-        let expected = BackLink.distanceBackLink()
+        let expected = MZMozscapeLinks.theDistanceLinks()
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
 
         expect(self.found.value?.links.count).toEventually(equal(25))
         expect(self.found.value?.links[5]).toEventually(contentEqual(expected))
@@ -89,17 +91,6 @@ class BackLinks_ViewModelTests: XCTestCase {
     }
     
     func testNextPageLoad() {
-        
-        let found = MutableProperty<LinksOutput?>(nil)
-        let errors = MutableProperty<NSError?>(nil)
-        
-        found <~ viewModel.contentChangesSignal
-            .observeOn(UIScheduler())
-            .map({ $0 as LinksOutput? })
-        
-        errors <~ viewModel.errorSignal
-            .observeOn(UIScheduler())
-            .map({ $0 as NSError? })
         
         errors.producer.startWithNext { (error) in
             XCTFail("Errored getting page: \(error)")
@@ -112,7 +103,7 @@ class BackLinks_ViewModelTests: XCTestCase {
             }
         }
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
         
         waitForExpectationsWithTimeout(1) { (error) in
             if let e = error {
@@ -120,19 +111,87 @@ class BackLinks_ViewModelTests: XCTestCase {
             }
         }
         
-        let expected1 = BackLink.distanceBackLink()
-        let expected2 = BackLink.distanceBackLink()
+        let expected1 = MZMozscapeLinks.theDistanceLinks()
+        let expected2 = MZMozscapeLinks.theDistanceLinks()
         
         viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
         
-        expect(found.value?.links.count).toEventually(equal(35))
-        expect(found.value?.links[5]).toEventually(contentEqual(expected1))
-        expect(found.value?.links[26]).toEventually(contentEqual(expected2))
-        expect(found.value?.moreAvailable).toEventually(beFalse())
+        expect(self.found.value?.links.count).toEventually(equal(35))
+        expect(self.found.value?.links[5]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.links[26]).toEventually(contentEqual(expected2))
+        expect(self.found.value?.moreAvailable).toEventually(beFalse())
         
         waitForTime(withDescription: #function + "Error")
         
         expect(self.errors.value).to(beNil())
     }
     
+    func testPageReload() {
+        
+        errors.producer.startWithNext { (error) in
+            XCTFail("Errored getting page: \(error)")
+        }
+        
+        let foundExpectation = expectationWithDescription(#function + "Page")
+        found.producer.startWithNext {
+            if $0 != nil {
+                foundExpectation.fulfill()
+            }
+        }
+        
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
+        
+        waitForExpectationsWithTimeout(1) { (error) in
+            if let e = error {
+                XCTFail("Failed to load first page: \(e)")
+            }
+        }
+        
+        let expected1 = MZMozscapeLinks.theDistanceLinks()
+        
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
+        
+        expect(self.found.value?.links.count).toEventually(equal(25))
+        expect(self.found.value?.links[5]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.moreAvailable).toEventually(beTrue())
+        
+        waitForTime(withDescription: #function + "Error")
+        
+        expect(self.errors.value).to(beNil())
+    }
+
+    func testNewPageLoad() {
+        
+        errors.producer.startWithNext { (error) in
+            XCTFail("Errored getting page: \(error)")
+        }
+        
+        let foundExpectation = expectationWithDescription(#function + "Page")
+        found.producer.startWithNext {
+            if $0 != nil {
+                foundExpectation.fulfill()
+            }
+        }
+        
+        viewModel.refreshObserver.sendNext((urlRequest: "slimmingworld.co.uk", nextPage: false))
+        
+        waitForExpectationsWithTimeout(1) { (error) in
+            if let e = error {
+                XCTFail("Failed to load first page: \(e)")
+            }
+        }
+        
+        let expected1 = MZMozscapeLinks.theDistanceLinks()
+        
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
+        
+        expect(self.found.value?.links.count).toEventually(equal(25))
+        expect(self.found.value?.links[5]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.moreAvailable).toEventually(beTrue())
+        
+        waitForTime(withDescription: #function + "Error")
+        
+        expect(self.errors.value).to(beNil())
+    }
+
 }

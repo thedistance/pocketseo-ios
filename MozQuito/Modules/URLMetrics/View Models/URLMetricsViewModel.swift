@@ -37,6 +37,7 @@ class MozscapeViewModel: ContentLoadingViewModel<String, MozscapeInfo> {
     
 }
 
+/*
 struct BackLink: ContentEquatable {
 
     static func distanceBackLink() -> BackLink {
@@ -56,8 +57,10 @@ extension BackLink: JSONCreated {
 
     init(json: JSON) throws { }
 }
+*/
 
-typealias LinksOutput = (links:[BackLink], moreAvailable:Bool)
+/*
+typealias LinksOutput = (links:[MZMozscapeLinks], moreAvailable:Bool)
 
 class LinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool), LinksOutput> {
   
@@ -98,7 +101,7 @@ class LinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool)
             return SignalProducer.empty
         }
         
-        let currentContent = (links:[BackLink](), moreAvailable:true)
+        let currentContent = (links:[MZMozscapeLinks](), moreAvailable:true)
         return apiManager.linksForString(url, page: page, count: pageCount)
             .scan(loadedContent ?? currentContent) {
                 
@@ -109,3 +112,4 @@ class LinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool)
         }
     }
 }
+ */
