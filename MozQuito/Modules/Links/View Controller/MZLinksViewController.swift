@@ -10,6 +10,7 @@ import UIKit
 
 import Components
 import ReactiveCocoa
+import JCLocalization
 
 class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableView {
     
@@ -17,8 +18,9 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     typealias OutputType = [[MZMozscapeLinks]]
     typealias ValueType = MZMozscapeLinks
 
-    var errorView = ErrorView(image: UIImage(named: "Error"), message: "")
-    var emptyView = ErrorView(image: nil, message: "No Links Found")
+    var errorView = MZErrorView(image: UIImage(named: "Error"), message: "")
+    var emptyView = MZErrorView(image: nil, message: LocalizedString(.LinksNoneFound))
+    var noInputView = NoInputView()
     
     var viewModel:MozscapeLinksViewModel? {
         didSet {
@@ -38,14 +40,18 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         viewModel.viewLifetime <~ lifetimeSignal
         
         if let tbv = tableView {
-            listDataSource = ListDataSource(viewModel: viewModel, tableView: tbv)
+            listDataSource = MozscapeLinksDataSource(viewModel: viewModel, tableView: tbv)
         }
     }
     
-    var listDataSource:ListDataSource<(urlRequest:String, nextPage:Bool),LinksOutput>?
+    var listDataSource:MozscapeLinksDataSource?
     
     var urlString:String? {
         didSet {
+            
+            let validURL = !(urlString?.isEmpty ?? false)
+            noInputView.hidden = validURL
+            tableView?.hidden = !validURL
             
             if let request = urlString {
                 viewModel?.refreshObserver.sendNext((urlRequest:request, nextPage:false))
@@ -57,17 +63,14 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     var refreshControl: UIRefreshControl?
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        viewModel = MozscapeLinksViewModel(apiManager: APIManager(urlStore: LiveURLStore()))
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for v in [errorView, emptyView] {
+        let toCenter = [errorView, emptyView]
+        
+        tableView?.hidden = true
+        
+        for v in toCenter {
             v.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(v, centeredOn: view)
         }
@@ -100,6 +103,10 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         
         showErrorViewForError(nil)
         showNoContent(false)
+        
+        if let selected = tableView?.indexPathForSelectedRow {
+            tableView?.deselectRowAtIndexPath(selected, animated: true)
+        }
     }
 
     func showErrorViewForError(error: NSError?) {
@@ -107,7 +114,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         errorView.label.text = ["Unable to download Links.",
             error?.localizedDescription,
             error?.localizedFailureReason,
-            error?.localizedFailureReason]
+            error?.localizedRecoverySuggestion]
             .flatMap({ $0 })
             .joinWithSeparator(" ")
         
@@ -138,6 +145,18 @@ extension MZLinksViewController : UITableViewDelegate {
                 
                 self.openURL(url, fromSourceItem: .View(self.view))
             }
+        }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let maxOffsetY =  scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maxOffsetY > 0 &&
+            scrollView.contentOffset.y > maxOffsetY - 50 &&
+            !(viewModel?.isLoading.value ?? true),
+            let request = self.urlString {
+            viewModel?.refreshObserver.sendNext((urlRequest: request, nextPage: true))
         }
     }
 }
