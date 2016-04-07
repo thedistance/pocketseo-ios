@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CIC-ij-RE7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CIC-ij-RE7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -56,56 +56,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYE-OJ-ube">
                                                 <rect key="frame" x="75" y="0.0" width="450" height="472"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twE-KT-Kl5">
-                                                        <rect key="frame" x="0.0" y="198" width="450" height="77"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BW Icon" translatesAutoresizingMaskIntoConstraints="NO" id="qd2-Wv-Q8m" customClass="ThemeImageView" customModule="PocketSEO" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="450" height="48"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tintColourStyleId" value="SecondaryText"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
-                                                                </variation>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-bV-A7g" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="56" width="450" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationKeyID" value="URLMetricsEmptyText"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="SecondaryText"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
-                                                                    <rect key="frame" x="0.0" y="56" width="600" height="17"/>
-                                                                </variation>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="qd2-Wv-Q8m" secondAttribute="trailing" id="Cyx-Pa-Nac"/>
-                                                            <constraint firstAttribute="bottom" secondItem="dA9-bV-A7g" secondAttribute="bottom" id="DKb-Ie-qBb"/>
-                                                            <constraint firstItem="qd2-Wv-Q8m" firstAttribute="top" secondItem="twE-KT-Kl5" secondAttribute="top" id="Frn-FP-nEC"/>
-                                                            <constraint firstAttribute="trailing" secondItem="dA9-bV-A7g" secondAttribute="trailing" id="ZuM-aX-jEL"/>
-                                                            <constraint firstItem="dA9-bV-A7g" firstAttribute="top" secondItem="qd2-Wv-Q8m" secondAttribute="bottom" constant="8" id="aQ7-96-OVK"/>
-                                                            <constraint firstItem="qd2-Wv-Q8m" firstAttribute="leading" secondItem="twE-KT-Kl5" secondAttribute="leading" id="h1y-si-0aw"/>
-                                                            <constraint firstItem="dA9-bV-A7g" firstAttribute="leading" secondItem="twE-KT-Kl5" secondAttribute="leading" id="jTS-qp-3sg"/>
-                                                        </constraints>
-                                                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
-                                                            <rect key="frame" x="0.0" y="132" width="600" height="73"/>
-                                                        </variation>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="twE-KT-Kl5" firstAttribute="centerY" secondItem="mYE-OJ-ube" secondAttribute="centerY" id="OtV-9r-Hyp"/>
-                                                    <constraint firstItem="twE-KT-Kl5" firstAttribute="leading" secondItem="mYE-OJ-ube" secondAttribute="leading" id="eJt-fr-6AQ"/>
-                                                    <constraint firstItem="twE-KT-Kl5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mYE-OJ-ube" secondAttribute="top" constant="8" id="gIV-m5-STC"/>
-                                                    <constraint firstAttribute="trailing" secondItem="twE-KT-Kl5" secondAttribute="trailing" id="rUM-Hu-bsk"/>
-                                                </constraints>
                                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                                     <rect key="frame" x="100" y="0.0" width="600" height="336"/>
                                                 </variation>
@@ -208,9 +159,9 @@
                         <outlet property="alexaDataView" destination="4nw-Qr-Ttu" id="0FP-vU-bHs"/>
                         <outlet property="contentToBottomConstraint" destination="fCU-7X-V5m" id="4QA-wE-FWw"/>
                         <outlet property="distanceView" destination="Xvp-sN-G4h" id="okV-BZ-xZY"/>
-                        <outlet property="emptyView" destination="mYE-OJ-ube" id="R2r-7E-bB2"/>
                         <outlet property="metaDataView" destination="zF0-bj-FND" id="QVM-p3-O5J"/>
                         <outlet property="mozscapeView" destination="fUQ-B9-wwe" id="6Wf-hQ-IbV"/>
+                        <outlet property="noInputContainer" destination="mYE-OJ-ube" id="CDN-K8-g7n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgo-f5-XXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,7 +180,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                 <rect key="frame" x="242" y="290" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -258,7 +209,4 @@
             <point key="canvasLocation" x="1447" y="404"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="BW Icon" width="48" height="48"/>
-    </resources>
 </document>

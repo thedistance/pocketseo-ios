@@ -14,8 +14,8 @@ import StackView
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
     @IBOutlet weak var distanceView:MZDistanceView?
-    @IBOutlet weak var emptyView:UIView?
-    
+    @IBOutlet weak var noInputContainer:UIView?
+    let noInputView = NoInputView()
     var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
     
     var urlString:String? {
@@ -27,7 +27,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             alexaData = nil
             
             let validURL = !(urlString?.isEmpty ?? false)
-            emptyView?.hidden = validURL
+            noInputView.hidden = validURL
             contentToBottomConstraint?.priority = validURL ? 990 : 740
             
             for p in metricsViews {
@@ -96,6 +96,10 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         for sv in metricsViews {
             sv?.hidden = true
         }
+        
+        if let container = noInputContainer {
+            container.addSubview(noInputView, centeredOn: container)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -110,7 +114,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         
         #if DEBUG || BETA_TESTING
             // set up the test view
-            let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
+            let tapper = UITapGestureRecognizer(target: self, action: #selector(MZURLMetricsViewController.logoTripleTapped(_:)))
             tapper.numberOfTouchesRequired = 1
             tapper.numberOfTapsRequired = 3
             distanceView?.distanceStack?.logoImageView.userInteractionEnabled = true

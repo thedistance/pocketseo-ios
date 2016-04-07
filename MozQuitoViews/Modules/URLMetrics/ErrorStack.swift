@@ -8,35 +8,35 @@
 
 import Foundation
 
-import StackView
+import Components
 
-public class ErrorStack: CreatedStack {
+public class MZErrorView: ErrorView {
     
-    var message:String {
-        didSet {
-            label.text = message
-        }
+    init(image:UIImage?, message:String) {
+        
+        let l = ThemeLabel()
+        l.textStyle = .Body1
+        l.textColourStyle = .SecondaryText
+        l.numberOfLines = 0
+        l.textAlignment = .Center
+        
+        let i = ThemeImageView()
+        i.tintColourStyle = .SecondaryText
+        i.contentMode = .ScaleAspectFit
+        
+        super.init(image: image,
+                   message: message,
+                   spacing: 8.0,
+                   imageView: i,
+                   label: l)
     }
     
-    let label = ThemeLabel()
-    
-    init(image:UIImage = UIImage(named: "Error")!, message:String) {
-        
-        let iv = ThemeImageView(image: image)
-        iv.contentMode = .ScaleAspectFit
-        iv.tintColourStyle = .SecondaryText
-        
-        self.message = message
-        label.text = message
-        label.textStyle = .Body1
-        label.textColourStyle = .SecondaryText
-        label.numberOfLines = 0
-        label.textAlignment = .Center
-        
-        super.init(arrangedSubviews: [iv, label])
-        
-        stack.axis = .Vertical
-        stack.spacing = 8.0
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
+    required public init(image: UIImage?, message: String, spacing: CGFloat, imageView: UIImageView, label: UILabel, button: UIButton) {
+        fatalError("init(image:message:spacing:imageView:label:button:) has not been implemented")
+    }
+
 }

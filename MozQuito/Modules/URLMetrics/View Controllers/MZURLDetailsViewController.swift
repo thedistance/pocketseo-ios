@@ -58,6 +58,8 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         headerBackgroundView?.layer.shadowRadius = 4.0
         headerBackgroundView?.layer.shadowOffset = CGSizeMake(0, 4.0)
         headerBackgroundView?.layer.shadowColor = UIColor.blackColor().CGColor
+        
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
