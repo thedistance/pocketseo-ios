@@ -18,6 +18,10 @@ class TestURLStore:NSObject, URLStore {
         return testBundle.URLForResource("MozscapeMetrics", withExtension: "json")
     }
     
+    func mozscapeLinksForRequest(request: String) -> NSURL? {
+        return testBundle.URLForResource("MozscapeLinks", withExtension: "json")
+    }
+    
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     
@@ -31,6 +35,10 @@ class TestURLStore:NSObject, URLStore {
 class EmptyURLStore:NSObject, URLStore {
     
     func mozscapeMetricsURLForRequest(request: String) -> NSURL? {
+        return NSURL()
+    }
+    
+    func mozscapeLinksForRequest(request: String) -> NSURL? {
         return NSURL()
     }
     

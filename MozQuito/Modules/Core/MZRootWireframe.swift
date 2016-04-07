@@ -14,6 +14,14 @@ import JCPageViewController
 
 class MZRootWireframe {
     
+    var apiManager:APIManager
+    var urlStore:URLStore
+    
+    init(urlStore:URLStore) {
+        self.urlStore = urlStore
+        apiManager = APIManager(urlStore: urlStore)
+    }
+    
     func createRootViewController() -> UIViewController {
         
         if isTesting {
@@ -34,8 +42,9 @@ class MZRootWireframe {
         urlMetricsVC.title = LocalizedString(.URLMetricsTitle).uppercaseString
         urlMetricsVC.presenter = MZURLMetricsPresenter.configuredPresenterForView(urlMetricsVC)
         
-        let linksVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLLinksVC)
+        let linksVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLLinksVC) as! MZLinksViewController
         linksVC.title = LocalizedString(.URLLinksTitle).uppercaseString
+        linksVC.viewModel = MozscapeLinksViewModel(apiManager: self.apiManager)
         
         detailsVC.metricsVC = urlMetricsVC
         detailsVC.linksVC = linksVC

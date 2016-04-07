@@ -14,7 +14,7 @@ import DeviceKit
 
 class MZApplicationAppDependencies: MZAppDependencies {
     
-    let rootWireframe = MZApplicationRootWireframe()
+    let rootWireframe = MZApplicationRootWireframe(urlStore: LiveURLStore())
     
     override func installRootViewControllerIntoWindow(window: UIWindow) {
         window.rootViewController = rootWireframe.createRootViewController()

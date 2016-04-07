@@ -13,6 +13,7 @@ import TheDistanceCore
 enum MZStoryboadID:String {
     case Test
     case URLDetails
+    case Links
     case App
     case Extension
 }
@@ -36,8 +37,10 @@ class MZStoryboardLoader: StoryboardLoader {
             return .App
         case .URLExtensionDetailsVC:
             return .Extension
-        case .URLMetricsVC, .URLLinksVC:
+        case .URLMetricsVC:
             return .URLDetails
+        case .URLLinksVC:
+            return .Links
         }
     }
 }

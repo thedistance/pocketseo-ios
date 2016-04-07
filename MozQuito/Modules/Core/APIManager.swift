@@ -11,11 +11,13 @@ import Foundation
 import Alamofire
 import ReactiveCocoa
 import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
+import SwiftyJSON
 import TheDistanceCore
 
 protocol URLStore {
     
     func mozscapeMetricsURLForRequest(request:String) -> NSURL?
+    func mozscapeLinksForRequest(request:String) -> NSURL?
     
     var mozscapeLastIndexedDatesURL:NSURL { get }
     var mozscapeNextIndexedDatesURL:NSURL { get }
@@ -41,6 +43,13 @@ struct LiveURLStore:URLStore {
             else { return nil }
         
         return NSURL(string:BaseURL.Mozscape + RequestPath.MozscapeURLMetrics)!.URLByAppendingPathComponent(requestURLString)
+    }
+    
+    func mozscapeLinksForRequest(request: String) -> NSURL? {
+        guard let requestURLString = request.stringByAddingURLPathEncoding()
+            else { return nil  }
+        
+        return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(requestURLString)
     }
     
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
@@ -109,6 +118,28 @@ class APIManager {
             .rac_responseSwiftyJSONCreated()
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NSError> in
+                return SignalProducer(error: error.userFacingError())
+            })
+    }
+    
+    // Backlinks
+    func mozscapeLinksForString(requestURLString:String) -> SignalProducer<[MZMozscapeLinks], NSError> {
+        
+        let cols:[MZLinksKey] = [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore, .AnchorText]
+        let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
+        
+        let urlString = urlStore.mozscapeLinksForRequest(requestURLString)?.absoluteString ?? ""
+        
+        //authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
+
+        return Alamofire.request(.GET, urlString,
+            parameters: authenticationParameters(["SourceCols": String(colsValue), "Sort":"page_authority", "Limit":"25", "TargetCols": "4", "LinksCols": "8"]),
+            encoding: .URL,
+            headers:  nil)
+            .validate()
+            .rac_responseArraySwiftyJSONCreated()
+            .map({ $0.1 })
+            .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
             })
     }
