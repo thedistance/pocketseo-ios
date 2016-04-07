@@ -83,7 +83,7 @@ class BackLinks_ViewModelTests: XCTestCase {
         viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
 
         expect(self.found.value?.links.count).toEventually(equal(25))
-        expect(self.found.value?.links[5]).toEventually(contentEqual(expected))
+        expect(self.found.value?.links[2]).toEventually(contentEqual(expected))
         expect(self.found.value?.moreAvailable).toEventually(beTrue())
         
         waitForTime(withDescription: #function)
@@ -93,13 +93,16 @@ class BackLinks_ViewModelTests: XCTestCase {
     func testNextPageLoad() {
         
         errors.producer.startWithNext { (error) in
-            XCTFail("Errored getting page: \(error)")
+            if let e = error {
+                XCTFail("Errored getting page: \(e)")
+            }
         }
         
-        let foundExpectation = expectationWithDescription(#function + "Page")
+        var foundExpectation:XCTestExpectation? = expectationWithDescription(#function + "Page")
         found.producer.startWithNext {
             if $0 != nil {
-                foundExpectation.fulfill()
+                foundExpectation?.fulfill()
+                foundExpectation = nil
             }
         }
         
@@ -112,12 +115,12 @@ class BackLinks_ViewModelTests: XCTestCase {
         }
         
         let expected1 = MZMozscapeLinks.theDistanceLinks()
-        let expected2 = MZMozscapeLinks.theDistanceLinks()
+        let expected2 = MZMozscapeLinks.theDistanceLinks1()
         
         viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
         
         expect(self.found.value?.links.count).toEventually(equal(35))
-        expect(self.found.value?.links[5]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
         expect(self.found.value?.links[26]).toEventually(contentEqual(expected2))
         expect(self.found.value?.moreAvailable).toEventually(beFalse())
         
@@ -129,13 +132,16 @@ class BackLinks_ViewModelTests: XCTestCase {
     func testPageReload() {
         
         errors.producer.startWithNext { (error) in
-            XCTFail("Errored getting page: \(error)")
+            if let e = error {
+                XCTFail("Errored getting page: \(e)")
+            }
         }
         
-        let foundExpectation = expectationWithDescription(#function + "Page")
+        var foundExpectation:XCTestExpectation? = expectationWithDescription(#function + "Page")
         found.producer.startWithNext {
             if $0 != nil {
-                foundExpectation.fulfill()
+                foundExpectation?.fulfill()
+                foundExpectation = nil
             }
         }
         
@@ -152,7 +158,7 @@ class BackLinks_ViewModelTests: XCTestCase {
         viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
         
         expect(self.found.value?.links.count).toEventually(equal(25))
-        expect(self.found.value?.links[5]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
         expect(self.found.value?.moreAvailable).toEventually(beTrue())
         
         waitForTime(withDescription: #function + "Error")
@@ -163,13 +169,16 @@ class BackLinks_ViewModelTests: XCTestCase {
     func testNewPageLoad() {
         
         errors.producer.startWithNext { (error) in
-            XCTFail("Errored getting page: \(error)")
+            if let e = error {
+                XCTFail("Errored getting page: \(e)")
+            }
         }
         
-        let foundExpectation = expectationWithDescription(#function + "Page")
+        var foundExpectation:XCTestExpectation? = expectationWithDescription(#function + "Page")
         found.producer.startWithNext {
             if $0 != nil {
-                foundExpectation.fulfill()
+                foundExpectation?.fulfill()
+                foundExpectation = nil
             }
         }
         
@@ -186,7 +195,7 @@ class BackLinks_ViewModelTests: XCTestCase {
         viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
         
         expect(self.found.value?.links.count).toEventually(equal(25))
-        expect(self.found.value?.links[5]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
         expect(self.found.value?.moreAvailable).toEventually(beTrue())
         
         waitForTime(withDescription: #function + "Error")

@@ -64,7 +64,17 @@ public struct MZMozscapeLinks: ContentEquatable {
                                canonicalURL: NSURL(string: "stackoverflow.com/users/258/anthony-main"),
                                pageAuthority: 47.99038445765669,
                                domainAuthority: 92.89606377307786,
-                               spamScore: 5,
+                               spamScore: 4,
+                               anchorText: "thedistance.co.uk")
+    }
+    
+    public static func theDistanceLinks1() -> MZMozscapeLinks {
+        
+        return MZMozscapeLinks(title: "The Distance - Awwwards",
+                               canonicalURL: NSURL(string: "www.awwwards.com/TheDistanceHQ/favourites"),
+                               pageAuthority: 30.92693328768593,
+                               domainAuthority: 80.07206867111411,
+                               spamScore: 3,
                                anchorText: "thedistance.co.uk")
     }
 

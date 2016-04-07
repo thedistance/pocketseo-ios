@@ -64,7 +64,7 @@ class Links_APIManager: XCTestCase {
         let testLinks = MZMozscapeLinks.theDistanceLinks()
         
         expect(links.value?.count).toEventually(equal(25))
-        expect(links.value?[5]).toEventually(contentEqual(testLinks))
+        expect(links.value?[2]).toEventually(contentEqual(testLinks))
         
 //        expect(links.value?.title).toEventually(equal(testLinks.title))
 //        expect(links.value?.canonicalURL).toEventually(equal(testLinks.canonicalURL))
@@ -87,7 +87,7 @@ class Links_APIManager: XCTestCase {
             })
             .map { $0 as [MZMozscapeLinks]? }
         
-        let expected = MZMozscapeLinks.theDistanceLinks()
+        let expected = MZMozscapeLinks.theDistanceLinks1()
         
         expect(found.value?.count).toEventually(equal(10))
         expect(found.value?[1]).toEventually(contentEqual(expected))
