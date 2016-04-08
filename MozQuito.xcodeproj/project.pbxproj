@@ -203,6 +203,8 @@
 		A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
 		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
 		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
+		A5C6A18C1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */; };
+		A5C6A18D1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */; };
 		A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
 		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
@@ -390,6 +392,7 @@
 		A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextFieldStack.swift; sourceTree = "<group>"; };
 		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
 		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
+		A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksConfiguration.swift; path = Modules/Links/MZLinksConfiguration.swift; sourceTree = "<group>"; };
 		A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataStack.swift; path = "Alexa Data/MZAlexaDataStack.swift"; sourceTree = "<group>"; };
 		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
 		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
@@ -522,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3085151CB3D95500F89EB7 /* MZLinks.swift */,
+				A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */,
 			);
 			name = Links;
 			sourceTree = "<group>";
@@ -1452,6 +1456,7 @@
 				A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */,
 				A59E9FE01CB25E6200888DFA /* AnalyticEntities.swift in Sources */,
 				A58561151C7F48D4005221B3 /* MZAlexaDataStack.swift in Sources */,
+				A5C6A18D1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */,
 				A55AB9A11CB6A10500F462A4 /* NoInputView.swift in Sources */,
 				A58561161C7F48D4005221B3 /* MZMetricProgressView.swift in Sources */,
 				A59EA0131CB27B4500888DFA /* FabricCrashReporter.swift in Sources */,
@@ -1480,6 +1485,7 @@
 				5E0FB0871CB41DA3001614BE /* LinksViewModel.swift in Sources */,
 				A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */,
 				A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */,
+				A5C6A18C1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */,
 				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
 				A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */,
 				A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */,
