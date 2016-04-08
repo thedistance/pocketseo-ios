@@ -17,7 +17,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     typealias InputType = String
     typealias OutputType = [[MZMozscapeLinks]]
     typealias ValueType = MZMozscapeLinks
-
+    
     var errorView = MZErrorView(image: UIImage(named: "Error"), message: "")
     var emptyView = MZErrorView(image: nil, message: LocalizedString(.LinksNoneFound))
     var noInputView = NoInputView()
@@ -45,6 +45,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     }
     
     var listDataSource:MozscapeLinksDataSource?
+    
+    var searchConfiguration = MutableProperty<LinkSearchConfiguration>(LinkSearchConfiguration.defaultConfiguration())
     
     var urlString:String? {
         didSet {
@@ -94,6 +96,14 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             }
         }
         
+        searchConfiguration.producer.combinePrevious(LinkSearchConfiguration.defaultConfiguration())
+            .startWithNext { (prev, new) in
+                if prev != new,
+                    let str = self.urlString {
+                    self.urlString = str
+                }
+        }
+        
         tableView?.addSubview(refresh)
         tableView?.estimatedRowHeight = 114
         tableView?.rowHeight = UITableViewAutomaticDimension
@@ -108,7 +118,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             tableView?.deselectRowAtIndexPath(selected, animated: true)
         }
     }
-
+    
     func showErrorViewForError(error: NSError?) {
         
         errorView.label.text = ["Unable to download Links.",
@@ -137,7 +147,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         tableView?.separatorStyle = show ? .SingleLine : .None
         tableView?.setNeedsLayout()
     }
-
+    
 }
 
 extension MZLinksViewController : UITableViewDelegate {

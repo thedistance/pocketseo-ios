@@ -44,7 +44,7 @@ public enum LinkType: String {
     
 }
 
-struct LinkSearchConfiguration {
+struct LinkSearchConfiguration: Equatable {
     
     static func defaultConfiguration() -> LinkSearchConfiguration {
         return LinkSearchConfiguration(sortBy: .PageAuthority, target: .Page, source: .All, type: .All)
@@ -75,4 +75,8 @@ struct LinkSearchConfiguration {
         return params
     }
     
+}
+
+func ==(c1:LinkSearchConfiguration, c2:LinkSearchConfiguration) -> Bool {
+    return true
 }
