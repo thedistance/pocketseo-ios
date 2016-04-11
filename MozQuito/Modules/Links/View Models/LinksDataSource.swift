@@ -11,9 +11,9 @@ import Foundation
 import ReactiveCocoa
 import Components
 
-class MozscapeLinksDataSource: ListDataSource<(urlRequest:String, nextPage:Bool),LinksOutput> {
+class MozscapeLinksDataSource: ListDataSource<(urlRequest:String, requestedParameters: LinkSearchConfiguration, nextPage:Bool),LinksOutput> {
     
-    override init(viewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool),LinksOutput>, tableView: UITableView, animatesChanges: Bool = false) {
+    override init(viewModel: ContentLoadingViewModel<(urlRequest:String, requestedParameters: LinkSearchConfiguration, nextPage:Bool),LinksOutput>, tableView: UITableView, animatesChanges: Bool = false) {
         super.init(viewModel: viewModel, tableView: tableView, animatesChanges: animatesChanges)
         
         viewModel.errorSignal

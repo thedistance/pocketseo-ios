@@ -15,6 +15,8 @@
 		5E3085181CB401A200F89EB7 /* Links-ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */; };
 		5E3085191CB4098C00F89EB7 /* MZLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085151CB3D95500F89EB7 /* MZLinks.swift */; };
 		5E30851A1CB4098D00F89EB7 /* MZLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085151CB3D95500F89EB7 /* MZLinks.swift */; };
+		5E77DAAB1CB7B76300585477 /* Links-ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E77DAAA1CB7B76300585477 /* Links-ConfigurationTests.swift */; };
+		5E77DAAF1CB7EB0100585477 /* MozscapeLinks-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E77DAAE1CB7EB0100585477 /* MozscapeLinks-2.json */; };
 		5E93715D1CB53B7F009C8248 /* Links.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FB08A1CB50096001614BE /* Links.storyboard */; };
 		5E93715E1CB53B8B009C8248 /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0861CB41DA3001614BE /* LinksViewModel.swift */; };
 		5E93715F1CB53B8E009C8248 /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */; };
@@ -310,6 +312,8 @@
 		5E3085121CB3D76A00F89EB7 /* MozscapeLink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MozscapeLink.json; path = Links/MozscapeLink.json; sourceTree = "<group>"; };
 		5E3085151CB3D95500F89EB7 /* MZLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinks.swift; path = Modules/Links/MZLinks.swift; sourceTree = "<group>"; };
 		5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Links-ModelTests.swift"; path = "Links/Links-ModelTests.swift"; sourceTree = "<group>"; };
+		5E77DAAA1CB7B76300585477 /* Links-ConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Links-ConfigurationTests.swift"; path = "Links/Links-ConfigurationTests.swift"; sourceTree = "<group>"; };
+		5E77DAAE1CB7EB0100585477 /* MozscapeLinks-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "MozscapeLinks-2.json"; path = "Links/MozscapeLinks-2.json"; sourceTree = "<group>"; };
 		5EA09B921CB3BDB000E3C5F3 /* Links-APIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Links-APIManagerTests.swift"; path = "Links/Links-APIManagerTests.swift"; sourceTree = "<group>"; };
 		661A68C89CB11FF3490F5718 /* Pods_MozQuitoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MozQuitoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7478352176EBA136B55E06B3 /* Pods-PocketSEOTests.beta testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketSEOTests.beta testing.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests.beta testing.xcconfig"; sourceTree = "<group>"; };
@@ -580,6 +584,7 @@
 				5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */,
 				5EA09B921CB3BDB000E3C5F3 /* Links-APIManagerTests.swift */,
 				A55AB99A1CB6845100F462A4 /* Links-ViewModelTests.swift */,
+				5E77DAAA1CB7B76300585477 /* Links-ConfigurationTests.swift */,
 			);
 			name = Links;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				5E3085121CB3D76A00F89EB7 /* MozscapeLink.json */,
 				A55AB9961CB682C200F462A4 /* MozscapeLinks-0.json */,
 				A55AB9981CB682D200F462A4 /* MozscapeLinks-1.json */,
+				5E77DAAE1CB7EB0100585477 /* MozscapeLinks-2.json */,
 			);
 			name = Links;
 			sourceTree = "<group>";
@@ -1168,6 +1174,7 @@
 			files = (
 				A560723B1CB2B65A007F7E65 /* MozscapeMetrics.json in Resources */,
 				A560722A1CB2AA11007F7E65 /* thedistance-alexa.xml in Resources */,
+				5E77DAAF1CB7EB0100585477 /* MozscapeLinks-2.json in Resources */,
 				A55AB9971CB682C200F462A4 /* MozscapeLinks-0.json in Resources */,
 				A56072291CB2AA11007F7E65 /* MozscapeNextUpdated.json in Resources */,
 				A56072281CB2AA11007F7E65 /* MozscapeLastUpdated.json in Resources */,
@@ -1559,6 +1566,7 @@
 				5E3085181CB401A200F89EB7 /* Links-ModelTests.swift in Sources */,
 				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
 				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,
+				5E77DAAB1CB7B76300585477 /* Links-ConfigurationTests.swift in Sources */,
 				A560721C1CB2A833007F7E65 /* URLMetrics-ModelTests.swift in Sources */,
 				A55AB99B1CB6845100F462A4 /* Links-ViewModelTests.swift in Sources */,
 				5EA09B931CB3BDB000E3C5F3 /* Links-APIManagerTests.swift in Sources */,

@@ -80,7 +80,9 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         let expected = MZMozscapeLinks.theDistanceLinks()
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
+        let parameters = LinkSearchConfiguration.defaultConfiguration()
+        
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", requestedParameters: parameters, nextPage: false))
 
         expect(self.found.value?.links.count).toEventually(equal(25))
         expect(self.found.value?.links[2]).toEventually(contentEqual(expected))
@@ -91,6 +93,8 @@ class BackLinks_ViewModelTests: XCTestCase {
     }
     
     func testNextPageLoad() {
+        
+        let parameters = LinkSearchConfiguration.defaultConfiguration()
         
         errors.producer.startWithNext { (error) in
             if let e = error {
@@ -106,7 +110,7 @@ class BackLinks_ViewModelTests: XCTestCase {
             }
         }
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", requestedParameters: parameters, nextPage: false))
         
         waitForExpectationsWithTimeout(1) { (error) in
             if let e = error {
@@ -117,7 +121,7 @@ class BackLinks_ViewModelTests: XCTestCase {
         let expected1 = MZMozscapeLinks.theDistanceLinks()
         let expected2 = MZMozscapeLinks.theDistanceLinks1()
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", requestedParameters: parameters, nextPage: false))
         
         expect(self.found.value?.links.count).toEventually(equal(35))
         expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
@@ -131,6 +135,8 @@ class BackLinks_ViewModelTests: XCTestCase {
     
     func testPageReload() {
         
+        let parameters = LinkSearchConfiguration.defaultConfiguration()
+        
         errors.producer.startWithNext { (error) in
             if let e = error {
                 XCTFail("Errored getting page: \(e)")
@@ -145,7 +151,7 @@ class BackLinks_ViewModelTests: XCTestCase {
             }
         }
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", requestedParameters: parameters, nextPage: false))
         
         waitForExpectationsWithTimeout(1) { (error) in
             if let e = error {
@@ -155,7 +161,7 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         let expected1 = MZMozscapeLinks.theDistanceLinks()
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: false))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", requestedParameters: parameters, nextPage: false))
         
         expect(self.found.value?.links.count).toEventually(equal(25))
         expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
@@ -168,6 +174,8 @@ class BackLinks_ViewModelTests: XCTestCase {
 
     func testNewPageLoad() {
         
+        let parameters = LinkSearchConfiguration.defaultConfiguration()
+        
         errors.producer.startWithNext { (error) in
             if let e = error {
                 XCTFail("Errored getting page: \(e)")
@@ -182,7 +190,7 @@ class BackLinks_ViewModelTests: XCTestCase {
             }
         }
         
-        viewModel.refreshObserver.sendNext((urlRequest: "slimmingworld.co.uk", nextPage: false))
+        viewModel.refreshObserver.sendNext((urlRequest: "slimmingworld.co.uk", requestedParameters: parameters, nextPage: false))
         
         waitForExpectationsWithTimeout(1) { (error) in
             if let e = error {
@@ -192,7 +200,7 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         let expected1 = MZMozscapeLinks.theDistanceLinks()
         
-        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", nextPage: true))
+        viewModel.refreshObserver.sendNext((urlRequest: "thedistance.co.uk", requestedParameters: parameters, nextPage: true))
         
         expect(self.found.value?.links.count).toEventually(equal(25))
         expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))

@@ -53,7 +53,9 @@ class Links_APIManager: XCTestCase {
     func testMozscapeLinksPage0() {
         let links = MutableProperty<[MZMozscapeLinks]?>(nil)
         
-        links <~ apiManager.mozscapeLinksForString("thedistance.co.uk", page: 0)
+        let parameters = LinkSearchConfiguration.defaultConfiguration()
+        
+        links <~ apiManager.mozscapeLinksForString("thedistance.co.uk", requestURLParameters: parameters, page: 0)
             .observeOn(UIScheduler())
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NoError> in
                 XCTFail("Failed to get mozscape links")
@@ -79,7 +81,9 @@ class Links_APIManager: XCTestCase {
         
         let found = MutableProperty<[MZMozscapeLinks]?>(nil)
         
-        found <~ apiManager.mozscapeLinksForString("thedistance.co.uk", page: 1)
+        let parameters = LinkSearchConfiguration.defaultConfiguration()
+
+        found <~ apiManager.mozscapeLinksForString("thedistance.co.uk", requestURLParameters: parameters, page: 1)
             .observeOn(UIScheduler())
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NoError> in
                 XCTFail("Failed to get mozscape metrics")
@@ -91,5 +95,26 @@ class Links_APIManager: XCTestCase {
         
         expect(found.value?.count).toEventually(equal(10))
         expect(found.value?[1]).toEventually(contentEqual(expected))
+    }
+    
+    func testMozscapeLinksSortByDA() {
+        
+        let found = MutableProperty<[MZMozscapeLinks]?>(nil)
+        
+        let parameters = LinkSearchConfiguration.distanceLinkSortyByDA()
+        
+        found <~ apiManager.mozscapeLinksForString("thedistance.co.uk", requestURLParameters: parameters, page: 2)
+            .observeOn(UIScheduler())
+            .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NoError> in
+                XCTFail("Failed to get mozscape metrics")
+                return SignalProducer.empty
+            })
+            .map { $0 as [MZMozscapeLinks]? }
+        
+        let expected = MZMozscapeLinks.theDistanceLinks()
+        
+        expect(found.value?.count).toEventually(equal(25))
+        expect(found.value?[1]).toEventually(contentEqual(expected))
+        
     }
 }
