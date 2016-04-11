@@ -144,4 +144,19 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
             }
         }
     }
+    
+    override func configureFilterVisibility() {
+        
+        if self.navigationItem.rightBarButtonItem == nil {
+            // add filter bbi
+            
+            let bbi = UIBarButtonItem(image: UIImage(named: "ic_filter_list"), style: .Plain, target: linksVC, action: #selector(MZLinksViewController.filterTapped(_:)))
+            self.navigationItem.setRightBarButtonItem(bbi, animated: true)
+            
+        } else {
+            // hide filter
+            self.navigationItem.setRightBarButtonItem(nil, animated: true)
+        }
+        
+    }
 }

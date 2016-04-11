@@ -34,17 +34,16 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.delegate = self
         
         // configure the input stack
         urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
-        urlInputView.inputStack.safariButton.addTarget(self, action: Selector("safariTapped:"), forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.safariButton.addTarget(self, action: #selector(MZURLDetailsViewController.safariTapped(_:)), forControlEvents: .TouchUpInside)
         urlInputView.inputStack.safariButton.hidden = true
         
-        urlInputView.inputStack.refreshButton.addTarget(self, action: Selector("refreshTapped:"), forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.refreshButton.addTarget(self, action: #selector(MZURLDetailsViewController.refreshTapped(_:)), forControlEvents: .TouchUpInside)
         urlInputView.inputStack.refreshButton.hidden = true
         
-        urlInputView.inputStack.filterButton.addTarget(linksVC, action: Selector("filterTapped:"), forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.filterButton.addTarget(linksVC, action: #selector(MZLinksViewController.filterTapped(_:)), forControlEvents: .TouchUpInside)
         urlInputView.inputStack.filterButton.hidden = true
     }
     
@@ -56,7 +55,7 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         (metricsVC.distanceView?.distanceStack as? MZDistanceApplicationStack)?.delegate = self
     }
     
-    func configureFilterVisibility() {
+    override func configureFilterVisibility() {
         let invalidURL = urlString?.isEmpty ?? true
         let validLinksPage = self.currentViewController is MZLinksViewController
         let validLinks =  validLinksPage && !invalidURL
@@ -68,13 +67,6 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
                 self.urlInputView.inputStack.filterButton.alpha = newValue ? 0.0 : 1.0
             })
         }
-    }
-}
-
-extension MZInputURLDetailsViewController: JCPageViewControllerDelegate {
-    
-    func pageViewController(pageViewController: JCPageViewController, didChangeCurrentPageTo page: UIViewController, atIndex: Int) {
-        configureFilterVisibility()
     }
 }
 

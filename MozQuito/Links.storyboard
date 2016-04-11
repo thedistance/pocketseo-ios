@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="114" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="114" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOj-XP-h8f" id="Leb-EO-fcU">
@@ -189,7 +189,7 @@
                                             <outlet property="titleLabel" destination="djO-a4-6OJ" id="eAa-Nn-FEa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="52" id="l4U-fJ-8eQ" customClass="LinksTableViewCell" customModule="PocketSEO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="52" id="l4U-fJ-8eQ" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="142" width="600" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l4U-fJ-8eQ" id="jXP-Jl-5uj">

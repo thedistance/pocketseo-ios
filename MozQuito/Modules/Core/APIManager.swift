@@ -47,7 +47,7 @@ struct LiveURLStore:URLStore {
         guard let requestURLString = request.stringByAddingURLPathEncoding()
             else { return nil  }
         
-        return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(requestURLString)
+        return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(request)
     }
     
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
