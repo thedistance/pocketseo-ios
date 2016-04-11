@@ -39,9 +39,11 @@ extension LinksOutput: ListLoadingModel {
     
 }
 
-class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool), LinksOutput> {
+class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, requestedParameters:LinkSearchConfiguration, nextPage:Bool), LinksOutput> {
     
     var currentRequestString:String?
+    
+    var currentRequestParameters:LinkSearchConfiguration?
     
     let apiManager:APIManager
     
@@ -54,12 +56,14 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPa
         super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
     }
     
-    override func loadingProducerWithInput(input: (urlRequest:String, nextPage:Bool)?) -> SignalProducer<LinksOutput, NSError> {
+    override func loadingProducerWithInput(input: (urlRequest:String, requestedParameters:LinkSearchConfiguration, nextPage:Bool)?) -> SignalProducer<LinksOutput, NSError> {
         
-        guard let (url, nextPage) = input
+        guard let (url,reqParams,nextPage) = input
             where !url.isEmpty else { return SignalProducer.empty }
         
         let reload = !nextPage || url != currentRequestString
+        
+        let requestParams = reqParams
         
         let page:UInt
         
@@ -67,6 +71,7 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPa
             
             loadedContent = nil
             currentRequestString = url
+            currentRequestParameters = requestParams
             page = 0
             
         } else if loadedContent?.moreAvailable ?? true {
@@ -79,7 +84,7 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPa
         }
         
         let currentContent = LinksOutput(links:[MZMozscapeLinks](), moreAvailable:true)
-        return apiManager.mozscapeLinksForString(url, page: page, count: pageCount)
+        return apiManager.mozscapeLinksForString(url, requestURLParameters: requestParams, page: page, count: pageCount)
             .scan(loadedContent ?? currentContent) {
                 
                 let aggregatedLinks = $0.links + $1

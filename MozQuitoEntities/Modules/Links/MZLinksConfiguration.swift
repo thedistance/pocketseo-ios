@@ -14,9 +14,9 @@ public enum LinkSortBy: String {
     
     static var titleKey:LocalizationKey = .LinksFilterSortBy
     
-    case PageAuthority
-    case DomainAuthority
-    case SpamScore
+    case PageAuthority = "page_authority"
+    case DomainAuthority = "domain_authority"
+    case SpamScore = "spam_score"
     
     var localizationKey:LocalizationKey {
         switch self {
@@ -28,7 +28,7 @@ public enum LinkSortBy: String {
             return .LinksFilterSpamScore
         }
     }
-
+    
     static var allValues:[LinkSortBy] {
         return [.PageAuthority, .DomainAuthority, .SpamScore]
     }
@@ -50,9 +50,9 @@ public enum LinkTarget: String {
     
     static var titleKey:LocalizationKey = .LinksFilterTarget
     
-    case Page
-    case Subdomain
-    case Domain
+    case Page = "page_to_page"
+    case Subdomain = "page_to_subdomain"
+    case Domain = "page_to_domain"
     
     var localizationKey:LocalizationKey {
         switch self {
@@ -86,9 +86,9 @@ public enum LinkSource: String {
     
     static var titleKey:LocalizationKey = .LinksFilterSource
     
-    case All
-    case External
-    case Internal
+    case All = ""
+    case External = "external"
+    case Internal = "internal"
     
     var localizationKey:LocalizationKey {
         switch self {
@@ -122,13 +122,13 @@ public enum LinkType: String {
     
     static var titleKey:LocalizationKey = .LinksFilterLinkType
     
-    case All
-    case Equity
-    case NoEquity
-    case Follow
-    case NoFollow
-    case Redirect301
-    case Redirect302
+    case All = ""
+    case Equity = "equity"
+    case NoEquity = "noequity"
+    case Follow = "follow"
+    case NoFollow = "nofollow"
+    case Redirect301 = "301"
+    case Redirect302 = "302"
     
     var localizationKey:LocalizationKey {
         switch self {
@@ -172,14 +172,45 @@ struct LinkSearchConfiguration: Equatable {
         return LinkSearchConfiguration(sortBy: .PageAuthority, target: .Page, source: .All, type: .All)
     }
     
+    static func distanceLinkSortyByDA() -> LinkSearchConfiguration {
+        return LinkSearchConfiguration(sortBy: .DomainAuthority, target: .Page, source: .All, type: .All)
+    }
+    
+    static func distanceLinkFilterByTypeAndSource() -> LinkSearchConfiguration {
+        return LinkSearchConfiguration(sortBy: .PageAuthority, target: .Page, source: .External, type: .All)
+    }
+    
     let sortBy: LinkSortBy
     let target: LinkTarget
     let source: LinkSource
     let type: LinkType
     
+    //standard parameters for each call
+    let targetCols: String
+    let limit: String
+    
+    init(sortBy: LinkSortBy, target: LinkTarget, source: LinkSource, type: LinkType, targetCols: String = "4", limit: String = "25") {
+        
+        self.sortBy = sortBy
+        self.source = source
+        self.target = target
+        self.type = type
+        
+        self.targetCols = targetCols
+        self.limit = limit
+    }
+    
     var mozscapeRequestParameters:[String:String] {
         
         var params = [String:String]()
+        
+        params["Sort"] = sortBy.rawValue
+        
+        params["Scope"] = target.rawValue
+        
+        params["TargetCols"] = targetCols
+        
+        params["Limit"] = limit
         
         switch (source, type) {
         case (.All, .All):
@@ -187,11 +218,11 @@ struct LinkSearchConfiguration: Equatable {
             break
         case (.All, _):
             // only
-            params["filter"] = type.rawValue
+            params["Filter"] = type.rawValue
         case (_, .All):
-            params["filter"] = source.rawValue
+            params["Filter"] = source.rawValue
         default:
-            params["filter"] = "\(type.rawValue)+\(source.rawValue)"
+            params["Filter"] = "\(type.rawValue)+\(source.rawValue)"
         }
         
         return params
@@ -228,8 +259,8 @@ extension LinkSearchConfiguration {
         }
         
         if let srt = sort,
-        let src = source,
-        let tgt = target,
+            let src = source,
+            let tgt = target,
             let typ = type {
             self.init(sortBy: srt, target: tgt, source: src, type: typ)
         } else {
@@ -240,5 +271,10 @@ extension LinkSearchConfiguration {
 }
 
 func ==(c1:LinkSearchConfiguration, c2:LinkSearchConfiguration) -> Bool {
-    return true
+    return c1.sortBy == c2.sortBy &&
+        c1.target == c2.target &&
+        c1.source == c2.source &&
+        c1.type == c2.type &&
+        c1.targetCols == c2.targetCols &&
+        c1.limit == c2.limit
 }

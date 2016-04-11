@@ -59,8 +59,9 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             showErrorViewForError(nil)
             showTableView(validURL)
             
-            if let request = urlString {
-                viewModel?.refreshObserver.sendNext((urlRequest:request, nextPage:false))
+            if let request = urlString
+            {
+                viewModel?.refreshObserver.sendNext((urlRequest:request, requestedParameters: searchConfiguration.value, nextPage:false))
             }
         }
     }
@@ -240,8 +241,9 @@ extension MZLinksViewController : UITableViewDelegate {
         if maxOffsetY > 0 &&
             scrollView.contentOffset.y > maxOffsetY - 50 &&
             !(viewModel?.isLoading.value ?? true),
-            let request = self.urlString {
-            viewModel?.refreshObserver.sendNext((urlRequest: request, nextPage: true))
+            let request = self.urlString
+            {
+            viewModel?.refreshObserver.sendNext((urlRequest: request, requestedParameters: self.searchConfiguration.value, nextPage: true))
         }
     }
 }
