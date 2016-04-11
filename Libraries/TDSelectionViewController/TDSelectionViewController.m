@@ -62,7 +62,10 @@
 
 -(void)dismissSelectionViewController:(id)sender
 {
-    if (self.requiresSelection && self.selectedKeys.count == 0) {
+    
+    BOOL validSelection = self.selectedKeys.count > 0;
+    
+    if (self.requiresSelection && validSelection) {
         
         UIAlertController *alert = [[UIAlertController alloc] init];
         alert.title = nil;
@@ -136,7 +139,7 @@
     
     if ([self.selectedKeys containsObject:thisKey]) {
         //[tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        [cell setSelected:YES];
+        //[cell setSelected:YES];
     }
     
     return cell;
@@ -161,7 +164,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (currentSingleSelection != nil) {
-        if (currentSingleSelection.row == indexPath.row && currentSingleSelection.section == indexPath.section) {
+        if (currentSingleSelection.row == indexPath.row && currentSingleSelection.section == indexPath.section && !self.requiresSelection) {
             // clear the current selection to be none
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             // manually send the delegate message as it doesn't get called when deselecting programmatically
@@ -178,7 +181,7 @@
         // clear this re-selection
         id  selectedKey = self.sortedOptionKeys[indexPath.section][indexPath.row];
         
-        if ([self.selectedKeys containsObject:selectedKey]) {
+        if ([self.selectedKeys containsObject:selectedKey] && !self.requiresSelection) {
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             // manually send the delegate message as it doesn't get called when deselecting programmatically
             [tableView.delegate tableView:tableView didDeselectRowAtIndexPath:indexPath];

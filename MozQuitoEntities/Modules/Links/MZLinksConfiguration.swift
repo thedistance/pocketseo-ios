@@ -14,7 +14,7 @@ public enum LinkSortBy: String {
     
     static var titleKey:LocalizationKey = .LinksFilterSortBy
     
-    case PageAuthority = "page"
+    case PageAuthority
     case DomainAuthority
     case SpamScore
     
@@ -31,6 +31,18 @@ public enum LinkSortBy: String {
 
     static var allValues:[LinkSortBy] {
         return [.PageAuthority, .DomainAuthority, .SpamScore]
+    }
+    
+    var selectionKey:String {
+        return "Sort_" + rawValue
+    }
+    
+    init?(selectionKey:String) {
+        if let r = selectionKey.rangeOfString("Sort_") {
+            self.init(rawValue: selectionKey.substringFromIndex(r.endIndex))
+        } else {
+            return nil
+        }
     }
 }
 
@@ -56,6 +68,18 @@ public enum LinkTarget: String {
     static var allValues:[LinkTarget] {
         return [.Page, .Subdomain, .Domain]
     }
+    
+    var selectionKey:String {
+        return "Target_" + rawValue
+    }
+    
+    init?(selectionKey:String) {
+        if let r = selectionKey.rangeOfString("Target_") {
+            self.init(rawValue: selectionKey.substringFromIndex(r.endIndex))
+        } else {
+            return nil
+        }
+    }
 }
 
 public enum LinkSource: String {
@@ -79,6 +103,18 @@ public enum LinkSource: String {
     
     static var allValues:[LinkSource] {
         return [.All, .External, .Internal]
+    }
+    
+    var selectionKey:String {
+        return "Source_" + rawValue
+    }
+    
+    init?(selectionKey:String) {
+        if let r = selectionKey.rangeOfString("Source_") {
+            self.init(rawValue: selectionKey.substringFromIndex(r.endIndex))
+        } else {
+            return nil
+        }
     }
 }
 
@@ -116,6 +152,18 @@ public enum LinkType: String {
     static var allValues:[LinkType] {
         return [.All, .Equity, .NoEquity, .Follow, .NoFollow, .Redirect301, .Redirect302]
     }
+    
+    var selectionKey:String {
+        return "Type_" + rawValue
+    }
+    
+    init?(selectionKey:String) {
+        if let r = selectionKey.rangeOfString("Type_") {
+            self.init(rawValue: selectionKey.substringFromIndex(r.endIndex))
+        } else {
+            return nil
+        }
+    }
 }
 
 struct LinkSearchConfiguration: Equatable {
@@ -147,6 +195,47 @@ struct LinkSearchConfiguration: Equatable {
         }
         
         return params
+    }
+    
+    var selectionKeys:[String] {
+        return [
+            sortBy.selectionKey,
+            target.selectionKey,
+            source.selectionKey,
+            type.selectionKey
+        ]
+    }
+}
+
+extension LinkSearchConfiguration {
+    init?(selectionKeys:[String]) {
+        
+        var sort:LinkSortBy? = nil
+        var source:LinkSource? = nil
+        var target:LinkTarget? = nil
+        var type:LinkType? = nil
+        
+        for k in selectionKeys {
+            if let s = LinkSortBy(selectionKey: k) {
+                sort = s
+            } else if let s = LinkSource(selectionKey: k) {
+                source = s
+            } else if let t = LinkTarget(selectionKey: k) {
+                target = t
+            } else if let t = LinkType(selectionKey: k) {
+                type = t
+            }
+        }
+        
+        if let srt = sort,
+        let src = source,
+        let tgt = target,
+            let typ = type {
+            self.init(sortBy: srt, target: tgt, source: src, type: typ)
+        } else {
+            return nil
+        }
+        
     }
 }
 

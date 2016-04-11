@@ -15,6 +15,8 @@ class LinkSelectionTableViewCell: UITableViewCell, SelectionCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+        // print("\(selected ? "selected" : "deselected"): \(titleLabel!.text) ")
         
         // Configure the view for the selected state
         self.accessoryType = selected ? .Checkmark : .None

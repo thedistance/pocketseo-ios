@@ -126,13 +126,13 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         guard let selectionVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.LinksSelectionVC) as? MZLinksSelectionViewController else { return }
         
         
-        let sortOptions = LinkSortBy.allValues.map({ ("Sort_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        let sortOptions = LinkSortBy.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
         
-        let targetOptions = LinkTarget.allValues.map({ ("Target_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        let targetOptions = LinkTarget.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
         
-        let sourceOptions = LinkSource.allValues.map({ ("Source_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        let sourceOptions = LinkSource.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
         
-        let typeOptions = LinkType.allValues.map({ ("Type_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        let typeOptions = LinkType.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
         
         let allOptions = [sortOptions, targetOptions, sourceOptions, typeOptions]
         
@@ -144,13 +144,13 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         let order = allOptions.map { $0.map { $0.0 } }
         
         selectionVC.setOptions(options, withDetails: nil, orderedAs: order)
-     
         selectionVC.sectionTitles = [
             LinkSortBy.titleKey,
             LinkTarget.titleKey,
             LinkSource.titleKey,
             LinkType.titleKey,
             ].map { LocalizedString($0) }
+        selectionVC.selectedKeys = NSMutableSet(array: searchConfiguration.value.selectionKeys)
         selectionVC.title = LocalizedString(.LinksFilter)
         
         let navVC = UINavigationController(navigationBarClass: ThemeNavigationBar.self, toolbarClass: ThemeToolbar.self)
@@ -255,6 +255,10 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
     func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
         
         // get the selection from the keys.
+        if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
+            let config = LinkSearchConfiguration(selectionKeys: selectedKeys) {
+            searchConfiguration.value = config
+        }
         
         selectionVC.dismissViewControllerAnimated(true, completion: nil)
     }
