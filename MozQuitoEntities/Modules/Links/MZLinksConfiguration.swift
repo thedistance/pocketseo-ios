@@ -8,31 +8,83 @@
 
 import Foundation
 
+import JCLocalization
+
 public enum LinkSortBy: String {
+    
+    static var titleKey:LocalizationKey = .LinksFilterSortBy
     
     case PageAuthority = "page"
     case DomainAuthority
     case SpamScore
     
+    var localizationKey:LocalizationKey {
+        switch self {
+        case .PageAuthority:
+            return .LinksFilterPageAuthority
+        case .DomainAuthority:
+            return .LinksFilterDomainAuthority
+        case .SpamScore:
+            return .LinksFilterSpamScore
+        }
+    }
+
+    static var allValues:[LinkSortBy] {
+        return [.PageAuthority, .DomainAuthority, .SpamScore]
+    }
 }
 
 public enum LinkTarget: String {
+    
+    static var titleKey:LocalizationKey = .LinksFilterTarget
     
     case Page
     case Subdomain
     case Domain
     
+    var localizationKey:LocalizationKey {
+        switch self {
+        case .Page:
+            return .LinksFilterPage
+        case .Subdomain:
+            return .LinksFilterSubdomain
+        case .Domain:
+            return .LinksFilterDomain
+        }
+    }
+    
+    static var allValues:[LinkTarget] {
+        return [.Page, .Subdomain, .Domain]
+    }
 }
 
 public enum LinkSource: String {
+    
+    static var titleKey:LocalizationKey = .LinksFilterSource
     
     case All
     case External
     case Internal
     
+    var localizationKey:LocalizationKey {
+        switch self {
+        case .All:
+            return .LinksFilterAll
+        case .External:
+            return .LinksFilterExternal
+        case .Internal:
+            return .LinksFilterInternal
+        }
+    }
+    
+    static var allValues:[LinkSource] {
+        return [.All, .External, .Internal]
+    }
 }
 
 public enum LinkType: String {
+    
+    static var titleKey:LocalizationKey = .LinksFilterLinkType
     
     case All
     case Equity
@@ -42,6 +94,28 @@ public enum LinkType: String {
     case Redirect301
     case Redirect302
     
+    var localizationKey:LocalizationKey {
+        switch self {
+        case .All:
+            return .LinksFilterAll
+        case .Equity:
+            return .LinksFilterEquity
+        case .NoEquity:
+            return .LinksFilterNoEquity
+        case .Follow:
+            return .LinksFilterFollow
+        case .NoFollow:
+            return .LinksFilterNoFollow
+        case .Redirect301:
+            return .LinksFilter301
+        case .Redirect302:
+            return .LinksFilter302
+        }
+    }
+    
+    static var allValues:[LinkType] {
+        return [.All, .Equity, .NoEquity, .Follow, .NoFollow, .Redirect301, .Redirect302]
+    }
 }
 
 struct LinkSearchConfiguration: Equatable {
@@ -74,7 +148,6 @@ struct LinkSearchConfiguration: Equatable {
         
         return params
     }
-    
 }
 
 func ==(c1:LinkSearchConfiguration, c2:LinkSearchConfiguration) -> Bool {

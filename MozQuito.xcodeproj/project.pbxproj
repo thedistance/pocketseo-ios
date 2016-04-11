@@ -205,6 +205,14 @@
 		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
 		A5C6A18C1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */; };
 		A5C6A18D1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */; };
+		A5C6A1911CB7B563004055EB /* TDSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */; };
+		A5C6A1921CB7B563004055EB /* TDSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */; };
+		A5C6A1941CB7BA52004055EB /* MZLinksSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */; };
+		A5C6A1951CB7BA52004055EB /* MZLinksSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */; };
+		A5C6A1971CB7BA8E004055EB /* LinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */; };
+		A5C6A1981CB7BA8E004055EB /* LinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */; };
+		A5C6A19A1CB7BF8B004055EB /* TDSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5C6A19C1CB7BFA2004055EB /* TDSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
 		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
@@ -393,6 +401,10 @@
 		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
 		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
 		A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksConfiguration.swift; path = Modules/Links/MZLinksConfiguration.swift; sourceTree = "<group>"; };
+		A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSelectionViewController.h; sourceTree = "<group>"; };
+		A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSelectionViewController.m; sourceTree = "<group>"; };
+		A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksSelectionViewController.swift; path = "Modules/Links/View Controller/MZLinksSelectionViewController.swift"; sourceTree = "<group>"; };
+		A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkSelectionTableViewCell.swift; path = Modules/Links/Views/LinkSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataStack.swift; path = "Alexa Data/MZAlexaDataStack.swift"; sourceTree = "<group>"; };
 		A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZGetMozscapeURLMetricsOperation.swift; path = Modules/URLMetrics/NetworkOperations/MZGetMozscapeURLMetricsOperation.swift; sourceTree = "<group>"; };
 		A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsViperProtocols.swift; path = Modules/URLMetrics/Viper/URLMetricsViperProtocols.swift; sourceTree = "<group>"; };
@@ -554,6 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				5E0FB0881CB50024001614BE /* MZLinksViewController.swift */,
+				A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -569,6 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */,
+				A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */,
 				A55AB99F1CB6A10500F462A4 /* NoInputView.swift */,
 			);
 			name = Views;
@@ -793,6 +807,7 @@
 		A59E9FFA1CB2631600888DFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5C6A18E1CB7B563004055EB /* TDSelectionViewController */,
 				A56072361CB2B43D007F7E65 /* Nimble.framework */,
 				A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */,
 				A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */,
@@ -821,6 +836,16 @@
 			);
 			name = Theme;
 			path = Modules/Theme;
+			sourceTree = "<group>";
+		};
+		A5C6A18E1CB7B563004055EB /* TDSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */,
+				A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */,
+			);
+			name = TDSelectionViewController;
+			path = Libraries/TDSelectionViewController;
 			sourceTree = "<group>";
 		};
 		A5E674951C7B312400A7CDF4 /* Alexa Data */ = {
@@ -1019,6 +1044,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A5C6A1991CB7BF84004055EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C6A19A1CB7BF8B004055EB /* TDSelectionViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5C6A19B1CB7BF96004055EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C6A19C1CB7BFA2004055EB /* TDSelectionViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		A58560CD1C7F3FFF005221B3 /* URLDetailsExtension */ = {
 			isa = PBXNativeTarget;
@@ -1026,6 +1070,7 @@
 			buildPhases = (
 				540D2E2E8F143950A1AFBCC3 /* Check Pods Manifest.lock */,
 				E7AAA0041C89B279003EE3D4 /* ShellScript */,
+				A5C6A19B1CB7BF96004055EB /* Headers */,
 				A58560CA1C7F3FFF005221B3 /* Sources */,
 				A58560CB1C7F3FFF005221B3 /* Frameworks */,
 				A58560CC1C7F3FFF005221B3 /* Resources */,
@@ -1048,6 +1093,7 @@
 			buildPhases = (
 				14975816AD92C57C6570A2B2 /* Check Pods Manifest.lock */,
 				A579DD8E1C8470A0006C0FB5 /* ShellScript */,
+				A5C6A1991CB7BF84004055EB /* Headers */,
 				A5F4E6641C50E0FD0099010C /* Sources */,
 				A5F4E6651C50E0FD0099010C /* Frameworks */,
 				A5F4E6661C50E0FD0099010C /* Resources */,
@@ -1398,6 +1444,7 @@
 				A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */,
 				A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */,
 				A579DD821C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
+				A5C6A1981CB7BA8E004055EB /* LinkSelectionTableViewCell.swift in Sources */,
 				A59EA0151CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */,
 				A58560E21C7F48D4005221B3 /* URLMetricsViperProtocols.swift in Sources */,
 				A58560E31C7F48D4005221B3 /* MZURLMetricsPresenter.swift in Sources */,
@@ -1413,6 +1460,7 @@
 				A58560EF1C7F48D4005221B3 /* MZAnalytics.swift in Sources */,
 				A58560F01C7F48D4005221B3 /* AlamofireJSONOperation.swift in Sources */,
 				A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */,
+				A5C6A1921CB7B563004055EB /* TDSelectionViewController.m in Sources */,
 				A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */,
 				A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */,
 				5E9371601CB53BB0009C8248 /* MZLinksViewController.swift in Sources */,
@@ -1449,6 +1497,7 @@
 				A585610C1C7F48D4005221B3 /* ThemeTextView.swift in Sources */,
 				A585610D1C7F48D4005221B3 /* ThemeImageView.swift in Sources */,
 				A585610E1C7F48D4005221B3 /* ThemeView.swift in Sources */,
+				A5C6A1951CB7BA52004055EB /* MZLinksSelectionViewController.swift in Sources */,
 				A585610F1C7F48D4005221B3 /* MZPanel.swift in Sources */,
 				A58561121C7F48D4005221B3 /* ErrorStack.swift in Sources */,
 				5E93715F1CB53B8E009C8248 /* LinksTableViewCell.swift in Sources */,
@@ -1500,6 +1549,7 @@
 				5E0FB08D1CB5017B001614BE /* LinksTableViewCell.swift in Sources */,
 				A59E9FE31CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */,
 				A50BD3B41C75E29500E7A07F /* ThemeNavigationBar.swift in Sources */,
+				A5C6A1971CB7BA8E004055EB /* LinkSelectionTableViewCell.swift in Sources */,
 				A50BD3B01C75E29500E7A07F /* ThemeSlider.swift in Sources */,
 				A599C8B61C5BCF81006B7FAC /* MZURLMetricsInteractor.swift in Sources */,
 				A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */,
@@ -1532,6 +1582,7 @@
 				A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */,
 				A579DD8A1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */,
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
+				A5C6A1911CB7B563004055EB /* TDSelectionViewController.m in Sources */,
 				A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */,
 				A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */,
 				A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */,
@@ -1541,6 +1592,7 @@
 				A5F46D191C7C759E001417F3 /* GMDView.swift in Sources */,
 				A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */,
 				A5ECBD341C5A5D5F003350E3 /* MZGetPageMetaDataOperation.swift in Sources */,
+				A5C6A1941CB7BA52004055EB /* MZLinksSelectionViewController.swift in Sources */,
 				A59E9FDF1CB25E6200888DFA /* AnalyticEntities.swift in Sources */,
 				A5F46D211C7DB144001417F3 /* MZButton.swift in Sources */,
 				A50BD3B61C75E29500E7A07F /* ThemeTabBarItem.swift in Sources */,
@@ -1688,7 +1740,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DM13_APP_EXTENSIONS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo.URLMetricsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
+				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "URLDetailsExtension/URLDetailsExtension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1960,7 +2012,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pocketseo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8cf039a7-1827-4647-94ad-f9d186283035";
+				PROVISIONING_PROFILE = "0943918a-2c94-4a2c-a224-4ff47e7d6ea5";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};

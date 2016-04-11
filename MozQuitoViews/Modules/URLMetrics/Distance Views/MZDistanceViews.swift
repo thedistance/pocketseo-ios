@@ -72,7 +72,16 @@ class MZDistanceView: MZPanel {
                 distanceStack.headingStack.axis = newAxis
             })
         }
-
+        
+        
+        
+        /*
+        if distanceStack.stack.axis != newAxis {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                distanceStack.stack.axis = newAxis
+            })
+        }
+        */
     }
 }
 

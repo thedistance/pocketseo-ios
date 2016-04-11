@@ -11,6 +11,10 @@
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <GoogleAnalytics/GAIFields.h>
 
+// --- TD PODS --- \\
+
+#import "TDSelectionViewController.h"
+
 // --- System --- \\
 
 #import <CommonCrypto/CommonHMAC.h>

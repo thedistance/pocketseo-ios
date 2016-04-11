@@ -22,14 +22,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="114" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="114" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO">
                                         <rect key="frame" x="0.0" y="28" width="600" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOj-XP-h8f" id="Leb-EO-fcU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CanonicalURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-CR-tMJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" misplaced="YES" text="CanonicalURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-CR-tMJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="40" width="564" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +39,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="SecondaryText"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="PA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryD-1Q-xWR" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="PA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryD-1Q-xWR" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="59" width="18" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +48,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&lt;PA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-xR-gYc" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;PA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-xR-gYc" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="42" y="59" width="38" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +58,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="DA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Vn-fr8" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="DA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Vn-fr8" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="88" y="59" width="19" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,7 +67,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Spam Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlF-QN-JNg" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Spam Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlF-QN-JNg" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="158" y="59" width="79" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC3-at-fgd" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC3-at-fgd" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="241" y="59" width="7" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.69411764705882351" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,7 +85,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&lt;DA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-gM-dZ6" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;DA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-gM-dZ6" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="111" y="59" width="39" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,7 +95,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Anchor Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-mR-pQI" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Anchor Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-mR-pQI" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="80" width="79" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,7 +105,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&lt;anchor_text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7c-rJ-fKC" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" misplaced="YES" text="&lt;anchor_text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7c-rJ-fKC" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="107" y="80" width="477" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -122,7 +122,7 @@
                                                         <constraint firstAttribute="width" constant="4" id="LJM-Cp-czM"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djO-a4-6OJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djO-a4-6OJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="16" width="564" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -231,6 +231,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lB-H7-wqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488" y="372"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Udo-v3-fjt">
+            <objects>
+                <navigationController id="dUu-Qd-Syx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOo-lD-W2c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="668-It-w3d" kind="relationship" relationship="rootViewController" id="Jcu-AG-LtN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7v-1q-OhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="372"/>
+        </scene>
+        <!--Links Selection View Controller-->
+        <scene sceneID="HRq-AQ-E7u">
+            <objects>
+                <viewController storyboardIdentifier="LinksSelectionVC" id="668-It-w3d" customClass="MZLinksSelectionViewController" customModule="PocketSEO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="niI-W8-9fc"/>
+                        <viewControllerLayoutGuide type="bottom" id="r7h-CM-ZUx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eo1-kn-hof">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sUv-Qj-vZh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Basic" id="2f8-26-tOl" customClass="LinkSelectionTableViewCell" customModule="PocketSEO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2f8-26-tOl" id="Os4-Vz-8vj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRT-Hk-FQe" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="8" width="577" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Button"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IRT-Hk-FQe" firstAttribute="top" secondItem="Os4-Vz-8vj" secondAttribute="topMargin" id="1RQ-jk-zSj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IRT-Hk-FQe" secondAttribute="bottom" id="GIy-ek-tUR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IRT-Hk-FQe" secondAttribute="trailing" id="XPa-Gy-mYZ"/>
+                                                <constraint firstItem="IRT-Hk-FQe" firstAttribute="leading" secondItem="Os4-Vz-8vj" secondAttribute="leading" constant="15" id="dyG-DA-yYp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="IRT-Hk-FQe" id="eX2-sV-bqt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="668-It-w3d" id="u3k-YI-W0Z"/>
+                                    <outlet property="delegate" destination="668-It-w3d" id="YnW-ZN-7cJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sUv-Qj-vZh" firstAttribute="top" secondItem="Eo1-kn-hof" secondAttribute="top" id="JEs-03-9lF"/>
+                            <constraint firstItem="sUv-Qj-vZh" firstAttribute="leading" secondItem="Eo1-kn-hof" secondAttribute="leading" id="KC7-8G-Eez"/>
+                            <constraint firstItem="r7h-CM-ZUx" firstAttribute="top" secondItem="sUv-Qj-vZh" secondAttribute="bottom" id="bKx-po-KAA"/>
+                            <constraint firstAttribute="trailing" secondItem="sUv-Qj-vZh" secondAttribute="trailing" id="oOy-z2-f5V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Z8-E4-waY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ubh-Bh-gEb">
+                            <connections>
+                                <action selector="cancelTapped:" destination="668-It-w3d" id="RWf-lI-Lln"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pr4-1d-JMO">
+                            <connections>
+                                <action selector="doneTapped:" destination="668-It-w3d" id="v7L-yF-nWs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="sUv-Qj-vZh" id="3ao-lH-kum"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gjs-IA-gKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1859" y="372"/>
         </scene>
     </scenes>
 </document>

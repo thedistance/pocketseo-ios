@@ -138,4 +138,15 @@ class LinksTableViewCell: ListTableViewCell {
             }
         }
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+//        for l in [titleLabel, subtitleLabel, PALabel, DALabel, SpamScoreLabel, anchorTextLabel] {
+//            if l.preferredMaxLayoutWidth != l.frame.size.width {
+//                l.preferredMaxLayoutWidth = l.frame.size.width
+//                l.setNeedsLayout()
+//            }
+//        }
+    }
 }

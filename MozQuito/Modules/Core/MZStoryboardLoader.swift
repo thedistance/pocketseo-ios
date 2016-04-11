@@ -25,6 +25,7 @@ enum MZViewControllerID:String {
     case URLExtensionDetailsVC
     case URLMetricsVC
     case URLLinksVC
+    case LinksSelectionVC
 }
 
 class MZStoryboardLoader: StoryboardLoader {
@@ -39,7 +40,7 @@ class MZStoryboardLoader: StoryboardLoader {
             return .Extension
         case .URLMetricsVC:
             return .URLDetails
-        case .URLLinksVC:
+        case .URLLinksVC, .LinksSelectionVC:
             return .Links
         }
     }

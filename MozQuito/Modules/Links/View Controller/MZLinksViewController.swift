@@ -10,6 +10,7 @@ import UIKit
 
 import Components
 import ReactiveCocoa
+import TheDistanceCore
 import JCLocalization
 
 class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableView {
@@ -111,6 +112,64 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         self.refreshControl = refresh
     }
     
+    func filterTapped(sender:AnyObject) {
+        
+        if let buttonSender = sender as? UIButton {
+            showFilterOptions(.View(buttonSender))
+        } else if let bbiSender = sender as? UIBarButtonItem {
+            showFilterOptions(.BarButton(bbiSender))
+        }
+    }
+    
+    func showFilterOptions(sender:UIPopoverSourceType) {
+        
+        guard let selectionVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.LinksSelectionVC) as? MZLinksSelectionViewController else { return }
+        
+        
+        let sortOptions = LinkSortBy.allValues.map({ ("Sort_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        
+        let targetOptions = LinkTarget.allValues.map({ ("Target_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        
+        let sourceOptions = LinkSource.allValues.map({ ("Source_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        
+        let typeOptions = LinkType.allValues.map({ ("Type_" + $0.rawValue, LocalizedString($0.localizationKey)) })
+        
+        let allOptions = [sortOptions, targetOptions, sourceOptions, typeOptions]
+        
+        // a dictionary of all Key-Value pairs
+        let options = allOptions.map { Dictionary($0) }
+            .reduce([String:String](), combine: +)
+        
+        // an array of just keys
+        let order = allOptions.map { $0.map { $0.0 } }
+        
+        selectionVC.setOptions(options, withDetails: nil, orderedAs: order)
+     
+        selectionVC.sectionTitles = [
+            LinkSortBy.titleKey,
+            LinkTarget.titleKey,
+            LinkSource.titleKey,
+            LinkType.titleKey,
+            ].map { LocalizedString($0) }
+        selectionVC.title = LocalizedString(.LinksFilter)
+        
+        let navVC = UINavigationController(navigationBarClass: ThemeNavigationBar.self, toolbarClass: ThemeToolbar.self)
+        navVC.navigationBar.translucent = false
+        (navVC.navigationBar as? ThemeNavigationBar)?.barTintColourStyle = .Main
+        (navVC.navigationBar as? ThemeNavigationBar)?.tintColourStyle = .LightText
+        (navVC.navigationBar as? ThemeNavigationBar)?.textColourStyle = .LightText
+        
+        navVC.viewControllers = [selectionVC]
+        navVC.modalInPopover = true
+        navVC.modalPresentationStyle = .Popover
+        
+        selectionVC.modalInPopover = true
+        selectionVC.modalPresentationStyle = .Popover
+        selectionVC.delegate = self
+        
+        presentViewController(navVC, fromSourceItem: sender)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -152,6 +211,10 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
 
 extension MZLinksViewController : UITableViewDelegate {
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if var selectedLinkURL = viewModel?.entityForIndexPath(indexPath)?.canonicalURL?.absoluteString {
@@ -181,4 +244,19 @@ extension MZLinksViewController : UITableViewDelegate {
             viewModel?.refreshObserver.sendNext((urlRequest: request, nextPage: true))
         }
     }
+}
+
+extension MZLinksViewController: TDSelectionViewControllerDelegate {
+    
+    func selectionViewControllerRequestsCancel(selectionVC: TDSelectionViewController) {
+        selectionVC.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
+        
+        // get the selection from the keys.
+        
+        selectionVC.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
