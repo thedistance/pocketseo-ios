@@ -22,6 +22,10 @@ class TestURLStore:NSObject, URLStore {
         return testBundle.URLForResource("MozscapeLinks-\(page)", withExtension: "json")
     }
     
+    func mozscapeLinksForRequestOrderedByDA(request: String, page: UInt) -> NSURL? {
+        return testBundle.URLForResource("MozscapeLinksOrderedByDA", withExtension: "json")
+    }
+    
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
     let mozscapeNextIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedNextDate)!
     

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+import JCPageViewController
 import JCLocalization
 import Components
 
@@ -24,6 +26,7 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
             
             urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
             urlInputView.inputStack.refreshButton.hidden = urlString?.isEmpty ?? true
+            configureFilterVisibility()
         }
     }
     
@@ -34,11 +37,14 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         
         // configure the input stack
         urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
-        urlInputView.inputStack.safariButton.addTarget(self, action: "safariTapped:", forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.safariButton.addTarget(self, action: #selector(MZURLDetailsViewController.safariTapped(_:)), forControlEvents: .TouchUpInside)
         urlInputView.inputStack.safariButton.hidden = true
         
-        urlInputView.inputStack.refreshButton.addTarget(self, action: "refreshTapped:", forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.refreshButton.addTarget(self, action: #selector(MZURLDetailsViewController.refreshTapped(_:)), forControlEvents: .TouchUpInside)
         urlInputView.inputStack.refreshButton.hidden = true
+        
+        urlInputView.inputStack.filterButton.addTarget(linksVC, action: #selector(MZLinksViewController.filterTapped(_:)), forControlEvents: .TouchUpInside)
+        urlInputView.inputStack.filterButton.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,7 +54,20 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         // configure the distance stack
         (metricsVC.distanceView?.distanceStack as? MZDistanceApplicationStack)?.delegate = self
     }
-
+    
+    override func configureFilterVisibility() {
+        let invalidURL = urlString?.isEmpty ?? true
+        let validLinksPage = self.currentViewController is MZLinksViewController
+        let validLinks =  validLinksPage && !invalidURL
+        
+        let newValue = !validLinks
+        if urlInputView.inputStack.filterButton.hidden != newValue {
+            UIView.animateWithDuration(0.25, animations: { 
+                self.urlInputView.inputStack.filterButton.hidden = newValue
+                self.urlInputView.inputStack.filterButton.alpha = newValue ? 0.0 : 1.0
+            })
+        }
+    }
 }
 
 extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {

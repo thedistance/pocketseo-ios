@@ -47,7 +47,7 @@ struct LiveURLStore:URLStore {
         guard let requestURLString = request.stringByAddingURLPathEncoding()
             else { return nil  }
         
-        return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(requestURLString)
+        return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(request)
     }
     
     let mozscapeLastIndexedDatesURL = NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeIndexedLastDate)!
@@ -100,24 +100,21 @@ class APIManager {
     }
     
     // Backlinks
-    func mozscapeLinksForString(requestURLString:String, page:UInt, count:UInt = 25) -> SignalProducer<[MZMozscapeLinks], NSError> {
+    func mozscapeLinksForString(requestURLString:String, requestURLParameters: LinkSearchConfiguration, page:UInt, count:UInt = 25) -> SignalProducer<[MZMozscapeLinks], NSError> {
         
         let cols:[MZLinksKey] = [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore]
         let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
         
         let urlString = urlStore.mozscapeLinksForRequest(requestURLString, page: page)?.absoluteString ?? ""
         
-        //authenticationParameters(["Sort":"page_authority", "Limit":"25", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
+        let parameters =  ["SourceCols":String(colsValue),
+                           "LinkCols": String(MZLinksKey.AnchorText.colValue),
+                           "Offset": String(page * count)]
         
+        let combinedParameters = parameters + requestURLParameters.mozscapeRequestParameters
+
         return Alamofire.request(.GET, urlString,
-//            parameters: authenticationParameters([
-//                "SourceCols": String(colsValue),
-//                "Sort":"page_authority",
-//                "Limit":"25",
-//                "Offset": "\(page * count)",
-//                "TargetCols": "4",
-//                "LinksCols": "8"]),
-            parameters: authenticationParameters(["Sort":"page_authority", "Limit":"25","Offset": "\(page * count)", "SourceCols":"103146323973", "TargetCols":"4", "LinkCols":"8"]),
+            parameters: authenticationParameters(combinedParameters),
             encoding: .URL,
             headers:  nil)
             .validate()

@@ -10,6 +10,7 @@ import UIKit
 
 import Components
 import ReactiveCocoa
+import TheDistanceCore
 import JCLocalization
 
 class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableView {
@@ -17,7 +18,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     typealias InputType = String
     typealias OutputType = [[MZMozscapeLinks]]
     typealias ValueType = MZMozscapeLinks
-
+    
     var errorView = MZErrorView(image: UIImage(named: "Error"), message: "")
     var emptyView = MZErrorView(image: nil, message: LocalizedString(.LinksNoneFound))
     var noInputView = NoInputView()
@@ -46,6 +47,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     var listDataSource:MozscapeLinksDataSource?
     
+    var searchConfiguration = MutableProperty<LinkSearchConfiguration>(LinkSearchConfiguration.defaultConfiguration())
+    
     var urlString:String? {
         didSet {
             
@@ -56,8 +59,9 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             showErrorViewForError(nil)
             showTableView(validURL)
             
-            if let request = urlString {
-                viewModel?.refreshObserver.sendNext((urlRequest:request, nextPage:false))
+            if let request = urlString
+            {
+                viewModel?.refreshObserver.sendNext((urlRequest:request, requestedParameters: searchConfiguration.value, nextPage:false))
             }
         }
     }
@@ -94,11 +98,77 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             }
         }
         
+        searchConfiguration.producer.combinePrevious(LinkSearchConfiguration.defaultConfiguration())
+            .startWithNext { (prev, new) in
+                if prev != new,
+                    let str = self.urlString {
+                    self.urlString = str
+                }
+        }
+        
         tableView?.addSubview(refresh)
         tableView?.estimatedRowHeight = 114
         tableView?.rowHeight = UITableViewAutomaticDimension
         
         self.refreshControl = refresh
+    }
+    
+    func filterTapped(sender:AnyObject) {
+        
+        if let buttonSender = sender as? UIButton {
+            showFilterOptions(.View(buttonSender))
+        } else if let bbiSender = sender as? UIBarButtonItem {
+            showFilterOptions(.BarButton(bbiSender))
+        }
+    }
+    
+    func showFilterOptions(sender:UIPopoverSourceType) {
+        
+        guard let selectionVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.LinksSelectionVC) as? MZLinksSelectionViewController else { return }
+        
+        
+        let sortOptions = LinkSortBy.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
+        
+        let targetOptions = LinkTarget.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
+        
+        let sourceOptions = LinkSource.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
+        
+        let typeOptions = LinkType.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
+        
+        let allOptions = [sortOptions, targetOptions, sourceOptions, typeOptions]
+        
+        // a dictionary of all Key-Value pairs
+        let options = allOptions.map { Dictionary($0) }
+            .reduce([String:String](), combine: +)
+        
+        // an array of just keys
+        let order = allOptions.map { $0.map { $0.0 } }
+        
+        selectionVC.setOptions(options, withDetails: nil, orderedAs: order)
+        selectionVC.sectionTitles = [
+            LinkSortBy.titleKey,
+            LinkTarget.titleKey,
+            LinkSource.titleKey,
+            LinkType.titleKey,
+            ].map { LocalizedString($0) }
+        selectionVC.selectedKeys = NSMutableSet(array: searchConfiguration.value.selectionKeys)
+        selectionVC.title = LocalizedString(.LinksFilter)
+        
+        let navVC = UINavigationController(navigationBarClass: ThemeNavigationBar.self, toolbarClass: ThemeToolbar.self)
+        navVC.navigationBar.translucent = false
+        (navVC.navigationBar as? ThemeNavigationBar)?.barTintColourStyle = .Main
+        (navVC.navigationBar as? ThemeNavigationBar)?.tintColourStyle = .LightText
+        (navVC.navigationBar as? ThemeNavigationBar)?.textColourStyle = .LightText
+        
+        navVC.viewControllers = [selectionVC]
+        navVC.modalInPopover = true
+        navVC.modalPresentationStyle = .Popover
+        
+        selectionVC.modalInPopover = true
+        selectionVC.modalPresentationStyle = .Popover
+        selectionVC.delegate = self
+        
+        presentViewController(navVC, fromSourceItem: sender)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -108,7 +178,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             tableView?.deselectRowAtIndexPath(selected, animated: true)
         }
     }
-
+    
     func showErrorViewForError(error: NSError?) {
         
         errorView.label.text = ["Unable to download Links.",
@@ -137,10 +207,14 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         tableView?.separatorStyle = show ? .SingleLine : .None
         tableView?.setNeedsLayout()
     }
-
+    
 }
 
 extension MZLinksViewController : UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -167,8 +241,28 @@ extension MZLinksViewController : UITableViewDelegate {
         if maxOffsetY > 0 &&
             scrollView.contentOffset.y > maxOffsetY - 50 &&
             !(viewModel?.isLoading.value ?? true),
-            let request = self.urlString {
-            viewModel?.refreshObserver.sendNext((urlRequest: request, nextPage: true))
+            let request = self.urlString
+            {
+            viewModel?.refreshObserver.sendNext((urlRequest: request, requestedParameters: self.searchConfiguration.value, nextPage: true))
         }
     }
+}
+
+extension MZLinksViewController: TDSelectionViewControllerDelegate {
+    
+    func selectionViewControllerRequestsCancel(selectionVC: TDSelectionViewController) {
+        selectionVC.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
+        
+        // get the selection from the keys.
+        if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
+            let config = LinkSearchConfiguration(selectionKeys: selectedKeys) {
+            searchConfiguration.value = config
+        }
+        
+        selectionVC.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

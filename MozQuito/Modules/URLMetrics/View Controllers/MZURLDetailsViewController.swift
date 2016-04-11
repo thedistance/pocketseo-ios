@@ -52,6 +52,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         
         (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
         pageContainer?.bounces = false
+        self.delegate = self
         
         // configure this view
         headerBackgroundView?.layer.shadowOpacity = 0.27
@@ -137,4 +138,14 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func configureFilterVisibility() {
+        
+    }
+}
+
+extension MZURLDetailsViewController: JCPageViewControllerDelegate {
+    
+    func pageViewController(pageViewController: JCPageViewController, didChangeCurrentPageTo page: UIViewController, atIndex: Int) {
+        configureFilterVisibility()
+    }
 }

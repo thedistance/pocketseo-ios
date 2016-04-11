@@ -9,6 +9,7 @@
 import Foundation
 import XCTest
 
+/*
 extension XCTestCase {
     func NLAssertEqualOptional<T : Equatable>(@autoclosure expression1: () -> T?, @autoclosure _ expression2: () -> T?, _ message: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
         
@@ -97,3 +98,4 @@ extension XCTestCase {
         }
     }
 }
+*/
