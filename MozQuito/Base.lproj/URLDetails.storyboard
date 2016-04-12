@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--URL Metrics View Controller-->
@@ -39,11 +38,33 @@
                                                 <rect key="frame" x="8" y="8" width="584" height="100"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="mYE-OJ-ube">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="bZ2-oK-PyW">
+                                                        <rect key="frame" x="160" y="172" width="280" height="128"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" priority="900" constant="280" id="niz-XM-C7o"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="bZ2-oK-PyW" firstAttribute="centerX" secondItem="mYE-OJ-ube" secondAttribute="centerX" id="Aw9-8b-jTq"/>
+                                                    <constraint firstItem="bZ2-oK-PyW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mYE-OJ-ube" secondAttribute="leadingMargin" id="HGe-M2-QKV"/>
+                                                    <constraint firstItem="bZ2-oK-PyW" firstAttribute="centerY" secondItem="mYE-OJ-ube" secondAttribute="centerY" id="LBx-Lh-HoS"/>
+                                                    <constraint firstItem="bZ2-oK-PyW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mYE-OJ-ube" secondAttribute="topMargin" id="gkW-j6-6w0"/>
+                                                </constraints>
+                                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                                                    <rect key="frame" x="100" y="0.0" width="600" height="336"/>
+                                                </variation>
+                                            </view>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fUQ-B9-wwe" customClass="MZMozscapeMetricsView" customModule="PocketSEO" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="116" width="288" height="128"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="800" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-sN-G4h" customClass="MZDistanceView" customModule="PocketSEO" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="800" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-sN-G4h" customClass="MZDistanceView" customModule="PocketSEO" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="472" width="584" height="120"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
@@ -54,28 +75,22 @@
                                                 <rect key="frame" x="304" y="116" width="288" height="128"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYE-OJ-ube">
-                                                <rect key="frame" x="75" y="0.0" width="450" height="472"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
-                                                    <rect key="frame" x="100" y="0.0" width="600" height="336"/>
-                                                </variation>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="4nw-Qr-Ttu" secondAttribute="trailing" id="2c6-gT-tZ2"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="width" secondItem="fUQ-B9-wwe" secondAttribute="width" id="2tu-vl-chb"/>
                                             <constraint firstItem="fUQ-B9-wwe" firstAttribute="top" secondItem="zF0-bj-FND" secondAttribute="bottom" constant="8" id="5ZJ-aR-EBW"/>
+                                            <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="mYE-OJ-ube" secondAttribute="bottom" id="80T-N3-9a2"/>
                                             <constraint firstAttribute="trailing" secondItem="zF0-bj-FND" secondAttribute="trailing" constant="8" id="9Va-xF-TIk"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="zF0-bj-FND" secondAttribute="bottom" constant="8" id="9lf-Jl-NvU"/>
                                             <constraint firstItem="zF0-bj-FND" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" constant="8" id="BJl-Da-Dqb"/>
-                                            <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="mYE-OJ-ube" secondAttribute="bottom" id="BpE-bn-Lye"/>
+                                            <constraint firstItem="mYE-OJ-ube" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leading" id="Bvc-Hc-f7J"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="top" secondItem="fUQ-B9-wwe" secondAttribute="bottom" constant="8" id="FE3-Bc-xPs"/>
-                                            <constraint firstItem="mYE-OJ-ube" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" id="FJ7-1z-1kH"/>
                                             <constraint firstItem="zF0-bj-FND" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leading" constant="8" id="HO1-NS-rZE"/>
                                             <constraint firstItem="ybI-yv-8jA" firstAttribute="top" secondItem="fUQ-B9-wwe" secondAttribute="bottom" priority="749" id="Lw4-sU-zyX"/>
-                                            <constraint firstItem="mYE-OJ-ube" firstAttribute="centerX" secondItem="F1T-ab-hsB" secondAttribute="centerX" id="PmL-Ph-9Bk"/>
+                                            <constraint firstAttribute="trailing" secondItem="mYE-OJ-ube" secondAttribute="trailing" id="Oq8-b6-ofx"/>
+                                            <constraint firstItem="mYE-OJ-ube" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" id="QQs-pr-Aqm"/>
                                             <constraint firstItem="zF0-bj-FND" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="UAK-L0-xWg"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="leading" secondItem="fUQ-B9-wwe" secondAttribute="trailing" constant="8" id="X9d-Dl-Jra"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="top" secondItem="zF0-bj-FND" secondAttribute="bottom" constant="8" id="XzR-vZ-dE5"/>
@@ -86,7 +101,6 @@
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="bottom" secondItem="F1T-ab-hsB" secondAttribute="bottomMargin" id="frm-uY-h4x"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="trailing" secondItem="F1T-ab-hsB" secondAttribute="trailingMargin" id="gGI-XA-1EU"/>
                                             <constraint firstItem="ybI-yv-8jA" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="hEr-6V-XTv"/>
-                                            <constraint firstItem="mYE-OJ-ube" firstAttribute="width" secondItem="F1T-ab-hsB" secondAttribute="width" multiplier="0.75" id="jq5-ol-afa"/>
                                             <constraint firstItem="ybI-yv-8jA" firstAttribute="top" secondItem="4nw-Qr-Ttu" secondAttribute="bottom" id="kGW-n6-QJK"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fUQ-B9-wwe" secondAttribute="trailing" id="lQc-VU-Tgp"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="o9Y-vu-hI1"/>
@@ -161,7 +175,7 @@
                         <outlet property="distanceView" destination="Xvp-sN-G4h" id="okV-BZ-xZY"/>
                         <outlet property="metaDataView" destination="zF0-bj-FND" id="QVM-p3-O5J"/>
                         <outlet property="mozscapeView" destination="fUQ-B9-wwe" id="6Wf-hQ-IbV"/>
-                        <outlet property="noInputContainer" destination="mYE-OJ-ube" id="CDN-K8-g7n"/>
+                        <outlet property="noInputContainer" destination="mYE-OJ-ube" id="w77-UG-l0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgo-f5-XXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,7 +194,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
                                 <rect key="frame" x="242" y="290" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

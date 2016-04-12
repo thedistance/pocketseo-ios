@@ -1,6 +1,7 @@
 Version 0.2:
 
 - Backlinks
+- Backlinks Filtering
 
 Version 0.1:
 

@@ -20,6 +20,7 @@ class LinkSelectionTableViewCell: UITableViewCell, SelectionCell {
         
         // Configure the view for the selected state
         self.accessoryType = selected ? .Checkmark : .None
+        
     }
 
 }

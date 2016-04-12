@@ -62,7 +62,9 @@ class MZDistanceStack: CreatedStack {
 
         buttonStack = CreateStackView(buttons)
         buttonStack.axis = .Horizontal
-        buttonStack.spacing = 8.0
+        buttonStack.spacing = 1.0
+        buttonStack.stackAlignment = .Fill
+        buttonStack.stackDistribution = .FillProportionally
         
         super.init(arrangedSubviews: [headingStack.view, buttonStack.view])
         stack.axis = .Vertical

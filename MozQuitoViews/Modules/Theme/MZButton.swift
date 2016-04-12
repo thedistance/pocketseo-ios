@@ -26,7 +26,8 @@ class MZButton: ThemeButton {
     func styleTheme() {
         self.tintColourStyle = .Accent
         self.textStyle = .Body2
-        self.contentEdgeInsets = UIEdgeInsetsMake(8, 0, 8, 0)
+        
+        self.contentEdgeInsets = UIEdgeInsetsMake(2, 0, 2, 0)
     }
     
 }
