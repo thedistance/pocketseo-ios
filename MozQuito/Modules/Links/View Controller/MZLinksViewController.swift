@@ -43,6 +43,27 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         if let tbv = tableView {
             listDataSource = MozscapeLinksDataSource(viewModel: viewModel, tableView: tbv)
         }
+        
+        if #available( iOS 9, *) {
+            // no need to re layout
+        } else {
+        
+            viewModel.contentChangesSignal.observeOn(UIScheduler())
+                .combinePrevious(LinksOutput(links: [], moreAvailable: true))
+                .observeNext { (prev, new) in
+                    
+                    if prev.links.count == 0 {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            
+                            if let tbv = self.tableView {
+                                tbv.beginUpdates()
+                                tbv.reloadRowsAtIndexPaths(tbv.indexPathsForVisibleRows ?? [], withRowAnimation: UITableViewRowAnimation.None)
+                                tbv.endUpdates()
+                            }
+                        })
+                    }
+            }
+        }
     }
     
     var listDataSource:MozscapeLinksDataSource?
@@ -70,8 +91,15 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     var refreshControl: UIRefreshControl?
     
+    var currentLifetime = MutableProperty<ViewLifetime>(.Init)
+    var hasAppeared = MutableProperty<Bool>(false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentLifetime <~ lifetimeSignal
+        hasAppeared <~ lifetimeSignal.filter { $0 == .DidAppear }
+            .map { _ in true }
         
         let toCenter = [errorView, emptyView]
         
@@ -81,8 +109,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         }
         
         // hide all the views
-        showErrorViewForError(nil)
-        showNoContent(false)
+        errorView.alpha = 0.0
+        emptyView.alpha = 0.0
         showTableView(false)
         
         if let vm = self.viewModel {
@@ -111,6 +139,26 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         tableView?.rowHeight = UITableViewAutomaticDimension
         
         self.refreshControl = refresh
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let selected = tableView?.indexPathForSelectedRow {
+            tableView?.deselectRowAtIndexPath(selected, animated: true)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if #available( iOS 9, *) {
+            // no layout needed
+        } else {
+            if currentLifetime.value == .WillAppear && !hasAppeared.value {
+                tableView?.reloadData()
+            }
+        }
     }
     
     func filterTapped(sender:AnyObject) {
@@ -171,14 +219,6 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         presentViewController(navVC, fromSourceItem: sender)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let selected = tableView?.indexPathForSelectedRow {
-            tableView?.deselectRowAtIndexPath(selected, animated: true)
-        }
-    }
-    
     func showErrorViewForError(error: NSError?) {
         
         errorView.label.text = ["Unable to download Links.",
@@ -196,16 +236,19 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     }
     
     func showNoContent(show:Bool) {
-        emptyView.alpha = show ? 1.0 : 0.0
         
-        if show {
-            showTableView(false)
+        if let str = urlString where !str.isEmpty {
+            emptyView.alpha = show ? 1.0 : 0.0
+            
+            if show {
+                showTableView(false)
+            }
         }
+        
     }
     
     func showTableView(show:Bool) {
         tableView?.separatorStyle = show ? .SingleLine : .None
-        tableView?.setNeedsLayout()
     }
     
 }
@@ -229,9 +272,13 @@ extension MZLinksViewController : UITableViewDelegate {
                 let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
                 AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
                 
-                self.openURL(url, fromSourceItem: .View(self.view))
+                let source = (tableView.cellForRowAtIndexPath(indexPath) as? LinksTableViewCell) ?? self.view
+                
+                self.openURL(url, fromSourceItem: .View(source!))
             }
         }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -256,13 +303,17 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
     
     func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
         
-        // get the selection from the keys.
-        if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
-            let config = LinkSearchConfiguration(selectionKeys: selectedKeys) {
-            searchConfiguration.value = config
+        if let tbv = self.tableView {
+            tbv.setContentOffset(CGPointMake(0, -tbv.contentInset.top), animated: false)
         }
         
         selectionVC.dismissViewControllerAnimated(true, completion: nil)
+        
+        // get the selection from the keys.
+        if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
+            let config = LinkSearchConfiguration(selectionKeys: selectedKeys) {
+            self.searchConfiguration.value = config
+        }
     }
     
 }
