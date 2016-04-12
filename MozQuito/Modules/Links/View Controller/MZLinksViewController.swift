@@ -39,6 +39,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         bindListLoadingTableViewModel(viewModel)
         
         viewModel.viewLifetime <~ lifetimeSignal
+        viewModel.urlString <~ urlString
+        viewModel.searchConfiguration <~ searchConfiguration
         
         if let tbv = tableView {
             listDataSource = MozscapeLinksDataSource(viewModel: viewModel, tableView: tbv)
@@ -47,7 +49,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         if #available( iOS 9, *) {
             // no need to re layout
         } else {
-        
+            
             viewModel.contentChangesSignal.observeOn(UIScheduler())
                 .combinePrevious(LinksOutput(links: [], moreAvailable: true))
                 .observeNext { (prev, new) in
@@ -70,37 +72,47 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     var searchConfiguration = MutableProperty<LinkSearchConfiguration>(LinkSearchConfiguration.defaultConfiguration())
     
-    var urlString:String? {
-        didSet {
-            
-            let validURL = !(urlString?.isEmpty ?? false)
-            noInputView.hidden = validURL
-            
-            showNoContent(false)
-            showErrorViewForError(nil)
-            showTableView(validURL)
-            
-            if let request = urlString
-            {
-                viewModel?.refreshObserver.sendNext((urlRequest:request, requestedParameters: searchConfiguration.value, nextPage:false))
-            }
-        }
-    }
+    var urlString = MutableProperty<String?>(nil)
+    
+    var validURLString = MutableProperty<Bool>(false)
+    
+    /*
+     var urlString:String? {
+     didSet {
+     
+     let validURL = !(urlString?.isEmpty ?? false)
+     noInputView.hidden = validURL
+     
+     showNoContent(false)
+     showErrorViewForError(nil)
+     showTableView(validURL)
+     
+     if let request = urlString
+     {
+     viewModel?.refreshObserver.sendNext((urlRequest:request, requestedParameters: searchConfiguration.value, nextPage:false))
+     }
+     }
+     }
+     */
     
     @IBOutlet weak var tableView: UITableView?
     
     var refreshControl: UIRefreshControl?
     
-    var currentLifetime = MutableProperty<ViewLifetime>(.Init)
-    var hasAppeared = MutableProperty<Bool>(false)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentLifetime <~ lifetimeSignal
-        hasAppeared <~ lifetimeSignal.filter { $0 == .DidAppear }
-            .map { _ in true }
+        // configure reloading properties
+        validURLString <~ urlString.producer.map { $0?.isEmpty ?? true }.map { !$0 }
         
+        validURLString.producer
+            .observeOn(UIScheduler())
+            .startWithNext { (valid) in
+                self.showTableView(valid)
+        }
+        
+        
+        // configure UIViews not added in the storyboard
         let toCenter = [errorView, emptyView]
         
         for v in toCenter {
@@ -113,52 +125,28 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         emptyView.alpha = 0.0
         showTableView(false)
         
+        // bind the view model again if set before viewDidLoad
         if let vm = self.viewModel {
             bindViewModel(vm)
         }
         
+        // add pull to refresh
         let refresh = UIRefreshControl()
         refresh.rac_signalForControlEvents(.ValueChanged).toSignalProducer().startWithNext { _ in
-            if let str = self.urlString {
-                self.urlString = str
+            if self.validURLString.value {
+                // pull to refresh reloads
+                self.viewModel?.refreshObserver.sendNext(false)
             } else {
                 refresh.endRefreshing()
             }
         }
-        
-        searchConfiguration.producer.combinePrevious(LinkSearchConfiguration.defaultConfiguration())
-            .startWithNext { (prev, new) in
-                if prev != new,
-                    let str = self.urlString {
-                    self.urlString = str
-                }
-        }
+        self.refreshControl = refresh
         
         tableView?.addSubview(refresh)
+        
+        // make table view autosizing
         tableView?.estimatedRowHeight = 114
         tableView?.rowHeight = UITableViewAutomaticDimension
-        
-        self.refreshControl = refresh
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let selected = tableView?.indexPathForSelectedRow {
-            tableView?.deselectRowAtIndexPath(selected, animated: true)
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if #available( iOS 9, *) {
-            // no layout needed
-        } else {
-            if currentLifetime.value == .WillAppear && !hasAppeared.value {
-                tableView?.reloadData()
-            }
-        }
     }
     
     func filterTapped(sender:AnyObject) {
@@ -237,14 +225,11 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     func showNoContent(show:Bool) {
         
-        if let str = urlString where !str.isEmpty {
-            emptyView.alpha = show ? 1.0 : 0.0
-            
-            if show {
-                showTableView(false)
-            }
-        }
+        emptyView.alpha = validURLString.value && show ? 1.0 : 0.0
         
+        if show {
+            showTableView(false)
+        }
     }
     
     func showTableView(show:Bool) {
@@ -287,10 +272,10 @@ extension MZLinksViewController : UITableViewDelegate {
         
         if maxOffsetY > 0 &&
             scrollView.contentOffset.y > maxOffsetY - 50 &&
-            !(viewModel?.isLoading.value ?? true),
-            let request = self.urlString
-            {
-            viewModel?.refreshObserver.sendNext((urlRequest: request, requestedParameters: self.searchConfiguration.value, nextPage: true))
+            !(viewModel?.isLoading.value ?? true) &&
+            validURLString.value
+        {
+            viewModel?.refreshObserver.sendNext(true)
         }
     }
 }
@@ -303,8 +288,10 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
     
     func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
         
-        if let tbv = self.tableView {
-            tbv.setContentOffset(CGPointMake(0, -tbv.contentInset.top), animated: false)
+        if let tbv = self.tableView,
+            let refreshControl = self.refreshControl {
+            // adjust the scroll to show the refresh control
+            tbv.setContentOffset(CGPointMake(0, -tbv.contentInset.top - refreshControl.frame.size.height), animated: true)
         }
         
         selectionVC.dismissViewControllerAnimated(true, completion: nil)

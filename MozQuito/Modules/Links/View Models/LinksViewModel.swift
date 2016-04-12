@@ -18,7 +18,7 @@ struct LinksOutput {
 }
 
 extension LinksOutput: ListLoadingModel {
-
+    
     typealias ValueType = MZMozscapeLinks
     
     func totalNumberOfEntities() -> Int {
@@ -39,11 +39,11 @@ extension LinksOutput: ListLoadingModel {
     
 }
 
-class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, requestedParameters:LinkSearchConfiguration, nextPage:Bool), LinksOutput> {
+class MozscapeLinksViewModel: ContentLoadingViewModel<Bool, LinksOutput> {
     
-    var currentRequestString:String?
+    var urlString = MutableProperty<String?>(nil)
     
-    var currentRequestParameters:LinkSearchConfiguration?
+    var searchConfiguration = MutableProperty<LinkSearchConfiguration>(LinkSearchConfiguration.defaultConfiguration())
     
     let apiManager:APIManager
     
@@ -54,38 +54,47 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<(urlRequest:String, reques
         self.apiManager = apiManager
         
         super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
+        
+        // reload for each new urlString
+        urlString.producer
+            .combinePrevious(nil)
+            .filter { $0 != $1 }
+            .startWithNext { _ in self.refreshObserver.sendNext(false) }
+        
+        // reload for each new search configuration
+        searchConfiguration.producer
+            .combinePrevious(LinkSearchConfiguration.defaultConfiguration())
+            .filter { $0 != $1 }
+            .startWithNext { _ in self.refreshObserver.sendNext(false) }
     }
     
-    override func loadingProducerWithInput(input: (urlRequest:String, requestedParameters:LinkSearchConfiguration, nextPage:Bool)?) -> SignalProducer<LinksOutput, NSError> {
+    override func loadingProducerWithInput(nextPage: Bool?) -> SignalProducer<LinksOutput, NSError> {
         
-        guard let (url,reqParams,nextPage) = input
+        guard let url = urlString.value
             where !url.isEmpty else { return SignalProducer.empty }
-        
-        let reload = !nextPage || url != currentRequestString
-        
-        let requestParams = reqParams
         
         let page:UInt
         
-        if reload {
-            
-            loadedContent = nil
-            currentRequestString = url
-            currentRequestParameters = requestParams
-            page = 0
-            
-        } else if loadedContent?.moreAvailable ?? true {
+        let currentContent:LinksOutput
+        
+        if nextPage ?? false {
             
             let currentCount = loadedContent?.links.count ?? 0
             page = UInt(currentCount) / pageCount
+            currentContent = loadedContent ?? LinksOutput(links:[MZMozscapeLinks](), moreAvailable:true)
             
         } else {
-            return SignalProducer.empty
+            
+            currentContent = LinksOutput(links:[MZMozscapeLinks](), moreAvailable:true)
+            
+            page = 0
         }
         
-        let currentContent = LinksOutput(links:[MZMozscapeLinks](), moreAvailable:true)
-        return apiManager.mozscapeLinksForString(url, requestURLParameters: requestParams, page: page, count: pageCount)
-            .scan(loadedContent ?? currentContent) {
+        
+        return apiManager.mozscapeLinksForString(url,
+            requestURLParameters: searchConfiguration.value,
+            page: page, count: pageCount)
+            .scan(currentContent) {
                 
                 let aggregatedLinks = $0.links + $1
                 let moreAvailable = UInt($1.count) == self.pageCount

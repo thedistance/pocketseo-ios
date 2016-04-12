@@ -28,7 +28,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     var urlString:String? {
         didSet {
             metricsVC?.urlString = urlString
-            linksVC?.urlString = urlString
+            linksVC?.urlString.value = urlString
         }
     }
     
@@ -140,6 +140,10 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     
     func configureFilterVisibility() {
         
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIDevice.currentDevice().getDeviceSupportedInterfaceOrientations()
     }
 }
 

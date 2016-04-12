@@ -175,7 +175,7 @@ public class MZExpandingStack: CreatedStack {
         
     }
     
-    public func toggleExpanded(sender:AnyObject?) {
+    public func toggleExpanded(sender:UIButton) {
         
         self.configureAsExpanded(!self.expanded)
 //        self.stackView.layoutIfNeeded()
