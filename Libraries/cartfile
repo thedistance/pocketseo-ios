@@ -3,6 +3,7 @@ github "SwiftyJSON/SwiftyJSON"
 github "dennisweissmann/DeviceKit"
 
 git "git@bitbucket.org:thedistance/component-library-ios.git"
+git "git@bitbucket.org:thedistance/selectionviewcontroller.git"
 github "joshc89/ReactiveCocoaConvenience"
 
 github "Quick/Nimble"

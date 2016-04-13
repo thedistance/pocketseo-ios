@@ -29,7 +29,7 @@ class Links_ConfigurationTests: XCTestCase {
 
         let defaultParameters = LinkSearchConfiguration.defaultConfiguration()
         
-        expect(defaultParameters.sortBy).to(equal(LinkSortBy.PageAuthority))
+        expect(defaultParameters.sortBy).to(equal(LinkSortBy.DomainAuthority))
         expect(defaultParameters.target).to(equal(LinkTarget.Page))
         expect(defaultParameters.source).to(equal(LinkSource.All))
         expect(defaultParameters.type).to(equal(LinkType.All))

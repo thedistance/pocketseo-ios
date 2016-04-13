@@ -12,6 +12,7 @@ import Components
 import ReactiveCocoa
 import TheDistanceCore
 import JCLocalization
+import SelectionViewController
 
 class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableView {
     
@@ -147,6 +148,16 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         // make table view autosizing
         tableView?.estimatedRowHeight = 114
         tableView?.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if viewModel?.isLoading.value ?? false {
+            self.refreshControl?.beginRefreshing()
+        } else {
+            self.refreshControl?.endRefreshing()
+        }
     }
     
     func filterTapped(sender:AnyObject) {
@@ -294,8 +305,9 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
             tbv.setContentOffset(CGPointMake(0, -tbv.contentInset.top - refreshControl.frame.size.height), animated: true)
         }
         
-        selectionVC.dismissViewControllerAnimated(true, completion: nil)
-        self.refreshControl?.beginRefreshing()
+        selectionVC.dismissViewControllerAnimated(true) {
+            self.refreshControl?.beginRefreshing()
+        }
         
         // get the selection from the keys.
         if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
@@ -303,5 +315,4 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
             self.searchConfiguration.value = config
         }
     }
-    
 }

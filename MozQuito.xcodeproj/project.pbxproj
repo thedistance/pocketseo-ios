@@ -193,18 +193,21 @@
 		A59EA0181CB27FA500888DFA /* ReactiveCocoaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */; };
 		A59EA01D1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */; };
 		A5A70AEE1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
+		A5C228D91CBE8D8300CD65EC /* SelectionViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C228D81CBE8D8300CD65EC /* SelectionViewController.framework */; };
+		A5C228DA1CBE8D8300CD65EC /* SelectionViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C228D81CBE8D8300CD65EC /* SelectionViewController.framework */; };
+		A5C228DD1CBE92B200CD65EC /* UIView+SwiftAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C228DB1CBE92B200CD65EC /* UIView+SwiftAppearance.h */; };
+		A5C228DE1CBE92B200CD65EC /* UIView+SwiftAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C228DB1CBE92B200CD65EC /* UIView+SwiftAppearance.h */; };
+		A5C228DF1CBE92B200CD65EC /* UIView+SwiftAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C228DC1CBE92B200CD65EC /* UIView+SwiftAppearance.m */; };
+		A5C228E01CBE92B200CD65EC /* UIView+SwiftAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C228DC1CBE92B200CD65EC /* UIView+SwiftAppearance.m */; };
+		A5C228E11CBEAA3B00CD65EC /* SelectionViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C228D81CBE8D8300CD65EC /* SelectionViewController.framework */; };
 		A5C5723B1C610A9F00E2AACF /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
 		A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
 		A5C6A18C1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */; };
 		A5C6A18D1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */; };
-		A5C6A1911CB7B563004055EB /* TDSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */; };
-		A5C6A1921CB7B563004055EB /* TDSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */; };
 		A5C6A1941CB7BA52004055EB /* MZLinksSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */; };
 		A5C6A1951CB7BA52004055EB /* MZLinksSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */; };
 		A5C6A1971CB7BA8E004055EB /* LinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */; };
 		A5C6A1981CB7BA8E004055EB /* LinkSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */; };
-		A5C6A19A1CB7BF8B004055EB /* TDSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5C6A19C1CB7BFA2004055EB /* TDSelectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
 		A5EA9A8B1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8A1C568083004CC9EF /* MZGetMozscapeURLMetricsOperation.swift */; };
 		A5EA9A8E1C5681E1004CC9EF /* URLMetricsViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA9A8D1C5681E1004CC9EF /* URLMetricsViperProtocols.swift */; };
@@ -369,14 +372,15 @@
 		A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoaConvenience_Alamofire.framework; path = Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire.framework; sourceTree = "<group>"; };
 		A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZMozscapeMetricsStack.swift; sourceTree = "<group>"; };
 		A5B45E0D1C6216F6005AFA37 /* MZURLInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZURLInputView.swift; sourceTree = "<group>"; };
+		A5C228D81CBE8D8300CD65EC /* SelectionViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SelectionViewController.framework; path = Libraries/Carthage/Build/iOS/SelectionViewController.framework; sourceTree = "<group>"; };
+		A5C228DB1CBE92B200CD65EC /* UIView+SwiftAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SwiftAppearance.h"; sourceTree = "<group>"; };
+		A5C228DC1CBE92B200CD65EC /* UIView+SwiftAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SwiftAppearance.m"; sourceTree = "<group>"; };
 		A5C572381C61083C00E2AACF /* MZTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZTheme.swift; sourceTree = "<group>"; };
 		A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZURLDetailsViewController.swift; path = "Modules/URLMetrics/View Controllers/MZURLDetailsViewController.swift"; sourceTree = "<group>"; };
 		A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextFieldStack.swift; sourceTree = "<group>"; };
 		A5C5723E1C610BBA00E2AACF /* ThemeTextViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextViewStack.swift; sourceTree = "<group>"; };
 		A5C572401C61131800E2AACF /* MZRootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZRootWireframe.swift; path = Modules/Core/MZRootWireframe.swift; sourceTree = "<group>"; };
 		A5C6A18B1CB7A561004055EB /* MZLinksConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksConfiguration.swift; path = Modules/Links/MZLinksConfiguration.swift; sourceTree = "<group>"; };
-		A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSelectionViewController.h; sourceTree = "<group>"; };
-		A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSelectionViewController.m; sourceTree = "<group>"; };
 		A5C6A1931CB7BA52004055EB /* MZLinksSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksSelectionViewController.swift; path = "Modules/Links/View Controller/MZLinksSelectionViewController.swift"; sourceTree = "<group>"; };
 		A5C6A1961CB7BA8E004055EB /* LinkSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkSelectionTableViewCell.swift; path = Modules/Links/Views/LinkSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAlexaDataStack.swift; path = "Alexa Data/MZAlexaDataStack.swift"; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 			files = (
 				A59EA01D1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */,
 				A59E9FEC1CB25F9700888DFA /* ThemeKitCore.framework in Frameworks */,
+				A5C228DA1CBE8D8300CD65EC /* SelectionViewController.framework in Frameworks */,
 				A59E9FFB1CB2637600888DFA /* Alamofire.framework in Frameworks */,
 				A59EA00D1CB277FF00888DFA /* Components.framework in Frameworks */,
 				A59EA0181CB27FA500888DFA /* ReactiveCocoaConvenience.framework in Frameworks */,
@@ -465,6 +470,7 @@
 				A5240F2A1CBBEC6500807076 /* DeviceKit.framework in Frameworks */,
 				A5240F2B1CBBEC6500807076 /* SwiftyJSON.framework in Frameworks */,
 				A5240F2C1CBBEC6500807076 /* ThemeKitCore.framework in Frameworks */,
+				A5C228D91CBE8D8300CD65EC /* SelectionViewController.framework in Frameworks */,
 				9A8374654599FC9832D9C0E1 /* Pods_PocketSEO.framework in Frameworks */,
 				A5240F2E1CBBF7C600807076 /* Pods_URLDetailsExtension.framework in Frameworks */,
 			);
@@ -485,6 +491,7 @@
 				A56072321CB2B009007F7E65 /* Alamofire.framework in Frameworks */,
 				A56072331CB2B009007F7E65 /* DeviceKit.framework in Frameworks */,
 				A56072341CB2B009007F7E65 /* SwiftyJSON.framework in Frameworks */,
+				A5C228E11CBEAA3B00CD65EC /* SelectionViewController.framework in Frameworks */,
 				A56072351CB2B009007F7E65 /* ThemeKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,7 +791,7 @@
 		A59E9FFA1CB2631600888DFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A5C6A18E1CB7B563004055EB /* TDSelectionViewController */,
+				A5C228D81CBE8D8300CD65EC /* SelectionViewController.framework */,
 				A56072361CB2B43D007F7E65 /* Nimble.framework */,
 				A59EA01B1CB2806200888DFA /* ReactiveCocoaConvenience_Alamofire.framework */,
 				A59EA0161CB27FA500888DFA /* ReactiveCocoaConvenience.framework */,
@@ -813,16 +820,6 @@
 			);
 			name = Theme;
 			path = Modules/Theme;
-			sourceTree = "<group>";
-		};
-		A5C6A18E1CB7B563004055EB /* TDSelectionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A5C6A18F1CB7B563004055EB /* TDSelectionViewController.h */,
-				A5C6A1901CB7B563004055EB /* TDSelectionViewController.m */,
-			);
-			name = TDSelectionViewController;
-			path = Libraries/TDSelectionViewController;
 			sourceTree = "<group>";
 		};
 		A5E674951C7B312400A7CDF4 /* Alexa Data */ = {
@@ -970,6 +967,8 @@
 			isa = PBXGroup;
 			children = (
 				A5F4E66B1C50E0FD0099010C /* AppDelegate.swift */,
+				A5C228DB1CBE92B200CD65EC /* UIView+SwiftAppearance.h */,
+				A5C228DC1CBE92B200CD65EC /* UIView+SwiftAppearance.m */,
 				A5F4E6A71C5113D00099010C /* MozQuito-Info.h */,
 				A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */,
 				A59627051C52892D0076147C /* MozQuito-Bridging-Header.h */,
@@ -1026,7 +1025,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5C6A19A1CB7BF8B004055EB /* TDSelectionViewController.h in Headers */,
+				A5C228DD1CBE92B200CD65EC /* UIView+SwiftAppearance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,7 +1033,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5C6A19C1CB7BFA2004055EB /* TDSelectionViewController.h in Headers */,
+				A5C228DE1CBE92B200CD65EC /* UIView+SwiftAppearance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1349,6 +1348,7 @@
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/Components.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire.framework",
+				"$(SRCROOT)/Libraries/Carthage/Build/iOS/SelectionViewController.framework",
 			);
 			outputPaths = (
 			);
@@ -1418,13 +1418,13 @@
 				A59E9FE41CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */,
 				A58560E71C7F48D4005221B3 /* MZGetMozscapeIndexDatesOperation.swift in Sources */,
 				A579DD8B1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */,
+				A5C228E01CBE92B200CD65EC /* UIView+SwiftAppearance.m in Sources */,
 				A58560E81C7F48D4005221B3 /* MZGetPageMetaDataOperation.swift in Sources */,
 				A58560E91C7F48D4005221B3 /* MZParseHTMLDataOperation.swift in Sources */,
 				A58560EA1C7F48D4005221B3 /* MZAlexaDataOperation.swift in Sources */,
 				A58560EF1C7F48D4005221B3 /* MZAnalytics.swift in Sources */,
 				A58560F01C7F48D4005221B3 /* AlamofireJSONOperation.swift in Sources */,
 				A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */,
-				A5C6A1921CB7B563004055EB /* TDSelectionViewController.m in Sources */,
 				A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */,
 				A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */,
 				5E9371601CB53BB0009C8248 /* MZLinksViewController.swift in Sources */,
@@ -1536,6 +1536,7 @@
 				A50BD3B91C75E29500E7A07F /* ThemeTextField.swift in Sources */,
 				A599C8B81C5BD018006B7FAC /* MZURLMetricsWireframe.swift in Sources */,
 				A5E674971C7B313E00A7CDF4 /* MZAlexaDataStack.swift in Sources */,
+				A5C228DF1CBE92B200CD65EC /* UIView+SwiftAppearance.m in Sources */,
 				A5F46D151C7B5EB0001417F3 /* ErrorStack.swift in Sources */,
 				A50BD3971C75E28200E7A07F /* MZNetworking.swift in Sources */,
 				A50BD39A1C75E28500E7A07F /* MZPageMetaData.swift in Sources */,
@@ -1546,7 +1547,6 @@
 				A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */,
 				A579DD8A1C846FE9006C0FB5 /* MZParseAlexaDataOperation.swift in Sources */,
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
-				A5C6A1911CB7B563004055EB /* TDSelectionViewController.m in Sources */,
 				A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */,
 				A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */,
 				A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */,

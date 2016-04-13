@@ -108,7 +108,7 @@ class APIManager {
         let urlString = urlStore.mozscapeLinksForRequest(requestURLString, page: page)?.absoluteString ?? ""
         
         let parameters =  ["SourceCols":String(colsValue),
-                           "LinkCols": String(MZLinksKey.AnchorText.colValue),
+                           "LinkCols": String(MZLinksKey.AnchorText.colValue + MZLinksKey.NoFollow.colValue),
                            "Offset": String(page * count)]
         
         let combinedParameters = parameters + requestURLParameters.mozscapeRequestParameters
@@ -134,7 +134,6 @@ class APIManager {
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
             })
-        return SignalProducer.empty
     }
     
     func dateProducer(url:NSURL, jsonKey:String) -> SignalProducer<NSDate?, NSError> {

@@ -19,6 +19,7 @@ public enum MZLinksKey: String {
     case DomainAuthority = "pda"
     case SpamScore = "fspsc"
     case AnchorText = "lnt"
+    case NoFollow = "lf"
     
     public var colValue:UInt64 {
         switch(self) {
@@ -34,6 +35,8 @@ public enum MZLinksKey: String {
             return 67108864
         case .AnchorText:
             return 8
+        case .NoFollow:
+            return 2
         }
     }
     
@@ -47,8 +50,9 @@ public struct MZMozscapeLinks: ContentEquatable {
     public let domainAuthority:Double?
     public let spamScore:SpamScore
     public let anchorText:String?
+    public let noFollow:Bool
     
-    public init(title:String, canonicalURL:NSURL?, pageAuthority:Double?, domainAuthority:Double?, spamScore:Double?, anchorText:String?) {
+    public init(title:String, canonicalURL:NSURL?, pageAuthority:Double?, domainAuthority:Double?, spamScore:Double?, anchorText:String?, noFollow:Bool) {
         
         self.title = title
         self.canonicalURL = canonicalURL
@@ -56,6 +60,7 @@ public struct MZMozscapeLinks: ContentEquatable {
         self.domainAuthority = domainAuthority
         self.spamScore = SpamScore(score: spamScore)
         self.anchorText = anchorText
+        self.noFollow = noFollow
     }
     
     public static func theDistanceLinks() -> MZMozscapeLinks {
@@ -65,7 +70,8 @@ public struct MZMozscapeLinks: ContentEquatable {
                                pageAuthority: 47.99038445765669,
                                domainAuthority: 92.89606377307786,
                                spamScore: 4,
-                               anchorText: "thedistance.co.uk")
+                               anchorText: "thedistance.co.uk",
+                               noFollow: true)
     }
     
     public static func theDistanceLinks1() -> MZMozscapeLinks {
@@ -75,7 +81,8 @@ public struct MZMozscapeLinks: ContentEquatable {
                                pageAuthority: 30.92693328768593,
                                domainAuthority: 80.07206867111411,
                                spamScore: 3,
-                               anchorText: "thedistance.co.uk")
+                               anchorText: "thedistance.co.uk",
+                               noFollow: true)
     }
 
     public func contentMatches(other: MZMozscapeLinks) -> Bool {
@@ -88,7 +95,8 @@ public struct MZMozscapeLinks: ContentEquatable {
             r1.pageAuthority == r2.pageAuthority &&
             r1.domainAuthority == r2.domainAuthority &&
             r1.spamScore == r2.spamScore &&
-            r1.anchorText == r2.anchorText
+            r1.anchorText == r2.anchorText &&
+            r1.noFollow == r2.noFollow
     }
 }
 
@@ -123,7 +131,8 @@ extension MZMozscapeLinks: JSONCreated {
             }
             
             self.anchorText = keyResults[.AnchorText]?.string
-
+            self.noFollow = keyResults[.NoFollow]?.bool ?? false
+            
         } else {
             throw NSError.unexpectedTypeErrorForJSON(json, expectedType: .Dictionary)
         }

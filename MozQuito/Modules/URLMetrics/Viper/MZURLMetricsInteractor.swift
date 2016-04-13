@@ -94,23 +94,4 @@ class MZURLMetricsInteractor<ViewType:URLMetricsView>: URLMetricsInteractor {
         
         operationQueue.addOperation(metaDataOperation)
     }
-    
-    func getAlexaDataFromURLString(urlString: String) {
-        
-        let alexaOperation = MZGetAlexaDataOperation(urlString: urlString)
-        
-        alexaOperation.success = { (data) in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.presenter?.foundAlexaData(data)
-            })
-        }
-        
-        alexaOperation.failure = { (errors) in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.presenter?.failedToFindAlexaDataWithErrors(errors)
-            })
-        }
-        
-        operationQueue.addOperation(alexaOperation)
-    }
 }
