@@ -124,7 +124,7 @@ public enum LinkType: String {
     
     case All = ""
     case Equity = "equity"
-    case NoEquity = "noequity"
+    case NoEquity = "nonequity"
     case Follow = "follow"
     case NoFollow = "nofollow"
     case Redirect301 = "301"

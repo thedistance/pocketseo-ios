@@ -49,7 +49,7 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<Bool, LinksOutput> {
     
     private let pageCount:UInt = 25
     
-    init(apiManager:APIManager, lifetimeTrigger: ViewLifetime = .WillAppear, refreshFlattenStrategy: FlattenStrategy = .Latest) {
+    init(apiManager:APIManager, lifetimeTrigger: ViewLifetime = .Init, refreshFlattenStrategy: FlattenStrategy = .Latest) {
         
         self.apiManager = apiManager
         

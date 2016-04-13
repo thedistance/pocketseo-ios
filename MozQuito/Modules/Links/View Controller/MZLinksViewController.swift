@@ -295,6 +295,7 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
         }
         
         selectionVC.dismissViewControllerAnimated(true, completion: nil)
+        self.refreshControl?.beginRefreshing()
         
         // get the selection from the keys.
         if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],

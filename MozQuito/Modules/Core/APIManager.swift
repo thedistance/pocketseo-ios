@@ -118,14 +118,23 @@ class APIManager {
             encoding: .URL,
             headers:  nil)
             .validate()
+//            .responseJSON(completionHandler: { (response) in
+//                if case .Failure(let err) = response.result {
+//                    print(err)
+//                }
+//            })
+
             .rac_responseArraySwiftyJSONCreated()
             .on(next: { (json, _) in
                 print(json)
+                }, failed: { (error) in
+                    print(error)
             })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
             })
+        return SignalProducer.empty
     }
     
     func dateProducer(url:NSURL, jsonKey:String) -> SignalProducer<NSDate?, NSError> {
