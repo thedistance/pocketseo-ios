@@ -91,10 +91,10 @@ class Links_APIManager: XCTestCase {
             })
             .map { $0 as [MZMozscapeLinks]? }
         
-        let expected = MZMozscapeLinks.theDistanceLinks1()
+        let expected = MZMozscapeLinks.theDistanceLinksNoFollowed()
         
         expect(found.value?.count).toEventually(equal(10))
-        expect(found.value?[1]).toEventually(contentEqual(expected))
+        expect(found.value?[9]).toEventually(contentEqual(expected))
     }
     
     func testMozscapeLinksSortByDA() {

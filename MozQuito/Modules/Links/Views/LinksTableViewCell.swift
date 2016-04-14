@@ -10,6 +10,7 @@ import UIKit
 
 import Components
 import Foundation
+import JCLocalization
 
 extension Double {
     /// Rounds the double to decimal places value
@@ -96,6 +97,7 @@ class LinksTableViewCell: ListTableViewCell {
     @IBOutlet weak var DALabel: UILabel!
     @IBOutlet weak var SpamScoreLabel: UILabel!
     @IBOutlet weak var anchorTextLabel: UILabel!
+    @IBOutlet weak var followedTextLabel: ThemeLabel!
     
     @IBOutlet weak var colourBar: UIView!
     
@@ -135,6 +137,9 @@ class LinksTableViewCell: ListTableViewCell {
                         self.anchorTextLabel!.text = link.anchorText
                     }
                 }
+                
+                followedTextLabel.text = link.followed ? LocalizedString(.LinksFilterFollow) : LocalizedString(.LinksFilterNoFollow)
+                followedTextLabel.textColourStyle = link.followed ? .SecondaryText : .Accent
             }
         }
     }

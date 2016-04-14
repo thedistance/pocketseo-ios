@@ -94,8 +94,8 @@ LinksFilterInternal	Internal	Text for "internal" source filter
 LinksFilterExternal	External	Text for "external" source filter
 LinksFilterEquity	Equity	Text for "equity" link filter
 LinksFilterNoEquity	No Equity	Text for "nonequity" link filter
-LinksFilterFollow	Follow	Text for "follow" link filter
-LinksFilterNoFollow	No Follow	Text for "nofollow" link filter
+LinksFilterFollow	Followed	Text for "follow" link filter
+LinksFilterNoFollow	Not Followed	Text for "nofollow" link filter
 LinksFilter301	301 Redirect	Text for "301" link filter
 LinksFilter302	302 Redirect	Text for "302" link filter
 LinksNoneFound	No links found for your URL	Text when there are no links found for the user's entered url

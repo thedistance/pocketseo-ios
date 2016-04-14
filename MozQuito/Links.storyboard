@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-JH-Ldn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-JH-Ldn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="114" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="114"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOj-XP-h8f" id="Leb-EO-fcU">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="113"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" ambiguous="YES" misplaced="YES" text="CanonicalURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-CR-tMJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="40" width="564" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="756" text="CanonicalURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-CR-tMJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="40" width="531" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -39,8 +39,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="SecondaryText"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="PA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryD-1Q-xWR" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="59" width="18" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="PA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryD-1Q-xWR" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="78" width="18" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -48,8 +48,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="&lt;PA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-xR-gYc" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="42" y="59" width="38" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;PA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-xR-gYc" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="42" y="78" width="38" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -58,8 +58,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="DA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Vn-fr8" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="88" y="59" width="19" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="DA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Vn-fr8" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="88" y="78" width="19" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -67,8 +67,18 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="Spam Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlF-QN-JNg" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="158" y="59" width="79" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;DA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-gM-dZ6" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="111" y="78" width="39" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Spam Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlF-QN-JNg" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="158" y="78" width="79" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -76,8 +86,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC3-at-fgd" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="241" y="59" width="7" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;SS&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC3-at-fgd" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="241" y="78" width="38" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.69411764705882351" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -85,8 +95,8 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="&lt;DA&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-gM-dZ6" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="111" y="59" width="39" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;anchor_text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7c-rJ-fKC" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="107" y="99" width="444" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -95,40 +105,40 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="Anchor Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-mR-pQI" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="80" width="79" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="&lt;anchor_text&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7c-rJ-fKC" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="107" y="80" width="477" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body2"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-3x-al5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="4" height="113"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-3x-al5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="4" height="133"/>
                                                     <color key="backgroundColor" red="0.0" green="0.69411764705882351" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="4" id="LJM-Cp-czM"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djO-a4-6OJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="16" width="564" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djO-a4-6OJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="16" width="531" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="SubHeadline"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="755" text="&lt;Followed&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnQ-IU-hPO" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="59" width="539" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Caption"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="SecondaryText"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="755" text="Anchor Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-mR-pQI" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="99" width="79" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Body1"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
@@ -141,13 +151,15 @@
                                                 <constraint firstItem="2oe-xR-gYc" firstAttribute="leading" secondItem="ryD-1Q-xWR" secondAttribute="trailing" constant="4" id="8PN-A8-ewy"/>
                                                 <constraint firstItem="djO-a4-6OJ" firstAttribute="leading" secondItem="wTU-3x-al5" secondAttribute="trailing" constant="16" id="8tn-Kb-wCD"/>
                                                 <constraint firstItem="ExE-Vn-fr8" firstAttribute="top" secondItem="ryD-1Q-xWR" secondAttribute="top" id="Av8-oP-1fB"/>
-                                                <constraint firstAttribute="bottom" secondItem="lTL-mR-pQI" secondAttribute="bottom" constant="16" id="D4O-1j-Owr"/>
                                                 <constraint firstItem="lTL-mR-pQI" firstAttribute="top" secondItem="ExE-Vn-fr8" secondAttribute="bottom" constant="4" id="F6e-To-7s9"/>
                                                 <constraint firstItem="djO-a4-6OJ" firstAttribute="top" secondItem="Leb-EO-fcU" secondAttribute="top" constant="16" id="Jsy-nC-fEK"/>
                                                 <constraint firstItem="SCd-gM-dZ6" firstAttribute="leading" secondItem="ExE-Vn-fr8" secondAttribute="trailing" constant="4" id="KmJ-NL-CH9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xnQ-IU-hPO" secondAttribute="trailing" id="MIA-IR-VzH"/>
                                                 <constraint firstItem="C7c-rJ-fKC" firstAttribute="top" secondItem="lTL-mR-pQI" secondAttribute="top" id="N5c-ts-hdK"/>
+                                                <constraint firstItem="2oe-xR-gYc" firstAttribute="top" secondItem="xnQ-IU-hPO" secondAttribute="bottom" constant="4" id="PUy-wX-71V"/>
                                                 <constraint firstItem="6pJ-CR-tMJ" firstAttribute="centerX" secondItem="djO-a4-6OJ" secondAttribute="centerX" id="RZ2-Cu-dWM"/>
                                                 <constraint firstItem="sC3-at-fgd" firstAttribute="top" secondItem="ryD-1Q-xWR" secondAttribute="top" id="Trg-Tc-GRv"/>
+                                                <constraint firstItem="xnQ-IU-hPO" firstAttribute="leading" secondItem="djO-a4-6OJ" secondAttribute="leading" id="Wav-tn-gNY"/>
                                                 <constraint firstAttribute="bottom" secondItem="lTL-mR-pQI" secondAttribute="bottom" constant="16" id="Wib-bq-Pwh"/>
                                                 <constraint firstItem="sC3-at-fgd" firstAttribute="leading" secondItem="qlF-QN-JNg" secondAttribute="trailing" constant="4" id="Wwh-ex-aWv"/>
                                                 <constraint firstItem="wTU-3x-al5" firstAttribute="leading" secondItem="Leb-EO-fcU" secondAttribute="leading" id="X6R-VW-76B"/>
@@ -156,10 +168,13 @@
                                                 <constraint firstItem="C7c-rJ-fKC" firstAttribute="leading" secondItem="lTL-mR-pQI" secondAttribute="trailing" constant="8" id="aDp-o4-fmC"/>
                                                 <constraint firstItem="6pJ-CR-tMJ" firstAttribute="top" secondItem="djO-a4-6OJ" secondAttribute="bottom" constant="4" id="aX6-P9-PJZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="djO-a4-6OJ" secondAttribute="trailing" constant="16" id="bpz-Tq-a4Q"/>
+                                                <constraint firstItem="lTL-mR-pQI" firstAttribute="top" secondItem="ryD-1Q-xWR" secondAttribute="bottom" constant="4" id="cIC-Tn-MMa"/>
                                                 <constraint firstItem="ExE-Vn-fr8" firstAttribute="leading" secondItem="2oe-xR-gYc" secondAttribute="trailing" constant="8" id="dEw-lP-tIW"/>
                                                 <constraint firstItem="SCd-gM-dZ6" firstAttribute="top" secondItem="ryD-1Q-xWR" secondAttribute="top" id="dH0-Kw-Lfa"/>
+                                                <constraint firstItem="xnQ-IU-hPO" firstAttribute="top" secondItem="6pJ-CR-tMJ" secondAttribute="bottom" constant="4" id="eET-H2-IDs"/>
                                                 <constraint firstItem="lTL-mR-pQI" firstAttribute="leading" secondItem="djO-a4-6OJ" secondAttribute="leading" id="g9F-fy-szc"/>
                                                 <constraint firstItem="ryD-1Q-xWR" firstAttribute="top" secondItem="6pJ-CR-tMJ" secondAttribute="top" constant="4" id="hIL-E2-LH9"/>
+                                                <constraint firstAttribute="bottom" secondItem="lTL-mR-pQI" secondAttribute="bottom" constant="16" id="i5A-zZ-4WX"/>
                                                 <constraint firstItem="sC3-at-fgd" firstAttribute="leading" secondItem="qlF-QN-JNg" secondAttribute="trailing" constant="4" id="iXZ-L9-V0Q"/>
                                                 <constraint firstItem="6pJ-CR-tMJ" firstAttribute="trailing" secondItem="djO-a4-6OJ" secondAttribute="trailing" id="nIr-U5-6xp"/>
                                                 <constraint firstItem="wTU-3x-al5" firstAttribute="top" secondItem="Leb-EO-fcU" secondAttribute="top" id="nnU-fL-d9v"/>
@@ -174,6 +189,8 @@
                                                     <exclude reference="wY0-8u-23F"/>
                                                     <exclude reference="RZ2-Cu-dWM"/>
                                                     <exclude reference="hIL-E2-LH9"/>
+                                                    <exclude reference="px1-gg-6LE"/>
+                                                    <exclude reference="F6e-To-7s9"/>
                                                     <exclude reference="Wib-bq-Pwh"/>
                                                     <exclude reference="xeJ-W5-Qt7"/>
                                                 </mask>
@@ -185,12 +202,13 @@
                                             <outlet property="SpamScoreLabel" destination="sC3-at-fgd" id="cGn-T2-adl"/>
                                             <outlet property="anchorTextLabel" destination="C7c-rJ-fKC" id="dTY-0V-qLZ"/>
                                             <outlet property="colourBar" destination="wTU-3x-al5" id="R8m-yx-vII"/>
+                                            <outlet property="followedTextLabel" destination="xnQ-IU-hPO" id="AMw-Gc-UIA"/>
                                             <outlet property="subtitleLabel" destination="6pJ-CR-tMJ" id="xf5-Lf-E1e"/>
                                             <outlet property="titleLabel" destination="djO-a4-6OJ" id="eAa-Nn-FEa"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="52" id="l4U-fJ-8eQ" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="142" width="600" height="52"/>
+                                        <rect key="frame" x="0.0" y="161" width="600" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l4U-fJ-8eQ" id="jXP-Jl-5uj">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>

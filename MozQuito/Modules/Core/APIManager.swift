@@ -108,7 +108,7 @@ class APIManager {
         let urlString = urlStore.mozscapeLinksForRequest(requestURLString, page: page)?.absoluteString ?? ""
         
         let parameters =  ["SourceCols":String(colsValue),
-                           "LinkCols": String(MZLinksKey.AnchorText.colValue + MZLinksKey.NoFollow.colValue),
+                           "LinkCols": String(MZLinksKey.AnchorText.colValue + MZLinksKey.LinkFlags.colValue),
                            "Offset": String(page * count)]
         
         let combinedParameters = parameters + requestURLParameters.mozscapeRequestParameters
@@ -125,11 +125,11 @@ class APIManager {
 //            })
 
             .rac_responseArraySwiftyJSONCreated()
-            .on(next: { (json, _) in
-                print(json)
-                }, failed: { (error) in
-                    print(error)
-            })
+//            .on(next: { (json, _) in
+//                print(json)
+//                }, failed: { (error) in
+//                    print(error)
+//            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
