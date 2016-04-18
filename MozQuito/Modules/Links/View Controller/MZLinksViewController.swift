@@ -84,7 +84,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     var searchConfiguration = MutableProperty<LinkSearchConfiguration>(LinkSearchConfiguration.defaultConfiguration())
     
-.
+    var urlString = MutableProperty<String?>(nil)
+    
     var validURLString = MutableProperty<Bool>(false)
     
     /*
