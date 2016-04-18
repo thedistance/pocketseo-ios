@@ -2014,6 +2014,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "35975edb-2e70-4a70-8216-6fd641a16b39";
 				SWIFT_OBJC_BRIDGING_HEADER = "MozQuito/MozQuito-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};

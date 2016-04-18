@@ -192,7 +192,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         let authStacks:[StackView] = authInfo.map({ (progress:MZMetricProgressView, key:LocalizationKey) -> (MZMetricProgressView, ThemeLabel) in
             
             let titleLabel = ThemeLabel()
-            titleLabel.setContentCompressionResistancePriority(755, forAxis: .Vertical)
+            titleLabel.setContentCompressionResistancePriority(760, forAxis: .Vertical)
             titleLabel.text = LocalizedString(key)
             titleLabel.textAlignment = .Center
             titleLabel.numberOfLines = 0
@@ -212,7 +212,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         authStack.axis = .Horizontal
         authStack.spacing = 16.0
         authStack.stackDistribution = .EqualCentering
-        authStack.stackAlignment = .Leading
+        authStack.stackAlignment = .Fill
         
         // separate the sections
         
@@ -313,5 +313,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         for v in collapsing {
             v.hidden = !expanded
         }
+        
+        stackView.setNeedsLayout()
     }
 }

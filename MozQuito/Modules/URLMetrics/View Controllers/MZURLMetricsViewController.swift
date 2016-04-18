@@ -144,8 +144,15 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
         mozscapeMetrics = metrics
-        
         mozscapeView?.dataStack.state = .Success
+        
+        if #available(iOS 9, *) {
+            return
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.mozscapeView?.layoutSubviews()
+        })
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {

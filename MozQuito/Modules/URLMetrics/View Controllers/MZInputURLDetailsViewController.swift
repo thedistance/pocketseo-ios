@@ -62,16 +62,14 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         
         let newValue = !validLinks
         if urlInputView.inputStack.filterButton.hidden != newValue {
-            UIView.animateWithDuration(0.1, animations: {
-                self.urlInputView.inputStack.filterButton.hidden = newValue
-                self.urlInputView.inputStack.filterButton.alpha = newValue ? 0.0 : 1.0
-                
-                self.urlInputView.inputStack.refreshButton.hidden = !newValue
-                self.urlInputView.inputStack.refreshButton.alpha = !newValue ? 0.0 : 1.0
-                
-                self.urlInputView.layoutIfNeeded()
-            })
+            self.urlInputView.inputStack.filterButton.hidden = newValue
         }
+        
+        if self.urlInputView.inputStack.refreshButton.hidden == newValue {
+            self.urlInputView.inputStack.refreshButton.hidden = !newValue
+        }
+        
+        self.urlInputView.layoutIfNeeded()
     }
 }
 

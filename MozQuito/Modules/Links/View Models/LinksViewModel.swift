@@ -86,7 +86,6 @@ class MozscapeLinksViewModel: ContentLoadingViewModel<Bool, LinksOutput> {
         } else {
             
             currentContent = LinksOutput(links:[MZMozscapeLinks](), moreAvailable:true)
-            
             page = 0
         }
         
