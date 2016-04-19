@@ -29,6 +29,8 @@ target 'PocketSEO' do
     
     ### NETWORKING PODS ###
     
+    pod 'PSOperations'
+    
     pod 'hpple'
     
     ### UI PODS ###
@@ -59,6 +61,8 @@ target 'URLDetailsExtension' do
     pod 'Crashlytics'
     
     ### NETWORKING PODS ###
+    
+    pod 'PSOperations'
     
     pod 'hpple'
     

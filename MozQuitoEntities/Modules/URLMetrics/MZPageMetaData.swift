@@ -9,6 +9,29 @@
 import Foundation
 import hpple
 
+extension TFHppleElement {
+    
+    func allText() -> String {
+        
+        let strs = children.flatMap({ (obj:AnyObject) -> String? in
+            
+            if let child = obj as? TFHppleElement {
+                
+                if child.isTextNode() {
+                    return child.content
+                } else {
+                    return child.allText()
+                }
+                
+            } else {
+                return nil
+            }
+        })
+        
+        return strs.reduce("", combine: +)
+    }
+}
+
 public struct MZHTMLMetaData {
     public let title:String?
     public let canonicalURL:NSURL?

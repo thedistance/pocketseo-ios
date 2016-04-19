@@ -8,12 +8,12 @@
 
 import UIKit
 import TheDistanceCore
-//import ViperKit
+
 import StackView
 import Components
 import ReactiveCocoa
 
-class MZURLMetricsViewController: ReactiveAppearanceViewController, URLMetricsView {
+class MZURLMetricsViewController: ReactiveAppearanceViewController {
 
     @IBOutlet weak var distanceView:MZDistanceView?
     @IBOutlet weak var noInputContainer:UIView?
@@ -37,60 +37,7 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, URLMetricsVi
         }
     }
     
-  //  var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
-    
     let urlString = MutableProperty<String?>(nil)
-    
-//    var urlString:String? {
-//        didSet {
-//            
-//            pageMetaData = nil
-//            mozscapeMetrics = nil
-//            mozscapeIndexedDates = nil
-//            
-//            let validURL = !(urlString?.isEmpty ?? false)
-//            noInputView.hidden = validURL
-//            contentToBottomConstraint?.priority = validURL ? 990 : 740
-//            
-//            for p in metricsViews {
-//                p?.hidden = !validURL
-//            }
-//            
-//            if validURL {
-//            
-//                for p in metricsViews {
-//                    (p?.stack as? MZExpandingStack)?.state = .Loading
-//                }
-//                
-//                if let str = urlString {
-//                    
-//                    if str != oldValue {
-//                        presenter?.requestMetricsForURLString(str)
-//                    } else {
-//                        presenter?.refreshMetricsForURLString(str)
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
-    var pageMetaData:MZPageMetaData? {
-        didSet {
-            metaDataView?.metaStack.pageMetaData = pageMetaData
-        }
-    }
-    
-    var mozscapeMetrics:MZMozscapeMetrics? {
-        didSet {
-            mozscapeView?.dataStack.data = mozscapeMetrics
-        }
-    }
-    
-    var mozscapeIndexedDates:MZMozscapeIndexedDates? {
-        didSet {
-            mozscapeView?.dataStack.indexedStack.dates = mozscapeIndexedDates
-        }
-    }
     
     @IBOutlet weak var contentToBottomConstraint:NSLayoutConstraint?
     //@IBOutlet weak var contentHeightConstraint:NSLayoutConstraint?
@@ -116,10 +63,6 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, URLMetricsVi
                     p?.hidden = !valid
                 }
         }
-        
-        // re-set the properties to assign to the views incase the presenter request finished before viewDidLoad(_:)
-        let meta = pageMetaData
-        pageMetaData = meta
         
         // hide the metrics stacks
         for sv in metricsViews {
@@ -171,43 +114,6 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, URLMetricsVi
         }
     }
 
-    // MARK: - URLMetricsView
-
-    // MARK: Meta Data
-    
-    func showPageMetaData(data: MZPageMetaData) {
-        pageMetaData = data
-        
-        metaDataView?.metaStack.state = .Success
-    }
-    
-    func showPageMetaDataErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: metaDataView)
-    }
-    
-    // MARK: Mozscape
-    
-    func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
-        mozscapeMetrics = metrics
-        mozscapeView?.dataStack.state = .Success
-        
-        if #available(iOS 9, *) {
-            return
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.mozscapeView?.layoutSubviews()
-        })
-    }
-    
-    func showMozscapeMetricsErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: mozscapeView)
-    }
-    
-    func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
-        mozscapeIndexedDates = dates
-    }
-    
     func showErrors(errors:[NSError], forPanel panel:MZPanel?) {
         if let e = errors.first {
             (panel?.stack as? MZExpandingStack)?.state = .Error(e)
