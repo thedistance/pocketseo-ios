@@ -11,6 +11,8 @@
 		5E0FB0891CB50024001614BE /* MZLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0881CB50024001614BE /* MZLinksViewController.swift */; };
 		5E0FB08B1CB50096001614BE /* Links.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FB08A1CB50096001614BE /* Links.storyboard */; };
 		5E0FB08D1CB5017B001614BE /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */; };
+		5E25E6901CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25E68F1CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift */; };
+		5E25E6911CC629CC0054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25E68F1CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift */; };
 		5E3085131CB3D76A00F89EB7 /* MozscapeLink.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3085121CB3D76A00F89EB7 /* MozscapeLink.json */; };
 		5E3085181CB401A200F89EB7 /* Links-ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */; };
 		5E3085191CB4098C00F89EB7 /* MZLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3085151CB3D95500F89EB7 /* MZLinks.swift */; };
@@ -290,6 +292,7 @@
 		5E0FB0881CB50024001614BE /* MZLinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinksViewController.swift; path = "Modules/Links/View Controller/MZLinksViewController.swift"; sourceTree = "<group>"; };
 		5E0FB08A1CB50096001614BE /* Links.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Links.storyboard; sourceTree = "<group>"; };
 		5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinksTableViewCell.swift; path = Modules/Links/Views/LinksTableViewCell.swift; sourceTree = "<group>"; };
+		5E25E68F1CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLMetricsPageMetaDataViewModel.swift; path = "Modules/URLMetrics/View Models/URLMetricsPageMetaDataViewModel.swift"; sourceTree = "<group>"; };
 		5E3085121CB3D76A00F89EB7 /* MozscapeLink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MozscapeLink.json; path = Links/MozscapeLink.json; sourceTree = "<group>"; };
 		5E3085151CB3D95500F89EB7 /* MZLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZLinks.swift; path = Modules/Links/MZLinks.swift; sourceTree = "<group>"; };
 		5E3085171CB401A200F89EB7 /* Links-ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Links-ModelTests.swift"; path = "Links/Links-ModelTests.swift"; sourceTree = "<group>"; };
@@ -715,6 +718,7 @@
 			isa = PBXGroup;
 			children = (
 				A560723D1CB2BDCC007F7E65 /* URLMetricsViewModel.swift */,
+				5E25E68F1CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -1052,6 +1056,7 @@
 				A58560CC1C7F3FFF005221B3 /* Resources */,
 				A59E9FED1CB25FFE00888DFA /* ShellScript */,
 				1B139426F4AB27B44233C34C /* Copy Pods Resources */,
+				9DDCAA6BCFF332BD77BCBE45 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1306,6 +1311,21 @@
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9DDCAA6BCFF332BD77BCBE45 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A5240F221CBBE23B00807076 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1412,6 +1432,7 @@
 				A59EA0151CB27B4500888DFA /* GoogleAnalyticsReporter.swift in Sources */,
 				A58560E21C7F48D4005221B3 /* URLMetricsViperProtocols.swift in Sources */,
 				A58560E31C7F48D4005221B3 /* MZURLMetricsPresenter.swift in Sources */,
+				5E25E6911CC629CC0054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */,
 				A58560E41C7F48D4005221B3 /* MZURLMetricsInteractor.swift in Sources */,
 				A58560E51C7F48D4005221B3 /* MZURLMetricsWireframe.swift in Sources */,
 				A58560E61C7F48D4005221B3 /* MZGetMozscapeURLMetricsOperation.swift in Sources */,
@@ -1549,6 +1570,7 @@
 				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
 				A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */,
 				A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */,
+				5E25E6901CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */,
 				A50BD3961C75E28200E7A07F /* MZErrors.swift in Sources */,
 				A579DD841C845ED4006C0FB5 /* MZDistanceExtensionStack.swift in Sources */,
 				A596270C1C528C1D0076147C /* MZAppDependencies.swift in Sources */,

@@ -12,7 +12,39 @@ import TheDistanceCore
 import StackView
 import JCLocalization
 
-public class MZPageMetaDataStack: MZExpandingStack {
+import Components
+import SwiftyJSON
+
+import ReactiveCocoa
+import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
+
+public class MZPageMetaDataStack: MZExpandingStack, ContentLoadingView {
+    
+    var viewModel:ContentLoadingViewModel<Void, MZPageMetaData>? = nil {
+        didSet {
+            if let vm = viewModel {
+                bindViewModel(vm)
+            }
+        }
+    }
+    
+    func bindViewModel(viewModel: ContentLoadingViewModel<Void, MZPageMetaData>) {
+        
+        bindContentLoadingViewModel(viewModel)
+        
+        viewModel.contentChangesSignal
+            .observeOn(UIScheduler())
+            .observeNext { (pageMeta) in
+                self.pageMetaData = pageMeta
+                self.state = .Success
+        }
+        
+        viewModel.isLoading.producer.observeOn(UIScheduler()).startWithNext { (nowLoading) in
+            if nowLoading {
+                self.state = .Loading
+            }
+        }
+    }
     
     static let dateFormatter:NSDateFormatter = {
         
@@ -162,6 +194,15 @@ public class MZPageMetaDataStack: MZExpandingStack {
         h2Stack.stackView.hidden = !expanded
         usingSSLStack.view.hidden = !expanded
         footerStack.view.hidden = !expanded
+    }
+    
+    public func showErrorViewForError(error: NSError?) {
+        
+        if let err = error {
+            self.state = .Error(err)
+        } else {
+            // Check what to do here
+        }
     }
     
 }

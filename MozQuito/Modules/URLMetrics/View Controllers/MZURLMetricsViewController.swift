@@ -10,46 +10,69 @@ import UIKit
 import TheDistanceCore
 //import ViperKit
 import StackView
+import Components
+import ReactiveCocoa
 
-class MZURLMetricsViewController: UIViewController, URLMetricsView {
+class MZURLMetricsViewController: ReactiveAppearanceViewController, URLMetricsView {
 
     @IBOutlet weak var distanceView:MZDistanceView?
     @IBOutlet weak var noInputContainer:UIView?
     let noInputView = NoInputView()
-    var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
     
-    var urlString:String? {
+    var urlMetricsViewModel:MozscapeViewModel? {
         didSet {
-            
-            pageMetaData = nil
-            mozscapeMetrics = nil
-            mozscapeIndexedDates = nil
-            
-            let validURL = !(urlString?.isEmpty ?? false)
-            noInputView.hidden = validURL
-            contentToBottomConstraint?.priority = validURL ? 990 : 740
-            
-            for p in metricsViews {
-                p?.hidden = !validURL
+            if let vm = urlMetricsViewModel {
+                vm.urlString <~ self.urlString.producer
             }
-            
-            if validURL {
-            
-                for p in metricsViews {
-                    (p?.stack as? MZExpandingStack)?.state = .Loading
-                }
-                
-                if let str = urlString {
-                    
-                    if str != oldValue {
-                        presenter?.requestMetricsForURLString(str)
-                    } else {
-                        presenter?.refreshMetricsForURLString(str)
-                    }
-                }
-            }
+            mozscapeView?.dataStack.viewModel = urlMetricsViewModel
         }
     }
+    
+    var pageMetaDataViewModel:PageMetaDataViewModel? {
+        didSet {
+            if let vm = pageMetaDataViewModel {
+                vm.urlString <~ self.urlString.producer
+            }
+            metaDataView?.metaStack.viewModel = pageMetaDataViewModel
+        }
+    }
+    
+  //  var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
+    
+    let urlString = MutableProperty<String?>(nil)
+    
+//    var urlString:String? {
+//        didSet {
+//            
+//            pageMetaData = nil
+//            mozscapeMetrics = nil
+//            mozscapeIndexedDates = nil
+//            
+//            let validURL = !(urlString?.isEmpty ?? false)
+//            noInputView.hidden = validURL
+//            contentToBottomConstraint?.priority = validURL ? 990 : 740
+//            
+//            for p in metricsViews {
+//                p?.hidden = !validURL
+//            }
+//            
+//            if validURL {
+//            
+//                for p in metricsViews {
+//                    (p?.stack as? MZExpandingStack)?.state = .Loading
+//                }
+//                
+//                if let str = urlString {
+//                    
+//                    if str != oldValue {
+//                        presenter?.requestMetricsForURLString(str)
+//                    } else {
+//                        presenter?.refreshMetricsForURLString(str)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     var pageMetaData:MZPageMetaData? {
         didSet {
@@ -82,6 +105,18 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let urlStringProducer = urlString.producer
+            .observeOn(UIScheduler())
+            .map({ !($0?.isEmpty ?? true) })
+            .startWithNext { (valid) in
+                self.noInputView.hidden = valid
+                self.contentToBottomConstraint?.priority = valid ? 990 : 740
+                
+                for p in self.metricsViews {
+                    p?.hidden = !valid
+                }
+        }
+        
         // re-set the properties to assign to the views incase the presenter request finished before viewDidLoad(_:)
         let meta = pageMetaData
         pageMetaData = meta
@@ -93,6 +128,16 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         
         if let container = noInputContainer {
             container.addSubview(noInputView, centeredOn: container)
+        }
+        
+        // bind the view models again if set before viewDidLoad
+        if let vm = self.urlMetricsViewModel {
+            mozscapeView?.dataStack.viewModel = vm
+        }
+        
+        // bind the view model again if set before viewDidLoad
+        if let vm = self.pageMetaDataViewModel {
+            self.pageMetaDataViewModel = vm
         }
     }
     

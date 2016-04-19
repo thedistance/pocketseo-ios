@@ -63,7 +63,7 @@ public class MZPageMetaDataView: MZPanel {
 
 public class MZMozscapeMetricsView: MZPanel {
     
-    public let dataStack = MZMozscapeMetricsStack()
+    let dataStack = MZMozscapeMetricsStack()
     
     override public var stack:CreatedStack? {
         get {

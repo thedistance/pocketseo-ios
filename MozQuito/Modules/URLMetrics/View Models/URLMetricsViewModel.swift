@@ -16,7 +16,9 @@ import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
 
 typealias MozscapeInfo = (metrics:MZMozscapeMetrics, dates:MZMozscapeIndexedDates?)
 
-class MozscapeViewModel: ContentLoadingViewModel<String, MozscapeInfo> {
+class MozscapeViewModel: ContentLoadingViewModel<Void, MozscapeInfo> {
+    
+    var urlString = MutableProperty<String?>(nil)
     
     let apiManager:APIManager
     
@@ -25,11 +27,21 @@ class MozscapeViewModel: ContentLoadingViewModel<String, MozscapeInfo> {
         self.apiManager = apiManager
         
         super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
+        
+        // reload for each new urlString
+        urlString.producer
+            .combinePrevious(nil)
+            .filter { $0 != $1 }
+            .startWithNext { _ in self.refreshObserver.sendNext(()) }
+
     }
     
-    override func loadingProducerWithInput(input: String?) -> SignalProducer<MozscapeInfo, NSError> {
+    override func loadingProducerWithInput(input: Void?) -> SignalProducer<MozscapeInfo, NSError> {
         
-        let metricsProducer = apiManager.mozscapeURLMetricsForString(input ?? "")
+        guard let url = urlString.value
+            where !url.isEmpty else { return SignalProducer.empty }
+        
+        let metricsProducer = apiManager.mozscapeURLMetricsForString(url ?? "")
         let datesProducer = apiManager.mozscapeIndexedDates()
         
         return combineLatest(metricsProducer, datesProducer).map({ (metrics: $0.0, dates: $0.1) })

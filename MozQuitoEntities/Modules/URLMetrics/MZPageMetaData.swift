@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import hpple
 
 public struct MZHTMLMetaData {
     public let title:String?
@@ -55,6 +56,46 @@ public struct MZHTMLMetaData {
     
     public var h2TagsCharacterCount:Int {
         return h2Tags.reduce(0, combine: { $0 + $1.characters.count })
+    }
+}
+
+extension MZHTMLMetaData {
+    
+    init(htmlData:NSData) throws {
+        
+        guard let htmlDoc = TFHpple(HTMLData: htmlData) else {
+            
+            let error = NSError(domain: .HTMLError, code: .UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: "Unable to create hpple HTML Document from data."])
+            throw error
+        }
+        
+        let titleElements = htmlDoc.searchWithXPathQuery("//title")
+        let title = (titleElements.first as? TFHppleElement)?.allText()
+        
+        let canonicalElements = htmlDoc.searchWithXPathQuery("//link[@rel='canonical']")
+        let canonical = (canonicalElements.first as? TFHppleElement)?.attributes["href"] as? String
+        let canonicalURL:NSURL?
+        if let cStr = canonical {
+            canonicalURL = NSURL(string: cStr)
+        } else {
+            canonicalURL = nil
+        }
+        
+        
+        let descriptionElements = htmlDoc.searchWithXPathQuery("//meta[@name='description']")
+        let description = (descriptionElements.first as? TFHppleElement)?.attributes["content"] as? String
+        
+        let h1Elements = htmlDoc.searchWithXPathQuery("//h1")
+        let h1Tags = h1Elements.flatMap({ ($0 as? TFHppleElement)?.allText() })
+        
+        let h2Elements = htmlDoc.searchWithXPathQuery("//h2")
+        let h2Tags = h2Elements.flatMap({ ($0 as? TFHppleElement)?.allText() })
+        
+        self.init(title: title,
+                  canonicalURL: canonicalURL,
+                  description: description,
+                  h1Tags: h1Tags,
+                  h2Tags: h2Tags)
     }
 }
 

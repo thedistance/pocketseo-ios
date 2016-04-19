@@ -36,16 +36,11 @@ extension String {
 struct LiveURLStore:URLStore {
     
     func mozscapeMetricsURLForRequest(request: String) -> NSURL? {
-     
-        guard let requestURLString = request.stringByAddingURLPathEncoding()
-            else { return nil }
         
-        return NSURL(string:BaseURL.Mozscape + RequestPath.MozscapeURLMetrics)!.URLByAppendingPathComponent(requestURLString)
+        return NSURL(string:BaseURL.Mozscape + RequestPath.MozscapeURLMetrics)!.URLByAppendingPathComponent(request)
     }
     
     func mozscapeLinksForRequest(request: String, page:UInt) -> NSURL? {
-        guard let requestURLString = request.stringByAddingURLPathEncoding()
-            else { return nil  }
         
         return NSURL(string: BaseURL.Mozscape + RequestPath.MozscapeLinks)!.URLByAppendingPathComponent(request)
     }
@@ -68,6 +63,8 @@ class APIManager {
         self.urlStore = urlStore
     }
     
+    // MARK:- Authentication
+    
     func authenticationParameters(existing:[String: AnyObject] = [String: AnyObject]()) -> [String: AnyObject] {
         
         let token = MZAppDependencies.sharedDependencies().currentAuthenticationToken
@@ -78,6 +75,8 @@ class APIManager {
         
         return authenticatedParameters
     }
+    
+    // MARK:- URL Metrics
     
     func mozscapeURLMetricsForString(requestURLString:String) -> SignalProducer<MZMozscapeMetrics, NSError> {
         
@@ -93,13 +92,21 @@ class APIManager {
                                          headers: nil)
             .validate()
             .rac_responseSwiftyJSONCreated()
+//            .on(next: { (json, _) in
+//                print(json)
+//                }, failed: { (error) in
+//                    print(error)
+//            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NSError> in
                 return SignalProducer(error: error.userFacingError())
             })
     }
     
-    // Backlinks
+    
+    
+    // MARK:- Backlinks
+    
     func mozscapeLinksForString(requestURLString:String, requestURLParameters: LinkSearchConfiguration, page:UInt, count:UInt = 25) -> SignalProducer<[MZMozscapeLinks], NSError> {
         
         let cols:[MZLinksKey] = [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore]
@@ -135,6 +142,8 @@ class APIManager {
                 return SignalProducer(error: error.userFacingError())
             })
     }
+    
+    // MARK:- Dates
     
     func dateProducer(url:NSURL, jsonKey:String) -> SignalProducer<NSDate?, NSError> {
         
@@ -173,9 +182,71 @@ class APIManager {
         
         return bothDatesProducer
     }
+
+    // MARK:- Data
     
     func htmlMetaDataForString(requestURLString:String) -> SignalProducer<MZPageMetaData, NSError> {
-        return SignalProducer.empty
+        
+        if var requestURL = NSURL(string: requestURLString) {
+            
+            if requestURL.scheme.isEmpty {
+                
+                if let guessURL = NSURL(string: "http://\(requestURLString)") {
+                    requestURL = guessURL
+                    
+                    return Alamofire.request(.GET,
+                        requestURL)
+                        .validate()
+                        .rac_responseData()
+                        .flatMap(.Latest, transform: { (data) -> SignalProducer<MZPageMetaData, NSError> in
+                            do {
+                                let html = try MZHTMLMetaData(htmlData: data)
+                                
+                                let pageData = MZPageMetaData(htmlData: html,
+                                    usingSSL: (requestURL.scheme == "https") ?? false,
+                                    requestDate: NSDate(),
+                                    responseURL: requestURL)
+                                
+                                return SignalProducer(value: pageData)
+                                
+                            } catch let error {
+                                return SignalProducer(error: error as NSError)
+                            }
+                        })
+                        .flatMapError({ (error) -> SignalProducer<MZPageMetaData, NSError> in
+                            return SignalProducer(error: error.userFacingError())
+                        })
+                } else {
+                    let inputError = NSError(domain: MZErrorDomain.UserInputError, code: MZErrorCode.InvalidURL, userInfo: [NSLocalizedDescriptionKey: "Invalid URL Entered."])
+                    return SignalProducer(error: inputError.userFacingError())
+                }
+            } else {
+                return Alamofire.request(.GET,
+                    requestURL)
+                    .validate()
+                    .rac_responseData()
+                    .flatMap(.Latest, transform: { (data) -> SignalProducer<MZPageMetaData, NSError> in
+                        do {
+                            let html = try MZHTMLMetaData(htmlData: data)
+                            
+                            let pageData = MZPageMetaData(htmlData: html,
+                                usingSSL: (requestURL.scheme == "https") ?? false,
+                                requestDate: NSDate(),
+                                responseURL: requestURL)
+                            
+                            return SignalProducer(value: pageData)
+                            
+                        } catch let error {
+                            return SignalProducer(error: error as NSError)
+                        }
+                    })
+                    .flatMapError({ (error) -> SignalProducer<MZPageMetaData, NSError> in
+                        return SignalProducer(error: error.userFacingError())
+                    })
+            }
+        } else {
+            return SignalProducer.empty
+        }
     }
     
     func alexaDataForString(requestURLString:String) -> SignalProducer<MZAlexaData, NSError> {

@@ -10,6 +10,12 @@ import Foundation
 import StackView
 import JCLocalization
 
+import Components
+import SwiftyJSON
+
+import ReactiveCocoa
+import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
+
 let LargeNumberFormatter:NSNumberFormatter = {
 
     let formatter = NSNumberFormatter()
@@ -80,7 +86,35 @@ public class MZMozscapeIndexedStack:CreatedStack {
     
 }
 
-public class MZMozscapeMetricsStack: MZExpandingStack {
+class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
+    
+    var viewModel:ContentLoadingViewModel<Void, MozscapeInfo>? = nil {
+        didSet {
+            if let vm = viewModel {
+                bindViewModel(vm)
+            }
+        }
+    }
+    
+    func bindViewModel(viewModel: ContentLoadingViewModel<Void, MozscapeInfo>) {
+        
+        bindContentLoadingViewModel(viewModel)
+        
+        viewModel.contentChangesSignal
+            .observeOn(UIScheduler())
+            .observeNext { (info) in
+                self.data = info.metrics
+                self.indexedStack.dates = info.dates
+                
+                self.state = .Success
+        }
+        
+        viewModel.isLoading.producer.observeOn(UIScheduler()).startWithNext { (nowLoading) in
+            if nowLoading {
+                self.state = .Loading
+            }
+        }
+    }
     
     var data:MZMozscapeMetrics? {
         didSet {
@@ -301,7 +335,7 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         }
     }
     
-    public override func configureAsExpanded(expanded: Bool) {
+     override func configureAsExpanded(expanded: Bool) {
         
         super.configureAsExpanded(expanded)
         
@@ -315,5 +349,14 @@ public class MZMozscapeMetricsStack: MZExpandingStack {
         }
         
         stackView.setNeedsLayout()
+    }
+    
+     func showErrorViewForError(error: NSError?) {
+        
+        if let err = error {
+            self.state = .Error(err)
+        } else {
+            // Check what to do here
+        }
     }
 }

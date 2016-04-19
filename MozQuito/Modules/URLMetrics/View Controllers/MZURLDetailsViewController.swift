@@ -27,7 +27,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
 
     var urlString:String? {
         didSet {
-            metricsVC?.urlString = urlString
+            metricsVC?.urlString.value = urlString
             linksVC?.urlString.value = urlString
         }
     }
