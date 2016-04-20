@@ -14,7 +14,7 @@ import TheDistanceCore
 public class MZURLInputStack: CreatedStack {
     
     public let safariButton = ThemeButton()
-    public let urlTextFieldStack = ThemeTextFieldStack()
+    public let urlSearchBar = UISearchBar()
     public let refreshButton = ThemeButton()
     public let filterButton = ThemeButton()
     
@@ -32,14 +32,14 @@ public class MZURLInputStack: CreatedStack {
         safariButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         safariButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
         
-        urlTextFieldStack.textField.keyboardType = .URL
-        urlTextFieldStack.textField.returnKeyType = .Send
-        urlTextFieldStack.textField.autocapitalizationType = .None
-        urlTextFieldStack.textField.autocorrectionType = .No
-        urlTextFieldStack.placeholderText = LocalizedString(.URLDataSearchHint)
-        (urlTextFieldStack.textField as? ThemeTextField)?.textStyle = .SubHeadline
-        (urlTextFieldStack.textField as? ThemeTextField)?.textColourStyle = .LightText
-        (urlTextFieldStack.textField as? ThemeTextField)?.placeholderTextColourStyle = .SecondaryLightText
+        
+        urlSearchBar.keyboardType = .URL
+        urlSearchBar.returnKeyType = .Send
+        urlSearchBar.autocapitalizationType = .None
+        urlSearchBar.autocorrectionType = .No
+        urlSearchBar.placeholder = LocalizedString(.URLDataSearchHint)
+        urlSearchBar.barTintColor = MZThemeVendor.defaultColour(.Main)
+        urlSearchBar.backgroundImage = UIImage()
         
         refreshButton.setImage(refreshImage, forState: .Normal)
         refreshButton.setContentCompressionResistancePriority(755, forAxis: .Horizontal)
@@ -55,7 +55,7 @@ public class MZURLInputStack: CreatedStack {
         filterButton.tintColourStyle = .LightText
         filterButton.contentEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 12)
 
-        super.init(arrangedSubviews: [urlTextFieldStack.stackView, safariButton, filterButton, refreshButton])
+        super.init(arrangedSubviews: [urlSearchBar, safariButton, filterButton, refreshButton])
         
         stack.stackDistribution = .Fill
         stack.spacing = 0.0

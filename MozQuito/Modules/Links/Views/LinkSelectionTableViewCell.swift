@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SelectionViewController
+
 class LinkSelectionTableViewCell: UITableViewCell, SelectionCell {
 
     @IBOutlet var titleLabel: UILabel?

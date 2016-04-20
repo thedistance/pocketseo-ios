@@ -12,6 +12,7 @@ import Components
 import ReactiveCocoa
 import TheDistanceCore
 import JCLocalization
+import SelectionViewController
 
 class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableView {
     
@@ -41,6 +42,17 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         viewModel.viewLifetime <~ lifetimeSignal
         viewModel.urlString <~ urlString
         viewModel.searchConfiguration <~ searchConfiguration
+        
+        viewModel.refreshSignal.observeOn(UIScheduler())
+        .startWithNext { (nextPage) in
+            if !(nextPage ?? false) {
+                if let tbv = self.tableView,
+                    let refreshControl = self.refreshControl {
+                    // adjust the scroll to show the refresh control
+                    tbv.setContentOffset(CGPointMake(0, -refreshControl.frame.size.height), animated: true)
+                }
+            }
+        }
         
         if let tbv = tableView {
             listDataSource = MozscapeLinksDataSource(viewModel: viewModel, tableView: tbv)
@@ -149,6 +161,16 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         tableView?.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if viewModel?.isLoading.value ?? false {
+            self.refreshControl?.beginRefreshing()
+        } else {
+            self.refreshControl?.endRefreshing()
+        }
+    }
+    
     func filterTapped(sender:AnyObject) {
         
         if let buttonSender = sender as? UIButton {
@@ -254,16 +276,18 @@ extension MZLinksViewController : UITableViewDelegate {
             
             if let url = NSURL(string: selectedLinkURL) {
                 
-                let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
-                AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
-                
                 let source = (tableView.cellForRowAtIndexPath(indexPath) as? LinksTableViewCell) ?? self.view
                 
                 self.openURL(url, fromSourceItem: .View(source!))
+                
+                let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
+                AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        })
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -288,19 +312,16 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
     
     func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
         
-        if let tbv = self.tableView,
-            let refreshControl = self.refreshControl {
-            // adjust the scroll to show the refresh control
-            tbv.setContentOffset(CGPointMake(0, -tbv.contentInset.top - refreshControl.frame.size.height), animated: true)
-        }
-        
-        selectionVC.dismissViewControllerAnimated(true, completion: nil)
-        
         // get the selection from the keys.
         if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
             let config = LinkSearchConfiguration(selectionKeys: selectedKeys) {
             self.searchConfiguration.value = config
         }
+        
+        selectionVC.dismissViewControllerAnimated(true) {
+            self.refreshControl?.beginRefreshing()
+        }
+        
+        
     }
-    
 }

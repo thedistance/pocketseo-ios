@@ -24,7 +24,6 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             pageMetaData = nil
             mozscapeMetrics = nil
             mozscapeIndexedDates = nil
-            alexaData = nil
             
             let validURL = !(urlString?.isEmpty ?? false)
             noInputView.hidden = validURL
@@ -70,19 +69,14 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         }
     }
     
-    var alexaData:MZAlexaData? {
-        didSet {
-            alexaDataView?.dataStack.alexaData = alexaData
-        }
-    }
     @IBOutlet weak var contentToBottomConstraint:NSLayoutConstraint?
     //@IBOutlet weak var contentHeightConstraint:NSLayoutConstraint?
     @IBOutlet weak var metaDataView:MZPageMetaDataView?
     @IBOutlet weak var mozscapeView:MZMozscapeMetricsView?
-    @IBOutlet weak var alexaDataView:MZAlexaDataView?
+
     
     var metricsViews:[MZPanel?] {
-        return [metaDataView, mozscapeView, alexaDataView]
+        return [metaDataView, mozscapeView]
     }
     
     override func viewDidLoad() {
@@ -150,8 +144,15 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
         mozscapeMetrics = metrics
-        
         mozscapeView?.dataStack.state = .Success
+        
+        if #available(iOS 9, *) {
+            return
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.mozscapeView?.layoutSubviews()
+        })
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {
@@ -160,18 +161,6 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
         mozscapeIndexedDates = dates
-    }
-    
-    // MARK: Alexa
-    
-    func showAlexaData(data: MZAlexaData) {
-        alexaData = data
-        
-        alexaDataView?.dataStack.state = .Success
-    }
-    
-    func showAlexaDataErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: alexaDataView)
     }
     
     func showErrors(errors:[NSError], forPanel panel:MZPanel?) {

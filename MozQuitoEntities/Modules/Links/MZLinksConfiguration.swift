@@ -30,7 +30,7 @@ public enum LinkSortBy: String {
     }
     
     static var allValues:[LinkSortBy] {
-        return [.PageAuthority, .DomainAuthority, .SpamScore]
+        return [.DomainAuthority, .PageAuthority, .SpamScore]
     }
     
     var selectionKey:String {
@@ -124,7 +124,7 @@ public enum LinkType: String {
     
     case All = ""
     case Equity = "equity"
-    case NoEquity = "noequity"
+    case NoEquity = "nonequity"
     case Follow = "follow"
     case NoFollow = "nofollow"
     case Redirect301 = "301"
@@ -169,7 +169,7 @@ public enum LinkType: String {
 struct LinkSearchConfiguration: Equatable {
     
     static func defaultConfiguration() -> LinkSearchConfiguration {
-        return LinkSearchConfiguration(sortBy: .PageAuthority, target: .Page, source: .All, type: .All)
+        return LinkSearchConfiguration(sortBy: .DomainAuthority, target: .Page, source: .All, type: .All)
     }
     
     static func distanceLinkSortyByDA() -> LinkSearchConfiguration {

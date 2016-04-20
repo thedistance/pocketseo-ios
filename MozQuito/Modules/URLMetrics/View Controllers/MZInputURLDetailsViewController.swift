@@ -19,9 +19,9 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
     override var urlString:String? {
         didSet {
             
-            if urlInputView.inputStack.urlTextFieldStack.text != urlString {
+            if urlInputView.inputStack.urlSearchBar.text != urlString {
                 // this will typically be from opening the app via the
-               urlInputView.inputStack.urlTextFieldStack.text = urlString
+               urlInputView.inputStack.urlSearchBar.text = urlString
             }
             
             urlInputView.inputStack.safariButton.hidden = urlString?.isEmpty ?? true
@@ -36,7 +36,7 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         // Do any additional setup after loading the view.
         
         // configure the input stack
-        urlInputView.inputStack.urlTextFieldStack.textField.delegate = self
+        urlInputView.inputStack.urlSearchBar.delegate = self
         urlInputView.inputStack.safariButton.addTarget(self, action: #selector(MZURLDetailsViewController.safariTapped(_:)), forControlEvents: .TouchUpInside)
         urlInputView.inputStack.safariButton.hidden = true
         
@@ -62,11 +62,14 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
         
         let newValue = !validLinks
         if urlInputView.inputStack.filterButton.hidden != newValue {
-            UIView.animateWithDuration(0.1, animations: {
-                self.urlInputView.inputStack.filterButton.hidden = newValue
-                self.urlInputView.inputStack.filterButton.alpha = newValue ? 0.0 : 1.0
-            })
+            self.urlInputView.inputStack.filterButton.hidden = newValue
         }
+        
+        if self.urlInputView.inputStack.refreshButton.hidden == newValue {
+            self.urlInputView.inputStack.refreshButton.hidden = !newValue
+        }
+        
+        self.urlInputView.layoutIfNeeded()
     }
 }
 
@@ -122,14 +125,11 @@ extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {
     }
 }
 
-extension MZInputURLDetailsViewController: UITextFieldDelegate {
+extension MZInputURLDetailsViewController: UISearchBarDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        textField.resignFirstResponder()
-        
-        urlString = textField.text
-        
-        return true
+        urlString = searchBar.text
+        searchBar.resignFirstResponder()
     }
 }

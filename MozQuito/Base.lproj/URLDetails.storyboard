@@ -24,16 +24,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1T-ab-hsB">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <view alpha="0.0" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="92" translatesAutoresizingMaskIntoConstraints="NO" id="ybI-yv-8jA" userLabel="Spacing view">
-                                                <rect key="frame" x="8" y="244" width="584" height="228"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="8" id="HgY-RM-NTO"/>
-                                                </constraints>
-                                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
-                                                    <rect key="frame" x="8" y="244" width="784" height="92"/>
-                                                </variation>
-                                            </view>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="mYE-OJ-ube">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
                                                 <subviews>
@@ -56,14 +46,6 @@
                                                     <rect key="frame" x="100" y="0.0" width="600" height="336"/>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-bj-FND" customClass="MZPageMetaDataView" customModule="PocketSEO" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="8" width="584" height="100"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fUQ-B9-wwe" customClass="MZMozscapeMetricsView" customModule="PocketSEO" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="116" width="288" height="128"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="800" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-sN-G4h" customClass="MZDistanceView" customModule="PocketSEO" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="472" width="584" height="120"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,8 +53,12 @@
                                                     <rect key="frame" x="8" y="336" width="784" height="120"/>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-Qr-Ttu" customClass="MZAlexaDataView" customModule="PocketSEO" customModuleProvider="target">
-                                                <rect key="frame" x="304" y="116" width="288" height="128"/>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fUQ-B9-wwe" customClass="MZPageMetaDataView" customModule="PocketSEO" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="8" width="288" height="128"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="255" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-Qr-Ttu" customClass="MZMozscapeMetricsView" customModule="PocketSEO" customModuleProvider="target">
+                                                <rect key="frame" x="304" y="8" width="288" height="128"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
@@ -80,49 +66,31 @@
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="4nw-Qr-Ttu" secondAttribute="trailing" id="2c6-gT-tZ2"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="width" secondItem="fUQ-B9-wwe" secondAttribute="width" id="2tu-vl-chb"/>
-                                            <constraint firstItem="fUQ-B9-wwe" firstAttribute="top" secondItem="zF0-bj-FND" secondAttribute="bottom" constant="8" id="5ZJ-aR-EBW"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="mYE-OJ-ube" secondAttribute="bottom" id="80T-N3-9a2"/>
-                                            <constraint firstAttribute="trailing" secondItem="zF0-bj-FND" secondAttribute="trailing" constant="8" id="9Va-xF-TIk"/>
-                                            <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="zF0-bj-FND" secondAttribute="bottom" constant="8" id="9lf-Jl-NvU"/>
-                                            <constraint firstItem="zF0-bj-FND" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" constant="8" id="BJl-Da-Dqb"/>
+                                            <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4nw-Qr-Ttu" secondAttribute="bottom" constant="8" id="8XT-fx-UNl"/>
                                             <constraint firstItem="mYE-OJ-ube" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leading" id="Bvc-Hc-f7J"/>
+                                            <constraint firstItem="4nw-Qr-Ttu" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" constant="8" id="EKV-7p-wRI"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="top" secondItem="fUQ-B9-wwe" secondAttribute="bottom" constant="8" id="FE3-Bc-xPs"/>
-                                            <constraint firstItem="zF0-bj-FND" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leading" constant="8" id="HO1-NS-rZE"/>
-                                            <constraint firstItem="ybI-yv-8jA" firstAttribute="top" secondItem="fUQ-B9-wwe" secondAttribute="bottom" priority="749" id="Lw4-sU-zyX"/>
+                                            <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fUQ-B9-wwe" secondAttribute="bottom" constant="8" id="H0J-0w-cfK"/>
                                             <constraint firstAttribute="trailing" secondItem="mYE-OJ-ube" secondAttribute="trailing" id="Oq8-b6-ofx"/>
                                             <constraint firstItem="mYE-OJ-ube" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" id="QQs-pr-Aqm"/>
-                                            <constraint firstItem="zF0-bj-FND" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="UAK-L0-xWg"/>
                                             <constraint firstItem="4nw-Qr-Ttu" firstAttribute="leading" secondItem="fUQ-B9-wwe" secondAttribute="trailing" constant="8" id="X9d-Dl-Jra"/>
-                                            <constraint firstItem="4nw-Qr-Ttu" firstAttribute="top" secondItem="zF0-bj-FND" secondAttribute="bottom" constant="8" id="XzR-vZ-dE5"/>
-                                            <constraint firstItem="ybI-yv-8jA" firstAttribute="trailing" secondItem="F1T-ab-hsB" secondAttribute="trailingMargin" id="Z6i-wN-QUK"/>
-                                            <constraint firstItem="zF0-bj-FND" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="topMargin" id="ZEa-Sr-egB"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="fUQ-B9-wwe" secondAttribute="bottom" constant="8" id="aTI-Mp-v97"/>
-                                            <constraint firstItem="Xvp-sN-G4h" firstAttribute="top" secondItem="ybI-yv-8jA" secondAttribute="bottom" priority="740" id="fCU-7X-V5m"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="bottom" secondItem="F1T-ab-hsB" secondAttribute="bottomMargin" id="frm-uY-h4x"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="trailing" secondItem="F1T-ab-hsB" secondAttribute="trailingMargin" id="gGI-XA-1EU"/>
-                                            <constraint firstItem="ybI-yv-8jA" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="hEr-6V-XTv"/>
-                                            <constraint firstItem="ybI-yv-8jA" firstAttribute="top" secondItem="4nw-Qr-Ttu" secondAttribute="bottom" id="kGW-n6-QJK"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fUQ-B9-wwe" secondAttribute="trailing" id="lQc-VU-Tgp"/>
                                             <constraint firstItem="Xvp-sN-G4h" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="o9Y-vu-hI1"/>
+                                            <constraint firstItem="fUQ-B9-wwe" firstAttribute="top" secondItem="F1T-ab-hsB" secondAttribute="top" constant="8" id="pwS-hA-9bH"/>
                                             <constraint firstItem="fUQ-B9-wwe" firstAttribute="height" relation="greaterThanOrEqual" secondItem="4nw-Qr-Ttu" secondAttribute="height" id="qO2-Je-AYl"/>
                                             <constraint firstItem="fUQ-B9-wwe" firstAttribute="leading" secondItem="F1T-ab-hsB" secondAttribute="leadingMargin" id="rT1-tD-DoW"/>
-                                            <constraint firstItem="zF0-bj-FND" firstAttribute="trailing" secondItem="F1T-ab-hsB" secondAttribute="trailingMargin" id="y0g-SV-V9x"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="4nw-Qr-Ttu" secondAttribute="leading" id="yXK-Wr-wxG"/>
-                                            <constraint firstItem="ybI-yv-8jA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4nw-Qr-Ttu" secondAttribute="bottom" id="zgr-18-8zh">
-                                                <variation key="widthClass=compact" constant="0.0"/>
-                                            </constraint>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="9Va-xF-TIk"/>
-                                                <exclude reference="BJl-Da-Dqb"/>
-                                                <exclude reference="HO1-NS-rZE"/>
                                                 <exclude reference="lQc-VU-Tgp"/>
-                                                <exclude reference="kGW-n6-QJK"/>
-                                                <exclude reference="zgr-18-8zh"/>
+                                                <exclude reference="qO2-Je-AYl"/>
                                                 <exclude reference="FE3-Bc-xPs"/>
                                                 <exclude reference="yXK-Wr-wxG"/>
-                                                <exclude reference="9lf-Jl-NvU"/>
                                                 <exclude reference="aTI-Mp-v97"/>
                                             </mask>
                                         </variation>
@@ -130,10 +98,9 @@
                                             <mask key="constraints">
                                                 <include reference="lQc-VU-Tgp"/>
                                                 <exclude reference="qO2-Je-AYl"/>
-                                                <include reference="zgr-18-8zh"/>
+                                                <exclude reference="EKV-7p-wRI"/>
                                                 <include reference="FE3-Bc-xPs"/>
                                                 <exclude reference="X9d-Dl-Jra"/>
-                                                <exclude reference="XzR-vZ-dE5"/>
                                                 <include reference="yXK-Wr-wxG"/>
                                             </mask>
                                         </variation>
@@ -170,11 +137,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="alexaDataView" destination="4nw-Qr-Ttu" id="0FP-vU-bHs"/>
-                        <outlet property="contentToBottomConstraint" destination="fCU-7X-V5m" id="4QA-wE-FWw"/>
                         <outlet property="distanceView" destination="Xvp-sN-G4h" id="okV-BZ-xZY"/>
-                        <outlet property="metaDataView" destination="zF0-bj-FND" id="QVM-p3-O5J"/>
-                        <outlet property="mozscapeView" destination="fUQ-B9-wwe" id="6Wf-hQ-IbV"/>
+                        <outlet property="metaDataView" destination="fUQ-B9-wwe" id="Sl0-By-P5I"/>
+                        <outlet property="mozscapeView" destination="4nw-Qr-Ttu" id="i4T-BV-01k"/>
                         <outlet property="noInputContainer" destination="mYE-OJ-ube" id="w77-UG-l0k"/>
                     </connections>
                 </viewController>
@@ -194,8 +159,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
-                                <rect key="frame" x="242" y="290" width="117" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-AL-Oq2" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
+                                <rect key="frame" x="214" y="286" width="173" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -203,9 +168,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="textStyleId" value="Headline"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="textColourStyleId" value="Text"/>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="142" y="290" width="117" height="21"/>
-                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="342" y="190" width="117" height="21"/>
                                 </variation>

@@ -10,6 +10,7 @@ import UIKit
 
 import Components
 import Foundation
+import JCLocalization
 
 extension Double {
     /// Rounds the double to decimal places value
@@ -92,10 +93,11 @@ class LinksTableViewCell: ListTableViewCell {
     @IBOutlet override weak var titleLabel:UILabel? { didSet { } }
     @IBOutlet override weak var subtitleLabel:UILabel? { didSet { } }
     
-    @IBOutlet weak var PALabel: UILabel!
-    @IBOutlet weak var DALabel: UILabel!
-    @IBOutlet weak var SpamScoreLabel: UILabel!
+//    @IBOutlet weak var PALabel: UILabel!
+//    @IBOutlet weak var DALabel: UILabel!
+//    @IBOutlet weak var SpamScoreLabel: UILabel!
     @IBOutlet weak var anchorTextLabel: UILabel!
+    @IBOutlet weak var followedTextLabel: ThemeLabel!
     
     @IBOutlet weak var colourBar: UIView!
     
@@ -114,18 +116,44 @@ class LinksTableViewCell: ListTableViewCell {
                 
                 self.subtitleLabel!.text = link.canonicalURL?.absoluteString
                 
+                // concat everything onto one line
+                let titleFont = MZThemeVendor.defaultFont(.Body1, sizeCategory: .Large)!
+                let titleColour = MZThemeVendor.defaultColour(.SecondaryText)!
+                
+                let titleAttributes:[String:AnyObject] = [NSFontAttributeName: titleFont, NSForegroundColorAttributeName: titleColour]
+                
+                let infoFont = MZThemeVendor.defaultFont(.Body2, sizeCategory: .Large)!
+                let infoColour = MZThemeVendor.defaultColour(.Text)!
+                
+                let infoAttributes:[String:AnyObject] = [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoColour]
+                
+                let mutString = NSMutableAttributedString(string: "")
+                
+                
                 if let pa = link.pageAuthority {
                     let roundedPA = pa.roundToPlaces(0)
-                    self.PALabel.text = String(Int(roundedPA))
+                    
+                    mutString.appendAttributedString(NSAttributedString(string: "PA ", attributes: titleAttributes))
+                    mutString.appendAttributedString(NSAttributedString(string: String(Int(roundedPA)) + "  ", attributes: infoAttributes))
                 }
                 
                 if let da = link.domainAuthority {
                     let roundedDA = da.roundToPlaces(0)
-                    self.DALabel.text = String(Int(roundedDA))
+                    
+                    mutString.appendAttributedString(NSAttributedString(string: "DA ", attributes: titleAttributes))
+                    mutString.appendAttributedString(NSAttributedString(string: String(Int(roundedDA)) + "  ", attributes: infoAttributes))
                 }
                 
-                self.SpamScoreLabel.text = link.spamScore.description
-                self.SpamScoreLabel.textColor = link.spamScore.colour
+                mutString.appendAttributedString(NSAttributedString(string: "Spam ", attributes: titleAttributes))
+                mutString.appendAttributedString(NSAttributedString(string: link.spamScore.description + "  ", attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: link.spamScore.colour]))
+                
+                let linkText = link.followed ? LocalizedString(.LinksFilterFollow) : LocalizedString(.LinksFilterNoFollow)
+                let linkColour = MZThemeVendor.defaultColour(link.followed ? .Accent : .SecondaryText)!
+                
+                mutString.appendAttributedString(NSAttributedString(string: linkText, attributes: [NSFontAttributeName: titleFont, NSForegroundColorAttributeName: linkColour]))
+                
+                followedTextLabel.attributedText = mutString
+                
                 self.colourBar.backgroundColor = link.spamScore.colour
                 
                 if let anchorText = link.anchorText {
@@ -135,6 +163,8 @@ class LinksTableViewCell: ListTableViewCell {
                         self.anchorTextLabel!.text = link.anchorText
                     }
                 }
+                
+                
             }
         }
     }

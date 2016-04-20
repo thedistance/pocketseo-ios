@@ -9,6 +9,7 @@
 import UIKit
 import StackView
 import TheDistanceCore
+import ThemeKitCore
 
 public class MZPanel: GMDView {
     
@@ -69,6 +70,24 @@ public class MZMozscapeMetricsView: MZPanel {
             return dataStack
         }
         set { }
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if #available(iOS 9 , *) {
+            return
+        }
+        
+        dataStack.authStack.view.iterateSubviews { (view, stop) in
+            if let l = view as? UILabel {
+                let width = floor(l.frame.size.width)
+                if l.preferredMaxLayoutWidth != width {
+                    l.preferredMaxLayoutWidth = width
+                    self.setNeedsLayout()
+                }
+            }
+        }
     }
 }
 
