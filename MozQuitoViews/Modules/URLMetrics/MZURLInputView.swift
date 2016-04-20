@@ -32,7 +32,6 @@ public class MZURLInputStack: CreatedStack {
         safariButton.setContentHuggingPriority(255, forAxis: .Horizontal)
         safariButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10)
         
-        
         urlSearchBar.keyboardType = .URL
         urlSearchBar.returnKeyType = .Send
         urlSearchBar.autocapitalizationType = .None
@@ -40,6 +39,7 @@ public class MZURLInputStack: CreatedStack {
         urlSearchBar.placeholder = LocalizedString(.URLDataSearchHint)
         urlSearchBar.barTintColor = MZThemeVendor.defaultColour(.Main)
         urlSearchBar.backgroundImage = UIImage()
+        
         
         refreshButton.setImage(refreshImage, forState: .Normal)
         refreshButton.setContentCompressionResistancePriority(755, forAxis: .Horizontal)

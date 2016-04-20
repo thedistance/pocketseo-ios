@@ -63,10 +63,10 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         } else {
             
             viewModel.contentChangesSignal.observeOn(UIScheduler())
-                .combinePrevious(LinksOutput(links: [], moreAvailable: true))
+                .combinePrevious(LinksOutput(currentContent: [], moreAvailable: true))
                 .observeNext { (prev, new) in
                     
-                    if prev.links.count == 0 {
+                    if prev.currentContent.count == 0 {
                         dispatch_async(dispatch_get_main_queue(), {
                             
                             if let tbv = self.tableView {

@@ -86,8 +86,12 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     
     func refreshTapped(sender:UIButton) {
         
-        // reset the property to reload the views where appropriate
         let str = urlString
+        
+        // force a refresh of the string
+        urlString = ""
+        
+        // reset the property to reload the views where appropriate
         urlString = str
     }
     
