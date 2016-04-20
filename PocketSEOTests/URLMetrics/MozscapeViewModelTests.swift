@@ -11,6 +11,7 @@ import XCTest
 import ReactiveCocoa
 import Result
 import Nimble
+import Components
 
 @testable import PocketSEO
 
@@ -38,7 +39,7 @@ class MozscapeViewModelTests: XCTestCase {
         let testMetrics = MZMozscapeMetrics.theDistanceMetrics()
         let testDates = MZMozscapeIndexedDates.theDistanceDates()
         
-        viewModel.refreshObserver.sendNext("thedistance.co.uk")
+        viewModel.urlString.value = "thedistance.co.uk"
         
         expect(info.value?.metrics.HTTPStatusCode).toEventually(equal(testMetrics.HTTPStatusCode))
         expect(info.value?.metrics.pageAuthority).toEventually(equal(testMetrics.pageAuthority))
@@ -53,25 +54,16 @@ class MozscapeViewModelTests: XCTestCase {
     
     func testNewRequestAnalytics() {
         
+        guard let analytics = MZAppDependencies.sharedDependencies().analyticsReporter as? TestAnalyticsInteractor else {
+            XCTFail("No reporter found")
+            return
+        }
+        
+        let expectedEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk")
+        expect(analytics.trackedEvents).toEventually(equal([expectedEvent]))
     }
     
     func testRefreshRequestAnalytics() {
-        
-    }
-    
-    func testNilInput() {
-        
-    }
-
-    func textInvalidInput() {
-        
-    }
-    
-    func testURLErrorMetrics() {
-        
-    }
-    
-    func testURLErrorDates() {
         
     }
     

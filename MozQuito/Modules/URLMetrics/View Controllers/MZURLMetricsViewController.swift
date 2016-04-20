@@ -8,7 +8,6 @@
 
 import UIKit
 import TheDistanceCore
-
 import StackView
 import Components
 import ReactiveCocoa
@@ -52,7 +51,7 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlStringProducer = urlString.producer
+        urlString.producer
             .observeOn(UIScheduler())
             .map({ !($0?.isEmpty ?? true) })
             .startWithNext { (valid) in

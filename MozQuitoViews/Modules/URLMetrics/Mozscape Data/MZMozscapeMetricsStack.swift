@@ -352,11 +352,8 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
     }
     
      func showErrorViewForError(error: NSError?) {
-        
         if let err = error {
             self.state = .Error(err)
-        } else {
-            // Check what to do here
         }
     }
 }

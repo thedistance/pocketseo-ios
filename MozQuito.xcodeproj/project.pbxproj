@@ -210,11 +210,6 @@
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
 		A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */; };
-		A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */; };
-		A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */; };
-		A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */; };
-		A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */; };
-		A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */; };
 		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -392,12 +387,7 @@
 		A5FB61DC1C787BBA00E0BC9A /* PocketSEOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketSEOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketSEOTests.swift; sourceTree = "<group>"; };
 		A5FB61E01C787BBA00E0BC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperTester.swift; sourceTree = "<group>"; };
-		A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_API_Test.swift; sourceTree = "<group>"; };
-		A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMetrics_NoNetwork_Tests.swift; sourceTree = "<group>"; };
 		A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketSEOTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperationTestCase.swift; sourceTree = "<group>"; };
-		A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NLAssertEqualOptional.swift; sourceTree = "<group>"; };
 		B5589C23D1CDA09C394CFE12 /* Pods-URLDetailsExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.release.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C2937A0530916D5881496CEF /* Pods-URLDetailsExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLDetailsExtension.debug.xcconfig"; path = "Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C7484853E007FBEB9AC2BC70 /* Pods_URLDetailsExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLDetailsExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -935,26 +925,13 @@
 			children = (
 				A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */,
 				A5FB61F41C787DB800E0BC9A /* PocketSEOTests-Bridging-Header.h */,
-				A5FB61E71C787BDF00E0BC9A /* Libraries */,
 				A5FB61E91C787BDF00E0BC9A /* Resources */,
-				A5FB61EC1C787BDF00E0BC9A /* URLMetrics_API_Test.swift */,
-				A5FB61ED1C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift */,
 				A560721D1CB2A868007F7E65 /* TestURLStore.swift */,
 				A560721A1CB2A811007F7E65 /* URLMetrics */,
 				5EA09B911CB3BD8100E3C5F3 /* Links */,
 				A5FB61E01C787BBA00E0BC9A /* Info.plist */,
 			);
 			path = PocketSEOTests;
-			sourceTree = "<group>";
-		};
-		A5FB61E71C787BDF00E0BC9A /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				A5FB61E81C787BDF00E0BC9A /* ViperTester.swift */,
-				A5FB61F51C787ED100E0BC9A /* AdvancedOperationTestCase.swift */,
-				A5FB61F61C787ED100E0BC9A /* NLAssertEqualOptional.swift */,
-			);
-			path = Libraries;
 			sourceTree = "<group>";
 		};
 		A5FB61E91C787BDF00E0BC9A /* Resources */ = {
@@ -1513,20 +1490,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5FB61F91C787ED100E0BC9A /* NLAssertEqualOptional.swift in Sources */,
 				A560721E1CB2A868007F7E65 /* TestURLStore.swift in Sources */,
 				A56072421CB2C84A007F7E65 /* MozscapeViewModelTests.swift in Sources */,
-				A5FB61F81C787ED100E0BC9A /* AdvancedOperationTestCase.swift in Sources */,
 				A56072191CB2A80E007F7E65 /* URLMetrics-APIManagerTests.swift in Sources */,
 				5E3085181CB401A200F89EB7 /* Links-ModelTests.swift in Sources */,
 				A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */,
-				A5FB61EE1C787BDF00E0BC9A /* ViperTester.swift in Sources */,
 				5E77DAAB1CB7B76300585477 /* Links-ConfigurationTests.swift in Sources */,
 				A560721C1CB2A833007F7E65 /* URLMetrics-ModelTests.swift in Sources */,
 				A55AB99B1CB6845100F462A4 /* Links-ViewModelTests.swift in Sources */,
 				5EA09B931CB3BDB000E3C5F3 /* Links-APIManagerTests.swift in Sources */,
-				A5FB61F21C787BDF00E0BC9A /* URLMetrics_NoNetwork_Tests.swift in Sources */,
-				A5FB61F11C787BDF00E0BC9A /* URLMetrics_API_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

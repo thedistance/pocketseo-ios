@@ -30,7 +30,6 @@ class PageMetaDataViewModel: ContentLoadingViewModel<Void, MZPageMetaData> {
             .combinePrevious(nil)
             .filter { $0 != $1 }
             .startWithNext { _ in self.refreshObserver.sendNext(()) }
-
     }
     
     override func loadingProducerWithInput(input: Void?) -> SignalProducer<MZPageMetaData, NSError> {

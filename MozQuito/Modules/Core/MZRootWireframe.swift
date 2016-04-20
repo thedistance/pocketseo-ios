@@ -42,7 +42,6 @@ class MZRootWireframe {
         urlMetricsVC.title = LocalizedString(.URLMetricsTitle).uppercaseString
         urlMetricsVC.urlMetricsViewModel = MozscapeViewModel(apiManager: self.apiManager)
         urlMetricsVC.pageMetaDataViewModel = PageMetaDataViewModel(apiManager: self.apiManager)
-//        urlMetricsVC.presenter = MZURLMetricsPresenter.configuredPresenterForView(urlMetricsVC)
         
         let linksVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.URLLinksVC) as! MZLinksViewController
         linksVC.title = LocalizedString(.URLLinksTitle).uppercaseString

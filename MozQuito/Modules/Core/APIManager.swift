@@ -83,20 +83,20 @@ class APIManager {
         let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
         let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
         
-    
+        
         let urlString = urlStore.mozscapeMetricsURLForRequest(requestURLString)?.absoluteString ?? ""
         
         return Alamofire.request(.GET, urlString,
-                                         parameters: authenticationParameters(["Cols": String(colsValue)]),
-                                         encoding: .URL,
-                                         headers: nil)
+            parameters: authenticationParameters(["Cols": String(colsValue)]),
+            encoding: .URL,
+            headers: nil)
             .validate()
             .rac_responseSwiftyJSONCreated()
-//            .on(next: { (json, _) in
-//                print(json)
-//                }, failed: { (error) in
-//                    print(error)
-//            })
+            //            .on(next: { (json, _) in
+            //                print(json)
+            //                }, failed: { (error) in
+            //                    print(error)
+            //            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NSError> in
                 return SignalProducer(error: error.userFacingError())
@@ -119,24 +119,24 @@ class APIManager {
                            "Offset": String(page * count)]
         
         let combinedParameters = parameters + requestURLParameters.mozscapeRequestParameters
-
+        
         return Alamofire.request(.GET, urlString,
             parameters: authenticationParameters(combinedParameters),
             encoding: .URL,
             headers:  nil)
             .validate()
-//            .responseJSON(completionHandler: { (response) in
-//                if case .Failure(let err) = response.result {
-//                    print(err)
-//                }
-//            })
-
+            //            .responseJSON(completionHandler: { (response) in
+            //                if case .Failure(let err) = response.result {
+            //                    print(err)
+            //                }
+            //            })
+            
             .rac_responseArraySwiftyJSONCreated()
-//            .on(next: { (json, _) in
-//                print(json)
-//                }, failed: { (error) in
-//                    print(error)
-//            })
+            //            .on(next: { (json, _) in
+            //                print(json)
+            //                }, failed: { (error) in
+            //                    print(error)
+            //            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
                 return SignalProducer(error: error.userFacingError())
@@ -163,7 +163,7 @@ class APIManager {
             }.flatMapError({ (error) -> SignalProducer<NSDate?, NSError> in
                 return SignalProducer(error: error.userFacingError())
             })
-
+        
     }
     
     func mozscapeIndexedDates() -> SignalProducer<MZMozscapeIndexedDates?, NSError> {
@@ -182,7 +182,7 @@ class APIManager {
         
         return bothDatesProducer
     }
-
+    
     // MARK:- Data
     
     func htmlMetaDataForString(requestURLString:String) -> SignalProducer<MZPageMetaData, NSError> {
@@ -193,57 +193,35 @@ class APIManager {
                 
                 if let guessURL = NSURL(string: "http://\(requestURLString)") {
                     requestURL = guessURL
-                    
-                    return Alamofire.request(.GET,
-                        requestURL)
-                        .validate()
-                        .rac_responseData()
-                        .flatMap(.Latest, transform: { (data) -> SignalProducer<MZPageMetaData, NSError> in
-                            do {
-                                let html = try MZHTMLMetaData(htmlData: data)
-                                
-                                let pageData = MZPageMetaData(htmlData: html,
-                                    usingSSL: (requestURL.scheme == "https") ?? false,
-                                    requestDate: NSDate(),
-                                    responseURL: requestURL)
-                                
-                                return SignalProducer(value: pageData)
-                                
-                            } catch let error {
-                                return SignalProducer(error: error as NSError)
-                            }
-                        })
-                        .flatMapError({ (error) -> SignalProducer<MZPageMetaData, NSError> in
-                            return SignalProducer(error: error.userFacingError())
-                        })
                 } else {
                     let inputError = NSError(domain: MZErrorDomain.UserInputError, code: MZErrorCode.InvalidURL, userInfo: [NSLocalizedDescriptionKey: "Invalid URL Entered."])
                     return SignalProducer(error: inputError.userFacingError())
                 }
-            } else {
-                return Alamofire.request(.GET,
-                    requestURL)
-                    .validate()
-                    .rac_responseData()
-                    .flatMap(.Latest, transform: { (data) -> SignalProducer<MZPageMetaData, NSError> in
-                        do {
-                            let html = try MZHTMLMetaData(htmlData: data)
-                            
-                            let pageData = MZPageMetaData(htmlData: html,
-                                usingSSL: (requestURL.scheme == "https") ?? false,
-                                requestDate: NSDate(),
-                                responseURL: requestURL)
-                            
-                            return SignalProducer(value: pageData)
-                            
-                        } catch let error {
-                            return SignalProducer(error: error as NSError)
-                        }
-                    })
-                    .flatMapError({ (error) -> SignalProducer<MZPageMetaData, NSError> in
-                        return SignalProducer(error: error.userFacingError())
-                    })
             }
+            
+            
+            return Alamofire.request(.GET, requestURL)
+                .validate()
+                .rac_responseData()
+                .flatMap(.Latest, transform: { (data) -> SignalProducer<MZPageMetaData, NSError> in
+                    do {
+                        let html = try MZHTMLMetaData(htmlData: data)
+                        
+                        let pageData = MZPageMetaData(htmlData: html,
+                            usingSSL: (requestURL.scheme == "https") ?? false,
+                            requestDate: NSDate(),
+                            responseURL: requestURL)
+                        
+                        return SignalProducer(value: pageData)
+                        
+                    } catch let error {
+                        return SignalProducer(error: error as NSError)
+                    }
+                })
+                .flatMapError({ (error) -> SignalProducer<MZPageMetaData, NSError> in
+                    return SignalProducer(error: error.userFacingError())
+                })
+            
         } else {
             return SignalProducer.empty
         }
