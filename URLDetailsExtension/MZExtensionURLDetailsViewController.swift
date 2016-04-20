@@ -12,9 +12,11 @@ import JCLocalization
 import DeviceKit
 import Fabric
 
+import Components
+
 class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanceExtensionStackDelegate {
     
-    let rootWireframe = MZRootWireframe()
+    let rootWireframe = MZRootWireframe(urlStore: LiveURLStore())
     
     // This is the launch point for the extension, application(_:didFinishLaunchingWithOptions:) does not get all in this context
     required init?(coder aDecoder: NSCoder) {
@@ -23,9 +25,9 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
         let _ = MZThemeVendor.shared()
         
         // Override point for customization after application launch.
-        let dependencies = MZAppDependencies.sharedInstance()
+        let dependencies = MZAppDependencies.sharedDependencies()
         
-        dependencies.crashReportingInteractor?.logToCrashReport("App Extension Launched")
+        dependencies.crashReporter?.logToCrashReport("App Extension Launched")
 
         // set the global session scope variable
         let tracker = GAI.sharedInstance().defaultTracker
@@ -50,7 +52,7 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
         let cancelBBI = ThemeBarButtonItem(image: UIImage(named: "ic_clear"),
             style: .Plain,
             target: self,
-            action: "cancel:")
+            action: #selector(MZExtensionURLDetailsViewController.cancel(_:)))
         
         self.navigationItem.leftBarButtonItem = cancelBBI
         
@@ -87,7 +89,7 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
             else { return }
         
         let event = AnalyticEvent(category: .DataRequest, action: .quickLookupOpenInApp, label: nil)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(event)
+        AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(event)
         
         var responder = self.nextResponder()
         while responder != nil {
@@ -141,5 +143,20 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
                 break
             }
         }
+    }
+    
+    override func configureFilterVisibility() {
+        
+        if self.navigationItem.rightBarButtonItem == nil {
+            // add filter bbi
+            
+            let bbi = UIBarButtonItem(image: UIImage(named: "ic_filter_list"), style: .Plain, target: linksVC, action: #selector(MZLinksViewController.filterTapped(_:)))
+            self.navigationItem.setRightBarButtonItem(bbi, animated: true)
+            
+        } else {
+            // hide filter
+            self.navigationItem.setRightBarButtonItem(nil, animated: true)
+        }
+        
     }
 }

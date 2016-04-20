@@ -7,13 +7,15 @@
 //
 
 import Foundation
-//import PocketSEOEntities
+import Components
 
 class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     
     weak var view:ViewType?
     var interactor:MZURLMetricsInteractor<ViewType>?
     var wireframe:MZURLMetricsWireframe<ViewType>?
+    
+    required init() { }
     
     static func configuredPresenterForView(view:ViewType) -> MZURLMetricsPresenter<ViewType> {
         
@@ -35,21 +37,20 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     func refreshMetricsForURLString(urlString: String) {
         
         let refreshEvent = AnalyticEvent(category: .DataRequest, action: .refreshData, label: urlString)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(refreshEvent)
+        MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(refreshEvent)
         
         // no need to refresh the indexed dates and the mozscape data as they change ~monthly.
         interactor?.getPageMetaDataForURLString(urlString)
         interactor?.getMozscapeMetricsForURLString(urlString)
-        interactor?.getAlexaDataFromURLString(urlString)
     }
     
     func requestMetricsForURLString(urlString:String) {
         
         let requestEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: urlString)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(requestEvent)
+        MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(requestEvent)
         
         let screenView = AnalyticEvent(screenName: .URLMetrics)
-        AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(screenView)
+        MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(screenView)
         
         if MZAppDependencies.sharedDependencies().shouldIgnoreCacheForRequest(.MozscapeIndexedDates) {
             interactor?.getMozscapeIndexDates()
@@ -61,9 +62,7 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
         }
         
         interactor?.getPageMetaDataForURLString(urlString)
-        interactor?.getAlexaDataFromURLString(urlString)
         interactor?.getMozscapeMetricsForURLString(urlString)
-        
     }
     
     func foundMozscapeMetrics(metrics:MZMozscapeMetrics) {
@@ -86,13 +85,5 @@ class MZURLMetricsPresenter<ViewType:URLMetricsView>: URLMetricsPresenter {
     
     func failedToFindPageMetaDataWithErrors(errors: [NSError]) {
         view?.showPageMetaDataErrors(errors)
-    }
-    
-    func foundAlexaData(data: MZAlexaData) {
-        view?.showAlexaData(data)
-    }
-    
-    func failedToFindAlexaDataWithErrors(errors: [NSError]) {
-        view?.showAlexaDataErrors(errors)
     }
 }

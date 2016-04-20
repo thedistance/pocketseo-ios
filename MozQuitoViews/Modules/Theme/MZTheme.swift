@@ -22,6 +22,19 @@ public class MZThemeVendor: TKThemeVendor {
     
     private var _defaultTheme:Theme? = MZTheme()
     
+    override init() {
+        super.init()
+        
+        if #available(iOS 9.0, *) {
+            UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).font = defaultTheme?.font(.SubHeadline)
+            UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).tintColor = defaultTheme?.colour(.Accent)
+        } else {
+            // Fallback on earlier versions
+            UITextField.my_appearanceWhenContainedIn(UISearchBar.self).font = defaultTheme?.font(.SubHeadline)
+            UITextField.my_appearanceWhenContainedIn(UISearchBar.self).tintColor = defaultTheme?.colour(.Accent)
+        }
+    }
+    
     public override var defaultTheme:Theme? {
         get {
             return _defaultTheme

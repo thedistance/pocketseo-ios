@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import ViperKit
+//import ViperKit
 //import PocketSEOEntities
 
 /// Protocol defining the methods required on an object to provide network results to a `URLMetricsPresenter`.
-protocol URLMetricsInteractor: VIPERInteractor {
+protocol URLMetricsInteractor {
     
     /**
 
@@ -41,21 +41,10 @@ protocol URLMetricsInteractor: VIPERInteractor {
      - parameter urlString: The url string to get metrics for. This can be be user entered.
      */
     func getPageMetaDataForURLString(urlString:String)
-    
-    /**
-     
-     Should query the network to get page data from Amazon Alexa server. On completion, will call either of:
-     
-     - `foundAlexaData(_:)`
-     - `failedToFindAlexaDataWithErrors(_:)
-     
-     - parameter urlString: The url string to get metrics for. This can be be user entered.
-     */
-    func getAlexaDataFromURLString(urlString:String)
 }
 
 /// Protocol defining the methods available to request by a `URLMetricsView`, and methods available to a `URLMetricsInteractor` to report results. All results should be reported to a `URLMetricsView`.
-protocol URLMetricsPresenter: VIPERPresenter {
+protocol URLMetricsPresenter {
 
     /// Typically called from a `URLMetricsView` this should refresh the metrics for a `String` typically user entered.
     func refreshMetricsForURLString(urlString:String)
@@ -77,17 +66,10 @@ protocol URLMetricsPresenter: VIPERPresenter {
     
     /// Typically called from a `URLMetricsInteractor` or when data is in the cache, this should forward a successful request to the `URLMetricsView`.
     func foundMozscapeIndexDates(dates:MZMozscapeIndexedDates)
-    
-    /// Typically called from a `URLMetricsInteractor`, this should forward a successful request to the `URLMetricsView`.
-    func foundAlexaData(data:MZAlexaData)
-    
-    /// Typically called from a `URLMetricsInteractor`, this should forward an unsuccessful request to the `URLMetricsView`.
-    func failedToFindAlexaDataWithErrors(errors:[NSError])
-    
 }
 
 /// Protocol defining the methods required on a object to respond to results from a `URLMetricsPresenter`.
-protocol URLMetricsView: VIPERView {
+protocol URLMetricsView: class {
     
     /// Should update the UI to show the given metrics.
     func showMozscapeMetrics(metrics:MZMozscapeMetrics)
@@ -98,17 +80,11 @@ protocol URLMetricsView: VIPERView {
     /// Should update the UI to show the given dates.
     func showMozscapeIndexedDates(dates:MZMozscapeIndexedDates)
     
-    /// Should update the UI to show the given data from Alexa.
-    func showAlexaData(data:MZAlexaData)
-    
     /// Should update the UI to indicate a failed request to Mozscape.
     func showMozscapeMetricsErrors(errors:[NSError])
 
     /// Should update the UI to indicate a failed request to get meta data.
     func showPageMetaDataErrors(errors:[NSError])
-    
-    /// Should update the UI to indicate a failed request to get meta data.
-    func showAlexaDataErrors(errors:[NSError])
     
 }
 

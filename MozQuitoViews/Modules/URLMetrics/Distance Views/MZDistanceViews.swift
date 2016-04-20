@@ -38,18 +38,6 @@ class MZDistanceView: MZPanel {
         super.layoutSubviews()
         
         configureStackAxis()
-        
-        if #available(iOS 9.0, *) { }
-        else {
-            
-            guard let distanceStack = self.distanceStack else { return }
-            
-            let width = distanceStack.headlineLabel.frame.size.width
-            if distanceStack.headlineLabel.preferredMaxLayoutWidth != width {
-                distanceStack.headlineLabel.preferredMaxLayoutWidth = width
-            }
-            
-        }
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
@@ -70,15 +58,9 @@ class MZDistanceView: MZPanel {
         if distanceStack.headingStack.axis != newAxis {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 distanceStack.headingStack.axis = newAxis
+                self.setNeedsLayout()
             })
         }
-        
-        if distanceStack.buttonStack.axis != newAxis {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                distanceStack.buttonStack.axis = newAxis
-            })
-        }
-
     }
 }
 

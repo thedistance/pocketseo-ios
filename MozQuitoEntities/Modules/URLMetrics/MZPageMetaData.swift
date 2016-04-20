@@ -81,5 +81,4 @@ public struct MZPageMetaData {
             responseURL: NSURL(string: "https://thedistance.co.uk")!
         )
     }
-
 }

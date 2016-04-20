@@ -8,14 +8,14 @@
 
 import UIKit
 import TheDistanceCore
-import ViperKit
+//import ViperKit
 import StackView
 
 class MZURLMetricsViewController: UIViewController, URLMetricsView {
 
     @IBOutlet weak var distanceView:MZDistanceView?
-    @IBOutlet weak var emptyView:UIView?
-    
+    @IBOutlet weak var noInputContainer:UIView?
+    let noInputView = NoInputView()
     var presenter:MZURLMetricsPresenter<MZURLMetricsViewController>?
     
     var urlString:String? {
@@ -24,10 +24,9 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
             pageMetaData = nil
             mozscapeMetrics = nil
             mozscapeIndexedDates = nil
-            alexaData = nil
             
             let validURL = !(urlString?.isEmpty ?? false)
-            emptyView?.hidden = validURL
+            noInputView.hidden = validURL
             contentToBottomConstraint?.priority = validURL ? 990 : 740
             
             for p in metricsViews {
@@ -70,19 +69,14 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         }
     }
     
-    var alexaData:MZAlexaData? {
-        didSet {
-            alexaDataView?.dataStack.alexaData = alexaData
-        }
-    }
     @IBOutlet weak var contentToBottomConstraint:NSLayoutConstraint?
     //@IBOutlet weak var contentHeightConstraint:NSLayoutConstraint?
     @IBOutlet weak var metaDataView:MZPageMetaDataView?
     @IBOutlet weak var mozscapeView:MZMozscapeMetricsView?
-    @IBOutlet weak var alexaDataView:MZAlexaDataView?
+
     
     var metricsViews:[MZPanel?] {
-        return [metaDataView, mozscapeView, alexaDataView]
+        return [metaDataView, mozscapeView]
     }
     
     override func viewDidLoad() {
@@ -95,6 +89,10 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         // hide the metrics stacks
         for sv in metricsViews {
             sv?.hidden = true
+        }
+        
+        if let container = noInputContainer {
+            container.addSubview(noInputView, centeredOn: container)
         }
     }
     
@@ -110,7 +108,7 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
         
         #if DEBUG || BETA_TESTING
             // set up the test view
-            let tapper = UITapGestureRecognizer(target: self, action: "logoTripleTapped:")
+            let tapper = UITapGestureRecognizer(target: self, action: #selector(MZURLMetricsViewController.logoTripleTapped(_:)))
             tapper.numberOfTouchesRequired = 1
             tapper.numberOfTapsRequired = 3
             distanceView?.distanceStack?.logoImageView.userInteractionEnabled = true
@@ -146,8 +144,15 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showMozscapeMetrics(metrics: MZMozscapeMetrics) {
         mozscapeMetrics = metrics
-        
         mozscapeView?.dataStack.state = .Success
+        
+        if #available(iOS 9, *) {
+            return
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.mozscapeView?.layoutSubviews()
+        })
     }
     
     func showMozscapeMetricsErrors(errors: [NSError]) {
@@ -156,18 +161,6 @@ class MZURLMetricsViewController: UIViewController, URLMetricsView {
     
     func showMozscapeIndexedDates(dates: MZMozscapeIndexedDates) {
         mozscapeIndexedDates = dates
-    }
-    
-    // MARK: Alexa
-    
-    func showAlexaData(data: MZAlexaData) {
-        alexaData = data
-        
-        alexaDataView?.dataStack.state = .Success
-    }
-    
-    func showAlexaDataErrors(errors: [NSError]) {
-        showErrors(errors, forPanel: alexaDataView)
     }
     
     func showErrors(errors:[NSError], forPanel panel:MZPanel?) {

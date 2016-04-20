@@ -19,8 +19,7 @@ target 'PocketSEO' do
     
     ### CORE PODS ###
     
-    pod 'TheDistanceCore', :path => 'TheDistanceCore'
-    pod 'ViperKit', :path => 'ViperKit'
+    pod 'TheDistanceCore', '0.6'
     
     ### DISTRIBUTION PODS ###
     
@@ -30,22 +29,20 @@ target 'PocketSEO' do
     
     ### NETWORKING PODS ###
     
-    pod 'Alamofire'
-    pod 'SwiftyJSON'
-    pod 'PSOperations', :git => 'git@github.com:joshc89/PSOperations.git'
+    pod 'PSOperations'
     
     pod 'hpple'
     
     ### UI PODS ###
     
-    pod 'JCPageViewController', :path => 'JCPageViewController'
+    pod 'JCPageViewController', :git => 'git@bitbucket.org:joshcampion89/jcpageviewcontroller.git'
     
     ### Josh's Development Pods ###
     
     pod 'JCLocalization', :git => 'git@bitbucket.org:joshcampion89/jclocalization.git'
     
     pod 'M13ProgressSuite', :git => 'https://github.com/Marxon13/M13ProgressSuite.git'
-    pod 'StackView', :path => 'StackView'
+    pod 'StackView/Core', :git => 'git@bitbucket.org:joshcampion89/stackview.git', :branch => 'develop'
     
 end
 
@@ -55,8 +52,7 @@ target 'URLDetailsExtension' do
     
     ### CORE PODS ###
     
-    pod 'TheDistanceCore', :path => 'TheDistanceCore'
-    pod 'ViperKit', :path => 'ViperKit'
+    pod 'TheDistanceCore', '0.6'
     
     ### DISTRIBUTION PODS ###
     
@@ -66,22 +62,20 @@ target 'URLDetailsExtension' do
     
     ### NETWORKING PODS ###
     
-    pod 'Alamofire'
-    pod 'SwiftyJSON'
-    pod 'PSOperations', :git => 'git@github.com:joshc89/PSOperations.git'
+    pod 'PSOperations'
     
     pod 'hpple'
     
     ### UI PODS ###
     
-    pod 'JCPageViewController', :path => 'JCPageViewController'
+    pod 'JCPageViewController', :git => 'git@bitbucket.org:joshcampion89/jcpageviewcontroller.git'
     
     ### Josh's Development Pods ###
     
     pod 'JCLocalization', :git => 'git@bitbucket.org:joshcampion89/jclocalization.git'
     
     pod 'M13ProgressSuite', :git => 'https://github.com/Marxon13/M13ProgressSuite.git'
-    pod 'StackView', :path => 'StackView'
+    pod 'StackView/Core', :git => 'git@bitbucket.org:joshcampion89/stackview.git', :branch => 'develop'
     
 end
 
@@ -90,7 +84,7 @@ target 'PocketSEOTests' do
     xcodeproj '../MozQuito'
     
     pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
-    pod 'ViperKit', :path => 'ViperKit'
+    #pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
     
 end
 

@@ -46,3 +46,30 @@ class MZParseAlexaDataOperation: FailingOperation {
         self.finish()
     }
 }
+
+extension MZAlexaData {
+    
+    init(xmlData:NSData) throws {
+        
+        guard let xmlDoc = TFHpple(XMLData: xmlData) else {
+            
+            let error = NSError(domain: .XMLError, code: .UnexpectedResponse, userInfo: [NSLocalizedDescriptionKey: "Unable to create hpple XML Document from data."])
+            
+            throw error
+        }
+        
+        let popularityElements = xmlDoc.searchWithXPathQuery("//POPULARITY")
+        let popString = (popularityElements.first as? TFHppleElement)?.attributes["TEXT"] as? String
+        
+        let reachElements = xmlDoc.searchWithXPathQuery("//REACH")
+        let reachString = (reachElements.first as? TFHppleElement)?.attributes["RANK"] as? String
+        
+        let rankElements = xmlDoc.searchWithXPathQuery("//RANK")
+        let rankString = (rankElements.first as? TFHppleElement)?.attributes["DELTA"] as? String
+        
+        self.init(popularityText: popString,
+                  reachRank: reachString,
+                  rankDelta: rankString)
+    }
+    
+}

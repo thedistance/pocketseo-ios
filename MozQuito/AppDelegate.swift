@@ -9,12 +9,12 @@
 import UIKit
 
 import Fabric
-import ViperKit
+import Components
 import DeviceKit
 
 class MZApplicationAppDependencies: MZAppDependencies {
     
-    let rootWireframe = MZApplicationRootWireframe()
+    let rootWireframe = MZApplicationRootWireframe(urlStore: LiveURLStore())
     
     override func installRootViewControllerIntoWindow(window: UIWindow) {
         window.rootViewController = rootWireframe.createRootViewController()
@@ -61,9 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = MZThemeVendor.shared()
         
         // Override point for customization after application launch.
-        let dependencies = MZApplicationAppDependencies.sharedInstance()
+        let dependencies = MZApplicationAppDependencies.sharedDependencies()
         
-        dependencies.crashReportingInteractor?.logToCrashReport("App Launched")
+        dependencies.crashReporter?.logToCrashReport("App Launched")
         
         window = UIWindow()
         window?.makeKeyAndVisible()
@@ -75,9 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // set the global session scope variable
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.DeviceType.rawValue), value: Device().description)
-        tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.ContextType.rawValue), value: "In App")
+        if let tracker = GAI.sharedInstance().defaultTracker {
+            tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.DeviceType.rawValue), value: Device().description)
+            tracker.set(GAIFields.customDimensionForIndex(AnalyticsCustomMetric.ContextType.rawValue), value: "In App")
+        }
         
         if FabricInitialiser.kits.count > 0 {
             // starting Fabric has to be the last method

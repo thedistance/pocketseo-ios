@@ -13,9 +13,13 @@ import ThemeKitCore
 import JCPageViewController
 import TheDistanceCore
 
+import Components
+
 import MessageUI
 import JCLocalization
 import DeviceKit
+
+import ReactiveCocoa
 
 class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControllerDelegate {
 
@@ -24,11 +28,12 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     var urlString:String? {
         didSet {
             metricsVC?.urlString = urlString
+            linksVC?.urlString.value = urlString
         }
     }
     
     var metricsVC:MZURLMetricsViewController!
-    var linksVC:UIViewController!
+    var linksVC:MZLinksViewController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,16 +48,19 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         super.viewDidLoad()
         
         // configure the JCPageViewController settings
-        viewControllers = [metricsVC]
+        viewControllers = [metricsVC,linksVC]
         
         (pageControl?.collectionViewLayout as? JCPageControlCollectionViewFlowLayout)?.cellAlignment = .Left
         pageContainer?.bounces = false
+        self.delegate = self
         
         // configure this view
         headerBackgroundView?.layer.shadowOpacity = 0.27
         headerBackgroundView?.layer.shadowRadius = 4.0
         headerBackgroundView?.layer.shadowOffset = CGSizeMake(0, 4.0)
         headerBackgroundView?.layer.shadowColor = UIColor.blackColor().CGColor
+        
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -70,7 +78,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         if let url = NSURL(string: str) {
             
             let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: url.absoluteString)
-            AppDependencies.sharedDependencies().analyticsInteractor?.sendAnalytic(openEvent)
+            AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
             
             self.openURL(url, fromSourceItem: .View(sender))
         }
@@ -130,4 +138,18 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func configureFilterVisibility() {
+        
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIDevice.currentDevice().getDeviceSupportedInterfaceOrientations()
+    }
+}
+
+extension MZURLDetailsViewController: JCPageViewControllerDelegate {
+    
+    func pageViewController(pageViewController: JCPageViewController, didChangeCurrentPageTo page: UIViewController, atIndex: Int) {
+        configureFilterVisibility()
+    }
 }

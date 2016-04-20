@@ -9,15 +9,25 @@
 import Foundation
 import TheDistanceCore
 
-class MZButton: GMDThemeButton {
+class MZButton: ThemeButton {
     
-    override func configureAsGMD() {
-        super.configureAsGMD()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        self.backgroundColourStyle = .Accent
-        self.tintColourStyle = .LightText
-        self.textStyle = .Button
-        self.contentEdgeInsets = UIEdgeInsetsMakeEqual(12.0)
+        styleTheme()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        styleTheme()
+    }
+    
+    func styleTheme() {
+        self.tintColourStyle = .Accent
+        self.textStyle = .Body2
+        
+        self.contentEdgeInsets = UIEdgeInsetsMake(2, 0, 2, 0)
     }
     
 }
