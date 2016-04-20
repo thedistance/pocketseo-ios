@@ -28,10 +28,12 @@ public class MZThemeVendor: TKThemeVendor {
         if #available(iOS 9.0, *) {
             UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).font = defaultTheme?.font(.SubHeadline)
             UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).tintColor = defaultTheme?.colour(.Accent)
+            UIBarButtonItem.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).tintColor = defaultTheme?.colour(.LightText)
         } else {
             // Fallback on earlier versions
             UITextField.my_appearanceWhenContainedIn(UISearchBar.self).font = defaultTheme?.font(.SubHeadline)
             UITextField.my_appearanceWhenContainedIn(UISearchBar.self).tintColor = defaultTheme?.colour(.Accent)
+            UIBarButtonItem.my_appearanceWhenContainedIn(UISearchBar.self).tintColor = defaultTheme?.colour(.LightText)
         }
     }
     

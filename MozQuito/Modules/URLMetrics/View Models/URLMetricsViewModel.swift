@@ -94,7 +94,7 @@ class LinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool)
             
         } else if loadedContent?.moreAvailable ?? true {
             
-            let currentCount = loadedContent?.links.count ?? 0
+            let currentCount = loadedContent?.currentContent.count ?? 0
             page = UInt(currentCount) / pageCount
             
         } else {
@@ -105,7 +105,7 @@ class LinksViewModel: ContentLoadingViewModel<(urlRequest:String, nextPage:Bool)
         return apiManager.linksForString(url, page: page, count: pageCount)
             .scan(loadedContent ?? currentContent) {
                 
-                let aggregatedLinks = $0.links + $1
+                let aggregatedLinks = $0.currentContent + $1
                 let moreAvailable = UInt($1.count) == self.pageCount
                 
                 return (links: aggregatedLinks, moreAvailable: moreAvailable )

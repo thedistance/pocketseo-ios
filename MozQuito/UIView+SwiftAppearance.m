@@ -15,3 +15,12 @@
 }
 
 @end
+
+@implementation UIBarButtonItem (SwiftAppearance)
+
++ (instancetype)my_appearanceWhenContainedIn:(Class<UIAppearanceContainer>)containerClass {
+    return [self appearanceWhenContainedIn:containerClass, nil];
+}
+
+
+@end
