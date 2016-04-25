@@ -28,6 +28,20 @@ class MozscapeViewModel: ContentLoadingViewModel<Void, MozscapeInfo> {
         
         super.init(lifetimeTrigger: lifetimeTrigger, refreshFlattenStrategy: refreshFlattenStrategy)
         
+        urlString.producer.observeOn(UIScheduler())
+            .filter({ !($0?.isEmpty ?? true) })
+            .combinePrevious(nil)
+            .startWithNext { (prev, new) in
+            
+                if prev == new {
+                    let refreshEvent = AnalyticEvent(category: .DataRequest, action: .refreshData, label: new)
+                    MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(refreshEvent)
+                } else {
+                    let requestEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: new)
+                    MZAppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(requestEvent)
+                }
+        }
+        
         // reload for each new urlString
         urlString.producer
             .combinePrevious(nil)
@@ -46,4 +60,6 @@ class MozscapeViewModel: ContentLoadingViewModel<Void, MozscapeInfo> {
         
         return combineLatest(metricsProducer, datesProducer).map({ (metrics: $0.0, dates: $0.1) })
     }
+    
+
 }

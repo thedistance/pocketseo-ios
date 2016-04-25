@@ -88,6 +88,8 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         
         // reset the property to reload the views where appropriate
         let str = urlString
+        
+        urlString = ""
         urlString = str
     }
     

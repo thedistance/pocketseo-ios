@@ -23,6 +23,8 @@ class MozscapeViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        MZAppDependencies.sharedDependencies().analyticsReporter = TestAnalyticsInteractor()
     }
     
     override func tearDown() {
@@ -59,11 +61,27 @@ class MozscapeViewModelTests: XCTestCase {
             return
         }
         
+        viewModel.urlString.value = "thedistance.co.uk"
+        
+        //analytics.sendAnalytic(AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk"))
+        
         let expectedEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk")
         expect(analytics.trackedEvents).toEventually(equal([expectedEvent]))
     }
     
     func testRefreshRequestAnalytics() {
+        
+        guard let analytics = MZAppDependencies.sharedDependencies().analyticsReporter as? TestAnalyticsInteractor else {
+            XCTFail("No reporter found")
+            return
+        }
+        viewModel.urlString.value = "thedistance.co.uk"
+        viewModel.urlString.value = "thedistance.co.uk"
+        
+        let expectedRequest = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk")
+        let expectedRefresh = AnalyticEvent(category: .DataRequest, action: .refreshData, label: "thedistance.co.uk")
+        expect(analytics.trackedEvents).toEventually(equal([expectedRequest, expectedRefresh]))
+
         
     }
     

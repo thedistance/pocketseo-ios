@@ -12,7 +12,7 @@ import StackView
 import Components
 import ReactiveCocoa
 
-class MZURLMetricsViewController: ReactiveAppearanceViewController {
+class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScreenView {
 
     @IBOutlet weak var distanceView:MZDistanceView?
     @IBOutlet weak var noInputContainer:UIView?
@@ -38,11 +38,14 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController {
     
     let urlString = MutableProperty<String?>(nil)
     
+    
+    
     @IBOutlet weak var contentToBottomConstraint:NSLayoutConstraint?
     //@IBOutlet weak var contentHeightConstraint:NSLayoutConstraint?
     @IBOutlet weak var metaDataView:MZPageMetaDataView?
     @IBOutlet weak var mozscapeView:MZMozscapeMetricsView?
 
+    var screenName: AnalyticScreen = .URLMetrics
     
     var metricsViews:[MZPanel?] {
         return [metaDataView, mozscapeView]
@@ -101,6 +104,10 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController {
             distanceView?.distanceStack?.logoImageView.userInteractionEnabled = true
             distanceView?.distanceStack?.logoImageView.addGestureRecognizer(tapper)
         #endif
+        
+        //Send analytics
+        self.registerScreenView()
+       
     }
     
     func logoTripleTapped(sender:AnyObject?) {
