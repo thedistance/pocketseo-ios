@@ -29,8 +29,6 @@ target 'PocketSEO' do
     
     ### NETWORKING PODS ###
     
-    pod 'PSOperations'
-    
     pod 'hpple'
     
     ### UI PODS ###
@@ -62,8 +60,6 @@ target 'URLDetailsExtension' do
     
     ### NETWORKING PODS ###
     
-    pod 'PSOperations'
-    
     pod 'hpple'
     
     ### UI PODS ###
@@ -76,15 +72,6 @@ target 'URLDetailsExtension' do
     
     pod 'M13ProgressSuite', :git => 'https://github.com/Marxon13/M13ProgressSuite.git'
     pod 'StackView/Core', :git => 'git@bitbucket.org:joshcampion89/stackview.git', :branch => 'develop'
-    
-end
-
-target 'PocketSEOTests' do
-    
-    xcodeproj '../MozQuito'
-    
-    pod 'AdvancedOperationKit', :git => 'git@bitbucket.org:joshcampion89/advancedoperationkit.git'
-    #pod 'ViperKit', :git => 'git@bitbucket.org:thedistance/viperkit.git', :branch => 'develop'
     
 end
 
