@@ -28,8 +28,6 @@
 		9E161B61FECA8E5B857D47EA /* Pods_URLDetailsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7484853E007FBEB9AC2BC70 /* Pods_URLDetailsExtension.framework */; };
 		A504A0721C8715A8001A214D /* URLDetailsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A58560CE1C7F3FFF005221B3 /* URLDetailsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A505BA481C567057004F2607 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
-		A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
-		A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
 		A508D8CA1C80ABCA0099BBD4 /* MZRootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572401C61131800E2AACF /* MZRootWireframe.swift */; };
 		A50BD38A1C75E24E00E7A07F /* MZTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C572381C61083C00E2AACF /* MZTheme.swift */; };
 		A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723C1C610AEF00E2AACF /* ThemeTextFieldStack.swift */; };
@@ -117,9 +115,7 @@
 		A58560E01C7F48D4005221B3 /* MZURLMetricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD5F1C5BA3A8003350E3 /* MZURLMetricsViewController.swift */; };
 		A58560E11C7F48D4005221B3 /* MZURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C5723A1C610A9E00E2AACF /* MZURLDetailsViewController.swift */; };
 		A58560EF1C7F48D4005221B3 /* MZAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D261C7DBB86001417F3 /* MZAnalytics.swift */; };
-		A58560F01C7F48D4005221B3 /* AlamofireJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */; };
 		A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA471C567057004F2607 /* MZAuthenticationToken.swift */; };
-		A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */; };
 		A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596270B1C528C1D0076147C /* MZAppDependencies.swift */; };
 		A58560F51C7F48D4005221B3 /* MZStoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59627101C5292740076147C /* MZStoryboardLoader.swift */; };
 		A58560F61C7F48D4005221B3 /* MZErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD911C5BA5FD003350E3 /* MZErrors.swift */; };
@@ -210,7 +206,6 @@
 		A5F4E6731C50E0FD0099010C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6721C50E0FD0099010C /* Assets.xcassets */; };
 		A5F4E6761C50E0FD0099010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F4E6741C50E0FD0099010C /* LaunchScreen.storyboard */; };
 		A5FB61DF1C787BBA00E0BC9A /* PocketSEOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB61DE1C787BBA00E0BC9A /* PocketSEOTests.swift */; };
-		BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35BB5C7131BA950C2B01F6A /* Pods_PocketSEOTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,8 +274,6 @@
 		939DC3C92237C49642BD66DA /* Pods_PocketSEO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketSEO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A505BA421C56512E004F2607 /* Beta Testing Release Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Beta Testing Release Notes.txt"; sourceTree = "<group>"; };
 		A505BA471C567057004F2607 /* MZAuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticationToken.swift; path = "Modules/Core/Network Operations/MZAuthenticationToken.swift"; sourceTree = "<group>"; };
-		A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireJSONOperation.swift; path = "Modules/Core/Network Operations/AlamofireJSONOperation.swift"; sourceTree = "<group>"; };
-		A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MZAuthenticatedOperation.swift; path = "Modules/Core/Network Operations/MZAuthenticatedOperation.swift"; sourceTree = "<group>"; };
 		A50BD39D1C75E29500E7A07F /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		A50BD39E1C75E29500E7A07F /* ThemeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSegmentedControl.swift; sourceTree = "<group>"; };
 		A50BD39F1C75E29500E7A07F /* ThemeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSlider.swift; sourceTree = "<group>"; };
@@ -443,7 +436,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE87C6B13A565E0656D69ED7 /* Pods_PocketSEOTests.framework in Frameworks */,
 				A560722C1CB2B009007F7E65 /* ReactiveCocoaConvenience_Alamofire.framework in Frameworks */,
 				A560722D1CB2B009007F7E65 /* ReactiveCocoaConvenience.framework in Frameworks */,
 				A56072371CB2B43D007F7E65 /* Nimble.framework in Frameworks */,
@@ -578,16 +570,6 @@
 				A5ECBD5E1C5BA365003350E3 /* View Controllers */,
 			);
 			name = "URL Metrics";
-			sourceTree = "<group>";
-		};
-		A505BA461C567035004F2607 /* Network Operations */ = {
-			isa = PBXGroup;
-			children = (
-				A505BA491C5672EF004F2607 /* AlamofireJSONOperation.swift */,
-				A505BA471C567057004F2607 /* MZAuthenticationToken.swift */,
-				A505BA4B1C567CA1004F2607 /* MZAuthenticatedOperation.swift */,
-			);
-			name = "Network Operations";
 			sourceTree = "<group>";
 		};
 		A50BD39B1C75E29400E7A07F /* IBInspectable */ = {
@@ -728,7 +710,7 @@
 		A596270D1C528C300076147C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A505BA461C567035004F2607 /* Network Operations */,
+				A505BA471C567057004F2607 /* MZAuthenticationToken.swift */,
 				A596270B1C528C1D0076147C /* MZAppDependencies.swift */,
 				A5C572401C61131800E2AACF /* MZRootWireframe.swift */,
 				A59627101C5292740076147C /* MZStoryboardLoader.swift */,
@@ -1018,12 +1000,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5FB61E31C787BBA00E0BC9A /* Build configuration list for PBXNativeTarget "PocketSEOTests" */;
 			buildPhases = (
-				E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */,
 				A5FB61D81C787BBA00E0BC9A /* Sources */,
 				A5FB61D91C787BBA00E0BC9A /* Frameworks */,
 				A5FB61DA1C787BBA00E0BC9A /* Resources */,
-				204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */,
-				955999B786551A95197F6A24 /* Copy Pods Resources */,
 				A56072381CB2B5AE007F7E65 /* CopyFiles */,
 			);
 			buildRules = (
@@ -1172,21 +1151,6 @@
 			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-URLDetailsExtension/Pods-URLDetailsExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		204CBA17A58E2F1A0AEA825E /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3E6BB89C0748D68F4103A815 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1215,21 +1179,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		955999B786551A95197F6A24 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Libraries/Pods/Target Support Files/Pods-PocketSEOTests/Pods-PocketSEOTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9DDCAA6BCFF332BD77BCBE45 /* Embed Pods Frameworks */ = {
@@ -1310,21 +1259,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		E376347C208DB5C470F8F76D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		E7AAA0041C89B279003EE3D4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1355,9 +1289,7 @@
 				A59E9FE41CB25E6200888DFA /* TestAnalyticsViewController.swift in Sources */,
 				A5C228E01CBE92B200CD65EC /* UIView+SwiftAppearance.m in Sources */,
 				A58560EF1C7F48D4005221B3 /* MZAnalytics.swift in Sources */,
-				A58560F01C7F48D4005221B3 /* AlamofireJSONOperation.swift in Sources */,
 				A58560F11C7F48D4005221B3 /* MZAuthenticationToken.swift in Sources */,
-				A58560F21C7F48D4005221B3 /* MZAuthenticatedOperation.swift in Sources */,
 				A58560F31C7F48D4005221B3 /* MZAppDependencies.swift in Sources */,
 				5E9371601CB53BB0009C8248 /* MZLinksViewController.swift in Sources */,
 				A508D8CA1C80ABCA0099BBD4 /* MZRootWireframe.swift in Sources */,
@@ -1430,7 +1362,6 @@
 				A50BD3981C75E28500E7A07F /* MZAlexaData.swift in Sources */,
 				A5C572421C6113B100E2AACF /* MZRootWireframe.swift in Sources */,
 				A5C6A18C1CB7A561004055EB /* MZLinksConfiguration.swift in Sources */,
-				A505BA4A1C5672EF004F2607 /* AlamofireJSONOperation.swift in Sources */,
 				A50BD3B31C75E29500E7A07F /* ThemeBarButtonItem.swift in Sources */,
 				A50BD38B1C75E24E00E7A07F /* ThemeTextFieldStack.swift in Sources */,
 				A50BD3921C75E25C00E7A07F /* MZPageMetaDataStack.swift in Sources */,
@@ -1469,7 +1400,6 @@
 				A579DD811C845EC9006C0FB5 /* MZDistanceApplicationStack.swift in Sources */,
 				A59EA0121CB27B4500888DFA /* FabricCrashReporter.swift in Sources */,
 				A50BD3B71C75E29500E7A07F /* ThemeToolbar.swift in Sources */,
-				A505BA4C1C567CA1004F2607 /* MZAuthenticatedOperation.swift in Sources */,
 				A50BD3B81C75E29500E7A07F /* ThemeLabel.swift in Sources */,
 				A50BD3911C75E25C00E7A07F /* MZMetaDataStack.swift in Sources */,
 				5E25E6901CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */,

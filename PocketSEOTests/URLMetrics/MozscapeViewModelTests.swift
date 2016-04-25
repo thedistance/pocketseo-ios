@@ -17,12 +17,13 @@ import Components
 
 class MozscapeViewModelTests: XCTestCase {
 
-    let viewModel = MozscapeViewModel(apiManager: APIManager(urlStore: TestURLStore()))
-    let failingViewModel = MozscapeViewModel(apiManager: APIManager(urlStore: EmptyURLStore()))
+    var viewModel:MozscapeViewModel!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        self.viewModel = MozscapeViewModel(apiManager: APIManager(urlStore: TestURLStore()))
         
         MZAppDependencies.sharedDependencies().analyticsReporter = TestAnalyticsInteractor()
     }
