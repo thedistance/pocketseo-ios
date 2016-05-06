@@ -86,7 +86,7 @@ public class MZMozscapeIndexedStack:CreatedStack {
     
 }
 
-class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
+class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
     
     var viewModel:ContentLoadingViewModel<Void, MozscapeInfo>? = nil {
         didSet {
@@ -95,6 +95,8 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
             }
         }
     }
+    
+     var delegate:MZURLMetricsMozcapeStackDelegate?
     
     func bindViewModel(viewModel: ContentLoadingViewModel<Void, MozscapeInfo>) {
         
@@ -190,8 +192,12 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
             inBundle: NSBundle(forClass: MZMozscapeMetricsStack.self),
             compatibleWithTraitCollection: nil)
         
-        let titleImageView = UIImageView(image: titleImage)
-        titleImageView.contentMode = .ScaleAspectFit
+        let titleImageButton = UIButton(type: .Custom) as UIButton
+        titleImageButton.setImage(titleImage, forState: .Normal)
+        titleImageButton.imageView?.contentMode = .ScaleAspectFit
+        
+        //        let titleImageView = UIImageView(image: titleImage)
+//        titleImageView.contentMode = .ScaleAspectFit
         
         statusCodeLabel.textStyle = .Body1
         statusCodeLabel.textColourStyle = .SecondaryText
@@ -312,12 +318,17 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
             v.hidden = true
         }
         
-        super.init(titleView: titleImageView, arrangedSubviews: [
+        
+        
+        super.init(titleView: titleImageButton, arrangedSubviews: [
             statusCodeLabel,
             authorityHeadingStack.view,
             authStack.view,
             linksStack.view,
             indexedStack.stackView])
+        
+        //Add target to titleImageButton
+        titleImageButton.addTarget(self, action: #selector(MZMozscapeMetricsStack.mozLogoPressed(_:)), forControlEvents: .TouchUpInside)
         
         stack.axis = .Vertical
         stack.spacing = 16.0
@@ -355,5 +366,10 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView{
         if let err = error {
             self.state = .Error(err)
         }
+    }
+    
+    @objc func mozLogoPressed(sender: UIButton) {
+       
+        self.delegate?.metricsMozscapePanelRequestOpenMozUrl(self, sender: sender)
     }
 }

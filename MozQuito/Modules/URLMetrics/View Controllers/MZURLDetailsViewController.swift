@@ -34,6 +34,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     
     var metricsVC:MZURLMetricsViewController!
     var linksVC:MZLinksViewController!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -92,7 +93,7 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
         urlString = ""
         urlString = str
     }
-    
+
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath)

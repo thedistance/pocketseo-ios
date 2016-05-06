@@ -11,6 +11,7 @@
 		5E0FB0891CB50024001614BE /* MZLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB0881CB50024001614BE /* MZLinksViewController.swift */; };
 		5E0FB08B1CB50096001614BE /* Links.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FB08A1CB50096001614BE /* Links.storyboard */; };
 		5E0FB08D1CB5017B001614BE /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FB08C1CB5017B001614BE /* LinksTableViewCell.swift */; };
+		5E1066DD1CDCDDB000ADE3FF /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
 		5E25E6901CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25E68F1CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift */; };
 		5E25E6911CC629CC0054BE87 /* URLMetricsPageMetaDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25E68F1CC4F2390054BE87 /* URLMetricsPageMetaDataViewModel.swift */; };
 		5E3085131CB3D76A00F89EB7 /* MozscapeLink.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3085121CB3D76A00F89EB7 /* MozscapeLink.json */; };
@@ -148,7 +149,6 @@
 		A58561141C7F48D4005221B3 /* MZExpandingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F46D221C7DB1AD001417F3 /* MZExpandingStack.swift */; };
 		A58561151C7F48D4005221B3 /* MZAlexaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E674961C7B313E00A7CDF4 /* MZAlexaDataStack.swift */; };
 		A58561161C7F48D4005221B3 /* MZMetricProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599C8B91C5BD0F3006B7FAC /* MZMetricProgressView.swift */; };
-		A58561171C7F48D4005221B3 /* MZMozscapeMetricsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A70AED1C761DDF004C1A0E /* MZMozscapeMetricsStack.swift */; };
 		A58561181C7F48D4005221B3 /* MZMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD991C5BA931003350E3 /* MZMetaDataStack.swift */; };
 		A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ECBD9B1C5BA931003350E3 /* MZPageMetaDataStack.swift */; };
 		A58561211C7F65B3005221B3 /* MZInputURLDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585611F1C7F65AF005221B3 /* MZInputURLDetailsViewController.swift */; };
@@ -1311,6 +1311,7 @@
 				A58561001C7F48D4005221B3 /* ThemeButton.swift in Sources */,
 				A58561011C7F48D4005221B3 /* ThemeSegmentedControl.swift in Sources */,
 				A58561021C7F48D4005221B3 /* ThemeSlider.swift in Sources */,
+				5E1066DD1CDCDDB000ADE3FF /* MZMozscapeMetricsStack.swift in Sources */,
 				A58561031C7F48D4005221B3 /* ThemeStepper.swift in Sources */,
 				A58561041C7F48D4005221B3 /* ThemeSwitch.swift in Sources */,
 				A58561051C7F48D4005221B3 /* ThemeBarButtonItem.swift in Sources */,
@@ -1337,7 +1338,6 @@
 				A55AB9A11CB6A10500F462A4 /* NoInputView.swift in Sources */,
 				A58561161C7F48D4005221B3 /* MZMetricProgressView.swift in Sources */,
 				A59EA0131CB27B4500888DFA /* FabricCrashReporter.swift in Sources */,
-				A58561171C7F48D4005221B3 /* MZMozscapeMetricsStack.swift in Sources */,
 				A58561181C7F48D4005221B3 /* MZMetaDataStack.swift in Sources */,
 				A58561191C7F48D4005221B3 /* MZPageMetaDataStack.swift in Sources */,
 				A560723F1CB2BDCC007F7E65 /* URLMetricsViewModel.swift in Sources */,

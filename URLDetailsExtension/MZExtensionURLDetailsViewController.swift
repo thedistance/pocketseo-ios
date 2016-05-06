@@ -112,7 +112,13 @@ class MZExtensionURLDetailsViewController: MZURLDetailsViewController, MZDistanc
     func distanceStackRequestsOpenInApp(stack: MZDistanceStack, sender: UIButton) {
         openInApp(sender)
     }
-
+    
+//    // MARK: - URLMetricsMozscapePanel Delegate 
+//    func metricsMozscapePanelRequestOpenMozUrl(stack: MZMozscapeMetricsStack, sender: UIButton) {
+//        
+//    }
+    
+    
     // MARK: - Extension
     
     /// Gets the single url we're handling from the extension context.

@@ -17,6 +17,11 @@ protocol MZDistanceExtensionStackDelegate {
     func distanceStackRequestsOpenInApp(stack:MZDistanceStack, sender:UIButton)
 }
 
+protocol MZURLMetricsMozcapeStackDelegate {
+    
+    func metricsMozscapePanelRequestOpenMozUrl(stack: MZMozscapeMetricsStack, sender: UIButton)
+}
+
 class MZDistanceExtensionStack: MZDistanceStack {
     
     let openInAppButton = MZButton(type: .System)

@@ -12,7 +12,7 @@ import StackView
 import Components
 import ReactiveCocoa
 
-class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScreenView {
+class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScreenView, MZURLMetricsMozcapeStackDelegate {
 
     @IBOutlet weak var distanceView:MZDistanceView?
     @IBOutlet weak var noInputContainer:UIView?
@@ -105,6 +105,11 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScre
             distanceView?.distanceStack?.logoImageView.addGestureRecognizer(tapper)
         #endif
         
+        // configure the distance stack
+        if let stack = (mozscapeView?.dataStack) {
+            stack.delegate = self
+        }
+
         //Send analytics
         self.registerScreenView()
        
@@ -128,6 +133,17 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScre
     
     func showTest() {
         MZStoryboardLoader.instantiateViewControllerForIdentifier(.TestVC, bundle: NSBundle(forClass: TestAnalyticsViewController.self))
+    }
+    
+    func metricsMozscapePanelRequestOpenMozUrl(stack: MZMozscapeMetricsStack, sender: UIButton) {
+        if let mozUrl = NSURL(string: "http://moz.com") {
+            
+            let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: mozUrl.absoluteString)
+            AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
+            
+            self.openURL(mozUrl, fromSourceItem: .View(sender))
+            
+        }
     }
     
 }

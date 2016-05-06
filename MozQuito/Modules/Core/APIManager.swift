@@ -13,6 +13,7 @@ import ReactiveCocoa
 import ReactiveCocoaConvenience_Alamofire_SwiftyJSON
 import SwiftyJSON
 import TheDistanceCore
+import JCLocalization
 
 protocol URLStore {
     
@@ -33,6 +34,25 @@ extension String {
     
 }
 
+extension NSError {
+    
+    func error429() -> NSError {
+        
+        let customUserInfo: [NSObject : AnyObject] = [
+                NSLocalizedDescriptionKey : LocalizedString(.Error429Text)
+            ]
+        
+        if let errorCode = self.userInfo["NSLocalizedFailureReason"] as? String{
+            if errorCode.containsString("429") {
+                return NSError(domain: "", code: 429, userInfo: customUserInfo)
+            } else {
+                return self
+            }
+        } else {
+            return self
+        }
+    }
+}
 struct LiveURLStore:URLStore {
     
     func mozscapeMetricsURLForRequest(request: String) -> NSURL? {
@@ -99,7 +119,7 @@ class APIManager {
             //            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<MZMozscapeMetrics, NSError> in
-                return SignalProducer(error: error.userFacingError())
+                return SignalProducer(error: error.userFacingError().error429())
             })
     }
     
@@ -139,7 +159,7 @@ class APIManager {
             //            })
             .map({ $0.1 })
             .flatMapError({ (error) -> SignalProducer<[MZMozscapeLinks], NSError> in
-                return SignalProducer(error: error.userFacingError())
+                return SignalProducer(error: error.userFacingError().error429())
             })
     }
     
@@ -161,7 +181,7 @@ class APIManager {
                     return nil
                 }
             }.flatMapError({ (error) -> SignalProducer<NSDate?, NSError> in
-                return SignalProducer(error: error.userFacingError())
+                return SignalProducer(error: error.userFacingError().error429())
             })
         
     }
@@ -195,7 +215,7 @@ class APIManager {
                     requestURL = guessURL
                 } else {
                     let inputError = NSError(domain: MZErrorDomain.UserInputError, code: MZErrorCode.InvalidURL, userInfo: [NSLocalizedDescriptionKey: "Invalid URL Entered."])
-                    return SignalProducer(error: inputError.userFacingError())
+                    return SignalProducer(error: inputError.userFacingError().error429())
                 }
             }
             
@@ -219,7 +239,7 @@ class APIManager {
                     }
                 })
                 .flatMapError({ (error) -> SignalProducer<MZPageMetaData, NSError> in
-                    return SignalProducer(error: error.userFacingError())
+                    return SignalProducer(error: error.userFacingError().error429())
                 })
             
         } else {
