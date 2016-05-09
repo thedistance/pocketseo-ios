@@ -36,9 +36,9 @@ public class MZMozscapeIndexedStack:CreatedStack {
         return formatter
     }()
     
-    var dates:MZMozscapeIndexedDates? {
+    var dates:MZMozscapeMetrics? {
         didSet {
-            [(lastDateLabel, dates?.last), (nextDateLabel, dates?.next)]
+            [(lastDateLabel, dates?.lastIndexed), (nextDateLabel, nil)]
                 .map({ ($0.0, $0.1 == nil ? NoValueString : self.dateFormatter.stringFromDate($0.1!)) })
                 .forEach({ $0.0.text = $0.1 })
         }
@@ -75,8 +75,10 @@ public class MZMozscapeIndexedStack:CreatedStack {
         
         for l in nextStack.labels {
             l.textAlignment = .Right
+            //temporary until paid version is available
+            l.hidden = true
         }
-        
+
         super.init(arrangedSubviews: [lastStack.stackView, nextStack.stackView])
         
         stack.stackDistribution = .FillEqually
@@ -88,7 +90,7 @@ public class MZMozscapeIndexedStack:CreatedStack {
 
 class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
     
-    var viewModel:ContentLoadingViewModel<Void, MozscapeInfo>? = nil {
+    var viewModel:ContentLoadingViewModel<Void, MZMozscapeMetrics>? = nil {
         didSet {
             if let vm = viewModel {
                 bindViewModel(vm)
@@ -98,15 +100,15 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
     
      var delegate:MZURLMetricsMozcapeStackDelegate?
     
-    func bindViewModel(viewModel: ContentLoadingViewModel<Void, MozscapeInfo>) {
+    func bindViewModel(viewModel: ContentLoadingViewModel<Void, MZMozscapeMetrics>) {
         
         bindContentLoadingViewModel(viewModel)
         
         viewModel.contentChangesSignal
             .observeOn(UIScheduler())
             .observeNext { (info) in
-                self.data = info.metrics
-                self.indexedStack.dates = info.dates
+                self.data = info
+                self.indexedStack.dates = info
                 
                 self.state = .Success
         }
@@ -225,8 +227,8 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
         let authInfo:[(progress:MZMetricProgressView, key:LocalizationKey)] =
         [
             (pageAuthorityProgressView, .URLMozscapeAuthorityPage),
-            (domainAuthorityProgressView, .URLMozscapeAuthorityDomain),
-            (spamScoreProgressView, .URLMozscapeAuthoritySpamScore)
+            (domainAuthorityProgressView, .URLMozscapeAuthorityDomain)//, Until paid version becomes available
+            //(spamScoreProgressView, .URLMozscapeAuthoritySpamScore)
             ]
             
         let authStacks:[StackView] = authInfo.map({ (progress:MZMetricProgressView, key:LocalizationKey) -> (MZMetricProgressView, ThemeLabel) in
@@ -248,7 +250,11 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
             return stack
         })
         
-        authStack = CreateStackView(authStacks.map({ $0.view }))
+        let ev1 = UIView()
+        let ev2 = UIView()
+        let ev3 = UIView()
+        
+        authStack = CreateStackView([ev1, authStacks[0].view, ev2, authStacks[1].view, ev3])
         authStack.axis = .Horizontal
         authStack.spacing = 16.0
         authStack.stackDistribution = .EqualCentering
@@ -274,19 +280,20 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
         linksHeadingStack.spacing = 8.0
         
         // create the content labels
-        
-        for l in [rootLinksStack.labels[0], totalLinksStack.labels[0]] {
+        //rootLinksStack.labels[0],
+        for l in [totalLinksStack.labels[0]] {
             l.textStyle = .Display1
             l.textColourStyle = .Text
             l.setContentHuggingPriority(255, forAxis: .Horizontal)
         }
-        
-        for l in [rootLinksStack.labels[1], totalLinksStack.labels[1]] {
+        //rootLinksStack.labels[1],
+        for l in [totalLinksStack.labels[1]] {
             l.textStyle = .Body1
             l.textColourStyle = .SecondaryText
         }
         
-        for var s in [rootLinksStack.stack, totalLinksStack.stack] {
+        //[rootLinksStack.stack, removed until paid version is available
+        for var s in [totalLinksStack.stack] {
             s.axis = .Horizontal
             s.stackAlignment = .FirstBaseline
             s.spacing = 4.0
@@ -303,7 +310,7 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
         
         linksStack = CreateStackView([separator1,
             linksHeadingStack.view,
-            rootLinksStack.stackView,
+            //rootLinksStack.stackView,
             totalLinksStack.stackView,
             separator2])
         linksStack.axis = .Vertical
@@ -335,7 +342,7 @@ class MZMozscapeMetricsStack: MZExpandingStack, ContentLoadingView {
         
         // constrain each auth stack to be equal widths
         
-        for s in authStacks[1...2] {
+        for s in authStacks[1...1] {
             stack.view.addConstraint(NSLayoutConstraint(item: s.view,
                 attribute: .Width,
                 relatedBy: .Equal,

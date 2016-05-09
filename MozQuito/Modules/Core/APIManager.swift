@@ -100,7 +100,7 @@ class APIManager {
     
     func mozscapeURLMetricsForString(requestURLString:String) -> SignalProducer<MZMozscapeMetrics, NSError> {
         
-        let cols:[MZMetricKey] = [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
+        let cols:[MZMetricKey] = MZMetricKey.freeValues
         let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
         
         
@@ -129,7 +129,7 @@ class APIManager {
     
     func mozscapeLinksForString(requestURLString:String, requestURLParameters: LinkSearchConfiguration, page:UInt, count:UInt = 25) -> SignalProducer<[MZMozscapeLinks], NSError> {
         
-        let cols:[MZLinksKey] = [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore]
+        let cols:[MZLinksKey] = MZLinksKey.freeValues
         let colsValue = cols.map({ $0.colValue }).reduce(0, combine: + )
         
         let urlString = urlStore.mozscapeLinksForRequest(requestURLString, page: page)?.absoluteString ?? ""
@@ -189,18 +189,30 @@ class APIManager {
     func mozscapeIndexedDates() -> SignalProducer<MZMozscapeIndexedDates?, NSError> {
         
         let lastProducer = dateProducer(urlStore.mozscapeLastIndexedDatesURL, jsonKey: "last_update")
-        let nextProducer = dateProducer(urlStore.mozscapeNextIndexedDatesURL, jsonKey: "next_update")
         
-        let bothDatesProducer = combineLatest(lastProducer, nextProducer).map { (last, next) -> MZMozscapeIndexedDates? in
-            
+        let mappedProducer = lastProducer.map { (last) -> MZMozscapeIndexedDates? in
             if let lastDate = last {
-                return MZMozscapeIndexedDates(last: lastDate, next: next)
+                return MZMozscapeIndexedDates(last: lastDate, next: nil)
             } else {
                 return nil
             }
         }
         
-        return bothDatesProducer
+        return mappedProducer
+    
+        // for paid version only
+//        let nextProducer = dateProducer(urlStore.mozscapeNextIndexedDatesURL, jsonKey: "next_update")
+//        
+//        let bothDatesProducer = combineLatest(lastProducer, nextProducer).map { (last, next) -> MZMozscapeIndexedDates? in
+//            
+//            if let lastDate = last {
+//                return MZMozscapeIndexedDates(last: lastDate, next: next)
+//            } else {
+//                return nil
+//            }
+//        }
+//        
+//        return bothDatesProducer
     }
     
     // MARK:- Data

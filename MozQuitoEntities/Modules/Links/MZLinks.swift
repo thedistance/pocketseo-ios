@@ -40,6 +40,14 @@ public enum MZLinksKey: String {
         }
     }
     
+    static var paidValues:[MZLinksKey] {
+        return [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority, .SpamScore]
+    }
+    
+    static var freeValues:[MZLinksKey] {
+        return [.Title, .CanonicalURL, .DomainAuthority, .PageAuthority]
+    }
+    
 }
 
 public struct MZMozscapeLinks: ContentEquatable {

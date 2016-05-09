@@ -24,6 +24,10 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     var emptyView = MZErrorView(image: nil, message: LocalizedString(.LinksNoneFound))
     var noInputView = NoInputView()
     
+    let headerImage:UIImage? = UIImage(named: "Moz Logo",
+                                      inBundle: NSBundle(forClass: MZMozscapeMetricsStack.self),
+                                      compatibleWithTraitCollection: nil)
+    
     var viewModel:MozscapeLinksViewModel? {
         didSet {
             if let vm = viewModel {
@@ -168,6 +172,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
             self.refreshControl?.beginRefreshing()
         } else {
             self.refreshControl?.endRefreshing()
+            self.tableView?.contentInset = UIEdgeInsetsZero
         }
     }
     
@@ -185,7 +190,7 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         guard let selectionVC = MZStoryboardLoader.instantiateViewControllerForIdentifier(.LinksSelectionVC) as? MZLinksSelectionViewController else { return }
         
         
-        let sortOptions = LinkSortBy.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
+        let sortOptions = LinkSortBy.freeValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
         
         let targetOptions = LinkTarget.allValues.map({ ($0.selectionKey, LocalizedString($0.localizationKey)) })
         
@@ -263,8 +268,60 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
 extension MZLinksViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return headerImage?.size.height ?? 0
     }
+
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        
+       // let headerImageView = UIImageView(image: headerImage)
+        
+        headerView.backgroundColor = UIColor(red: 36/255, green: 171/255, blue: 226/255, alpha: 1)
+        
+//        headerView.contentMode = .ScaleAspectFit
+        let headerImageButton = UIButton(type: .Custom) as UIButton
+        headerImageButton.setImage(headerImage, forState: .Normal)
+        headerImageButton.imageView?.contentMode = .ScaleAspectFit
+        headerImageButton.frame = CGRectMake(0, 0, headerImage?.size.width ?? 200, headerImage?.size.height ?? 100)
+        headerImageButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        headerImageButton.addTarget(self, action: #selector(MZLinksViewController.headerImageButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        
+        headerView.addConstraints([
+            NSLayoutConstraint(item: headerView,
+                attribute: .CenterX,
+                relatedBy: .Equal,
+                toItem: headerImageButton,
+                attribute: .CenterX,
+                multiplier: 1,
+                constant: 0),
+            NSLayoutConstraint(item: headerView,
+                attribute: .CenterY,
+                relatedBy: .Equal,
+                toItem: headerImageButton,
+                attribute: .CenterY,
+                multiplier: 1,
+                constant: 0)
+            ])
+        
+        headerView.addSubview(headerImageButton)
+        
+        return headerView
+    }
+    
+    func headerImageButtonPressed(sender: UIButton){
+        
+        if let mozUrl = NSURL(string: LocalizedString(.MozWebsiteURL)) {
+            
+            let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: mozUrl.absoluteString)
+            AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)
+            
+            self.openURL(mozUrl, fromSourceItem: .View(sender))
+            
+        }
+        
+    }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -312,14 +369,21 @@ extension MZLinksViewController: TDSelectionViewControllerDelegate {
     
     func selectionViewControllerRequestsDismissal(selectionVC: TDSelectionViewController) {
         
+        let hasChanged = self.searchConfiguration.value != LinkSearchConfiguration(selectionKeys: (selectionVC.selectedKeys.allObjects as? [String])!)
+        
         // get the selection from the keys.
         if let selectedKeys = selectionVC.selectedKeys.allObjects as? [String],
             let config = LinkSearchConfiguration(selectionKeys: selectedKeys) {
-            self.searchConfiguration.value = config
+            
+            if hasChanged{
+                self.searchConfiguration.value = config
+            }
         }
         
         selectionVC.dismissViewControllerAnimated(true) {
+            if hasChanged {
             self.refreshControl?.beginRefreshing()
+            }
         }
         
         

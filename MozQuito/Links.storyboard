@@ -15,18 +15,18 @@
                         <viewControllerLayoutGuide type="bottom" id="6LX-SL-oCr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z7F-Up-0FC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-JH-Ldn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="133"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOj-XP-h8f" id="Leb-EO-fcU">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="132"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" text="CanonicalURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pJ-CR-tMJ" customClass="ThemeLabel" customModule="PocketSEO" customModuleProvider="target">
@@ -126,13 +126,13 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="52" id="l4U-fJ-8eQ" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="161" width="320" height="52"/>
+                                        <rect key="frame" x="0.0" y="161" width="600" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l4U-fJ-8eQ" id="jXP-Jl-5uj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ucx-b9-gaH">
+                                                <activityIndicatorView opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ucx-b9-gaH">
                                                     <rect key="frame" x="290" y="16" width="20" height="19"/>
                                                     <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </activityIndicatorView>
@@ -160,14 +160,13 @@
                             <constraint firstAttribute="trailing" secondItem="xQQ-JH-Ldn" secondAttribute="trailing" id="lJ4-l3-c4a"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="xQQ-JH-Ldn" id="eml-dt-JU2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lB-H7-wqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514" y="349"/>
+            <point key="canvasLocation" x="478" y="364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Udo-v3-fjt">

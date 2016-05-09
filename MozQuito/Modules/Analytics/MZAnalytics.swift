@@ -51,5 +51,6 @@ enum AnalyticAction:String {
     case refreshData
     case openInBrowser
     case viewDistanceWebsite
+    case viewFeedback
     case quickLookupOpenInApp
 }

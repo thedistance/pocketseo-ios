@@ -76,9 +76,17 @@ class MZInputURLDetailsViewController: MZURLDetailsViewController {
 extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {
 
     func distanceStackRequestsSendFeedback(stack: MZDistanceStack, sender: UIButton) {
-        sendEmail([LocalizedString(.TheDistancePanelSendFeedbackEmailAddress)],
-            withSubject:LocalizedString(.TheDistancePanelSendFeedbackSubject),
-        fromSender: sender)
+        
+        guard let url = NSURL(string: LocalizedString(.TheDistancePanelFeedbackURL)) else { return }
+        
+        let websiteEvent = AnalyticEvent(category: .Meta, action: .viewFeedback, label: nil)
+        AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(websiteEvent)
+        
+        self.openURL(url, fromSourceItem: .View(sender))
+        
+//        sendEmail([LocalizedString(.TheDistancePanelSendFeedbackEmailAddress)],
+//            withSubject:LocalizedString(.TheDistancePanelSendFeedbackSubject),
+//        fromSender: sender)
 
     }
     
@@ -88,7 +96,7 @@ extension MZInputURLDetailsViewController: MZDistanceApplicationStackDelegate {
         contactSheet.addAction(UIAlertAction(title: LocalizedString(.TheDistancePanelGetInTouchOptionEmail),
             style: .Default,
             handler: { (_) -> Void in
-                self.sendEmail([LocalizedString(.TheDistanceContactEmail)],
+                self.sendEmail(["pocketseo@thedistance.co.uk"],
                     withSubject:"",
                     fromSender: sender
                 )

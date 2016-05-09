@@ -11,6 +11,7 @@ import TheDistanceCore
 import StackView
 import Components
 import ReactiveCocoa
+import JCLocalization
 
 class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScreenView, MZURLMetricsMozcapeStackDelegate {
 
@@ -105,7 +106,7 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScre
             distanceView?.distanceStack?.logoImageView.addGestureRecognizer(tapper)
         #endif
         
-        // configure the distance stack
+        // configure the mozscape stack
         if let stack = (mozscapeView?.dataStack) {
             stack.delegate = self
         }
@@ -136,7 +137,7 @@ class MZURLMetricsViewController: ReactiveAppearanceViewController, AnalyticScre
     }
     
     func metricsMozscapePanelRequestOpenMozUrl(stack: MZMozscapeMetricsStack, sender: UIButton) {
-        if let mozUrl = NSURL(string: "http://moz.com") {
+        if let mozUrl = NSURL(string: LocalizedString(.MozWebsiteURL)) {
             
             let openEvent = AnalyticEvent(category: .DataRequest, action: .openInBrowser, label: mozUrl.absoluteString)
             AppDependencies.sharedDependencies().analyticsReporter?.sendAnalytic(openEvent)

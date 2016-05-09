@@ -55,6 +55,14 @@ public enum MZMetricKey: String {
         }
     }
     
+    static var paidValues:[MZMetricKey] {
+        return [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .SpamScore, .EstablishedLinksRootDomains, .EstablishedLinksTotalLinks]
+    }
+    
+    static var freeValues:[MZMetricKey] {
+        return [.Title, .CanonicalURL, .HTTPStatusCode, .DomainAuthority, .PageAuthority, .EstablishedLinksTotalLinks, .TimeLastCrawled]
+    }
+    
 }
 
 public struct MZMozscapeMetrics {
@@ -62,11 +70,12 @@ public struct MZMozscapeMetrics {
     static func theDistanceMetrics() -> MZMozscapeMetrics {
         
         return MZMozscapeMetrics(HTTPStatusCode: 301,
-                  pageAuthority: 46.13596103561107,
-                  domainAuthority: 39.03236788583709,
-                  spamScore: 0,
-                  establishedLinksRoot: 86,
-                  establishedLinksTotal: 657)
+                                 pageAuthority: 46.13596103561107,
+                                 domainAuthority: 39.03236788583709,
+                                 spamScore: 0,
+                                 establishedLinksRoot: 86,
+                                 establishedLinksTotal: 657,
+                                 lastIndexed: NSDate(timeIntervalSince1970: 1459451654))
     }
 
     public let HTTPStatusCode:Int?
@@ -82,6 +91,8 @@ public struct MZMozscapeMetrics {
     
     public let establishedLinksRoot:Int?
     public let establishedLinksTotal:Int?
+    
+    public let lastIndexed:NSDate?
 }
 
 extension MZMozscapeMetrics: JSONCreated {
@@ -105,6 +116,8 @@ extension MZMozscapeMetrics: JSONCreated {
             let root = keyResults[.EstablishedLinksRootDomains]?.int
             let total = keyResults[.EstablishedLinksTotalLinks]?.int
             
+            let last = keyResults[.TimeLastCrawled]?.double
+            
             self.HTTPStatusCode = http
             self.pageAuthority = pageAuth
             self.domainAuthority = domainAuth
@@ -117,6 +130,12 @@ extension MZMozscapeMetrics: JSONCreated {
             
             self.establishedLinksRoot = root
             self.establishedLinksTotal = total
+            
+            if let lastDouble = last {
+                self.lastIndexed = NSDate(timeIntervalSince1970: lastDouble)
+            } else {
+                self.lastIndexed = nil
+            }
             
         } else {
             throw NSError.unexpectedTypeErrorForJSON(json, expectedType: .Dictionary)
