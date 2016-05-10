@@ -20,6 +20,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     typealias OutputType = [[MZMozscapeLinks]]
     typealias ValueType = MZMozscapeLinks
     
+    @IBOutlet weak var mozLogoButton: UIButton?
+    
     var errorView = MZErrorView(image: UIImage(named: "Error"), message: "")
     var emptyView = MZErrorView(image: nil, message: LocalizedString(.LinksNoneFound))
     var noInputView = NoInputView()
@@ -117,6 +119,8 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mozLogoButton?.addTarget(self, action: #selector(MZLinksViewController.headerImageButtonPressed(_:)), forControlEvents: .TouchUpInside)
         
         // configure reloading properties
         validURLString <~ urlString.producer.map { $0?.isEmpty ?? true }.map { !$0 }
@@ -268,46 +272,50 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
 extension MZLinksViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return headerImage?.size.height ?? 0
+        return UITableViewAutomaticDimension
     }
-
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        
-       // let headerImageView = UIImageView(image: headerImage)
-        
-        headerView.backgroundColor = UIColor(red: 36/255, green: 171/255, blue: 226/255, alpha: 1)
-        
-//        headerView.contentMode = .ScaleAspectFit
-        let headerImageButton = UIButton(type: .Custom) as UIButton
-        headerImageButton.setImage(headerImage, forState: .Normal)
-        headerImageButton.imageView?.contentMode = .ScaleAspectFit
-        headerImageButton.frame = CGRectMake(0, 0, headerImage?.size.width ?? 200, headerImage?.size.height ?? 100)
-        headerImageButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        headerImageButton.addTarget(self, action: #selector(MZLinksViewController.headerImageButtonPressed(_:)), forControlEvents: .TouchUpInside)
-        
-        headerView.addConstraints([
-            NSLayoutConstraint(item: headerView,
-                attribute: .CenterX,
-                relatedBy: .Equal,
-                toItem: headerImageButton,
-                attribute: .CenterX,
-                multiplier: 1,
-                constant: 0),
-            NSLayoutConstraint(item: headerView,
-                attribute: .CenterY,
-                relatedBy: .Equal,
-                toItem: headerImageButton,
-                attribute: .CenterY,
-                multiplier: 1,
-                constant: 0)
-            ])
-        
-        headerView.addSubview(headerImageButton)
-        
-        return headerView
-    }
+    
+//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return headerImage?.size.height ?? 0
+//    }
+//
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        
+//       // let headerImageView = UIImageView(image: headerImage)
+//        
+//        headerView.backgroundColor = UIColor(red: 36/255, green: 171/255, blue: 226/255, alpha: 1)
+//        
+////        headerView.contentMode = .ScaleAspectFit
+//        let headerImageButton = UIButton(type: .Custom) as UIButton
+//        headerImageButton.setImage(headerImage, forState: .Normal)
+//        headerImageButton.imageView?.contentMode = .ScaleAspectFit
+//        headerImageButton.frame = CGRectMake(0, 0, headerImage?.size.width ?? 200, headerImage?.size.height ?? 100)
+//        headerImageButton.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        headerImageButton.addTarget(self, action: #selector(MZLinksViewController.headerImageButtonPressed(_:)), forControlEvents: .TouchUpInside)
+//        
+//        headerView.addConstraints([
+//            NSLayoutConstraint(item: headerView,
+//                attribute: .CenterX,
+//                relatedBy: .Equal,
+//                toItem: headerImageButton,
+//                attribute: .CenterX,
+//                multiplier: 1,
+//                constant: 0),
+//            NSLayoutConstraint(item: headerView,
+//                attribute: .CenterY,
+//                relatedBy: .Equal,
+//                toItem: headerImageButton,
+//                attribute: .CenterY,
+//                multiplier: 1,
+//                constant: 0)
+//            ])
+//        
+//        headerView.addSubview(headerImageButton)
+//        
+//        return headerView
+//    }
     
     func headerImageButtonPressed(sender: UIButton){
         
