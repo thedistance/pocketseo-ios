@@ -164,6 +164,42 @@ class MZLinksViewController: ReactiveAppearanceViewController, ListLoadingTableV
         
         tableView?.addSubview(refresh)
         
+        let headerView = UIView()
+        
+        headerView.backgroundColor = UIColor(red: 36/255, green: 171/255, blue: 226/255, alpha: 1)
+        
+        //        headerView.contentMode = .ScaleAspectFit
+        let headerImageButton = UIButton(type: .Custom) as UIButton
+        headerImageButton.setImage(headerImage, forState: .Normal)
+        headerImageButton.imageView?.contentMode = .ScaleAspectFit
+        headerImageButton.frame = CGRectMake(0, 0, headerImage?.size.width ?? 200, headerImage?.size.height ?? 100)
+        headerImageButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        headerImageButton.addTarget(self, action: #selector(MZLinksViewController.headerImageButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        
+        headerView.addConstraints([
+            NSLayoutConstraint(item: headerView,
+                attribute: .CenterX,
+                relatedBy: .Equal,
+                toItem: headerImageButton,
+                attribute: .CenterX,
+                multiplier: 1,
+                constant: 0),
+            NSLayoutConstraint(item: headerView,
+                attribute: .CenterY,
+                relatedBy: .Equal,
+                toItem: headerImageButton,
+                attribute: .CenterY,
+                multiplier: 1,
+                constant: 0)
+            ])
+        
+        headerView.addSubview(headerImageButton)
+        
+        tableView?.tableHeaderView = headerView
+        tableView?.tableHeaderView?.backgroundColor = UIColor(red: 36/255, green: 171/255, blue: 226/255, alpha: 1)
+        tableView?.tableHeaderView?.frame = CGRectMake(0, 0, self.view.frame.size.width, headerImage?.size.height ?? 100)
+        
         // make table view autosizing
         tableView?.estimatedRowHeight = 114
         tableView?.rowHeight = UITableViewAutomaticDimension

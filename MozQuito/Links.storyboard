@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-JH-Ldn">
-                                <rect key="frame" x="0.0" y="40" width="600" height="560"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" id="jOj-XP-h8f" customClass="LinksTableViewCell" customModule="PocketSEO" customModuleProvider="target">
@@ -151,47 +151,24 @@
                                     <outlet property="delegate" destination="IIR-0F-J1e" id="Vaq-K2-YA7"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efr-3N-aGP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11E-Bu-JDQ">
-                                        <rect key="frame" x="200" y="0.0" width="200" height="40"/>
-                                        <state key="normal" image="Moz Logo"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="11E-Bu-JDQ" firstAttribute="top" secondItem="efr-3N-aGP" secondAttribute="top" id="MwM-gc-frT"/>
-                                    <constraint firstItem="11E-Bu-JDQ" firstAttribute="centerY" secondItem="efr-3N-aGP" secondAttribute="centerY" id="chh-LA-OFU"/>
-                                    <constraint firstItem="11E-Bu-JDQ" firstAttribute="centerX" secondItem="efr-3N-aGP" secondAttribute="centerX" id="e2b-Bh-kXn"/>
-                                    <constraint firstAttribute="bottom" secondItem="11E-Bu-JDQ" secondAttribute="bottom" id="yw9-ui-9bJ"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="chh-LA-OFU"/>
-                                    </mask>
-                                </variation>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="efr-3N-aGP" firstAttribute="leading" secondItem="z7F-Up-0FC" secondAttribute="leading" id="3uv-BT-uR9"/>
                             <constraint firstItem="xQQ-JH-Ldn" firstAttribute="top" secondItem="z7F-Up-0FC" secondAttribute="top" id="4gp-6n-xTY"/>
-                            <constraint firstItem="xQQ-JH-Ldn" firstAttribute="top" secondItem="efr-3N-aGP" secondAttribute="bottom" id="Ifh-r4-Fwe"/>
+                            <constraint firstItem="xQQ-JH-Ldn" firstAttribute="top" secondItem="N6e-XL-goe" secondAttribute="bottom" id="4oi-JA-3Fe"/>
                             <constraint firstItem="xQQ-JH-Ldn" firstAttribute="leading" secondItem="z7F-Up-0FC" secondAttribute="leading" id="NMB-dg-yRp"/>
-                            <constraint firstItem="efr-3N-aGP" firstAttribute="top" secondItem="z7F-Up-0FC" secondAttribute="top" id="XX1-Fw-Gv4"/>
                             <constraint firstItem="6LX-SL-oCr" firstAttribute="top" secondItem="xQQ-JH-Ldn" secondAttribute="bottom" id="hg0-VU-8dJ"/>
+                            <constraint firstItem="xQQ-JH-Ldn" firstAttribute="top" secondItem="N6e-XL-goe" secondAttribute="bottom" id="itR-r9-7zW"/>
                             <constraint firstAttribute="trailing" secondItem="xQQ-JH-Ldn" secondAttribute="trailing" id="lJ4-l3-c4a"/>
-                            <constraint firstAttribute="trailing" secondItem="efr-3N-aGP" secondAttribute="trailing" id="tfs-Kd-Qpw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4gp-6n-xTY"/>
+                                <exclude reference="4oi-JA-3Fe"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mozLogoButton" destination="11E-Bu-JDQ" id="VaZ-jL-rIK"/>
                         <outlet property="tableView" destination="xQQ-JH-Ldn" id="eml-dt-JU2"/>
                     </connections>
                 </viewController>
@@ -296,7 +273,4 @@
             <point key="canvasLocation" x="1859" y="372"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Moz Logo" width="200" height="40"/>
-    </resources>
 </document>
