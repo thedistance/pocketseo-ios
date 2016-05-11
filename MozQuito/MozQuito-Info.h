@@ -1,1 +1,1 @@
-#define BUILD_VERSION 2016.05.10.2
+#define BUILD_VERSION 1.0_rc_03
