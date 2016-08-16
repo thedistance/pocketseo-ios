@@ -1,3 +1,7 @@
+Version 1.0:
+
+- Removed paid account features
+
 Version 0.2:
 
 - Backlinks
