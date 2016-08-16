@@ -82,8 +82,8 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         viewModel.urlString.value = "thedistance.co.uk"
 
-        expect(self.found.value?.links.count).toEventually(equal(25))
-        expect(self.found.value?.links[2]).toEventually(contentEqual(expected))
+        expect(self.found.value?.currentContent.count).toEventually(equal(25))
+        expect(self.found.value?.currentContent[2]).toEventually(contentEqual(expected))
         expect(self.found.value?.moreAvailable).toEventually(beTrue())
         
         waitForTime(withDescription: #function)
@@ -119,9 +119,9 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         viewModel.refreshObserver.sendNext(true)
         
-        expect(self.found.value?.links.count).toEventually(equal(35))
-        expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
-        expect(self.found.value?.links[26]).toEventually(contentEqual(expected2))
+        expect(self.found.value?.currentContent.count).toEventually(equal(35))
+        expect(self.found.value?.currentContent[2]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.currentContent[26]).toEventually(contentEqual(expected2))
         expect(self.found.value?.moreAvailable).toEventually(beFalse())
         
         waitForTime(withDescription: #function + "Error")
@@ -157,8 +157,8 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         viewModel.refreshObserver.sendNext(false)
         
-        expect(self.found.value?.links.count).toEventually(equal(25))
-        expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.currentContent.count).toEventually(equal(25))
+        expect(self.found.value?.currentContent[2]).toEventually(contentEqual(expected1))
         expect(self.found.value?.moreAvailable).toEventually(beTrue())
         
         waitForTime(withDescription: #function + "Error")
@@ -196,8 +196,8 @@ class BackLinks_ViewModelTests: XCTestCase {
         
         viewModel.urlString.value = "slimmingworld.co.uk"
         
-        expect(self.found.value?.links.count).toEventually(equal(25))
-        expect(self.found.value?.links[2]).toEventually(contentEqual(expected1))
+        expect(self.found.value?.currentContent.count).toEventually(equal(25))
+        expect(self.found.value?.currentContent[2]).toEventually(contentEqual(expected1))
         expect(self.found.value?.moreAvailable).toEventually(beTrue())
         
         waitForTime(withDescription: #function + "Error")

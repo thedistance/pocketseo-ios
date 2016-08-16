@@ -29,8 +29,16 @@ public enum LinkSortBy: String {
         }
     }
     
-    static var allValues:[LinkSortBy] {
+//    static var allValues:[LinkSortBy] {
+//        return [.DomainAuthority, .PageAuthority, .SpamScore]
+//    }
+    
+    static var paidValues:[LinkSortBy] {
         return [.DomainAuthority, .PageAuthority, .SpamScore]
+    }
+    
+    static var freeValues:[LinkSortBy] {
+        return [.DomainAuthority, .PageAuthority]
     }
     
     var selectionKey:String {
@@ -68,6 +76,14 @@ public enum LinkTarget: String {
     static var allValues:[LinkTarget] {
         return [.Page, .Subdomain, .Domain]
     }
+    
+//    static var freeValues:[LinkTarget] {
+//        return [.Page, .Subdomain, .Domain]
+//    }
+//    
+//    static var paidValues:[LinkTarget] {
+//        return [.Page, .Subdomain, .Domain]
+//    }
     
     var selectionKey:String {
         return "Target_" + rawValue

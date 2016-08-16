@@ -11,17 +11,21 @@ import XCTest
 import ReactiveCocoa
 import Result
 import Nimble
+import Components
 
 @testable import PocketSEO
 
 class MozscapeViewModelTests: XCTestCase {
 
-    let viewModel = MozscapeViewModel(apiManager: APIManager(urlStore: TestURLStore()))
-    let failingViewModel = MozscapeViewModel(apiManager: APIManager(urlStore: EmptyURLStore()))
+    var viewModel:MozscapeViewModel!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        self.viewModel = MozscapeViewModel(apiManager: APIManager(urlStore: TestURLStore()))
+        
+        MZAppDependencies.sharedDependencies().analyticsReporter = TestAnalyticsInteractor()
     }
     
     override func tearDown() {
@@ -38,7 +42,7 @@ class MozscapeViewModelTests: XCTestCase {
         let testMetrics = MZMozscapeMetrics.theDistanceMetrics()
         let testDates = MZMozscapeIndexedDates.theDistanceDates()
         
-        viewModel.refreshObserver.sendNext("thedistance.co.uk")
+        viewModel.urlString.value = "thedistance.co.uk"
         
         expect(info.value?.metrics.HTTPStatusCode).toEventually(equal(testMetrics.HTTPStatusCode))
         expect(info.value?.metrics.pageAuthority).toEventually(equal(testMetrics.pageAuthority))
@@ -53,25 +57,32 @@ class MozscapeViewModelTests: XCTestCase {
     
     func testNewRequestAnalytics() {
         
+        guard let analytics = MZAppDependencies.sharedDependencies().analyticsReporter as? TestAnalyticsInteractor else {
+            XCTFail("No reporter found")
+            return
+        }
+        
+        viewModel.urlString.value = "thedistance.co.uk"
+        
+        //analytics.sendAnalytic(AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk"))
+        
+        let expectedEvent = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk")
+        expect(analytics.trackedEvents).toEventually(equal([expectedEvent]))
     }
     
     func testRefreshRequestAnalytics() {
         
-    }
-    
-    func testNilInput() {
+        guard let analytics = MZAppDependencies.sharedDependencies().analyticsReporter as? TestAnalyticsInteractor else {
+            XCTFail("No reporter found")
+            return
+        }
+        viewModel.urlString.value = "thedistance.co.uk"
+        viewModel.urlString.value = "thedistance.co.uk"
         
-    }
+        let expectedRequest = AnalyticEvent(category: .DataRequest, action: .loadUrl, label: "thedistance.co.uk")
+        let expectedRefresh = AnalyticEvent(category: .DataRequest, action: .refreshData, label: "thedistance.co.uk")
+        expect(analytics.trackedEvents).toEventually(equal([expectedRequest, expectedRefresh]))
 
-    func textInvalidInput() {
-        
-    }
-    
-    func testURLErrorMetrics() {
-        
-    }
-    
-    func testURLErrorDates() {
         
     }
     

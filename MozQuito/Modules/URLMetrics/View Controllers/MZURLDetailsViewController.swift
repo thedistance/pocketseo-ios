@@ -27,13 +27,14 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
 
     var urlString:String? {
         didSet {
-            metricsVC?.urlString = urlString
+            metricsVC?.urlString.value = urlString
             linksVC?.urlString.value = urlString
         }
     }
     
     var metricsVC:MZURLMetricsViewController!
     var linksVC:MZLinksViewController!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -86,11 +87,13 @@ class MZURLDetailsViewController: JCPageViewController, MFMailComposeViewControl
     
     func refreshTapped(sender:UIButton) {
         
-        // reset the property to reload the views where appropriate
         let str = urlString
+        
+        // force a refresh of the string
+        urlString = ""
         urlString = str
     }
-    
+
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath)

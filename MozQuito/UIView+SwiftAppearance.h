@@ -12,3 +12,8 @@
 // appearanceWhenContainedIn: is not available in Swift. This fixes that.
 + (instancetype)my_appearanceWhenContainedIn:(Class<UIAppearanceContainer>)containerClass;
 @end
+
+@interface UIBarButtonItem (SwiftAppearance)
+// appearanceWhenContainedIn: is not available in Swift. This fixes that.
++ (instancetype)my_appearanceWhenContainedIn:(Class<UIAppearanceContainer>)containerClass;
+@end

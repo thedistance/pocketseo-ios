@@ -61,16 +61,16 @@ class URLMetrics_ModelTests: XCTestCase {
         expect(returnedMeta?.h2TagsCharacterCount).to(equal(testMeta.h2TagsCharacterCount))
     }
     
-    func testAlexaData() {
-        
-        let alexaData = NSData(contentsOfURL: urlStore.alexaURL)!
-        
-        let returnedAlexa = try? MZAlexaData(xmlData: alexaData)
-        let testAlexa = MZAlexaData.TheDistanceAlexaData()
-        
-        expect(returnedAlexa?.popularityText).to(equal(testAlexa.popularityText))
-        expect(returnedAlexa?.reachRank).to(equal(testAlexa.reachRank))
-        expect(returnedAlexa?.rankDelta).to(equal(testAlexa.rankDelta))
-    }
+//    func testAlexaData() {
+//        
+//        let alexaData = NSData(contentsOfURL: urlStore.alexaURL)!
+//        
+//        let returnedAlexa = try? MZAlexaData(xmlData: alexaData)
+//        let testAlexa = MZAlexaData.TheDistanceAlexaData()
+//        
+//        expect(returnedAlexa?.popularityText).to(equal(testAlexa.popularityText))
+//        expect(returnedAlexa?.reachRank).to(equal(testAlexa.reachRank))
+//        expect(returnedAlexa?.rankDelta).to(equal(testAlexa.rankDelta))
+//    }
     
 }

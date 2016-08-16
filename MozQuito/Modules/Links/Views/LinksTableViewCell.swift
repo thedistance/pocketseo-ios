@@ -144,8 +144,9 @@ class LinksTableViewCell: ListTableViewCell {
                     mutString.appendAttributedString(NSAttributedString(string: String(Int(roundedDA)) + "  ", attributes: infoAttributes))
                 }
                 
-                mutString.appendAttributedString(NSAttributedString(string: "Spam ", attributes: titleAttributes))
-                mutString.appendAttributedString(NSAttributedString(string: link.spamScore.description + "  ", attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: link.spamScore.colour]))
+                //Once paid version becomes available make check here on type of app , if paid then enable the below
+                //mutString.appendAttributedString(NSAttributedString(string: "Spam ", attributes: titleAttributes))
+                //mutString.appendAttributedString(NSAttributedString(string: link.spamScore.description + "  ", attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: link.spamScore.colour]))
                 
                 let linkText = link.followed ? LocalizedString(.LinksFilterFollow) : LocalizedString(.LinksFilterNoFollow)
                 let linkColour = MZThemeVendor.defaultColour(link.followed ? .Accent : .SecondaryText)!
@@ -154,7 +155,13 @@ class LinksTableViewCell: ListTableViewCell {
                 
                 followedTextLabel.attributedText = mutString
                 
-                self.colourBar.backgroundColor = link.spamScore.colour
+                //temporary check as free version will always return .None however the code below will not be correct for future paid version
+                if link.spamScore == .None {
+                    self.colourBar.hidden = true
+                } else {
+                    self.colourBar.hidden = false
+                    self.colourBar.backgroundColor = link.spamScore.colour
+                }
                 
                 if let anchorText = link.anchorText {
                     if anchorText.isEmpty {

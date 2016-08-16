@@ -65,10 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         dependencies.crashReporter?.logToCrashReport("App Launched")
         
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        window?.frame = UIScreen.mainScreen().bounds
-        
         // set the root view controller via the app dependencies so log can be performed as to which vc to start from
         if let window = self.window {
             dependencies.installRootViewControllerIntoWindow(window)
