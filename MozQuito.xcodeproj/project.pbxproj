@@ -957,7 +957,6 @@
 				A58560CA1C7F3FFF005221B3 /* Sources */,
 				A58560CB1C7F3FFF005221B3 /* Frameworks */,
 				A58560CC1C7F3FFF005221B3 /* Resources */,
-				A59E9FED1CB25FFE00888DFA /* ShellScript */,
 				1B139426F4AB27B44233C34C /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1223,19 +1222,6 @@
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/ReactiveCocoaConvenience_Alamofire.framework",
 				"$(SRCROOT)/Libraries/Carthage/Build/iOS/SelectionViewController.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		A59E9FED1CB25FFE00888DFA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
 			);
 			outputPaths = (
 			);

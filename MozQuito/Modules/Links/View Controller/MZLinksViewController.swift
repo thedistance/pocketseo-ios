@@ -395,7 +395,8 @@ extension MZLinksViewController : UITableViewDelegate {
         
         let maxOffsetY =  scrollView.contentSize.height - scrollView.frame.size.height
         
-        if maxOffsetY > 0 &&
+        if (viewModel?.loadedContent?.moreAvailable ?? false) &&
+            maxOffsetY > 0 &&
             scrollView.contentOffset.y > maxOffsetY - 50 &&
             !(viewModel?.isLoading.value ?? true) &&
             validURLString.value
